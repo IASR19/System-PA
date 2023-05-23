@@ -1,0 +1,688 @@
+var SCOPE;
+
+var CONTROLADORIA;
+var GER_FINANCEIRO;
+var DIR_GERAL;
+var DIR_FINANCEIRO;
+var PRESIDENTE;
+var PRESIDENTE_FILIAL;
+var JURIDICO;
+var CONTRATO;
+var ENG_PRODUTO;
+var DEP_IMPORTACAO;
+var POS_VENDAS_SERVICOS;
+var ARMAZEM;
+var FINANCEIRO;
+var GER_NEGOCIOS;
+var DIR_COMERCIAL;
+var GER_COMERCIAL;
+var CREDITO_COBRANCA;
+var GER_LOCACAO;
+var GER_AREA_CHINES;
+var GER_AREA_MINERACAO;
+var DIR_AREA_MINERACAO;
+var RECOF;
+var COMEX;
+var ARMAZEM_MINERACAO;
+var NOTIFICACAO_APROV_ENG_PRODUTO_MINERACAO;
+var GER_RH;
+var DIR_RH;
+var GER_POS_VENDAS_CHINES;
+var GER_CREDITO_COBRANCA;
+var GER_POS_VENDAS;
+var VICE_DIRETOR_COMERCIAL_GERAL;
+var PROCESS_INFO;
+
+
+//INICIO DATASET
+function createDataset(fields, constraints, sortFields) {
+	
+	log.info("aprovadores");
+	
+	SCOPE = {
+		MECANISM: "MECANISMO", ALL: "TODOS", ALL_FLUIG: "TODOS_FLUIG"
+	}
+	
+	CONTROLADORIA = "Group:controladoria";
+	GER_FINANCEIRO = "Group:financeiro_gerencia";
+	DIR_GERAL = "Group:diretor_geral";
+	DIR_FINANCEIRO = "Group:financeiro_diretoria";
+	PRESIDENTE = "Group:presidencia";
+	PRESIDENTE_FILIAL = "Group:presidencia_filial";
+	JURIDICO = "Group:juridico";
+	CONTRATO = "Group:juridico";
+	ENG_PRODUTO = "Group:aprovador_engenharia_produto";
+	DEP_IMPORTACAO = "Group:aprovador_departamento_importacao";
+	POS_VENDAS_SERVICOS = "Group:aprovador_pos_vendas_servicos";
+	ARMAZEM = "Group:aprovador_armazem";
+	FINANCEIRO = "Group:financeiro";
+	DIRETOR_NEGOCIOS = "Group:diretor_negocios";
+	DIR_COMERCIAL = "Group:diretor_comercial";
+	GER_NEGOCIOS = "Group:gerente_negocios";
+	GER_COMERCIAL = "Group:gerente_comercial";
+	CREDITO_COBRANCA = "Group:credito_cobranca";
+	GER_LOCACAO = "Group:gerencia_locacao";
+	GER_AREA_CHINES = "Group:gerencia_pos_vendas_chines";
+	GER_AREA_MINERACAO = "Group:gerente_area_mineracao";
+	DIR_AREA_MINERACAO = "Group:diretor_area_mineracao";
+	RECOF = "Group:recof";
+	COMEX = "Group:comex";
+	ARMAZEM_MINERACAO = "Group:aprovador_armazem_mineracao";
+	NOTIFICACAO_APROV_ENG_PRODUTO_MINERACAO = "Group:notificacao_aprov_eng_produto_mineracao";
+	GER_RH = "Group:gerencia_rh";
+	DIR_RH = "Group:diretoria_rh";
+	GER_POS_VENDAS_CHINES = "Group:gerencia_pos_vendas_chines";
+	GER_CREDITO_COBRANCA = "Group:gerencia_credito_cobranca";
+	GER_POS_VENDAS = "Group:gerencia_pos_vendas";
+	VICE_DIRETOR_COMERCIAL_GERAL = "Group:vice_diretor_comercial_geral";
+	
+												  										
+	/*Cada código de processo tem sua configuração com dataset
+		e atividades. Os números são os taskId conforme diagrama de cada processo.
+		Group: significa listar usuários do grupo
+		DS: significa olhar no dataset do processo o nome do campo especificado */
+	PROCESS_INFO = {
+		"pagamento_com_po": {
+			ds: "xcmg_pagamento_com_po",
+			a: { 5: "DS:CodGer", 10: "DS:CodDir"}
+		}
+		, "pagamento_sem_po": {
+			ds: "xcmg_pagamento_sem_po",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 33: GER_FINANCEIRO, 70: DIR_FINANCEIRO
+				, 35: PRESIDENTE
+			}
+		}
+		, "pagamento_sem_po_filial": {
+			ds: "xcmg_pagamento_sem_po_filial",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 33: DIR_GERAL, 70: DIR_FINANCEIRO
+				, 35: PRESIDENTE_FILIAL
+			}
+		}
+		, "pgto_importacao_exportacao": {
+			ds: "xcmg_pagamento_import_export",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 33: GER_FINANCEIRO, 70: DIR_FINANCEIRO
+				, 35: PRESIDENTE
+			}
+		}
+		, "pagamento_despesas_rh": {
+			ds: "xcmg_pagamento_despesas_rh",
+			a: { 19: "DS:CodGer", 128: "DS:CodDir"
+				, 78: CONTROLADORIA
+				, 33: GER_FINANCEIRO, 85: DIR_FINANCEIRO
+				, 90: PRESIDENTE
+			}
+		}
+		, "pagamento_tributos": {
+			ds: "xcmg_pagamento_tributos",
+			a: { 19: "DS:CodGer"
+				, 78: CONTROLADORIA
+				, 33: GER_FINANCEIRO, 85: DIR_FINANCEIRO
+				, 90: PRESIDENTE
+			}
+		}
+		, "adiantamento_prestacao": {
+			ds: "xcmg_adiantamento_prestacao",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 74: GER_FINANCEIRO, 33: DIR_FINANCEIRO
+				, 35: PRESIDENTE
+			}
+		}
+		, "pagamento_fatura": {
+			ds: "xcmg_pagamento_faturas",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 74: GER_FINANCEIRO, 33: DIR_FINANCEIRO
+				, 35: PRESIDENTE
+			}
+		}
+		, "adiantamento_prestacao_viagem": {
+			ds: "xcmg_adto_prestacao_viagem",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 74: GER_FINANCEIRO, 33: DIR_FINANCEIRO
+				, 35: PRESIDENTE
+			}
+		}
+		, "adiantamento_prestacao_viagem_filial": {
+			ds: "xcmg_adto_prestacao_viagem_filial",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 74: DIR_GERAL
+				, 35: PRESIDENTE_FILIAL
+			}
+		}
+		, "adiantamento_prestacao_fornec": {
+			ds: "xcmg_adto_prestacao_fornec",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 74: GER_FINANCEIRO, 33: DIR_FINANCEIRO
+				, 35: PRESIDENTE
+			}
+		}
+		, "solicitacao_extra_budget": {
+			ds: "xcmg_extra_budget",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 74: GER_FINANCEIRO, 70: DIR_FINANCEIRO
+				, 35: PRESIDENTE
+				, 52: CONTROLADORIA
+			}
+		}	
+		, "envio_budget_mensal": {
+			ds: "xcmg_envio_budget",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 52: CONTROLADORIA
+			}
+		}
+		, "pagamento_tributos_comex": {
+			ds: "xcmg_aprovacao_pagamento_tributos_comex",
+			a: { 19: "DS:CodGer"
+				, 78: CONTROLADORIA
+				, 33: GER_FINANCEIRO, 85: DIR_FINANCEIRO
+				, 90: PRESIDENTE
+			}
+		}
+		, "aprovacao_contrato_juridico": {
+			ds: "xcmg_aprovacao_contrato_juridico",
+			a: { 20: "DS:CodGer", 22: "DS:CodDir"
+				, 26: JURIDICO
+				, 30: CONTROLADORIA
+				, 33: GER_FINANCEIRO
+				, 34: DIR_FINANCEIRO
+				, 35: PRESIDENTE
+				, 44: CONTRATO
+			}
+		}
+		, "aprovacao_contrato_confidencialidade": {
+			ds: "xcmg_aprovacao_contrato_confidencialidade",
+			a: { 20: "DS:CodGer" 
+				, 26: JURIDICO
+				
+			}
+		}
+		, "aprovacao_contrato_venda": {
+			ds: "xcmg_aprovacao_contrato_venda",
+			a: { 6: "DS:CodGer", 24: "DS:CodDir"
+				, 25: DIRETOR_NEGOCIOS
+				, 7: JURIDICO
+				,26: DIR_COMERCIAL
+				,27: FINANCEIRO
+			}
+		}
+		, "aprovacao_compras_internacionais": {
+			ds: "xcmg_aprovacao_compras_internacionais",
+			a: { 21: "DS:CodGer"
+				, 30: "DS:CodDir"
+				, 93: GER_AREA_CHINES
+				, 19: ARMAZEM
+				, 24: ENG_PRODUTO
+				, 28: DEP_IMPORTACAO
+				, 33: PRESIDENTE
+			}
+		}
+		, "locacao": {
+			ds: "xcmg_locacao",
+			a: { 17: CREDITO_COBRANCA
+				, 14: GER_LOCACAO
+				, 15: GER_NEGOCIOS
+				, 54: DIR_COMERCIAL
+				, 11: JURIDICO
+			}
+		}
+		, "pagamento_fatura_1008_1010": {
+			ds: "xcmg_pagamento_faturas_1008_1010",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 188: DIR_COMERCIAL
+				, 74: GER_FINANCEIRO
+				, 33: DIR_FINANCEIRO
+				, 35: PRESIDENTE
+			}
+		}
+		, "pagamento_sem_po_1008_1010": {
+			ds: "xcmg_pagamento_sem_po_1008_1010",
+			a: { 16: "DS:CodGer", 19: "DS:CodDir"
+				, 31: CONTROLADORIA
+				, 33: GER_FINANCEIRO
+				, 98: DIR_COMERCIAL
+				, 70: DIR_FINANCEIRO
+				, 35: PRESIDENTE
+			}
+		}
+		, "pagamento_com_po_1008_1010": {
+			ds: "xcmg_pagamento_com_po_1008_1010",
+			a: { 5: "DS:CodGer", 10: "DS:CodDir"}
+		}
+		, "adiantamento_prestacao_viagem_1008_1010": {
+			ds: "xcmg_adiantamento_prestacao_viagem_1008_1010",
+			a: { 10: "DS:CodGer", 11: "DS:CodDir"
+				, 13: CONTROLADORIA
+				, 22: GER_FINANCEIRO
+				, 63: DIR_COMERCIAL
+				, 14: DIR_FINANCEIRO
+				, 15: PRESIDENTE
+			}
+		}
+		, "adiantamento_prestacao_contas_fornecedor_1008_1010": {
+			ds: "xcmg_adiantamento_prestacao_contas_fornecedor_1008_1010",
+			a: { 13: "DS:CodGer", 14: "DS:CodDir"
+				, 69: DIR_COMERCIAL
+				, 16: CONTROLADORIA
+				, 17: DIR_FINANCEIRO
+				, 26: GER_FINANCEIRO
+				, 18: PRESIDENTE
+			}
+		}		
+		, "aprovacao_compras_internacionais_mineracao": {
+			ds: "xcmg_aprovacao_compras_internacionais_mineracao",
+			a: { 21: GER_AREA_MINERACAO, 30: DIR_AREA_MINERACAO
+				, 19: ARMAZEM_MINERACAO
+				, 24: ENG_PRODUTO
+				, 28: DEP_IMPORTACAO
+				, 33: PRESIDENTE
+				, 79: NOTIFICACAO_APROV_ENG_PRODUTO_MINERACAO
+				, 80: RECOF
+				, 81: COMEX
+			}
+		}
+		, "solicitacao_alteracao_cargo_salario": {
+			ds: "xcmg_solicitacao_alteracao_cargo_salario",
+			a: { 33: "DS:CodGer", 18: "DS:CodDir"				
+				, 19: GER_RH
+				, 20: DIR_RH
+				, 21: DIR_GERAL
+			}
+		}
+		, "solicitacao_aprovacao_condicao_venda_especial": {
+			ds: "xcmg_solicitacao_aprovacao_condicao_venda_especial",
+			a: {5: CREDITO_COBRANCA 
+				,23: GER_POS_VENDAS_CHINES
+				, 22: GER_POS_VENDAS
+				, 21: DIR_COMERCIAL
+				, 20: VICE_DIRETOR_COMERCIAL_GERAL
+				, 15: GER_CREDITO_COBRANCA
+				, 16: DIR_FINANCEIRO
+				, 18: PRESIDENTE
+			}
+		}									
+	}	
+	
+	var dataset = getNewDataset();
+    
+	var filter = {};
+	try {
+        if (constraints != null) {
+			getConstraintsValue(constraints, [ 'cd_centro_custo', 'escopo', 'processo', 'atividade' ]);
+			filter.escopo = constraintMap.get('escopo');
+			filter.processo = constraintMap.get('processo');
+			filter.solicitacao = constraintMap.get('solicitacao');
+			filter.atividade = constraintMap.get('atividade');
+			filter.requisitante = constraintMap.get('cd_requisitante');
+			filter.filial = constraintMap.get('cd_filial');
+			filter.cdCentroCusto = constraintMap.get('cd_centro_custo');
+		}
+		log.info("aprovadores - filter: ");
+		log.dir(filter);
+		
+		if(isEmpty(filter.escopo)) throw "Informe o 'escopo' da consulta";
+		if(filter.escopo == SCOPE.MECANISM){
+			log.info("aprovadores - SCOPE.MECANISM");
+			if(isEmpty(filter.processo) 
+				|| isEmpty(filter.solicitacao) 
+				|| isEmpty(filter.atividade)){
+				throw "Quando 'escopo' for " + SCOPE.MECANISM 
+					+ " os filtros 'processo', 'solicitacao' e 'atividade' são obrigatórios";
+			}
+			processMecanism(dataset, filter);
+		}
+		else if(filter.escopo == SCOPE.ALL_FLUIG){
+			log.info("aprovadores - SCOPE.ALL_FLUIG");
+			processAllFluig(dataset, filter);
+			log.info("aprovadores - SCOPE.ALL_FLUIG - FIM");
+		}
+		else if(filter.escopo == SCOPE.ALL){
+			log.info("aprovadores - SCOPE.ALL");
+			processAll(dataset, filter);
+			log.info("aprovadores - SCOPE.ALL - FIM");
+		}
+    } catch (e){
+		dataset.addRow( [ e.toString(), "", "", "", "", "", "", "" ] );
+	}
+	return dataset;
+}
+function getNewDataset(){
+	var ds = DatasetBuilder.newDataset();
+	ds.addColumn("ERRO");
+    ds.addColumn("aprovadores");
+    ds.addColumn("cd_centro_custo");
+    ds.addColumn("escopo");
+    ds.addColumn("processo");
+    ds.addColumn("solicitacao");
+    ds.addColumn("atividade");
+    ds.addColumn("cd_matricula");
+    return ds;
+}
+
+function processMecanism(dataset, filter){
+	log.info("aprovadores - processMecanism");
+	var info = PROCESS_INFO[filter.processo];
+	if(info.a[filter.atividade].indexOf("DS:") > -1){
+		fillUsersByForm(dataset, info, filter);
+	}
+	else{
+		var rows = getUsersByGroup(info, filter, null);
+		for (var i = 0; i < rows.length; i++){
+			dataset.addRow(["", "", ""
+				, filter.escopo
+				, filter.processo
+				, filter.solicitacao
+				, filter.atividade
+				, rows[i].cd
+			]);
+		}
+	}
+}
+
+function processAllFluig(dataset, filter){
+	log.info("aprovadores - processAllFluig");
+	var info = PROCESS_INFO[filter.processo];
+	
+	var users = { "controladoria": {}
+		, "gerente_financeiro": {}
+		, "diretor_geral": {}
+		, "diretor_financeiro": {}
+		, "presidencia": {}
+		, "presidencia_filial": {}
+		, "juridico": {}
+		, "contrato": {}
+		, "aprovador_engenharia_produto": {}
+		, "aprovador_armazem": {}
+		, "aprovador_departamento_importacao": {}
+		, "aprovador_pos_vendas_servicos": {}
+		, "diretor_comercial": {}
+		, "financeiro": {}
+		, "gerente_negocios": {}
+		, "gerente_comercial": {}
+		, "credito_cobranca": {}
+		, "gerencia_locacao": {}
+		, "gerente_area_chines": {}
+		, "gerente_area_mineracao": {}
+		, "diretor_area_mineracao": {}
+		, "recof": {}
+		, "comex": {}
+		, "armazem_mineracao": {}
+		, "notificacao_aprov_eng_produto_mineracao": {}
+		, "gerencia_rh": {}
+		, "diretoria_rh": {}
+		, "gerencia_pos_vendas_chines": {}
+		, "gerencia_credito_cobranca": {}
+		, "gerencia_pos_vendas": {}	
+		, "financeiro_diretoria": {}
+		, "vice_diretor_comercial_geral": {}
+	};
+		
+	users.controladoria = fillUsersByGroup(info, filter, CONTROLADORIA);
+	users.gerente_financeiro = fillUsersByGroup(info, filter, GER_FINANCEIRO);
+	users.diretor_geral = fillUsersByGroup(info, filter, DIR_GERAL);
+	users.diretor_financeiro = fillUsersByGroup(info, filter, DIR_FINANCEIRO);
+	users.presidencia = fillUsersByGroup(info, filter, PRESIDENTE);
+	users.presidencia_filial = fillUsersByGroup(info, filter, PRESIDENTE_FILIAL);
+	users.juridico = fillUsersByGroup(info, filter, JURIDICO);
+	users.contrato = fillUsersByGroup(info, filter, CONTRATO);
+	users.aprovador_engenharia_produto = fillUsersByGroup(info, filter, ENG_PRODUTO);
+	users.aprovador_armazem = fillUsersByGroup(info, filter, ARMAZEM);
+	users.aprovador_departamento_importacao = fillUsersByGroup(info, filter, DEP_IMPORTACAO);
+	users.aprovador_pos_vendas_servicos = fillUsersByGroup(info, filter, POS_VENDAS_SERVICOS);
+	users.diretor_comercial = fillUsersByGroup(info, filter, DIR_COMERCIAL);
+	users.financeiro = fillUsersByGroup(info, filter, FINANCEIRO);
+	users.gerente_negocios = fillUsersByGroup(info, filter, GER_NEGOCIOS);
+	users.gerente_comercial = fillUsersByGroup(info, filter, GER_COMERCIAL);
+	users.credito_cobranca = fillUsersByGroup(info, filter, CREDITO_COBRANCA);
+	users.gerencia_locacao = fillUsersByGroup(info, filter, GER_LOCACAO);
+	users.diretor_area_mineracao = fillUsersByGroup(info, filter, DIR_AREA_MINERACAO);
+	users.gerente_area_mineracao = fillUsersByGroup(info, filter, GER_AREA_MINERACAO);
+	users.gerente_area_chines = fillUsersByGroup(info, filter, GER_AREA_CHINES);
+	users.recof = fillUsersByGroup(info, filter, RECOF);
+	users.comex = fillUsersByGroup(info, filter, COMEX);
+	users.aprovador_armazem_mineracao = fillUsersByGroup(info, filter, ARMAZEM_MINERACAO);
+	users.notificacao_aprov_eng_produto_mineracao = fillUsersByGroup(info, filter, NOTIFICACAO_APROV_ENG_PRODUTO_MINERACAO);
+	users.gerencia_rh = fillUsersByGroup(info, filter, GER_RH);
+	users.diretoria_rh = fillUsersByGroup(info, filter, DIR_RH);														
+	users.gerencia_pos_vendas_chines = fillUsersByGroup(info, filter, GER_POS_VENDAS_CHINES);
+	users.gerencia_credito_cobranca = fillUsersByGroup(info, filter, GER_CREDITO_COBRANCA);
+	users.gerencia_pos_vendas = fillUsersByGroup(info, filter, GER_POS_VENDAS);	
+	users.financeiro_diretoria = fillUsersByGroup(info, filter, DIR_FINANCEIRO);
+	users.vice_diretor_comercial_geral = fillUsersByGroup(info, filter, VICE_DIRETOR_COMERCIAL_GERAL);
+	dataset.addRow([
+		"", JSONUtil.toJSON(users), ""
+		, filter.escopo
+		, filter.processo
+		, filter.solicitacao
+		, "", ""
+	]);l
+	
+}
+
+function processAll(dataset, filter){
+	log.info("aprovadores - processAll");
+	
+	var temp = getNewDataset();
+	processAllFluig(temp, filter);
+	var users = JSON.parse(temp.getValue(0, "aprovadores"));
+	
+	var info = PROCESS_INFO[filter.processo];
+	log.dir(info);
+	
+	for(var i in info.a){
+		filter.atividade = i;
+		if(info.a[filter.atividade].indexOf("DS:") > -1){
+			var target = info.a[filter.atividade].split("DS:")[1] + "_area";
+			users[target] = { "cd": "", "nm": "" };
+			
+			//Busca matrícula usuário com base nos dados do formulário
+			var temp2 = getNewDataset();
+			fillUsersByForm(temp2, info, filter);
+			users[target].cd = temp2.getValue(0, "cd_matricula");
+			
+			//Se não obteve a matrícula, ignora busca do nome
+			if(isEmpty(users[target].cd)) continue;
+			
+			//Complementa o nome do usuário com base na matrícula obtida
+			userData = getUserByGenericId(users[target].cd);
+			if(userData != null){
+				users[target].cd = userData.cd;
+				users[target].nm = userData.nm;
+			};
+		}
+	}
+	dataset.addRow([
+		"", JSONUtil.toJSON(users), ""
+		, filter.escopo
+		, filter.processo
+		, filter.solicitacao
+		, "", ""
+	]);
+}
+
+/**
+* Busca dados do formulário do processo para obter usuários.
+* O formulário do processo é que deve identificar quando atualizar seus aprovadores
+* @param dataset: objeto dataset para retornar resultados.
+* @param info: dados de configuração de comportamento por processo.
+* @param filter: constraints recebidas.
+*/
+function fillUsersByForm(dataset, info, filter){
+	log.info("aprovadores - fillUsersByForm");
+	var field = info.a[filter.atividade].split("DS:")[1];
+	
+	var requester = filter.requisitante;
+	var branch = filter.filial;
+	var costCenter = filter.cdCentroCusto;
+	if(isEmpty(requester) || isEmpty(branch) || isEmpty(costCenter)){
+		var requesterField = "lg_requisitante";
+		var branchField = "cd_filial";
+		var costCenterField = "cd_centro_custo";
+		var fields = [requesterField, branchField, costCenterField];
+		
+		var constraints = [
+			DatasetFactory.createConstraint("nr_solicitacao", filter.solicitacao, filter.solicitacao, ConstraintType.MUST)
+			, DatasetFactory.createConstraint("metadata#active", true, true, ConstraintType.MUST)
+		];
+		var formDs = DatasetFactory.getDataset(info.ds, fields, constraints, null);
+		if(formDs != null && formDs.rowsCount > 0){
+			requester = formDs.getValue(0, requesterField);
+			branch = formDs.getValue(0, branchField);
+			costCenter = formDs.getValue(0, costCenterField);
+		}
+	}
+	var constraints = [
+		DatasetFactory.createConstraint("cd_matricula", requester, requester, ConstraintType.MUST)
+		, DatasetFactory.createConstraint("cd_filial", branch, branch, ConstraintType.MUST)
+		, DatasetFactory.createConstraint("cd_centro_custo", costCenter, costCenter, ConstraintType.MUST)
+	];
+	var costCenterDs = DatasetFactory.getDataset("protheus_amarracao_cc", null, constraints, null);
+	if(costCenterDs != null && costCenterDs.rowsCount > 0){
+		var userCd = costCenterDs.getValue(0, field);
+		userData = getUserByGenericId(userCd);
+		if(userData != null){
+			userCd = userData.cd;
+		};
+		dataset.addRow(["", "", ""
+			, filter.escopo
+			, filter.processo
+			, filter.solicitacao
+			, filter.atividade
+			, userCd
+		]);
+	}
+}
+
+/**
+* Monta objeto de aprovadores por grupo após buscar lista de usuários.
+* @param rows: objeto dataset para retornar resultados.
+* @param info: dados de configuração de comportamento por processo.
+* @param filter: constraints recebidas.
+*/
+function fillUsersByGroup(info, filter, group){
+	var approver = { "cd": "", "nm": "" };
+	
+	var rows = getUsersByGroup(info, filter, group.split(':')[1]);
+	approver = rows[0];
+	for (var i = 1; i < rows.length; i++){
+		approver.cd += ";"+rows[i].cd;
+		approver.nm += "; "+rows[i].nm;
+	}
+	return approver;
+}
+
+/**
+* Busca lista de usuários do grupo.
+* @param rows: objeto dataset para retornar resultados.
+* @param info: dados de configuração de comportamento por processo.
+* @param filter: constraints recebidas.
+*/
+function getUsersByGroup(info, filter, group){
+	var rows = [];
+	var groupId = (group == null) ? info.a[filter.atividade].split("Group:")[1] : group;
+	var constraints = [
+		DatasetFactory.createConstraint("colleagueGroupPK.groupId", groupId, groupId, ConstraintType.MUST)
+	];
+	var colleagueField = "colleagueGroupPK.colleagueId";
+	var usersInGroup = DatasetFactory.getDataset("colleagueGroup", [colleagueField], constraints, null);
+	if(usersInGroup != null && usersInGroup.rowsCount > 0){
+		var constraints = [ DatasetFactory.createConstraint("active"
+				, true, true, ConstraintType.MUST) ];
+		for(var i = 0; i < usersInGroup.rowsCount; i++){
+			var userId = usersInGroup.getValue(i, "colleagueGroupPK.colleagueId");
+			constraints.push(DatasetFactory.createConstraint("colleaguePK.colleagueId"
+				, userId, userId, ConstraintType.SHOULD));
+		}
+		var users = DatasetFactory.getDataset("colleague"
+			, ["colleaguePK.colleagueId", "colleagueName"], constraints, null);
+		if(users != null && users.rowsCount > 0){
+			for(var i = 0; i < users.rowsCount; i++){
+				rows.push( { 
+					"cd": users.getValue(i, "colleaguePK.colleagueId")
+					, "nm": users.getValue(i, "colleagueName")
+				} );
+			}
+		}
+	}
+	return rows;
+}
+
+var USERS = {};
+function getUserByGenericId(id){
+	if(USERS[id] != null && USERS[id].cd != null) return USERS[id];
+	
+	var constraints = [ DatasetFactory.createConstraint("active"
+			, true, true, ConstraintType.MUST) 
+		, DatasetFactory.createConstraint("colleaguePK.colleagueId"
+			, id, id, ConstraintType.SHOULD)
+		, DatasetFactory.createConstraint("login"
+			, id, id, ConstraintType.SHOULD)
+	];
+	var userDs = DatasetFactory.getDataset("colleague"
+		, ["colleaguePK.colleagueId", "colleagueName"], constraints, null);
+	if(userDs != null && userDs.rowsCount > 0){
+		USERS[id] = { "cd": "", "nm": "" };
+		USERS[id].cd = userDs.getValue(0, "colleaguePK.colleagueId");
+		USERS[id].nm = userDs.getValue(0, "colleagueName");
+		return USERS[id];
+	}
+	else return null;
+}
+
+//########### Funções auxiliares
+/**
+ * Verificar se o valor é nulo ou vazio
+ * @param valor
+ * @returns
+ */
+function isEmpty(valor){
+	if(valor == null) return true;
+	
+	var teste = "" + valor;
+	return teste.trim() == "";
+}
+
+/**
+ * Captura o valor das constraints enviadas ao dataset.
+ * @param constraints: Array de constraints.
+ * @param constraintNames: Array com o nome das constraints obrigatorias para o dataset.
+ * @returns HashMap<String,String>  
+ */
+var constraintMap = null;
+function getConstraintsValue(constraints, constraintNames) {
+	if (constraintMap == null) constraintMap = constraintToMap(constraints);
+
+	for (var i = 0; i < constraintNames.length; i++) {
+		var constraintValue = constraintMap.get(constraintNames[i]);
+		if (constraintValue == null)
+			log.warn("aprovadores - Constraint " + constraintNames[i] + " esta com valor nulo.");
+	}
+	return constraintValue;
+}
+/**
+ * Converte as Contraints em HashMap;
+ * @param constraints: Array de Constraint;
+ * @returns HashMap<String,String>  
+ */
+function constraintToMap(constraints) {
+	var map = new java.util.HashMap();
+	
+	if (constraints != null)
+		for (var i = 0; i < constraints.length; i++) {
+			log.info("aprovadores - constraint: " + constraints[i].fieldName);
+			map.put(constraints[i].fieldName, constraints[i].initialValue);
+		}
+	
+	return map;
+}

@@ -1,0 +1,119 @@
+<html>
+	<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	
+	<link type="text/css" rel="stylesheet" href="custom.css" />
+	<script type="text/javascript" charset="utf-8" src="/webdesk/vcXMLRPC.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.mask.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/activities.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/utils.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/zooms.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/enableFields.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/approvers.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+</head>
+	<body>
+        <div class="fluig-style-guide">
+            <form name="form" role="form">
+                <div class="panel panel-default">
+                    <div class="panel-body xcmg-primary">
+                        <h1>
+                            <b>Servi&ccedil;o de Chamados</b>
+                        </h1>
+                    </div>
+                </div>
+				<!-- DIV_CABECALHO -->
+                <div class="panel panel-default" id="div_cabecalho">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title">
+                            <b>Cabe&ccedil;alho</b>
+                        </h3>
+                    </div>
+					<div class="panel-body">
+						<div class="form-group row-default">
+							<div class="row">
+								<div class="col-md-4 input-default">
+									<label for="dt_solicitacao">Data de Abertura do Chamado</label>
+									<input type="text" class="form-control" name="dt_solicitacao" id="dt_solicitacao" readonly />
+								</div>
+								<div class="col-md-4 input-default">
+									<label for="nr_solicitacao">N&#186;</label>
+									<input type="text" class="form-control" name="nr_solicitacao" id="nr_solicitacao" readonly />
+								</div>
+								<div class="col-md-4">
+	                                <label for="nm_requisitante">Requisitante</label>
+	                                <input type="hidden" name="cd_requisitante" id="cd_requisitante" />
+									<input type="hidden" name="lg_requisitante" id="lg_requisitante" />
+									<input type="text" class="form-control" name="nm_requisitante" id="nm_requisitante" readonly />
+	                                <br>
+	                                <br>   
+								</div>
+							</div>
+                		</div>
+                			<div class="row">
+                				<div class="col-md-6 input-default" id="setor">
+                					<label for="nome_setor">Nome do Setor</label>	
+			                		<select name="nome_setor" id="nome_setor" class="form-control" onchange="myFunction()">
+		                				<option value = ""></option>
+		                				<option value = "infra">INFRA</option>
+		                				<option value = "sistema">SISTEMAS</option>
+		                				<option value = "adm">ADMINISTRATIVO</option>
+		                			</select>
+                				</div>
+                				<div class="col-md-6 input-default" id="id_resposta" style="display:none">
+                					<label for="nome_setor">Nome do Setor</label>	
+                					<input type="text" class="form-control" name="txt_resposta" id="txt_resposta" readonly/>
+                				</div>
+                			</div>
+					</div>
+				</div>
+				<!-- DIV_SERVICO -->
+				<div id="div_servico" style="display:none">
+					<div class="panel panel-default">
+                    	<div class="panel-heading xcmg-primary">
+                       		<h3 class="panel-title">
+                           		Serviço
+                        	</h3>
+                    	</div>
+						<div class="panel-body">
+							<div class="form-group row-default">
+								<div class="row">
+									<div class="col-md-6 input-default">
+										<label for="desc_servico">Descrição do Serviço</label>
+										<input type="text" class="form-control" name="desc_servico" id="desc_servico" />								
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- DIV_APROVACAO -->
+				<div class="panel panel-default" id="div_aprovacao" style="display:none">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title">
+                            <b>Aprovação</b>
+                        </h3>
+                    </div>
+					<div class="panel-body">
+						<div class="form-group row-default">
+							<div class="row">
+                				<div class="col-md-2 input-default" id="id_aprova">
+                					<label for="sl_aprova">Aprovado</label>	
+			                		<select name="sl_aprova" id="sl_aprova" class="form-control">
+		                				<option value = ""></option>
+		                				<option value = "sim">SIM</option>
+		                				<option value = "nao">NÃO</option>
+		                			</select>
+                				</div>
+                			</div>
+                		</div>
+					</div>
+				</div>
+    		</form>
+		</div>
+    </body>
+</html>

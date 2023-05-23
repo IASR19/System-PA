@@ -1,0 +1,10 @@
+var Activity = {
+		ZERO: 0,
+		INICIO: 4,
+		ESCOLHE_ATIVIDADE: 14,
+		SISTEMAS: 15,
+		ADM: 16,
+		INFRA: 17,
+		VALIDA_RESPOSTA: 33,
+		FIM: 29
+};

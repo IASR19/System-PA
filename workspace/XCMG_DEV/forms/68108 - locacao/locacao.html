@@ -1,0 +1,982 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+		<link type="text/css" rel="stylesheet" href="custom.css" />
+		
+		<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+		<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/webdesk/vcXMLRPC.js" charset="utf-8" ></script>
+		<script type="text/javascript" src="js/jquery.mask.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/activities.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/enableFields.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/zoom.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/utils.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/tables.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/main.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/approvers.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.maskMoney.js" charset="utf-8"></script>
+	</head>	
+	<body>
+	
+	<script>
+    	$(document).ready(function(){
+    	
+        	$('.currency').maskMoney({
+        		showSymbol:true, 
+        		prefix:"R$ ", 
+        		decimal:",", 
+        		thousands:"."
+        	});
+        	
+        	var onlyDate = FLUIGC.calendar('#vencimento_primeira_parcela', {
+    			daysOfWeekDisabled: [0,6]
+			});   	
+			
+        });
+   	</script>
+        <div class="fluig-style-guide">
+            <form name="form" role="form">
+                <div class="panel panel-default">
+                    <div class="panel-body xcmg-primary">
+                        <h1>
+                            Formulário de Aprovação de Locação / 租賃審批表</b>
+                        </h1>
+                    </div>
+                </div>
+                
+                <!-- DADOS DO CABEÇALHO -->
+                <div class="panel panel-default" id="div_cabecalho">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title">
+                            <b>Cabeçalho / 标题</b>
+                        </h3>
+                    </div>
+					<div class="panel-body">
+						<div class="form-group row-default">
+							<div class="row">
+                                <div class="col-md-4 input-default">
+                                    <label for="cd_solicitacao">Nº / 申请单</label>
+                                    <input type="text" class="form-control" name="nr_solicitacao" id="nr_solicitacao" readonly />
+                                </div>
+                                 <div class="col-md-4 input-default">
+                                    <label for="dt_data">Data / 申请时间</label>
+                                    <input type="text" class="form-control" name="dt_solicitacao" id="dt_solicitacao" readonly />
+                                </div>
+                                <div class="col-md-4 input-default">
+                                    <label for="nm_requisitante">Requisitante  / 申请人</label>
+                                    <input type="text" class="form-control" name="nm_requisitante" id="nm_requisitante" readonly />
+                                    <input type="hidden" id="cd_requisitante" name="cd_requisitante" />
+                                    <input type="hidden" name="lg_requisitante" id="lg_requisitante" />
+                                </div>
+                            </div>                            
+						</div>
+						<div class="form-group row-default">
+							<div class="row">
+                                <div class="col-md-4 input-default">
+                                    <label for="nm_filial" class="required">Filial / 分公司</label>
+                                    <input type="hidden" id="cd_filial" name="cd_filial" />
+                                    <input type="hidden" id="cd_empresa" name="cd_empresa" />
+                                    <input type="zoom" class="form-control" id="nm_filial" name="nm_filial" data-zoom="{
+                                            'displayKey':'CodeAndDescription',
+                                            'datasetId':'protheus_filiais',
+                                            'maximumSelectionLength':'1',
+                                            'fields':[
+                                                {
+                                                    'field':'Code',
+                                                    'label':'ID',
+                                                    'visible':'false'
+                                                },
+                                                {
+                                                    'field':'CodeAndDescription',
+                                                    'label':'Filial',
+                                                    'standard':'true'
+                                                },
+                                                {
+                                                    'field':'Description',
+                                                    'label':'Filial',
+                                                    'visible':'false'                                                },
+                                                {
+                                                    'field':'CompanyCode',
+                                                    'label':'Empresa',
+                                                    'visible':'false'
+                                                }
+                                                ]
+                                            }" 
+                                    />
+                                </div>
+								<div class="col-md-4 input-default">
+	                                <label for="cd_centro_custo" class="required">Centro de Custo / 成本中心</label> 
+	                                <input type="zoom" class="form-control" id="cd_centro_custo" name="cd_centro_custo" data-zoom="{ 						
+	                                        'displayKey':'CodCC',
+	                                        'datasetId':'protheus_amarracao_cc',
+	                                        'maximumSelectionLength':'1',
+	                                        'fields':[
+	                                                    {
+	                                                        'field':'CodCC',
+	                                                        'label':'C&oacute;digo',
+	                                                        'visible':'true'
+	                                                    },
+	                                                    {
+	                                                        'field':'NomeCC',
+	                                                        'label':'Centro de custo',
+	                                                        'standard':'true'
+	                                                    },
+	                                                    {
+	                                                        'field':'gerente',
+	                                                        'label':'Gerente',
+	                                                        'visible':'false'
+	                                                    },
+	                                                    {
+	                                                        'field':'diretor',
+	                                                        'label':'Diretor',
+	                                                        'visible':'false'
+	                                                    }
+	                                                ]
+	                                        }"
+	                                />
+	                            </div>
+								<div class="col-md-4">	
+	                                <label for="nm_centro_custo">Nome C.C. / 成本中心名称</label>	
+	                                <input type="text" class="form-control" name="nm_centro_custo" id="nm_centro_custo" readonly />
+	                            </div>
+							</div>
+						</div>
+					</div>
+                </div>
+                <!-- DADOS DO CLIENTE -->
+                <div class="panel panel-default" id="div_cliente">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title">
+                            <b>Informações do Cliente / 客户基本信息</b>
+                        </h3>
+                    </div>
+					<div class="panel-body">
+						<div class="form-group row-default">
+							<div class="row">
+								<div class="col-md-6 input-default">
+	                                <label for="A1_COD" class="required">Código / 代码</label>   	
+                                        <input type="zoom" class="form-control" id="A1_COD" name="A1_COD" data-zoom="{
+                                                            'displayKey':'CGC_NOM',
+                                                            'datasetId':'protheus_clientes',
+                                                            'maximumSelectionLength':'1',
+                                                            'filterValues' : '',	
+                                                            'fields':[
+                                                                        {
+                                                                            'field':'A1_COD',
+                                                                            'label':'C&oacute;digo',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'CGC_NOM',
+                                                                            'label':'Cliente',
+                                                                            'standard':'true'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_NREDUZ',
+                                                                            'label':'Nome reduzido',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_NOME',
+                                                                            'label':'Nome',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_CGC',
+                                                                            'label':'CGC',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_DDD',
+                                                                            'label':'DDD',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_TEL',
+                                                                            'label':'TEL',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_LOJA',
+                                                                            'label':'LOJA',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_TIPO',
+                                                                            'label':'TIPO',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_END',
+                                                                            'label':'END',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_CEP',
+                                                                            'label':'CEP',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_BAIRRO',
+                                                                            'label':'BAIRRO',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_MUN',
+                                                                            'label':'MUN',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_PESSOA',
+                                                                            'label':'PESSOA',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_EST',
+                                                                            'label':'EST',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_PAIS',
+                                                                            'label':'PAIS',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_EMAIL',
+                                                                            'label':'EMAIL',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_CODPAIS',
+                                                                            'label':'CODPAIS',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_CEP',
+                                                                            'label':'CEP',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_PESSOA',
+                                                                            'label':'PESSOA',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_CONTRIB',
+                                                                            'label':'CONTRIB',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_TPESSOA',
+                                                                            'label':'TPESSOA',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_INSCR',
+                                                                            'label':'INSCR',
+                                                                            'visible':'false'
+                                                                        },
+                                                                        {
+                                                                            'field':'A1_TIPO',
+                                                                            'label':'CPF_CNPJ',
+                                                                            'visible':'false'
+                                                                        }
+                                                                    ]
+                                                            }"
+                                        />													
+	                            </div>
+                                <div class="col-md-6 input-default">
+	                                <label for="A1_LOJA" class="required">Loja / 店铺</label>   	
+                                    <input type="text" class="form-control" id="A1_LOJA" name="A1_LOJA" readonly/>
+								</div>
+	                        </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_NOME">Nome  / 客户姓名</label>	
+	                                <input type="text" class="form-control" name="A1_NOME" id="A1_NOME" readonly/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_PESSOA">Natureza  / 客户性质</label>
+                                   	<input type="text" class="form-control" name="A1_PESSOA" id="A1_PESSOA" readonly/>	
+                                    <!--  
+                                    <select class="form-control" name="A1_PESSOA" id="A1_PESSOA">
+                                        <option value=""></option>
+                                        <option value="F">Física</option>
+                                        <option value="J">Jurídica</option>
+                                    </select>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_NREDUZ">Nome Fantasia / 幻想名字</label>	
+	                                <input type="text" class="form-control" name="A1_NREDUZ" id="A1_NREDUZ" readonly/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_TIPO">Tipo do Cliente / 顾客类型</label>
+	                                <input type="text" class="form-control" name="A1_TIPO" id="A1_TIPO" readonly/>
+                                    <!--	
+                                    <select class="form-control" name="A1_TIPO" id="A1_TIPO">
+                                        <option value=""></option>
+                                        <option value="F">Consumidor Final</option>
+                                        <option value="L">Produtor Rural</option>
+                                        <option value="R">Revendedor</option>
+                                        <option value="S">Solidário</option>
+                                        <option value="X">Exportação</option>
+                                    </select>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_CONTRIB">Contribuinte ICMS / 纳税方</label>	
+                                    <input type="text" class="form-control" name="A1_CONTRIB" id="A1_CONTRIB" readonly/>
+                                    <!--
+                                    <select class="form-control" name="A1_CONTRIB" id="A1_CONTRIB">
+                                        <option value=""></option>
+                                        <option value="Sim">Sim</option>
+                                        <option value="Não">Não</option>
+                                    </select>
+                                     -->
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_TPESSOA">Tipo Pessoa  /人物类型</label>
+                                    <input type="text" class="form-control" name="A1_TPESSOA" id="A1_TPESSOA" readonly/>
+                                    <!--	
+                                    <select class="form-control" name="A1_TPESSOA" id="A1_TPESSOA">
+                                        <option value=""></option>
+                                        <option value="CI">Comércio/Indústria</option>
+                                        <option value="PF">Pessoa Física</option>
+                                        <option value="OS">Prestação de Serviço</option>
+                                        <option value="EP">Empresa Pública</option>
+                                    </select>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_CGC">CNPJ/CPF / 法人税号 / 个人税号</label>	
+	                                <input type="text" class="form-control" name="A1_CGC" id="A1_CGC" readonly/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_INSCR">Inscrição Estadual / 州登记号</label>	
+	                                <input type="text" class="form-control" name="A1_INSCR" id="A1_INSCR" readonly/>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_DDD">DDD / 区号</label>
+	                                <input type="text" class="form-control" name="A1_DDD" id="A1_DDD" readonly/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_TEL">Telefone / 电话</label>
+	                                <input type="text" class="form-control" name="A1_TEL" id="A1_TEL" readonly/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_END">Endereço / 地址</label>
+	                                <input type="text" class="form-control" name="A1_END" id="A1_END" readonly/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_CEP">CEP / 邮政编码</label>
+	                                <input type="text" class="form-control" name="A1_CEP" id="A1_CEP" readonly/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_BAIRRO">Bairro / 邻里</label>
+	                                <input type="text" class="form-control" name="A1_BAIRRO" id="A1_BAIRRO" readonly/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_MUN">Munícipio  / 县</label>
+	                                <input type="text" class="form-control" name="A1_MUN" id="A1_MUN" readonly/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_EST">Estado / 状态</label>
+	                                <input type="text" class="form-control" name="A1_EST" id="A1_EST" readonly/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_PAIS">País  / 国家</label>
+	                                <input type="text" class="form-control" name="A1_PAIS" id="A1_PAIS" readonly/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_EMAIL">E-mail  / 邮箱</label>
+	                                <input type="text" class="form-control" name="A1_EMAIL" id="A1_EMAIL" readonly/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="A1_CODPAIS">País BACEN / 
+巴森国家</label>
+	                                <input type="text" class="form-control" name="A1_CODPAIS" id="A1_CODPAIS" readonly/>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+                </div>
+                <!-- REPRESENTANTE LEGAL -->
+				<div class="panel panel-default" id="div_representante_legal">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title">
+                            <b>Representante Legal  / 法人代表</b>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="nome_representante">Nome  / 姓名</label>	
+                                    <input type="text" class="form-control" name="nome_representante" id="nome_representante"/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="nacionalidade_representante">Nacionalidade  / 国籍</label>	
+                                    <input type="text" class="form-control" name="nacionalidade_representante" id="nacionalidade_representante"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="profissao_representante">Profissão  / 职业</label>	
+                                    <input type="text" class="form-control" name="profissao_representante" id="profissao_representante"/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="estado_civil_representante">Estado Civil  / 婚姻状况</label>	
+                                    <input type="text" class="form-control" name="estado_civil_representante" id="estado_civil_representante"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="rg_representante">RG</label>	
+                                    <input type="text" class="form-control" name="rg_representante" id="rg_representante"/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="cpf_representante">CPF / 公积金</label>	
+                                    <input type="text" class="form-control" onkeypress="$(this).mask('000.000.000-00')" name="cpf_representante" id="cpf_representante"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="endereco_representante">Endereço  / 居住地址</label>	
+                                    <input type="text" class="form-control" name="endereco_representante" id="endereco_representante"/>
+                                </div>
+                                <div class="col-md-6 input-default">
+                                    <label for="cep_representante">CEP / 邮政编码</label>	
+                                    <input type="text" class="form-control" onkeypress="$(this).mask('00000-000')" name="cep_representante" id="cep_representante"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                    <label for="email_representante">Email / 电子邮件</label>	
+                                    <input type="text" class="form-control" name="email_representante" id="email_representante"/>
+                                </div>
+                            </div>
+                        </div>						
+                    </div>
+                </div>
+                <!-- INFORMAÇÕES DO PRODUTO -->
+                <div class="panel panel-default" id="div_informacoes_produto">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title">
+                            <b>Informações do Produto  / 商品基本信息</b>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+                                <div class="table-responsive">
+								    <table border="0" class="table table-striped table-condensed table-bordered" tablename="tb_itens_locacao" id="tb_itens_locacao" nodeletebutton="true" noaddbutton="true">
+									<thead>
+										<tr align="center">
+											<td></td>
+											<td class="col-xs-4 tb-col-4"><b>Chassi / Série /
+													Número do motor / 底盘/发动机编号</b></td>
+
+											<td class="col-xs-4 tb-col-4"><b>Modelo / 规格型号</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Quantidade / 数量</b></td>
+											<td class="col-xs-2 tb-col-4"><b>Nome do produto /
+													商品名称</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Ano Modelo / Ano
+													Fabricação / 型号 / 生产年份</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Peso / 产品重量</b></td>
+											<td class="col-xs-4 tb-col-3"><b>Prazo de garantia /
+													质保期</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Valor da NF / 开票金额</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Valor do produto /
+													产品价格</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Frete (Fábrica /
+													Revenda) / 铺货运费</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Prazo de entrega /
+													交货期</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Local da Entrega
+													Técnica / 技术支持地点</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Local de Retirada /
+													收货地点</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Valor de Locação
+													Mensal / 租赁月租金</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Possui Comissão /
+													是否有佣金</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Porcentagem de
+													Comissão / 佣金比例</b></td>
+											<td class="col-xs-4 tb-col-4"><b>Observações /
+													其他备注信息</b></td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span class="fluig-style-guide fs-md-space">
+													<i class="flaticon flaticon-trash icon-md no-view"
+													style="cursor: pointer"
+													onclick="Javascript:TABLES.customDeleteProduto(this);"></i>
+											</span></td>
+											<td><input type="zoom" class="form-control" id="chassi"
+												name="chassi"
+												data-zoom="{
+                                                                    'displayKey':'BF_NUMSERI',
+                                                                    'datasetId':'protheus_saldolocacao',
+                                                                    'maximumSelectionLength':'1',
+                                                                    'filterValues' : '',	
+                                                                    'fields':[								                                    			
+                                                                                {
+                                                                                    'field':'BF_PRODUTO',
+                                                                                    'label':'Código',
+                                                                                    'visible':'false'
+                                                                                },
+                                                                                {
+                                                                                    'field':'B1_DESC',
+                                                                                    'label':'Descrição',
+                                                                                    'visible':'false'												                                    
+                                                                                },
+                                                                                {
+                                                                                    'field':'BM_DESC',
+                                                                                    'label':'Grupo',
+                                                                                    'visible':'false'												                                    
+                                                                                },
+                                                                                {
+                                                                                    'field':'BF_QUANT',
+                                                                                    'label':'Quantidade?',
+                                                                                    'visible':'false'												                                    
+                                                                                },
+                                                                                {
+                                                                                    'field':'BF_LOCAL',
+                                                                                    'label':'Local',
+                                                                                    'visible':'false'												                                    
+                                                                                },
+                                                                                {
+                                                                                    'field':'B1_PESO',
+                                                                                    'label':'Peso',
+                                                                                    'visible':'false'												                                    
+                                                                                },
+                                                                                {
+                                                                                    'field':'BF_NUMSERI',
+                                                                                    'label':'Número de Série',
+                                                                                    'visible':'true'												                                    
+                                                                                },
+                                                                                {
+                                                                                    'field':'BF_LOCALIZ',
+                                                                                    'label':'Localização',
+                                                                                    'visible':'false'												                                    
+                                                                                }
+                                                                                ]
+                                                                                }"></td>
+
+											<td><input type="text" class="form-control"
+												name="nm_modelo_produto" id="nm_modelo_produto" readonly></td>
+											<td><input type="text" class="form-control" readonly
+												name="quantidade" id="quantidade"></td>
+											<td><input type="text" class="form-control"
+												name="cd_produto_estoque" id="cd_produto_estoque" readonly></td>
+											<td><input type="text" class="form-control"
+												name="ano_modelo_fabricacao" id="ano_modelo_fabricacao"></td>
+											<td><input type="text" class="form-control" name="peso"
+												id="peso"></td>
+											<td><input type="text" class="form-control"
+												name="prazo_garantia" id="prazo_garantia"></td>
+											<td><input type="text" class="form-control currency"
+												name="valor_nf" id="valor_nf"></td>
+											<td><input type="text" class="form-control currency"
+												name="valor_produto" id="valor_produto"></td>
+											<td><input type="text" class="form-control" name="frete"
+												id="frete"></td>
+											<td><input type="text" class="form-control"
+												name="prazo_entrega" id="prazo_entrega"></td>
+											<td><input type="text" class="form-control"
+												name="local_entrega_tecnica" id="local_entrega_tecnica"></td>
+											<td><input type="text" class="form-control"
+												name="local_retirada" id="local_retirada"></td>
+											<td><input type="text" class="form-control currency"
+												name="vl_locacao_mensal" id="vl_locacao_mensal"></td>
+											<td><select class="form-control" name="comissao"
+												id="comissao">
+													<option value="SIM">SIM</option>
+													<option value="NÃO">NÃO</option>
+											</select></td>
+											<td><input type="text" class="form-control"
+												name="percentual_locacao" id="percentual_locacao"></td>
+											<td><input type="text" class="form-control"
+												name="observacao" id="observacao"></td>
+										</tr>
+
+
+									</tbody>
+								    </table>
+							    </div>
+							</div>
+                        </div>
+							    
+                        <br/>
+                        <div class="form-group row">
+	    					<div class="col-md-12">
+	    						<button class="btn btn-primary" id="bt_add_prod">Adicionar Registro 添加付款標題</button>
+	    					</div>
+	    				</div>
+                    </div>
+                </div>        			
+                <!-- DETALHES DO PAGAMENTO -->
+                <div class="panel panel-default" id="div_detalhes_pagamento">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title">
+                            <b>Detalhes do  Pagamento  / 商务政策</b>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+						<div class="form-group row-default">
+                            <div class="row">
+	                        	<div class="col-md-4 input-default">
+	                                <label for="caucao">Caução  / 保证金</label>							
+	                                <input type="text" class="form-control currency" name="caucao" id="caucao" />
+	                        	</div>
+	                        	<div class="col-md-4 input-default">
+	                                <label for="un_vigencia">UN Vigência / 持续时间单位</label>							
+	                                <input type="text" class="form-control" name="un_vigencia" id="un_vigencia" />
+	                        	</div>
+	                        	<div class="col-md-4 input-default">
+	                                <label for="vigencia">Vigência / 学期</label>							
+	                                <input type="text" class="form-control" name="vigencia" id="vigencia" />
+	                        	</div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+                                	<label for="vencimento_primeira_parcela">Data de vencimento da primeira parcela / 第一笔分期付款时间:  </label>
+	                                <div class="input-group calendar" id="vencimento_primeira_parcela"> 
+                                    	<input type="text" class="form-control" name="vencimento_primeira_parcela" />
+                                    	<span class="input-group-addon">
+											<span class="fluigicon fluigicon-calendar"></span>
+										</span>
+									</div>
+                                </div>        
+                                <div class="col-md-6 input-default">
+	                                <label for="nm_forma_pagamento" class="required">Forma de pagamento / 付款方</label>	
+	                                    <select class="form-control" name="nm_forma_pagamento" id="nm_forma_pagamento">
+	                                        <option value=""></option>
+	                                        <option value="boleto">BOLETO</option>
+	                                        <option value="ted">TED</option>
+	                                    </select>		
+	                            </div>
+                            </div>
+                        </div>
+                        <div class="form-group row-default">
+                            <div class="row">
+                                <div class="col-md-6 input-default">
+									<label for="tipo_contrato">Tipo de Contrato / 合同类型</label>	
+									<textarea class="form-control" name="tipo_contrato" id="tipo_contrato"></textarea>
+								</div>
+                                <div class="col-md-6 input-default">
+									<label for="observacoes">Observações / 其他备注信息</label>	
+									<textarea class="form-control" name="observacoes" id="observacoes"></textarea>
+								</div>
+                            </div>
+                        </div>
+					</div>
+                </div>
+                <!-- APROVAÇÕES -->
+                <div class="panel panel-default" id="div_aprovacoes">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title">
+                            <b>Autorizações 批准</b>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                    	<!-- DOCUMENTOS -->
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">					
+                                <label for="nm_funcao_6">Função / 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_6" id="nm_funcao_6" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_documentos">Nome  / 名字</label>	
+                                <input type="text" class="form-control" name="nm_documentos" id="nm_documentos" readonly />
+                                <input type="hidden" id="cd_documentos" name="cd_documentos" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_documentos" name="aux_aprov_documentos" />
+                                <label class="required">Aprovado? / 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_documentos" id="rd_aprov_documentos_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_documentos" data-aux-id="aux_aprov_documentos"
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado / 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_documentos" id="rd_aprov_documentos_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_documentos" data-aux-id="aux_aprov_documentos"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado / 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_documentos">Observações / 备注</label>	
+                                <textarea class="form-control" name="ds_obs_documentos" id="ds_obs_documentos"></textarea>
+                            </div>
+                        </div>
+                        <!-- CRÉDITO/COBRANÇA -->
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">					
+                                <label for="nm_funcao_1">Função / 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_1" id="nm_funcao_1" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_credito_cobranca">Nome / 名字</label>	
+                                <input type="text" class="form-control" name="nm_credito_cobranca" id="nm_credito_cobranca" readonly />
+                                <input type="hidden" id="cd_credito_cobranca" name="cd_credito_cobranca" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_credito_cobranca" name="aux_aprov_credito_cobranca" />
+                                <label class="required">Aprovado? / 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_credito_cobranca" id="rd_aprov_credito_cobranca_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_credito_cobranca" data-aux-id="aux_aprov_credito_cobranca"
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado / 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_credito_cobranca" id="rd_aprov_credito_cobranca_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_credito_cobranca" data-aux-id="aux_aprov_credito_cobranca"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado / 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_credito_cobranca">Observações  / 备注</label>	
+                                <textarea class="form-control" name="ds_obs_credito_cobranca" id="ds_obs_credito_cobranca"></textarea>
+                            </div>
+                        </div>
+						<!-- GERENTE LOCAÇÃO -->
+						<div class="form-group row row-default">
+                            <div class="col-md-3 input-default">
+                                <label for="nm_funcao_2">Função  / 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_2" id="nm_funcao_2" readonly />
+                            </div>
+                            <div class="col-md-3">						
+                                <label for="nm_gerente_locacao">Nome / 名字</label>	
+                                <input type="text" class="form-control" name="nm_gerente_locacao" id="nm_gerente_locacao" readonly />
+                                <input type="hidden" id="cd_gerente_locacao" name="cd_gerente_locacao" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_gerente_locacao" name="aux_aprov_gerente_locacao" />
+                                <label class="required">Aprovado?  / 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_gerente_locacao" id="rd_aprov_gerente_locacao_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_gerente_locacao" data-aux-id="aux_aprov_gerente_locacao"
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado / 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_gerente_locacao" id="rd_aprov_gerente_locacao_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_gerente_locacao" data-aux-id="aux_aprov_gerente_locacao" 
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado / 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_gerente_locacao">Observações / 备注</label>	
+                                <textarea class="form-control" name="ds_obs_gerente_locacao" id="ds_obs_gerente_locacao"></textarea>
+                            </div>
+                        </div>	
+						<!--  GERENTE DE NEGÓCIOS -->
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">
+                                <label for="nm_funcao_3">Função / 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_3" id="nm_funcao_3" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_gerente_negocios">Nome / 名字</label>	
+                                <input type="text" class="form-control" name="nm_gerente_negocios" id="nm_gerente_negocios" readonly />
+                                <input type="hidden" id="cd_gerente_negocios" name="cd_gerente_negocios" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_gerente_negocios" name="aux_aprov_gerente_negocios" />
+                                <label class="required">Aprovado?  / 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_gerente_negocios" id="rd_aprov_gerente_negocios_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_gerente_negocios"  data-aux-id="aux_aprov_gerente_negocios"
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado / 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_gerente_negocios" id="rd_aprov_gerente_negocios_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_gerente_negocios"  data-aux-id="aux_aprov_gerente_negocios"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado / 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_gerente_negocios">Observações  / 备注</label>	
+                                <textarea class="form-control" name="ds_obs_gerente_negocios" id="ds_obs_gerente_negocios"></textarea>
+                            </div>
+                        </div>
+                        <!-- DIRETOR COMERCIAL -->
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">
+                                <label for="nm_funcao_4">Função / 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_4" id="nm_funcao_4" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_diretor_comercial">Nome  / 名字</label>	
+                                <input type="text" class="form-control" name="nm_diretor_comercial" id="nm_diretor_comercial" readonly />
+                                <input type="hidden" id="cd_diretor_comercial" name="cd_diretor_comercial" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_diretor_comercial" name="aux_aprov_diretor_comercial" />
+                                <label class="required">Aprovado?  / 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_diretor_comercial" id="rd_aprov_diretor_comercial_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_diretor_comercial" data-aux-id="aux_aprov_diretor_comercial" 
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado  / 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_diretor_comercial" id="rd_aprov_diretor_comercial_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_diretor_comercial" data-aux-id="aux_aprov_diretor_comercial"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado  / 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_diretor_comercial">Observações  / 备注</label>	
+                                <textarea class="form-control" name="ds_obs_diretor_comercial" id="ds_obs_diretor_comercial"></textarea>
+                            </div>
+                        </div>
+                        <!-- DEPARTAMENTO JURÍDICO -->
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">			
+                                <label for="nm_funcao_5">Função  / 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_5" id="nm_funcao_5" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_juridico">Nome  / 名字</label>	
+                                <input type="text" class="form-control" name="nm_juridico" id="nm_juridico" readonly />
+                                <input type="hidden" id="cd_juridico" name="cd_juridico" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_juridico" name="aux_aprov_juridico" />
+                                <label class="required">Aprovado?  / 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_juridico" id="rd_aprov_juridico_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_juridico" data-aux-id="aux_aprov_juridico"
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado  / 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_juridico" id="rd_aprov_juridico_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_juridico" data-aux-id="aux_aprov_juridico"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado / 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_juridico">Observações / 备注</label>	
+                                <textarea class="form-control" name="ds_obs_juridico" id="ds_obs_juridico"></textarea>
+                            </div>
+                        </div>     
+                    </div>
+                </div>
+                <!-- PARECER JURIDICO -->
+                <div id="div_parecer_juridico" style="display:none">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title"><b>Parecer(es) Jurídico/Solicitante</b></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group row">
+                            <div class="col-md-6">
+                                <label for="parecer_juridico">Parecer(es) Jurídico/Solicitante</label>	
+                                <textarea class="form-control" name="parecer_juridico" id="parecer_juridico" rows="6"></textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="historico_parecer_juridico">Histórico Parecer(es) Jurídico/Solicitante</label>	
+                                <textarea class="form-control" name="historico_parecer_juridico" id="historico_parecer_juridico" rows="6" readonly></textarea>
+                            </div>
+                        </div>
+                    </div>						  			
+                </div> 
+                <!-- IMPRESSÃO CONTRATO -->   
+                <div id="div_impressao" style="display:none" palign="center">
+                    <div class="panel-body">
+                        <div class="form-group row row-default">
+                            <div class="col-md-2 input-default">
+                                <button class="form-control" style="margin-left: 16;" type="button"  name="bt_Contrato" onclick="Contrato();">Contrato</button>
+                            </div>
+                        </div>
+                    </div>						  			
+                </div>
+                <input type="hidden" id="num_anexos" name="num_anexos"/>   
+            </form>
+        </div>       
+    </body>
+</html>

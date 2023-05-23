@@ -1,0 +1,2651 @@
+<list>
+  <ProcessDefinition>
+    <processDefinitionPK>
+      <companyId>1</companyId>
+      <processId>pagto_sem_po_filial</processId>
+    </processDefinitionPK>
+    <processDescription>Pagamento sem PO Filial 1006</processDescription>
+    <instruction></instruction>
+    <active>true</active>
+    <publicProcess>false</publicProcess>
+    <volumeId>Default</volumeId>
+    <categoryId>Pagamentos</categoryId>
+    <managerEngineAllocationId>Papel</managerEngineAllocationId>
+    <managerEngineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Role&gt;admin&lt;/Role&gt;&lt;/AssignmentController&gt;</managerEngineAllocationConfiguration>
+    <snapshotFrequency>0</snapshotFrequency>
+    <baseDay>0</baseDay>
+    <baseMonth>0</baseMonth>
+    <periodId>Default</periodId>
+    <uniqueCardVersion>false</uniqueCardVersion>
+    <keyWord></keyWord>
+    <complementsLevel>1</complementsLevel>
+    <notifyRequisitionerComplements>true</notifyRequisitionerComplements>
+    <notifyManagerComplements>false</notifyManagerComplements>
+    <deadlineTime>0</deadlineTime>
+    <warningDeadlineTime>0</warningDeadlineTime>
+    <notifyAuthorityComplements>true</notifyAuthorityComplements>
+  </ProcessDefinition>
+  <ProcessDefinitionVersion>
+    <processDefinitionVersionPK>
+      <companyId>1</companyId>
+      <processId>Pagamento sem PO Filial 1006</processId>
+      <version>12</version>
+    </processDefinitionVersionPK>
+    <versionDescription></versionDescription>
+    <formId>57477</formId>
+    <editionMode>true</editionMode>
+    <updateAttachmentsVersion>false</updateAttachmentsVersion>
+    <controlsAttachmentsSecurity>true</controlsAttachmentsSecurity>
+    <active>true</active>
+    <blockedVersion>false</blockedVersion>
+    <counterSign>false</counterSign>
+    <openInstances>0</openInstances>
+    <bpmnVersion>1</bpmnVersion>
+    <processStates/>
+    <favorito>false</favorito>
+    <inheritFormSecurity>false</inheritFormSecurity>
+    <mobileReady>true</mobileReady>
+  </ProcessDefinitionVersion>
+  <list>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>4</sequence>
+      </processStatePK>
+      <stateName>Início</stateName>
+      <stateDescription>Início</stateDescription>
+      <instruction>1 - Preencher os dados do formulário.&#xd;
+2 - Anexar 1 documento referentes ao pagamento (Nota fiscal).</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>true</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>7200</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>105</positionX>
+      <positionY>57</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>10</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>5</sequence>
+      </processStatePK>
+      <stateName>Lançar nota</stateName>
+      <stateDescription>Lançar nota</stateDescription>
+      <instruction>Avaliar e conferir os dados da solicitação e os anexos.&#xd;
+Se estiver tudo correto, lançar manualmente a nota fiscal no TOTVS Protheus.&#xd;
+</instruction>
+      <deadlineTime>57600</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;fiscal&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>7200</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>69</positionX>
+      <positionY>214</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>16</sequence>
+      </processStatePK>
+      <stateName>Avaliar 批准了</stateName>
+      <stateDescription>Avaliar 批准了</stateDescription>
+      <instruction>Gerente da área deve avaliar os dados preenchidos e anexos se estão corretos e emitir parecer.</instruction>
+      <deadlineTime>28800</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;financeiro_filial&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>7200</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>69</positionX>
+      <positionY>375</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>19</sequence>
+      </processStatePK>
+      <stateName>Avaliar 批准了</stateName>
+      <stateDescription>Avaliar 批准了</stateDescription>
+      <instruction>Diretor da área deve avaliar os dados preenchidos e anexos se estão corretos e emitir parecer.&#xd;
+</instruction>
+      <deadlineTime>28800</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;diretor_geral_filial&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>7200</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>69</positionX>
+      <positionY>697</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>31</sequence>
+      </processStatePK>
+      <stateName>Avaliar 批准了</stateName>
+      <stateDescription>Avaliar 批准了</stateDescription>
+      <instruction>Gerente controladoria deve avaliar os dados preenchidos e anexos se estão corretos e emitir parecer.</instruction>
+      <deadlineTime>28800</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;aprovador_controladoria_filial&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>7200</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>69</positionX>
+      <positionY>536</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>35</sequence>
+      </processStatePK>
+      <stateName>Avaliar 批准了</stateName>
+      <stateDescription>Avaliar 批准了</stateDescription>
+      <instruction>Presidente da XCMG deve avaliar os dados preenchidos e anexos se estão corretos e emitir parecer.</instruction>
+      <deadlineTime>57600</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;presidencia_filial&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>true</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>7200</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>7200</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>257</positionX>
+      <positionY>1018</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>52</sequence>
+      </processStatePK>
+      <stateName>Recebido e conferido / pago</stateName>
+      <stateDescription>Recebido e conferido / pago</stateDescription>
+      <instruction>Responsável deve proceder com o pagamento e geração do comprovante, e anexá-lo à solicitação.</instruction>
+      <deadlineTime>0</deadlineTime>
+      <deadlineFieldName>dt_pagamento_iso</deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Pool Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;financeiro_filial&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>7200</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>69</positionX>
+      <positionY>1164</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId>Default</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>70</sequence>
+      </processStatePK>
+      <stateName>Avaliar 批准了</stateName>
+      <stateDescription>Avaliar 批准了</stateDescription>
+      <instruction>Diretor financeiro deve avaliar os dados preenchidos e anexos se estão corretos e emitir parecer.&#xd;
+</instruction>
+      <deadlineTime>28800</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;financeiro_diretoria_filial&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>7200</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>257</positionX>
+      <positionY>858</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>43</sequence>
+      </processStatePK>
+      <stateName>Envolve presidente?</stateName>
+      <stateDescription>Envolve presidente?</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>92</positionX>
+      <positionY>988</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>47</sequence>
+      </processStatePK>
+      <stateName>Lançado?</stateName>
+      <stateDescription>Lançado?</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>280</positionX>
+      <positionY>191</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>65</sequence>
+      </processStatePK>
+      <stateName>Mais parcelas?</stateName>
+      <stateDescription>Mais parcelas?</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>280</positionX>
+      <positionY>1148</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>80</sequence>
+      </processStatePK>
+      <stateName>Envolve dir financeiro?</stateName>
+      <stateDescription>Envolve dir financeiro?</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>92</positionX>
+      <positionY>828</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>84</sequence>
+      </processStatePK>
+      <stateName>Corrigir 未获批准</stateName>
+      <stateDescription>Corrigir 未获批准</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>280</positionX>
+      <positionY>16</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>40</sequence>
+      </processStatePK>
+      <stateName>Aprovado</stateName>
+      <stateDescription>Aprovado</stateDescription>
+      <instruction>Atividade final do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>430</positionX>
+      <positionY>1189</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>6</stateType>
+      <bpmnType>60</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+  </list>
+  <list>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>12</version>
+        <sequence>43</sequence>
+      </conditionProcessStatePK>
+      <condition>involvesPresident()</condition>
+      <destinationSequenceId>35</destinationSequenceId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;presidencia_filial&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>12</version>
+        <sequence>43</sequence>
+      </conditionProcessStatePK>
+      <condition>true</condition>
+      <destinationSequenceId>52</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>12</version>
+        <sequence>47</sequence>
+      </conditionProcessStatePK>
+      <condition>hAPI.getCardValue(&quot;rd_lancado&quot;)==&quot;Sim&quot;</condition>
+      <destinationSequenceId>16</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>12</version>
+        <sequence>47</sequence>
+      </conditionProcessStatePK>
+      <condition>true</condition>
+      <destinationSequenceId>84</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>12</version>
+        <sequence>65</sequence>
+      </conditionProcessStatePK>
+      <condition>isThereMoreInstallments()</condition>
+      <destinationSequenceId>52</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>12</version>
+        <sequence>65</sequence>
+      </conditionProcessStatePK>
+      <condition>true</condition>
+      <destinationSequenceId>40</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>12</version>
+        <sequence>80</sequence>
+      </conditionProcessStatePK>
+      <condition>involvesFinancialManager()</condition>
+      <destinationSequenceId>70</destinationSequenceId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;financeiro_diretoria_filial&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Grupo</engineAllocationId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <expressionOrder>2</expressionOrder>
+        <version>12</version>
+        <sequence>80</sequence>
+      </conditionProcessStatePK>
+      <condition>true</condition>
+      <destinationSequenceId>43</destinationSequenceId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>12</version>
+        <sequence>84</sequence>
+      </conditionProcessStatePK>
+      <condition>true</condition>
+      <destinationSequenceId>4</destinationSequenceId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;BaseActivity&gt;4&lt;/BaseActivity&gt;&lt;Returns&gt;Last&lt;/Returns&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Executor Atividade</engineAllocationId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+  </list>
+  <list>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>46</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>43</initialStateSequence>
+      <finalStateSequence>35</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>48</linkSequence>
+      </processLinkPK>
+      <actionLabel>Encaminhar</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>5</initialStateSequence>
+      <finalStateSequence>47</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>50</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>47</initialStateSequence>
+      <finalStateSequence>16</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>56</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>4</initialStateSequence>
+      <finalStateSequence>5</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>66</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>52</initialStateSequence>
+      <finalStateSequence>65</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>69</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>65</initialStateSequence>
+      <finalStateSequence>40</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>72</linkSequence>
+      </processLinkPK>
+      <actionLabel>Aprovar 批准了</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>70</initialStateSequence>
+      <finalStateSequence>43</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>82</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>80</initialStateSequence>
+      <finalStateSequence>70</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>83</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>80</initialStateSequence>
+      <finalStateSequence>43</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>85</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>84</initialStateSequence>
+      <finalStateSequence>4</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>89</linkSequence>
+      </processLinkPK>
+      <actionLabel>Reprovar 未获批准</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>70</initialStateSequence>
+      <finalStateSequence>84</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>92</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>47</initialStateSequence>
+      <finalStateSequence>84</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>93</linkSequence>
+      </processLinkPK>
+      <actionLabel>Recusado - Atrasado</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>52</initialStateSequence>
+      <finalStateSequence>84</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>94</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>43</initialStateSequence>
+      <finalStateSequence>52</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>96</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>65</initialStateSequence>
+      <finalStateSequence>52</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>104</linkSequence>
+      </processLinkPK>
+      <actionLabel>Aprovar 批准了</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>16</initialStateSequence>
+      <finalStateSequence>31</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>105</linkSequence>
+      </processLinkPK>
+      <actionLabel>Reprovar 未获批准</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>16</initialStateSequence>
+      <finalStateSequence>84</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>106</linkSequence>
+      </processLinkPK>
+      <actionLabel>Aprovar 批准了</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>31</initialStateSequence>
+      <finalStateSequence>19</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>107</linkSequence>
+      </processLinkPK>
+      <actionLabel>Reprovar 未获批准</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>31</initialStateSequence>
+      <finalStateSequence>84</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>108</linkSequence>
+      </processLinkPK>
+      <actionLabel>Aprovar 批准了</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>19</initialStateSequence>
+      <finalStateSequence>80</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>109</linkSequence>
+      </processLinkPK>
+      <actionLabel>Reprovar 未获批准</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>19</initialStateSequence>
+      <finalStateSequence>84</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>110</linkSequence>
+      </processLinkPK>
+      <actionLabel>Aprovar 批准了</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>35</initialStateSequence>
+      <finalStateSequence>52</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <linkSequence>111</linkSequence>
+      </processLinkPK>
+      <actionLabel>Reprovar 未获批准</actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>35</initialStateSequence>
+      <finalStateSequence>84</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+  </list>
+  <list>
+    <ProcessAttachmentSecurity>
+      <processAttachmentSecurityPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>1</sequence>
+      </processAttachmentSecurityPK>
+      <engineAllocationId>Todos os Usuários</engineAllocationId>
+      <accessLevel>PRMO</accessLevel>
+      <editionMode>false</editionMode>
+    </ProcessAttachmentSecurity>
+    <ProcessAttachmentSecurity>
+      <processAttachmentSecurityPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>2</sequence>
+      </processAttachmentSecurityPK>
+      <engineAllocationId>Executor Atividade</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;BaseActivity&gt;4&lt;/BaseActivity&gt;&lt;Returns&gt;All&lt;/Returns&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <accessLevel>PRMOED</accessLevel>
+      <editionMode>false</editionMode>
+    </ProcessAttachmentSecurity>
+  </list>
+  <list>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>isThereMoreInstallments</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function isThereMoreInstallments(){&#xd;
+	log.info(&quot;#isThereMoreInstallments - SEM PO&quot;);&#xd;
+	var thereIs = false;&#xd;
+	var indexes = hAPI.getChildrenIndexes(&quot;tb_parcelas&quot;);&#xd;
+	for (var i = 0; i &lt; indexes.length; i++) {&#xd;
+		var row = indexes[i];&#xd;
+		var paid = hAPI.getCardValue(&quot;nm_pago___&quot;+row);&#xd;
+		log.info(&quot;#paid: &quot;+paid);&#xd;
+		&#xd;
+		if(paid != &quot;sim&quot;){&#xd;
+			thereIs = true;&#xd;
+			break&#xd;
+		}&#xd;
+		&#xd;
+	}&#xd;
+	log.info(&quot;#thereIs: &quot;+thereIs);&#xd;
+	return thereIs;&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>ESP_LITERALS</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>process.description=
+process.category=
+process.instructions=</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>involvesControllerDepartment</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function involvesControllerDepartment(){&#xd;
+	var involves = true;&#xd;
+	/*var indexes = hAPI.getChildrenIndexes(&quot;tb_produtos&quot;);&#xd;
+	for (var i = 0; i &lt; indexes.length; i++) {&#xd;
+		var row = indexes[i];&#xd;
+		var cc = &quot;&quot;+hAPI.getCardValue(&quot;cd_conta_contabil___&quot;+row);&#xd;
+		log.info(&quot;#cc: &quot;+cc);&#xd;
+		if(cc.charAt(0) == &quot;4&quot;){&#xd;
+			involves = true;&#xd;
+			break&#xd;
+		}&#xd;
+		&#xd;
+	}*/&#xd;
+	log.info(&quot;#involves: &quot;+involves);&#xd;
+	return involves;&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>mobileApproval</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function mobileApproval(){}&#xd;
+&#xd;
+function processMobileApproval(){&#xd;
+	var NUM_STATE = getValue(&quot;WKNumState&quot;);&#xd;
+	var NEXT_STATE = getValue(&quot;WKNextState&quot;);&#xd;
+	var IS_MOBILE = getValue(&quot;WKMobile&quot;);&#xd;
+	var USER_COMMENT = getValue(&quot;WKUserComment&quot;);&#xd;
+	var feedback = getApprovalFeedback(NUM_STATE);&#xd;
+	&#xd;
+	log.info(_log + &quot; - processMobileApproval &quot;&#xd;
+		+ &quot; - NUM_STATE: &quot; + NUM_STATE + &quot; - NEXT_STATE: &quot; + NEXT_STATE&#xd;
+		+ &quot; - IS_MOBILE: &quot; + IS_MOBILE + &quot; - USER_COMMENT: &quot; + USER_COMMENT &#xd;
+		+ &quot; - feedback: &quot;);&#xd;
+	log.dir(feedback);&#xd;
+	if(isApprovalActivity(NUM_STATE)){&#xd;
+		var targetStatus = approvalPath(NUM_STATE, NEXT_STATE);&#xd;
+		var new_feedback = { &#xd;
+			&quot;status&quot;: targetStatus, &#xd;
+			&quot;obs&quot;: isEmpty(USER_COMMENT) ? feedback.obs : USER_COMMENT&#xd;
+		};&#xd;
+		log.info(_log + &quot; - processMobileApproval - new_feedback: &quot;);&#xd;
+		log.dir(new_feedback);&#xd;
+		&#xd;
+		if((targetStatus == &quot;Reprovado&quot; || new_feedback.status == &quot;Reprovado&quot;) &amp;&amp; isEmpty(new_feedback.obs)){&#xd;
+			throw &quot;Conforme o direcionamento do fluxo, o processo é aprovado ou reprovado.&quot;&#xd;
+				+ &quot; Quando reprovado, o campo Observações é obrigatório.&quot;&#xd;
+				+ &quot; 根據流程的方向，流程被批准或不批准。未獲批准時，備註字段為必填字段。&quot;;&#xd;
+		}&#xd;
+		setApprovalFeedback(NUM_STATE, new_feedback);&#xd;
+	}&#xd;
+}&#xd;
+&#xd;
+function isApprovalActivity(currentState){&#xd;
+	return currentState == Activity.LANCAR_NOTA&#xd;
+	    || currentState == Activity.AVALIAR_FINANCEIRO&#xd;
+		|| currentState == Activity.AVALIAR_CONTROLADORIA&#xd;
+		|| currentState == Activity.AVALIAR_DIRETOR_GERAL&#xd;
+		|| currentState == Activity.AVALIAR_DIRETOR_FINANCEIRO&#xd;
+		|| currentState == Activity.AVALIAR_PRESIDENTE;	&#xd;
+	&#xd;
+}&#xd;
+&#xd;
+function getApprovalFeedback(currentState){&#xd;
+	if(currentState == Activity.LANCAR_NOTA){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_lancado&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_lancar_nota&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_FINANCEIRO){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_aprov_aprovador_financeiro&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_aprovador_financeiro&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_CONTROLADORIA){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_aprov_controladoria&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_controladoria&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_GERAL){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_aprov_diretor_geral&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_diretor_geral&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_FINANCEIRO){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_aprov_diretor_financeiro&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_diretor_financeiro&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_PRESIDENTE){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_aprov_presidencia&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_presidencia&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	return null;&#xd;
+}&#xd;
+&#xd;
+function setApprovalFeedback(currentState, feedback){&#xd;
+	if(currentState == Activity.LANCAR_NOTA){&#xd;
+		hAPI.setCardValue(&quot;rd_lancado&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_lancar_nota&quot;, feedback.obs);&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_FINANCEIRO){&#xd;
+		hAPI.setCardValue(&quot;rd_aprov_aprovador_financeiro&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_aprovador_financeiro&quot;, feedback.obs);&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_CONTROLADORIA){&#xd;
+		hAPI.setCardValue(&quot;rd_aprov_controladoria&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_controladoria&quot;, feedback.obs);&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_GERAL){&#xd;
+		hAPI.setCardValue(&quot;rd_aprov_diretor_geral&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_diretor_geral&quot;, feedback.obs);&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_FINANCEIRO){&#xd;
+		hAPI.setCardValue(&quot;rd_aprov_diretor_financeiro&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_diretor_financeiro&quot;, feedback.obs);&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_PRESIDENTE){&#xd;
+		hAPI.setCardValue(&quot;rd_aprov_presidencia&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_presidencia&quot;, feedback.obs);&#xd;
+	}&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>afterTaskComplete</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function afterTaskComplete(colleagueId,nextSequenceId,userList){&#xd;
+	&#xd;
+	var sequenceId = getValue(&quot;WKNumState&quot;);&#xd;
+	&#xd;
+	log.info(&quot;#sequenceId: &quot;+sequenceId);&#xd;
+	log.info(&quot;#colleagueId: &quot;+colleagueId);&#xd;
+	log.info(&quot;#nextSequenceId: &quot;+nextSequenceId);&#xd;
+	log.info(&quot;#userList: &quot;+userList);&#xd;
+	&#xd;
+	&#xd;
+	//Quando aprovado atualiza campos se caso usuario colocar errado&#xd;
+	if(sequenceId == Activity.CONFERENCIA_FINANCEIRO &amp;&amp; nextSequenceId == Activity.AVALIAR_CONTROLADORIA){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_aprovador_financeiro&quot;,&quot;Aprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_aprovador_financeiro&quot;,&quot;Aprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_CONTROLADORIA &amp;&amp; nextSequenceId == Activity.AVALIAR_DIRETOR_GERAL){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_controladoria&quot;,&quot;Aprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_controladoria&quot;,&quot;Aprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_DIRETOR_GERAL &amp;&amp; nextSequenceId == Activity.GATEWAY_ENVOLVE_DIRETOR_FINANCEIRO){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_diretor_geral&quot;,&quot;Aprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_diretor_geral&quot;,&quot;Aprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_DIRETOR_FINANCEIRO &amp;&amp; nextSequenceId == Activity.GATEWAY_ENVOLVE_PRESIDENTE){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_diretor_financeiro&quot;,&quot;Aprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_diretor_financeiro&quot;,&quot;Aprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_PRESIDENTE &amp;&amp; nextSequenceId == Activity.DEFINIR_CONTA_PA){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_presidencia&quot;,&quot;Aprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_presidencia&quot;,&quot;Aprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	&#xd;
+	//Quando reprovado atualiza campos se caso usuario colocar errado&#xd;
+	if(sequenceId == Activity.CONFERENCIA_FINANCEIRO &amp;&amp; nextSequenceId == Activity.GATEWAY_CORRIGIR){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_aprovador_financeiro&quot;,&quot;Reprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_aprovador_financeiro&quot;,&quot;Reprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_CONTROLADORIA &amp;&amp; nextSequenceId == Activity.GATEWAY_CORRIGIR){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_controladoria&quot;,&quot;Reprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_controladoria&quot;,&quot;Reprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_DIRETOR_GERAL &amp;&amp; nextSequenceId == Activity.GATEWAY_CORRIGIR){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_diretor_geral&quot;,&quot;Reprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_diretor_geral&quot;,&quot;Reprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_DIRETOR_FINANCEIRO &amp;&amp; nextSequenceId == Activity.GATEWAY_CORRIGIR){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_diretor_financeiro&quot;,&quot;Reprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_diretor_financeiro&quot;,&quot;Reprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_PRESIDENTE &amp;&amp; nextSequenceId == Activity.GATEWAY_CORRIGIR){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_presidencia&quot;,&quot;Reprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_presidencia&quot;,&quot;Reprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>approvalPath</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function approvalPath(currentState, nextState){&#xd;
+	if(currentState == Activity.LANCAR_NOTA){&#xd;
+		var map = {};&#xd;
+		map[Activity.GATEWAY_LANCADO] = &quot;Sim&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Não&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_FINANCEIRO){&#xd;
+		var map = {};&#xd;
+		map[Activity.AVALIAR_CONTROLADORIA] = &quot;Aprovado&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Reprovado&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_CONTROLADORIA){&#xd;
+		var map = {};&#xd;
+		map[Activity.AVALIAR_DIRETOR_GERAL] = &quot;Aprovado&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Reprovado&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_GERAL){&#xd;
+		var map = {};&#xd;
+		map[Activity.GATEWAY_ENVOLVE_DIRETOR_FINANCEIRO] = &quot;Aprovado&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Reprovado&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_FINANCEIRO){&#xd;
+		var map = {};&#xd;
+		map[Activity.GATEWAY_ENVOLVE_PRESIDENTE] = &quot;Aprovado&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Reprovado&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_PRESIDENTE){&#xd;
+		var map = {};&#xd;
+		map[Activity.RECEBIDO_CONFERIDO_PAGO] = &quot;Aprovado&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Reprovado&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	return null;&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>calculateAgreement</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>/****** &#xd;
+** Enable customization script to change agreement calculation. &#xd;
+** Input: &#xd;
+**	stateId -&gt; Current state, whose agreement percentage is being calculated. &#xd;
+**	agreementData.get(&quot;currentPercentage&quot;) -&gt; Current percentage, calculated by the workflow engine&#xd;
+**	agreementData.get(&quot;currentDestState&quot;) -&gt; Current destination state. Zero, if process won&apos;t move&#xd;
+**	agreementData.get(&quot;currentDestUsers&quot;) -&gt; Current destination users. Empty if process won&apos;t move&#xd;
+**/&#xd;
+function calculateAgreement(currentState, agreementData) {&#xd;
+	var NEXT_STATE = getValue(&quot;WKNextState&quot;);&#xd;
+	var currentDestState = agreementData.get(&quot;currentDestState&quot;); &#xd;
+	&#xd;
+	log.info(_log + &quot; - calculateAgreement - currentState: &quot; + currentState&#xd;
+		+ &quot; - NEXT_STATE: &quot; + NEXT_STATE&#xd;
+		+ &quot; - currentDestState: &quot; + currentDestState);&#xd;
+	//log.dir(agreementData);&#xd;
+	&#xd;
+	if(!isApprovalActivity(currentState)) return;&#xd;
+	&#xd;
+	var userList = [];&#xd;
+	if(isApprovalActivity(NEXT_STATE)){&#xd;
+		var SCOPE = {&#xd;
+			MECANISM: &quot;MECANISMO&quot;, ALL: &quot;TODOS&quot;, ALL_FLUIG: &quot;TODOS_FLUIG&quot;&#xd;
+		}&#xd;
+		&#xd;
+		var constraints = [&#xd;
+			DatasetFactory.createConstraint(&quot;processo&quot;, _codigoProcesso, null, ConstraintType.MUST)&#xd;
+			, DatasetFactory.createConstraint(&quot;solicitacao&quot;, _solicitacao, null, ConstraintType.MUST)&#xd;
+			, DatasetFactory.createConstraint(&quot;atividade&quot;, NEXT_STATE, null, ConstraintType.MUST)&#xd;
+			, DatasetFactory.createConstraint(&quot;escopo&quot;, SCOPE.MECANISM, null, ConstraintType.MUST)&#xd;
+		];&#xd;
+		var dataset = DatasetFactory.getDataset(&quot;aprovadores&quot;, null, constraints, null);&#xd;
+		log.info(_log + &quot; - calculateAgreement - ds: &quot; + dataset);&#xd;
+		log.dir(dataset);&#xd;
+		if(dataset != null &amp;&amp; dataset.rowsCount &gt; 0){&#xd;
+			for(var i = 0; i &lt; dataset.rowsCount; i++){&#xd;
+				log.info(_log + &quot; - calculateAgreement - cd_matricula &quot;+ i + &quot;: &quot; + dataset.getValue(i, &quot;cd_matricula&quot;));&#xd;
+				userList.push(dataset.getValue(i, &quot;cd_matricula&quot;));&#xd;
+			}&#xd;
+		}&#xd;
+	}&#xd;
+	else if(NEXT_STATE == Activity.RECEBIDO_CONFERIDO_PAGO){&#xd;
+		userList.push(&quot;Pool:Group:financeiro&quot;);&#xd;
+	}&#xd;
+	else{&#xd;
+		userList.push(&quot;System:Auto&quot;);&#xd;
+	}&#xd;
+	log.info(_log + &quot; - calculateAgreement - NEXT_STATE: &quot; + NEXT_STATE + &quot; - userList: &quot; + userList.join(&quot;;&quot;));&#xd;
+	agreementData.put(&quot;currentPercentage&quot;, 100); &#xd;
+	agreementData.put(&quot;currentDestState&quot;, NEXT_STATE); &#xd;
+	agreementData.put(&quot;currentDestUsers&quot;, userList.join(&quot;,&quot;));&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>afterProcessCreate</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function afterProcessCreate(processId){&#xd;
+	hAPI.setCardValue(&quot;nr_solicitacao&quot;, processId);&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>activities</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>var Activity = {&#xd;
+		&#xd;
+	ABERTURA: 0,&#xd;
+	INICIO: 4,&#xd;
+	LANCAR_NOTA: 5,&#xd;
+	GATEWAY_LANCADO: 47,&#xd;
+	GATEWAY_CORRIGIR: 84,&#xd;
+	AVALIAR_FINANCEIRO: 16,&#xd;
+	AVALIAR_CONTROLADORIA: 31,&#xd;
+	AVALIAR_DIRETOR_GERAL: 19,&#xd;
+	GATEWAY_ENVOLVE_DIRETOR_FINANCEIRO: 80,&#xd;
+	AVALIAR_DIRETOR_FINANCEIRO: 70,&#xd;
+	GATEWAY_ENVOLVE_PRESIDENTE: 43,&#xd;
+	AVALIAR_PRESIDENTE: 35,&#xd;
+	RECEBIDO_CONFERIDO_PAGO: 52,&#xd;
+	GATEWAY_MAIS_PARCELAS: 65,&#xd;
+	GATEWAY_ENVOLVE_CONTROLADORIA: 57,&#xd;
+	AVALIAR_GERENTE_FINANCEIRO: 33,&#xd;
+	AGUARDAR_VENCIMENTO: 61,&#xd;
+	FIM: 40&#xd;
+	&#xd;
+};&#xd;
+</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>utils</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function utils(){}&#xd;
+&#xd;
+var _codigoProcesso = getValue(&quot;WKDef&quot;);&#xd;
+var _solicitacao = getValue(&quot;WKNumProces&quot;);&#xd;
+var _log = _codigoProcesso + &quot; - _solicitacao: &quot; + _solicitacao + &quot; - &quot;;&#xd;
+&#xd;
+function isEmpty(valor){&#xd;
+	return valor == null || valor == &apos;&apos;;&#xd;
+}&#xd;
+&#xd;
+function parseOrFormatDate(date,operation,dateFormat){&#xd;
+	var sdf = new java.text.SimpleDateFormat(dateFormat);&#xd;
+	var newDate = null;&#xd;
+	&#xd;
+	if(operation == &quot;parse&quot;)&#xd;
+		newDate = sdf.parse(date);&#xd;
+	else if(operation == &quot;format&quot;)&#xd;
+		newDate = sdf.format(date);&#xd;
+		&#xd;
+	return newDate;&#xd;
+}&#xd;
+&#xd;
+function transformDateFromTo(date,from,to){&#xd;
+	var dateFrom = new java.text.SimpleDateFormat(from);&#xd;
+	var dateTo = new java.text.SimpleDateFormat(to);&#xd;
+	&#xd;
+	return dateTo.format(dateFrom.parse(date));&#xd;
+}&#xd;
+&#xd;
+function comprovanteAnexado(company, process, numState){&#xd;
+	var anexado = false;&#xd;
+&#xd;
+    var hc1 = DatasetFactory.createConstraint(&quot;processHistoryPK.companyId&quot;, company, company, ConstraintType.MUST);&#xd;
+	var hc2 = DatasetFactory.createConstraint(&quot;processHistoryPK.processInstanceId&quot;, process, process, ConstraintType.MUST);&#xd;
+	var historyDataset = DatasetFactory.getDataset(&quot;processHistory&quot;, [&quot;processHistoryPK.movementSequence&quot;, &quot;stateSequence&quot;], [hc1, hc2], null);&#xd;
+	log.info(&quot;comprovanteAnexado - HISTORY - rows - &quot; + historyDataset.rowsCount);&#xd;
+	//log.dir(historyDataset);&#xd;
+	&#xd;
+	if(historyDataset.rowsCount &gt; 0){&#xd;
+		var ultimoMovimento = historyDataset.getValue(historyDataset.rowsCount-1, &quot;processHistoryPK.movementSequence&quot;);&#xd;
+		&#xd;
+		//var ultimoMovimento = historyDataset.getValue(historyDataset.rowsCount-1, &quot;NUM_SEQ_MOVTO&quot;);&#xd;
+		&#xd;
+		var ac1 = DatasetFactory.createConstraint(&quot;processAttachmentPK.companyId&quot;, company, company, ConstraintType.MUST);&#xd;
+		var ac2 = DatasetFactory.createConstraint(&quot;processAttachmentPK.processInstanceId&quot;, process, process, ConstraintType.MUST);&#xd;
+		var ac3 = DatasetFactory.createConstraint(&quot;originalMovementSequence&quot;, ultimoMovimento, ultimoMovimento, ConstraintType.MUST);&#xd;
+		var attachmentDataset = DatasetFactory.getDataset(&quot;processAttachment&quot;, [&quot;originalMovementSequence&quot;], [ac1, ac2, ac3], null);&#xd;
+		log.info(&quot;QUANTOS ANEXOS? &quot;+attachmentDataset.rowsCount);&#xd;
+		//log.dir(attachmentDataset);&#xd;
+		return attachmentDataset.rowsCount &gt;= 1;&#xd;
+	}&#xd;
+    &#xd;
+    return anexado;&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>involvesFinancialManagerAndPresident</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function involvesFinancialManager(){&#xd;
+	return involvesApproverByTrigger(&quot;gatilho_diretor_financeiro&quot;);&#xd;
+}&#xd;
+function involvesPresident(){&#xd;
+	return involvesApproverByTrigger(&quot;gatilho_presidente&quot;);&#xd;
+}&#xd;
+&#xd;
+function involvesApproverByTrigger(trigger){&#xd;
+	//if(regraBypassEnvolvimento()) return false;&#xd;
+&#xd;
+	var involves = false;&#xd;
+	var total = &quot;&quot;+hAPI.getCardValue(&quot;vl_total&quot;);	&#xd;
+	total = total.replaceAll(&quot;.&quot;, &quot;&quot;);	    			&#xd;
+	total = parseFloat(total.replaceAll(&quot;,&quot;, &quot;.&quot;)).toFixed(2);&#xd;
+	&#xd;
+	var target = &quot;&quot;+hAPI.getAdvancedProperty(trigger);&#xd;
+	target = target.replaceAll(&quot;.&quot;, &quot;&quot;);&#xd;
+	target = parseFloat(target.replaceAll(&quot;,&quot;, &quot;.&quot;)).toFixed(2);&#xd;
+	&#xd;
+	if(parseFloat(total) &gt; target){&#xd;
+		involves = true;&#xd;
+	}&#xd;
+	return involves;&#xd;
+}&#xd;
+&#xd;
+function regraBypassEnvolvimento(){&#xd;
+	return hAPI.getCardValue(&quot;cd_filial&quot;) == &quot;1006&quot;;&#xd;
+}&#xd;
+&#xd;
+String.prototype.replaceAll = function(from, to){ &#xd;
+	var str = this.split(from).join(to); &#xd;
+	return (str); &#xd;
+};</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>ENG_LITERALS</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>process.description=
+process.category=
+process.instructions=</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>beforeSendData</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function beforeSendData(customFields,customFacts){
+	
+	
+    customFields[0] = hAPI.getCardValue(&quot;dt_pagamento&quot;).toString();    
+	customFields[1] = hAPI.getCardValue(&quot;nm_centro_custo&quot;).toString();
+    customFields[2] = hAPI.getCardValue(&quot;vl_total&quot;).toString();
+    
+    customFacts[0] = 999.99;
+    
+    var vl_total_aux = hAPI.getCardValue(&quot;vl_total&quot;).replace(&quot;.&quot;,&quot;&quot;).replace(&quot;.&quot;,&quot;&quot;).replace(&quot;,&quot;,&quot;.&quot;);
+	
+    customFacts[1]=java.lang.Double.parseDouble(vl_total_aux);
+}
+</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>beforeStateEntry</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function beforeStateEntry(sequenceId){&#xd;
+	var attachments = hAPI.listAttachments();&#xd;
+	var company = &apos;&apos;+getValue(&quot;WKCompany&quot;);&#xd;
+	var process = &apos;&apos;+getValue(&quot;WKNumProces&quot;);&#xd;
+	var currentId = getValue(&quot;WKCurrentState&quot;);&#xd;
+  &#xd;
+	if (sequenceId == Activity.LANCAR_NOTA){&#xd;
+		var valorAnterior =  hAPI.getCardValue(&quot;vl_total&quot;);&#xd;
+		hAPI.setCardValue(&quot;vl_total_anterior&quot;, valorAnterior);&#xd;
+		&#xd;
+		var attchmentsNeeded = parseInt(hAPI.getAdvancedProperty(&quot;qtd_anexos&quot;),10);&#xd;
+		var needBoleto = hAPI.getCardValue(&quot;sl_forma_pagamento&quot;) == &quot;boleto&quot;;&#xd;
+		if(needBoleto) attchmentsNeeded++;&#xd;
+		&#xd;
+		var rateio = !isEmpty(hAPI.getCardValue(&quot;ck_rateio&quot;));&#xd;
+		if(rateio) attchmentsNeeded++;&#xd;
+		&#xd;
+		var attachments = hAPI.listAttachments();&#xd;
+		var hasAttachment = (attachments != null &amp;&amp; attachments.size() &gt;= attchmentsNeeded);&#xd;
+&#xd;
+		if (!hasAttachment) {&#xd;
+			var erro = &quot;Atenção! 注意 ! Não esqueceça de adicionar os (&quot;+attchmentsNeeded+&quot;) anexos&quot;;&#xd;
+			&#xd;
+			if(needBoleto)&#xd;
+				erro += &quot;, incluindo o boleto. 包括匯票 &quot;&#xd;
+			&#xd;
+			if(rateio)&#xd;
+				erro += &quot;, incluindo o documento de detalhamento do rateio.&quot;&#xd;
+					&#xd;
+			erro += &quot; 不要忘記添加附件&quot;;&#xd;
+					&#xd;
+			throw erro;&#xd;
+	    }&#xd;
+    }&#xd;
+    &#xd;
+    //Anexe o comprovante de pagamento.&#xd;
+	&#xd;
+	if(currentId == Activity.RECEBIDO_CONFERIDO_PAGO &amp;&amp; sequenceId == Activity.GATEWAY_MAIS_PARCELAS){&#xd;
+		var indexes = hAPI.getChildrenIndexes(&quot;tb_parcelas&quot;);&#xd;
+		for (var i = 0; i &lt; indexes.length; i++) {&#xd;
+			var row = indexes[i];&#xd;
+			var paid = hAPI.getCardValue(&quot;nm_pago___&quot;+row);&#xd;
+			 log.info(&quot;#paid: &quot;+paid);&#xd;
+			&#xd;
+			if(paid == &quot;atual&quot;){&#xd;
+				hAPI.setCardValue(&quot;nm_pago___&quot;+row,&quot;sim&quot;);&#xd;
+			}else if(paid == &quot;pendente&quot;){&#xd;
+				hAPI.setCardValue(&quot;nm_pago___&quot;+row,&quot;atual&quot;);&#xd;
+				var newPaymentDate =  hAPI.getCardValue(&quot;dt_parcela___&quot;+row);&#xd;
+				hAPI.setCardValue(&quot;dt_pagamento&quot;,newPaymentDate);&#xd;
+				var newPaymentDateISO = transformDateFromTo(newPaymentDate,&quot;dd/MM/yyyy&quot;,&quot;yyyy-MM-dd&quot;);&#xd;
+				hAPI.setCardValue(&quot;dt_pagamento_iso&quot;,newPaymentDateISO);&#xd;
+				break;&#xd;
+			}			&#xd;
+		}&#xd;
+		&#xd;
+		if(!comprovanteAnexado(company, process, currentId)){&#xd;
+			throw &quot;Obrigatório anexar o comprovante de pagamento!&quot;;&#xd;
+		}&#xd;
+	}&#xd;
+	&#xd;
+	processMobileApproval();&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>POR_LITERALS</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>process.description=Pagamento sem PO (Filial) 无采购订单付款（分公司）
+process.category=Pagamentos (Filial) 付款（分公司）
+process.instructions=</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>afterTaskCreate</eventId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function afterTaskCreate(colleagueId) {&#xd;
+	log.info(&quot;#afterTaskCreate - SEM PO&quot;);&#xd;
+	var sequenceId = getValue(&quot;WKCurrentState&quot;);&#xd;
+	&#xd;
+	if(sequenceId == Activity.AGUARDAR_VENCIMENTO){&#xd;
+		 var numProcess = getValue(&apos;WKNumProces&apos;);&#xd;
+		 &#xd;
+         var threadProcess = 0; &#xd;
+         &#xd;
+         var dataPrazo = parseOrFormatDate(hAPI.getCardValue(&quot;dt_pagamento&quot;),&quot;parse&quot;,&quot;dd/MM/yyyy&quot;);&#xd;
+         log.info(&quot;#dataPrazo: &quot;+dataPrazo);&#xd;
+         dataPrazo.setDate(dataPrazo.getDate()-7);&#xd;
+         log.info(&quot;#dataPrazo2: &quot;+dataPrazo);&#xd;
+         var horaPrazo = (24*60*60) - 1;                            &#xd;
+         &#xd;
+         hAPI.setDueDate(numProcess, threadProcess, colleagueId, dataPrazo, horaPrazo);&#xd;
+	}&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+  </list>
+  <list>
+    <AdvancedProcessProperties>
+      <advancedProcessPropertiesPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <propertyId>gatilho_diretor_financeiro</propertyId>
+        <version>12</version>
+      </advancedProcessPropertiesPK>
+      <propertieValue>50000</propertieValue>
+    </AdvancedProcessProperties>
+    <AdvancedProcessProperties>
+      <advancedProcessPropertiesPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <propertyId>gatilho_presidente</propertyId>
+        <version>12</version>
+      </advancedProcessPropertiesPK>
+      <propertieValue>100000</propertieValue>
+    </AdvancedProcessProperties>
+    <AdvancedProcessProperties>
+      <advancedProcessPropertiesPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <propertyId>qtd_anexos</propertyId>
+        <version>12</version>
+      </advancedProcessPropertiesPK>
+      <propertieValue>1</propertieValue>
+    </AdvancedProcessProperties>
+  </list>
+  <list>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>162</height>
+      <width>562</width>
+      <positionX>3</positionX>
+      <positionY>483</positionY>
+      <stateName>Controladoria</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>1</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>162</height>
+      <width>562</width>
+      <positionX>3</positionX>
+      <positionY>322</positionY>
+      <stateName>Financeiro</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>2</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>162</height>
+      <width>562</width>
+      <positionX>3</positionX>
+      <positionY>161</positionY>
+      <stateName>Fiscal</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>3</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>162</height>
+      <width>562</width>
+      <positionX>3</positionX>
+      <positionY>644</positionY>
+      <stateName>Diretor Geral</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>4</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>162</height>
+      <width>562</width>
+      <positionX>3</positionX>
+      <positionY>1125</positionY>
+      <stateName>Financeiro</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>5</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>162</height>
+      <width>562</width>
+      <positionX>3</positionX>
+      <positionY>0</positionY>
+      <stateName>Requisitante</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>6</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>162</height>
+      <width>562</width>
+      <positionX>3</positionX>
+      <positionY>965</positionY>
+      <stateName>Presidente</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>7</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>162</height>
+      <width>562</width>
+      <positionX>3</positionX>
+      <positionY>805</positionY>
+      <stateName>Diretor financeiro</stateName>
+      <type>2</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>1</version>
+        <sequence>8</sequence>
+      </swimLanePK>
+    </SwimLane>
+  </list>
+  <list/>
+  <list/>
+  <list>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>50</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>309</positionX>
+      <positionY>348</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>50</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>122</positionX>
+      <positionY>348</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>72</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>309</positionX>
+      <positionY>947</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>72</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>122</positionX>
+      <positionY>947</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>83</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>122</positionX>
+      <positionY>953</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>89</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>398</positionX>
+      <positionY>885</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>89</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>398</positionX>
+      <positionY>73</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>92</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>398</positionX>
+      <positionY>241</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>92</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>399</positionX>
+      <positionY>73</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>93</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>122</positionX>
+      <positionY>1143</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>93</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>398</positionX>
+      <positionY>1143</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>93</linkSequence>
+        <bendSequence>3</bendSequence>
+      </processLinkBendPK>
+      <positionX>398</positionX>
+      <positionY>73</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>96</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>310</positionX>
+      <positionY>1279</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>96</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>121</positionX>
+      <positionY>1279</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>105</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>398</positionX>
+      <positionY>402</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>105</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>398</positionX>
+      <positionY>73</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>107</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>398</positionX>
+      <positionY>563</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>107</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>399</positionX>
+      <positionY>73</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>109</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>398</positionX>
+      <positionY>724</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>109</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>399</positionX>
+      <positionY>73</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>110</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>309</positionX>
+      <positionY>1143</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>110</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>121</positionX>
+      <positionY>1143</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>111</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>398</positionX>
+      <positionY>1045</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <linkSequence>111</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>399</positionX>
+      <positionY>73</positionY>
+    </ProcessLinkBend>
+  </list>
+  <list/>
+  <list>
+    <ExtendedPropertyField>
+      <extendedPropertyFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <stateSequence>0</stateSequence>
+        <propertyName>gatilho_diretor_financeiro</propertyName>
+      </extendedPropertyFieldPK>
+      <propertyType>0</propertyType>
+      <propertyDescription>gatilho_diretor_financeiro</propertyDescription>
+      <propertyValue>50000</propertyValue>
+      <isDefaultProperty>false</isDefaultProperty>
+    </ExtendedPropertyField>
+    <ExtendedPropertyField>
+      <extendedPropertyFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <stateSequence>0</stateSequence>
+        <propertyName>gatilho_presidente</propertyName>
+      </extendedPropertyFieldPK>
+      <propertyType>0</propertyType>
+      <propertyDescription>gatilho_presidente</propertyDescription>
+      <propertyValue>100000</propertyValue>
+      <isDefaultProperty>false</isDefaultProperty>
+    </ExtendedPropertyField>
+    <ExtendedPropertyField>
+      <extendedPropertyFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <version>12</version>
+        <stateSequence>0</stateSequence>
+        <propertyName>qtd_anexos</propertyName>
+      </extendedPropertyFieldPK>
+      <propertyType>0</propertyType>
+      <propertyDescription>qtd_anexos</propertyDescription>
+      <propertyValue>1</propertyValue>
+      <isDefaultProperty>false</isDefaultProperty>
+    </ExtendedPropertyField>
+  </list>
+  <list>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>cd_centro_custo</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Cod Centro Custo</fieldDescription>
+      <slotId>1</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>cd_filial</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Filial</fieldDescription>
+      <slotId>2</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>cd_fornecedor</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Fornecedor</fieldDescription>
+      <slotId>3</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>cgc_fornecedor</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>cgc_fornecedor</fieldDescription>
+      <slotId>4</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>dt_lancar_nota</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Data Lançamento Nota</fieldDescription>
+      <slotId>5</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>dt_pagamento</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Data Pagamento</fieldDescription>
+      <slotId>6</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>dt_pagamento_iso</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>dt_pagamento_iso</fieldDescription>
+      <slotId>7</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>loja_fornecedor</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Loja Fornecedor</fieldDescription>
+      <slotId>8</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>nm_razao_social</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Fornecedor</fieldDescription>
+      <slotId>9</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>sl_forma_pagamento</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Forma de Pagamento</fieldDescription>
+      <slotId>10</slotId>
+    </ProcessFormField>
+    <ProcessFormField>
+      <processFormFieldPK>
+        <companyId>1</companyId>
+        <processId>pagto_sem_po_filial</processId>
+        <fieldId>vl_total</fieldId>
+      </processFormFieldPK>
+      <fieldDescription>Valor Total</fieldDescription>
+      <slotId>11</slotId>
+    </ProcessFormField>
+  </list>
+  <list/>
+  <list/>
+  <list>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>16</stateSequence>
+      <appKey>approval</appKey>
+      <appField>title</appField>
+      <description>Pagamento sem PO 没有申请单的付款</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>16</stateSequence>
+      <appKey>approval</appKey>
+      <appField>description</appField>
+      <description>@[form:ds_descricao]&#xd;
+</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>16</stateSequence>
+      <appKey>approval</appKey>
+      <appField>highlight</appField>
+      <description>@[form:vl_total]</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>16</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>31</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>16</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>84</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>19</stateSequence>
+      <appKey>approval</appKey>
+      <appField>title</appField>
+      <description>Pagamento sem PO 没有申请单的付款</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>19</stateSequence>
+      <appKey>approval</appKey>
+      <appField>description</appField>
+      <description>@[form:ds_descricao]&#xd;
+</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>19</stateSequence>
+      <appKey>approval</appKey>
+      <appField>highlight</appField>
+      <description>@[form:vl_total]</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>19</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>80</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>19</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>84</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>31</stateSequence>
+      <appKey>approval</appKey>
+      <appField>title</appField>
+      <description>Pagamento sem PO 没有申请单的付款</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>31</stateSequence>
+      <appKey>approval</appKey>
+      <appField>description</appField>
+      <description>@[form:ds_descricao]&#xd;
+</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>31</stateSequence>
+      <appKey>approval</appKey>
+      <appField>highlight</appField>
+      <description>@[form:vl_total]</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>31</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>19</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>31</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>84</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>35</stateSequence>
+      <appKey>approval</appKey>
+      <appField>title</appField>
+      <description>Pagamento sem PO 没有申请单的付款</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>35</stateSequence>
+      <appKey>approval</appKey>
+      <appField>description</appField>
+      <description>@[form:ds_descricao]&#xd;
+</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>35</stateSequence>
+      <appKey>approval</appKey>
+      <appField>highlight</appField>
+      <description>@[form:vl_total]</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>35</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>52</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>35</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>84</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>70</stateSequence>
+      <appKey>approval</appKey>
+      <appField>title</appField>
+      <description>Pagamento sem PO 没有申请单的付款</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>70</stateSequence>
+      <appKey>approval</appKey>
+      <appField>description</appField>
+      <description>@[form:ds_descricao]&#xd;
+</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>70</stateSequence>
+      <appKey>approval</appKey>
+      <appField>highlight</appField>
+      <description>@[form:vl_total]</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>70</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>43</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>pagto_sem_po_filial</processId>
+      <processVersion>12</processVersion>
+      <stateSequence>70</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>84</description>
+    </ProcessAppConfiguration>
+  </list>
+  <list/>
+  <list/>
+</list>

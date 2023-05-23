@@ -1,0 +1,112 @@
+function createDataset(fields, constraints, sortFields) {
+	
+	log.info("protheus_historico_salarial - inicio");
+	log.info(constraints);
+	
+	var dataset = DatasetBuilder.newDataset();
+	
+	var filter = {};
+	
+	if (constraints != null) {
+		getConstraintsValue(constraints
+			, [ 'queryAddWhere', 'branch', 'R7_MAT' ]);
+		filter.branch = constraintMap.get('branch');
+		filter.R7_MAT = constraintMap.get('R7_MAT');
+		filter.queryAddWhere = constraintMap.get('queryAddWhere');
+		
+		if(!isEmpty(filter.R7_MAT)){			
+			filter.R7_MAT = filter.R7_MAT.toUpperCase();
+			filter.queryAddWhere = (isEmpty(filter.queryAddWhere) 
+			? "(" : filter.queryAddWhere + " (") + 
+			" R7_MAT = '" + filter.R7_MAT + 
+			"' AND R7_FILIAL = '" + filter.branch + "' )";
+			
+		}
+		
+	}	
+	if(!filter.userCode || filter.userCode == ""){
+		filter.userCode = "MSALPHA";
+	}
+	if(!filter.alias || filter.alias == ""){
+		filter.alias = "SR7";
+	}
+	log.info("protheus_historico_salarial - filter: ");
+	log.dir(filter);
+	
+	var FIELDS = ["R7_DATA", "R7_FUNCAO", "R7_TIPO"];
+	
+	if (fields != null && fields.length > 0) {
+		FIELDS = [];
+		for(var f = 0; f < fields.length; f++){
+				FIELDS.push(fields[f]);
+		}
+	}
+	for(var f = 0; f < FIELDS.length; f++){
+		dataset.addColumn(FIELDS[f]);
+	}
+
+	var constraints = [
+		DatasetFactory.createConstraint("userCode", filter.userCode, null, ConstraintType.MUST)
+		, DatasetFactory.createConstraint("alias", filter.alias, null, ConstraintType.MUST)
+		, DatasetFactory.createConstraint("queryAddWhere", filter.queryAddWhere, null, ConstraintType.MUST)
+		, DatasetFactory.createConstraint("branch", filter.branch, null, ConstraintType.MUST)
+	];
+	var ds = DatasetFactory.getDataset("protheus_cfgtable", FIELDS, constraints, null);
+	if(ds != null && ds.rowsCount > 0){
+		for(var i = 0; i < ds.rowsCount; i++){
+			var row = [];
+			for(var f = 0; f < FIELDS.length; f++){
+				row.push(ds.getValue(i, FIELDS[f]));
+			}
+			
+			dataset.addRow(row);
+		}
+	}
+	return dataset;
+}
+
+/**
+ * Verificar se o valor é nulo ou vazio
+ * @param valor
+ * @returns
+ */
+function isEmpty(valor){
+	if(valor == null) return true;	
+	var teste = "" + valor;
+	return teste.trim() == "";
+}
+
+/**
+ * Captura o valor das constraints enviadas ao dataset.
+ * @param constraints: Array de constraints.
+ * @param constraintNames: Array com o nome das constraints obrigatorias para o dataset.
+ * @returns HashMap<String,String>  
+ */
+var constraintMap = null;
+function getConstraintsValue(constraints, constraintNames) {
+	if (constraintMap == null) constraintMap = constraintToMap(constraints);
+
+	for (var i = 0; i < constraintNames.length; i++) {
+		var constraintValue = constraintMap.get(constraintNames[i]);
+		if (constraintValue == null)
+			log.warn("protheus_historico_salarial - Constraint " + constraintNames[i] + " esta com valor nulo.");
+	}
+	return constraintValue;
+}
+/**
+ * Converte as Contraints em HashMap;
+ * @param constraints: Array de Constraint;
+ * @returns HashMap<String,String>  
+ */
+function constraintToMap(constraints) {
+	var map = new java.util.HashMap();
+	
+	if (constraints != null)
+		for (var i = 0; i < constraints.length; i++) {
+			log.info("protheus_historico_salarial - constraint: " + constraints[i].fieldName);
+			map.put(constraints[i].fieldName, constraints[i].initialValue);
+		}
+	
+	return map;
+
+}

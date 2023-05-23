@@ -1,0 +1,17 @@
+{
+	"version": "0.0.1",
+	"configurations": [
+		{
+			"id": "z5k5n48t4xbld6h992u6n24c09i3nb",
+			"name": "XCMG_DEV",
+			"host": "xcmgbrasil124787.fluig.cloudtotvs.com.br",
+			"ssl": true,
+			"port": 443,
+			"username": "integrador",
+			"password": "U2FsdGVkX193tDD2Ulx5e4Nwam5QCeqnxm+ywv9u/rY=",
+			"userCode": "integrador",
+			"confirmExporting": false,
+			"companyId": 1
+		}
+	]
+}

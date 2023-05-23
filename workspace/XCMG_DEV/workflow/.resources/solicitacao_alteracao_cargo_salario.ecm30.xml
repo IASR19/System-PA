@@ -1,0 +1,1519 @@
+<list>
+  <ProcessDefinition>
+    <processDefinitionPK>
+      <companyId>1</companyId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+    </processDefinitionPK>
+    <processDescription>Solicitação de Alteração de Cargo e/ou Salário</processDescription>
+    <instruction></instruction>
+    <active>true</active>
+    <publicProcess>false</publicProcess>
+    <volumeId>Default</volumeId>
+    <categoryId></categoryId>
+    <managerEngineAllocationId></managerEngineAllocationId>
+    <snapshotFrequency>0</snapshotFrequency>
+    <baseDay>0</baseDay>
+    <baseMonth>0</baseMonth>
+    <periodId>Default</periodId>
+    <uniqueCardVersion>false</uniqueCardVersion>
+    <keyWord></keyWord>
+    <complementsLevel>1</complementsLevel>
+    <notifyRequisitionerComplements>true</notifyRequisitionerComplements>
+    <notifyManagerComplements>false</notifyManagerComplements>
+    <deadlineTime>0</deadlineTime>
+    <warningDeadlineTime>0</warningDeadlineTime>
+    <notifyAuthorityComplements>true</notifyAuthorityComplements>
+  </ProcessDefinition>
+  <ProcessDefinitionVersion>
+    <processDefinitionVersionPK>
+      <companyId>1</companyId>
+      <processId>Solicitação de Alteração de Cargo e/ou Salário</processId>
+      <version>49</version>
+    </processDefinitionVersionPK>
+    <versionDescription></versionDescription>
+    <formId>70258</formId>
+    <editionMode>true</editionMode>
+    <updateAttachmentsVersion>false</updateAttachmentsVersion>
+    <controlsAttachmentsSecurity>false</controlsAttachmentsSecurity>
+    <active>true</active>
+    <blockedVersion>false</blockedVersion>
+    <counterSign>false</counterSign>
+    <openInstances>0</openInstances>
+    <bpmnVersion>2</bpmnVersion>
+    <processStates/>
+    <favorito>false</favorito>
+    <inheritFormSecurity>false</inheritFormSecurity>
+    <mobileReady>true</mobileReady>
+  </ProcessDefinitionVersion>
+  <list>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>4</sequence>
+      </processStatePK>
+      <stateName>Início</stateName>
+      <stateDescription>Início</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Usuário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;integrador&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>true</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>130</positionX>
+      <positionY>59</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>10</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>18</sequence>
+      </processStatePK>
+      <stateName>Aprovar 批准了</stateName>
+      <stateDescription>Aprovar 批准了</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>xcmg_aprovadores</engineAllocationId>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>230</positionX>
+      <positionY>261</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>19</sequence>
+      </processStatePK>
+      <stateName>Aprovar 批准了</stateName>
+      <stateDescription>Aprovar 批准了</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>xcmg_aprovadores</engineAllocationId>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>230</positionX>
+      <positionY>376</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>20</sequence>
+      </processStatePK>
+      <stateName>Aprovar 批准了</stateName>
+      <stateDescription>Aprovar 批准了</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>xcmg_aprovadores</engineAllocationId>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>230</positionX>
+      <positionY>491</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>21</sequence>
+      </processStatePK>
+      <stateName>Aprovar 批准了</stateName>
+      <stateDescription>Aprovar 批准了</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>xcmg_aprovadores</engineAllocationId>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>230</positionX>
+      <positionY>607</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>33</sequence>
+      </processStatePK>
+      <stateName>Aprovar 批准了</stateName>
+      <stateDescription>Aprovar 批准了</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>xcmg_aprovadores</engineAllocationId>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>230</positionX>
+      <positionY>157</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>38</sequence>
+      </processStatePK>
+      <stateName>Intermediário</stateName>
+      <stateDescription>Intermediário</stateDescription>
+      <instruction>Evento intermediário do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>1</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>true</automatic>
+      <positionX>130</positionX>
+      <positionY>150</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>0</stateType>
+      <bpmnType>32</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <parentSequence>0</parentSequence>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>17</sequence>
+      </processStatePK>
+      <stateName>Corrigir 未获批准</stateName>
+      <stateDescription>Corrigir 未获批准</stateDescription>
+      <joint>false</joint>
+      <initialState>false</initialState>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <automatic>true</automatic>
+      <positionX>540</positionX>
+      <positionY>15</positionY>
+      <inhibitTransfer>false</inhibitTransfer>
+      <stateType>1</stateType>
+      <bpmnType>120</bpmnType>
+      <signalId>0</signalId>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>9</sequence>
+      </processStatePK>
+      <stateName>Fim</stateName>
+      <stateDescription>Fim</stateDescription>
+      <instruction>Atividade final do processo</instruction>
+      <deadlineTime>0</deadlineTime>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
+      <selectColleague>0</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>0</allowanceAuthorityTime>
+      <frequenceAuthorityTime>1</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>660</positionX>
+      <positionY>627</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId></periodId>
+      <stateType>6</stateType>
+      <bpmnType>60</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+    </ProcessState>
+  </list>
+  <list>
+    <ConditionProcessState>
+      <conditionProcessStatePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <expressionOrder>1</expressionOrder>
+        <version>49</version>
+        <sequence>17</sequence>
+      </conditionProcessStatePK>
+      <condition>true</condition>
+      <destinationSequenceId>4</destinationSequenceId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;BaseActivity&gt;4&lt;/BaseActivity&gt;&lt;Returns&gt;Last&lt;/Returns&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Executor Atividade</engineAllocationId>
+      <conditionType>0</conditionType>
+    </ConditionProcessState>
+  </list>
+  <list>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>24</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>17</initialStateSequence>
+      <finalStateSequence>4</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>25</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>18</initialStateSequence>
+      <finalStateSequence>19</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>26</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>18</initialStateSequence>
+      <finalStateSequence>17</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>27</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>19</initialStateSequence>
+      <finalStateSequence>20</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>28</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>19</initialStateSequence>
+      <finalStateSequence>17</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>29</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>20</initialStateSequence>
+      <finalStateSequence>21</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>30</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>20</initialStateSequence>
+      <finalStateSequence>17</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>31</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>21</initialStateSequence>
+      <finalStateSequence>9</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>32</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>21</initialStateSequence>
+      <finalStateSequence>17</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>35</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>33</initialStateSequence>
+      <finalStateSequence>18</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>36</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>33</initialStateSequence>
+      <finalStateSequence>17</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>39</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>4</initialStateSequence>
+      <finalStateSequence>38</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <linkSequence>40</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>38</initialStateSequence>
+      <finalStateSequence>33</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+  </list>
+  <list/>
+  <list>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>afterTaskComplete</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function afterTaskComplete(colleagueId,nextSequenceId,userList){&#xd;
+	&#xd;
+	var sequenceId = getValue(&quot;WKNumState&quot;);&#xd;
+	&#xd;
+	log.info(&quot;#sequenceId: &quot;+sequenceId);&#xd;
+	log.info(&quot;#colleagueId: &quot;+colleagueId);&#xd;
+	log.info(&quot;#nextSequenceId: &quot;+nextSequenceId);&#xd;
+	log.info(&quot;#userList: &quot;+userList);&#xd;
+	&#xd;
+	&#xd;
+	//Quando aprovado atualiza campos se caso usuario colocar errado&#xd;
+	if(sequenceId == Activity.AVALIAR_GERENTE_AREA &amp;&amp; nextSequenceId == Activity.AVALIAR_DIRETOR_AREA){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_gerente_area&quot;,&quot;Aprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_gerente_area&quot;,&quot;Aprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_DIRETOR_AREA &amp;&amp; nextSequenceId == Activity.AVALIAR_GERENTE_RH){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_diretor_area&quot;,&quot;Aprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_diretor_area&quot;,&quot;Aprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_GERENTE_RH &amp;&amp; nextSequenceId == Activity.AVALIAR_DIRETOR_RH){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_gerente_rh&quot;,&quot;Aprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_gerente_rh&quot;,&quot;Aprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_DIRETOR_RH &amp;&amp; nextSequenceId == Activity.AVALIAR_DIRETOR_GERAL){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_diretor_rh&quot;,&quot;Aprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_diretor_rh&quot;,&quot;Aprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_DIRETOR_GERAL &amp;&amp; nextSequenceId == Activity.FIM){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_diretor_geral&quot;,&quot;Aprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_diretor_geral&quot;,&quot;Aprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	//Quando reprovado atualiza campos se caso usuario colocar errado&#xd;
+	if(sequenceId == Activity.AVALIAR_GERENTE_AREA &amp;&amp; nextSequenceId == Activity.GATEWAY_CORRIGIR){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_gerente_area&quot;,&quot;Reprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_gerente_area&quot;,&quot;Reprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_DIRETOR_AREA &amp;&amp; nextSequenceId == Activity.GATEWAY_CORRIGIR){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_diretor_area&quot;,&quot;Reprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_diretor_area&quot;,&quot;Reprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_GERENTE_RH &amp;&amp; nextSequenceId == Activity.GATEWAY_CORRIGIR){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_gerente_rh&quot;,&quot;Reprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_gerente_rh&quot;,&quot;Reprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_DIRETOR_RH &amp;&amp; nextSequenceId == Activity.GATEWAY_CORRIGIR){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_diretor_rh&quot;,&quot;Reprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_diretor_rh&quot;,&quot;Reprovado&quot;);&#xd;
+	}&#xd;
+	&#xd;
+	if(sequenceId == Activity.AVALIAR_DIRETOR_GERAL &amp;&amp; nextSequenceId == Activity.GATEWAY_CORRIGIR){&#xd;
+		hAPI.setCardValue(&quot;_rd_aprov_diretor_geral&quot;,&quot;Reprovado&quot;);&#xd;
+		hAPI.setCardValue(&quot;aux_aprov_diretor_geral&quot;,&quot;Reprovado&quot;);&#xd;
+	}	&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>approvalPath</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function approvalPath(currentState, nextState){&#xd;
+	if(currentState == Activity.AVALIAR_GERENTE_AREA){&#xd;
+		var map = {};&#xd;
+		map[Activity.AVALIAR_DIRETOR_AREA] = &quot;Aprovado&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Reprovado&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_AREA){&#xd;
+		var map = {};&#xd;
+		map[Activity.AVALIAR_GERENTE_RH] = &quot;Aprovado&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Reprovado&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_GERENTE_RH){&#xd;
+		var map = {};&#xd;
+		map[Activity.AVALIAR_DIRETOR_RH] = &quot;Aprovado&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Reprovado&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_RH){&#xd;
+		var map = {};&#xd;
+		map[Activity.AVALIAR_DIRETOR_GERAL] = &quot;Aprovado&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Reprovado&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_GERAL){&#xd;
+		var map = {};&#xd;
+		map[Activity.FIM] = &quot;Aprovado&quot;;&#xd;
+		map[Activity.GATEWAY_CORRIGIR] = &quot;Reprovado&quot;;&#xd;
+		return map[nextState];&#xd;
+	}&#xd;
+	return null;&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>afterProcessCreate</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function afterProcessCreate(processId){&#xd;
+	hAPI.setCardValue(&quot;nr_solicitacao&quot;, processId);&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>beforeTaskSave</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function beforeTaskSave(colleagueId,nextSequenceId,userList){&#xd;
+	&#xd;
+&#xd;
+	&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>activities</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>var Activity = {&#xd;
+	ZERO: 0,&#xd;
+	INICIO: 4,&#xd;
+	GATEWAY_CORRIGIR: 17,&#xd;
+	AVALIAR_GERENTE_AREA: 33,&#xd;
+	AVALIAR_DIRETOR_AREA: 18,&#xd;
+	AVALIAR_GERENTE_RH: 19,&#xd;
+	AVALIAR_DIRETOR_RH: 20,&#xd;
+	AVALIAR_DIRETOR_GERAL: 21,&#xd;
+	FIM: 9&#xd;
+&#xd;
+	, isBeginning: function(state){&#xd;
+		return state == Activity.ABERTURA&#xd;
+			|| state == Activity.INICIO;&#xd;
+	}&#xd;
+};</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>utils</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function utils(){}&#xd;
+&#xd;
+var _codigoProcesso = getValue(&quot;WKDef&quot;);&#xd;
+var _solicitacao = getValue(&quot;WKNumProces&quot;);&#xd;
+var _log = _codigoProcesso + &quot; - _solicitacao: &quot; + _solicitacao + &quot; - &quot;;&#xd;
+&#xd;
+function isEmpty(valor){&#xd;
+	return valor == null || valor == &apos;&apos;;&#xd;
+}&#xd;
+&#xd;
+/**&#xd;
+ * Recupera valor sem formatação&#xd;
+ * @param valor&#xd;
+ * @return string&#xd;
+ */&#xd;
+function getRawValue(valor){&#xd;
+	return (&quot;&quot;+valor).replace(/\D/g,&quot;&quot;);&#xd;
+}&#xd;
+/**&#xd;
+ * Recupera numero com separação decimal&#xd;
+ * @param valor&#xd;
+ * @return string&#xd;
+ */&#xd;
+function getRawNumber(valor){&#xd;
+	return (&quot;&quot;+valor).replace(/\./g,&quot;&quot;).replace(/\//g,&quot;&quot;).replace(&quot;,&quot;,&quot;.&quot;);&#xd;
+}&#xd;
+/**&#xd;
+ * Recupera numero em módulo com separação decimal&#xd;
+ * @param valor&#xd;
+ * @return string&#xd;
+ */&#xd;
+function getModuleRawNumber(valor){&#xd;
+	return (&quot;&quot;+valor).replace(/\./g,&quot;&quot;).replace(/\//g,&quot;&quot;).replace(/-/g,&quot;&quot;).replace(&quot;,&quot;,&quot;.&quot;);&#xd;
+}&#xd;
+&#xd;
+//Regex ddd&#xd;
+var dddPattern = java.util.regex.Pattern.compile(&quot;\((\d+)\)&quot;);&#xd;
+&#xd;
+/**&#xd;
+ * Converte string número brasileiro em número em formato americano&#xd;
+ * @param string -&gt; &quot;2.000,00&quot;&#xd;
+ * @return float -&gt; 2000&#xd;
+ */&#xd;
+function numeroAmericano(valor){&#xd;
+	if(valor == null || valor == &quot;&quot;) return 0;&#xd;
+	&#xd;
+	return parseFloat(getRawNumber(valor));&#xd;
+}&#xd;
+&#xd;
+/**&#xd;
+ * Verificar valor e retorna um boolean conforme regra:&#xd;
+ * &quot;nao&quot; = false; &quot;sim&quot; = true;&#xd;
+ * 0 = false; 1 = true;&#xd;
+ * &quot;false&quot; = false; &quot;true&quot; = true;&#xd;
+ * @param input&#xd;
+ * @returns&#xd;
+ */&#xd;
+function getBooleanOf(input){&#xd;
+	if(input == null || input == &quot;&quot;) return false;&#xd;
+	&#xd;
+	return (input == &quot;sim&quot; &#xd;
+		|| input == &quot;true&quot; || input == true &#xd;
+		|| input == &quot;1&quot; || input == 1);&#xd;
+}&#xd;
+&#xd;
+/**&#xd;
+ * Preenche com zeros a esquerda&#xd;
+ * @param valor que sera tratado&#xd;
+ * @param tamanho alvo do resultado&#xd;
+ * @return String &#xd;
+ */&#xd;
+function leftPad(n, w) {&#xd;
+	var an = Math.abs(n);&#xd;
+	var digitCount = 1 + Math.floor(Math.log(an) / Math.LN10);&#xd;
+	if (digitCount &gt;= w) {&#xd;
+		return n;&#xd;
+	}&#xd;
+	var zeroString = Math.pow(10, w - digitCount).toString().substr(1);&#xd;
+	return n &lt; 0 ? &apos;-&apos; + zeroString + an : zeroString + an;&#xd;
+}&#xd;
+&#xd;
+//FORMATOS&#xd;
+//Formato brasileiro&#xd;
+var LOCALE_PT_BR = new java.util.Locale(&quot;pt&quot;, &quot;br&quot;);&#xd;
+var dataFormaBrasileira = java.time.format.DateTimeFormatter&#xd;
+		.ofLocalizedDate(java.time.format.FormatStyle.MEDIUM)&#xd;
+		.withLocale(LOCALE_PT_BR);&#xd;
+var FORMATO_SIMPLES = {&#xd;
+		DATA_EN_US: new java.text.SimpleDateFormat(&quot;yyyy-MM-dd&quot;)&#xd;
+		, DATA_PT_BR: new java.text.SimpleDateFormat(&quot;dd/MM/yyyy&quot;)&#xd;
+		, HH_MM: new java.text.SimpleDateFormat(&quot;HH:mm&quot;)&#xd;
+}&#xd;
+&#xd;
+//FUNCOES DATA E HORA&#xd;
+function getCurrentDate(locale){&#xd;
+	return (!locale || locale == undefined || locale == null || locale == &quot;PT_BR&quot;) &#xd;
+		? FORMATO_SIMPLES.DATA_PT_BR.format(new Date()) : FORMATO_SIMPLES.DATA_EN_US.format(new Date());&#xd;
+}&#xd;
+function getCurrentTime(){&#xd;
+	return FORMATO_SIMPLES.HH_MM.format(new Date());&#xd;
+}&#xd;
+&#xd;
+/**&#xd;
+ * Recebe uma data qualquer e formata padrão americano.&#xd;
+ * @Example: YYYY-MM-DD =&gt; YYYY-MM-DD&#xd;
+ * @Example: DD/MM/YYYY =&gt; YYYY-MM-DD&#xd;
+ * @param data : string&#xd;
+ * @return dataPadraoAmericano : string&#xd;
+ */&#xd;
+function dataPadraoAmericano(input){&#xd;
+    log.info(&quot;dataPadraoAmericano - input: &quot; + input);&#xd;
+    if(input == null || input == &quot;&quot;) return &quot;&quot;;&#xd;
+    &#xd;
+    if(input.indexOf(&quot;T&quot;) &gt; -1) input = input.replace(&quot;T&quot;, &quot; &quot;);&#xd;
+    var dataHora = input.split(&quot; &quot;);&#xd;
+    var data = dataHora[0];&#xd;
+    &#xd;
+    var americana = (data.indexOf(&quot;-&quot;) &gt; 3);&#xd;
+    var split = (americana) ? data.split(&quot;-&quot;) : data.split(&quot;/&quot;);&#xd;
+    &#xd;
+    return (americana) &#xd;
+        ? java.time.LocalDate.of(parseInt(split[0], 10), parseInt(split[1], 10), parseInt(split[2], 10)).toString()&#xd;
+        : java.time.LocalDate.of(parseInt(split[2], 10), parseInt(split[1], 10), parseInt(split[0], 10)).toString();&#xd;
+}&#xd;
+/**&#xd;
+ * Recebe uma data em milisegundos e formata padrão americano.&#xd;
+ * @Example: DD/MM/YYYY =&gt; YYYY-MM-DD&#xd;
+ * @param data : int&#xd;
+ * @return dataMilisPadraoAmericano : string&#xd;
+ */&#xd;
+function dataMilisPadraoAmericano(intMilis){&#xd;
+	return FORMATO_SIMPLES.DATA_EN_US.format(new java.util.Date(intMilis));&#xd;
+}&#xd;
+/**&#xd;
+ * Recebe uma data qualquer e formata padrão brasileiro.&#xd;
+ * @Example: YYYY-MM-DD =&gt; DD/MM/YYYY&#xd;
+ * @Example: DD/MM/YYYY =&gt; DD/MM/YYYY&#xd;
+ * @param data : string&#xd;
+ * @return dataPadraoBrasileiro : string&#xd;
+ */&#xd;
+function dataPadraoBrasileiro(input){&#xd;
+	log.info(&quot;dataPadraoBrasileiro - input: &quot; + input);&#xd;
+	if(input == null || input == &quot;&quot;) return &quot;&quot;;&#xd;
+    &#xd;
+	log.info(&quot;dataPadraoBrasileiro - go: &quot; + input);&#xd;
+    var dataHora = input.split(&quot; &quot;);&#xd;
+    var data = dataHora[0];&#xd;
+    &#xd;
+    var americana = (data.indexOf(&quot;-&quot;) &gt; 3);&#xd;
+    var split = (americana) ? data.split(&quot;-&quot;) : data.split(&quot;/&quot;);&#xd;
+    &#xd;
+    var localDate = (americana) &#xd;
+        ? java.time.LocalDate.of(parseInt(split[0], 10), parseInt(split[1], 10), parseInt(split[2], 10))&#xd;
+        : java.time.LocalDate.of(parseInt(split[2], 10), parseInt(split[1], 10), parseInt(split[0], 10));&#xd;
+    &#xd;
+    log.info(&quot;dataPadraoBrasileiro - localDate: &quot; + localDate.toString());&#xd;
+    return localDate.format(dataFormaBrasileira);&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>ENG_LITERALS</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>process.description=Solicitação de Alteração de Cargo e/ou Salário
+process.category=
+process.instructions=</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>ESP_LITERALS</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>process.description=Solicitação de Alteração de Cargo e/ou Salário
+process.category=
+process.instructions=</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>beforeSendData</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function beforeSendData(customFields,customFacts){
+	
+	
+}
+</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>beforeStateEntry</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function beforeStateEntry(sequenceId){&#xd;
+/*	log.info(_log + &quot; - beforeStateEntry - sequenceId: &quot; + sequenceId);&#xd;
+	if(sequenceId == Activity.GATEWAY_ENVOLVE_FISCAL){&#xd;
+		var type = hAPI.getCardValue(&quot;rd_tipo&quot;);&#xd;
+		if(type != &quot;adiantamento&quot;){&#xd;
+		&#xd;
+			var attchmentsNeeded = parseInt(hAPI.getAdvancedProperty(&quot;qtd_anexos&quot;),10);&#xd;
+			var needBoleto = hAPI.getCardValue(&quot;sl_forma_pagamento&quot;) == &quot;boleto&quot;;&#xd;
+			if(needBoleto) attchmentsNeeded++;&#xd;
+			&#xd;
+			var rateio = !isEmpty(hAPI.getCardValue(&quot;ck_rateio&quot;));&#xd;
+			if(rateio) attchmentsNeeded++;&#xd;
+			&#xd;
+			var attachments = hAPI.listAttachments();&#xd;
+			var hasAttachment = (attachments != null &amp;&amp; attachments.size() &gt;= attchmentsNeeded);&#xd;
+	&#xd;
+			if (!hasAttachment) {&#xd;
+				var erro = &quot;Atenção! 注意 ! Não esqueceça de adicionar os (&quot;+attchmentsNeeded+&quot;) anexos&quot;;&#xd;
+				&#xd;
+				if(needBoleto)&#xd;
+					erro += &quot;, incluindo o boleto. 包括匯票 &quot;&#xd;
+				&#xd;
+				if(rateio)&#xd;
+					erro += &quot;, incluindo o documento de detalhamento do rateio.&quot;&#xd;
+						&#xd;
+				erro += &quot; 不要忘記添加附件&quot;;&#xd;
+						&#xd;
+				throw erro;&#xd;
+		    }&#xd;
+		}&#xd;
+	}&#xd;
+*/	&#xd;
+	processMobileApproval();&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>POR_LITERALS</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>process.description=Solicitação de Alteração de Cargo e/ou Salário
+process.category=RH
+process.instructions=</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
+        <eventId>mobileApproval</eventId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function mobileApproval(){}&#xd;
+&#xd;
+function processMobileApproval(){&#xd;
+	var NUM_STATE = getValue(&quot;WKNumState&quot;);&#xd;
+	var NEXT_STATE = getValue(&quot;WKNextState&quot;);&#xd;
+	var IS_MOBILE = getValue(&quot;WKMobile&quot;);&#xd;
+	var USER_COMMENT = getValue(&quot;WKUserComment&quot;);&#xd;
+	var feedback = getApprovalFeedback(NUM_STATE);&#xd;
+	&#xd;
+	log.info(_log + &quot; - processMobileApproval &quot;&#xd;
+		+ &quot; - NUM_STATE: &quot; + NUM_STATE + &quot; - NEXT_STATE: &quot; + NEXT_STATE&#xd;
+		+ &quot; - IS_MOBILE: &quot; + IS_MOBILE + &quot; - USER_COMMENT: &quot; + USER_COMMENT &#xd;
+		+ &quot; - feedback: &quot;);&#xd;
+	log.dir(feedback);&#xd;
+	if(isApprovalActivity(NUM_STATE)){&#xd;
+		var targetStatus = approvalPath(NUM_STATE, NEXT_STATE);&#xd;
+		var new_feedback = { &#xd;
+			&quot;status&quot;: targetStatus, &#xd;
+			&quot;obs&quot;: isEmpty(USER_COMMENT) ? feedback.obs : USER_COMMENT&#xd;
+		};&#xd;
+		log.info(_log + &quot; - processMobileApproval - new_feedback: &quot;);&#xd;
+		log.dir(new_feedback);&#xd;
+		&#xd;
+		if((targetStatus == &quot;Reprovado&quot; || new_feedback.status == &quot;Reprovado&quot;) &amp;&amp; isEmpty(new_feedback.obs)){&#xd;
+			throw &quot;Conforme o direcionamento do fluxo, o processo é aprovado ou reprovado.&quot;&#xd;
+				+ &quot; Quando reprovado, o campo Observações é obrigatório.&quot;&#xd;
+				+ &quot; 根據流程的方向，流程被批准或不批准。未獲批准時，備註字段為必填字段。&quot;;&#xd;
+		}&#xd;
+		setApprovalFeedback(NUM_STATE, new_feedback);&#xd;
+	}&#xd;
+}&#xd;
+&#xd;
+function isApprovalActivity(currentState){&#xd;
+	return currentState == Activity.AVALIAR_GERENTE_AREA&#xd;
+	    || currentState == Activity.AVALIAR_DIRETOR_AREA&#xd;
+		|| currentState == Activity.AVALIAR_GERENTE_RH&#xd;
+		|| currentState == Activity.AVALIAR_DIRETOR_RH&#xd;
+		|| currentState == Activity.AVALIAR_DIRETOR_GERAL&#xd;
+}&#xd;
+&#xd;
+function getApprovalFeedback(currentState){&#xd;
+	if(currentState == Activity.AVALIAR_GERENTE_AREA){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_aprov_gerente_area&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_aprov_gerente_area&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_AREA){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_aprov_diretor_area&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_aprov_diretor_area&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_GERENTE_RH){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_aprov_gerente_rh&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_aprov_gerente_rh&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_RH){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_aprov_diretor_rh&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_aprov_diretor_rh&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_GERAL){&#xd;
+		return { &#xd;
+			&quot;status&quot;: hAPI.getCardValue(&quot;rd_aprov_diretor_geral&quot;)&#xd;
+			, &quot;obs&quot;: hAPI.getCardValue(&quot;ds_obs_aprov_diretor_geral&quot;)&#xd;
+		}&#xd;
+	}&#xd;
+	return null;&#xd;
+}&#xd;
+&#xd;
+function setApprovalFeedback(currentState, feedback){&#xd;
+	if(currentState == Activity.AVALIAR_GERENTE_AREA){&#xd;
+		hAPI.setCardValue(&quot;rd_aprov_gerente_area&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_aprov_gerente_area&quot;, feedback.obs);&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_AREA){&#xd;
+		hAPI.setCardValue(&quot;rd_aprov_diretor_area&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_aprov_diretor_area&quot;, feedback.obs);&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_GERENTE_RH){&#xd;
+		hAPI.setCardValue(&quot;rd_aprov_gerente_rh&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_aprov_gerente_rh&quot;, feedback.obs);&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_RH){&#xd;
+		hAPI.setCardValue(&quot;rd_aprov_diretor_rh&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_aprov_diretor_rh&quot;, feedback.obs);&#xd;
+	}&#xd;
+	else if(currentState == Activity.AVALIAR_DIRETOR_GERAL){&#xd;
+		hAPI.setCardValue(&quot;rd_aprov_diretor_geral&quot;, feedback.status);&#xd;
+		hAPI.setCardValue(&quot;ds_obs_aprov_diretor_geral&quot;, feedback.obs);&#xd;
+	}&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+  </list>
+  <list/>
+  <list>
+    <SwimLane>
+      <color>FFFFFF</color>
+      <height>691</height>
+      <width>831</width>
+      <positionX>30</positionX>
+      <positionY>11</positionY>
+      <stateName>Solicitação de Alteração de Cargo e/ou Salário</stateName>
+      <type>1</type>
+      <parentSequence>0</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>1</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>115</height>
+      <width>801</width>
+      <positionX>60</positionX>
+      <positionY>11</positionY>
+      <stateName>Solicitante</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>2</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>115</height>
+      <width>801</width>
+      <positionX>60</positionX>
+      <positionY>126</positionY>
+      <stateName>Gerente da Área</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>3</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>115</height>
+      <width>801</width>
+      <positionX>60</positionX>
+      <positionY>241</positionY>
+      <stateName>Diretor da Área</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>4</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>115</height>
+      <width>801</width>
+      <positionX>60</positionX>
+      <positionY>356</positionY>
+      <stateName>Gerente RH</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>5</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>115</height>
+      <width>801</width>
+      <positionX>60</positionX>
+      <positionY>471</positionY>
+      <stateName>Diretor RH</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>6</sequence>
+      </swimLanePK>
+    </SwimLane>
+    <SwimLane>
+      <color>E9E9E9</color>
+      <height>116</height>
+      <width>801</width>
+      <positionX>60</positionX>
+      <positionY>586</positionY>
+      <stateName>Diretor Geral</stateName>
+      <type>2</type>
+      <parentSequence>1</parentSequence>
+      <swimLanePK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>1</version>
+        <sequence>7</sequence>
+      </swimLanePK>
+    </SwimLane>
+  </list>
+  <list/>
+  <list/>
+  <list>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>49</version>
+        <linkSequence>26</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>569</positionX>
+      <positionY>298</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>49</version>
+        <linkSequence>28</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>569</positionX>
+      <positionY>413</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>49</version>
+        <linkSequence>30</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>569</positionX>
+      <positionY>529</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>49</version>
+        <linkSequence>32</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>569</positionX>
+      <positionY>644</positionY>
+    </ProcessLinkBend>
+  </list>
+  <list>
+    <ProcessStateTrigger>
+      <processStateTriggerPK>
+        <companyId>1</companyId>
+        <processId>solicitacao_alteracao_cargo_salario</processId>
+        <version>49</version>
+        <stateSequence>38</stateSequence>
+        <triggerSequence>0</triggerSequence>
+      </processStateTriggerPK>
+      <runType>0</runType>
+      <type>2</type>
+      <timeTrigger>0:0:0</timeTrigger>
+      <frequencia>01</frequencia>
+    </ProcessStateTrigger>
+  </list>
+  <list/>
+  <list/>
+  <list/>
+  <list/>
+  <list>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+      <processVersion>49</processVersion>
+      <stateSequence>18</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>19</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+      <processVersion>49</processVersion>
+      <stateSequence>18</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>17</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+      <processVersion>49</processVersion>
+      <stateSequence>19</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>20</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+      <processVersion>49</processVersion>
+      <stateSequence>19</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>17</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+      <processVersion>49</processVersion>
+      <stateSequence>20</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>21</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+      <processVersion>49</processVersion>
+      <stateSequence>20</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>17</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+      <processVersion>49</processVersion>
+      <stateSequence>21</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>9</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+      <processVersion>49</processVersion>
+      <stateSequence>21</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>17</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+      <processVersion>49</processVersion>
+      <stateSequence>33</stateSequence>
+      <appKey>approval</appKey>
+      <appField>approve</appField>
+      <description>18</description>
+    </ProcessAppConfiguration>
+    <ProcessAppConfiguration>
+      <id>0</id>
+      <tenantId>0</tenantId>
+      <processId>solicitacao_alteracao_cargo_salario</processId>
+      <processVersion>49</processVersion>
+      <stateSequence>33</stateSequence>
+      <appKey>approval</appKey>
+      <appField>reject</appField>
+      <description>17</description>
+    </ProcessAppConfiguration>
+  </list>
+  <list/>
+  <list/>
+</list>

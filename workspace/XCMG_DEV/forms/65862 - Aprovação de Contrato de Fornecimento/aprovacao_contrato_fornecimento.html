@@ -1,0 +1,810 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css" />
+		<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+		<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>	
+		
+		<link type="text/css" rel="stylesheet" href="custom.css" />
+		<script type="text/javascript" charset="utf-8" src="/webdesk/vcXMLRPC.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/jquery.mask.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/activities.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/utils.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/zooms.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/enableFields.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/approvers.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/main.js"></script>
+	</head>
+	<body>
+        <div class="fluig-style-guide">
+            <form name="form" role="form">
+                <div class="panel panel-default">
+                    <div class="panel-body xcmg-primary">
+                        <h1>
+                            <b>Ficha de Aprovação de Contrato de Fornecimento</b>
+                        </h1>
+                    </div>
+                </div>
+                <div class="panel panel-default" id="div-cabecalho">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title">
+                            <b>Cabeçalho 标题</b>
+                        </h3>
+                    </div>
+					<div class="panel-body">
+						<div class="form-group row-default">
+							<div class="row">
+								<div class="col-md-4 input-default">
+									<label for="cd_solicitacao">Nº 申请单</label>
+									<input type="text" class="form-control" name="nr_solicitacao" id="nr_solicitacao" readonly />
+								</div>
+								<div class="col-md-4 input-default">
+									<label for="nm_contrato">Nº do Contrato 合同号</label>	
+									<input type="text" class="form-control" name="nm_contrato" id="nm_contrato" readonly/>
+								</div>
+								<div class="col-md-4">
+									<label for="nm_filial" class="required">Filial 分公司</label>
+									<input type="hidden" id="cd_filial" name="cd_filial" />
+									<input type="hidden" id="cd_empresa" name="cd_empresa" />
+									<input type="zoom" class="form-control" id="filial" name="filial" data-zoom="{
+												'displayKey':'CodeAndDescription',
+												'datasetId':'protheus_filiais',
+												'maximumSelectionLength':'1',
+												'fields':[
+															{
+																'field':'Code',
+																'label':'ID',
+																'visible':'false'
+															},
+															{
+																'field':'CodeAndDescription',
+																'label':'Filial',
+																'standard':'true'
+															},
+															{
+																'field':'Description',
+																'label':'Filial',
+																'visible':'false'
+															},
+															{
+																'field':'CompanyCode',
+																'label':'Empresa',
+																'visible':'false'
+															}
+														]
+												}" />
+								</div>
+							</div>
+						</div>
+						<div class="form-group row-default">
+							<div class="row">
+								<div class="col-md-4 input-default">
+	                                <label for="cd_centro_custo" class="required">Centro de Custo 成本中心</label> 
+	                                <input type="zoom" class="form-control" id="cd_centro_custo" name="cd_centro_custo" data-zoom="{ 						
+	                                        'displayKey':'CodCC',
+	                                        'datasetId':'protheus_amarracao_cc',
+	                                        'maximumSelectionLength':'1',
+	                                        'fields':[
+	                                                    {
+	                                                        'field':'CodCC',
+	                                                        'label':'C&oacute;digo',
+	                                                        'visible':'true'
+	                                                    },
+	                                                    {
+	                                                        'field':'NomeCC',
+	                                                        'label':'Centro de custo',
+	                                                        'standard':'true'
+	                                                    },
+	                                                    {
+	                                                        'field':'gerente',
+	                                                        'label':'Gerente',
+	                                                        'visible':'false'
+	                                                    },
+	                                                    {
+	                                                        'field':'diretor',
+	                                                        'label':'Diretor',
+	                                                        'visible':'false'
+	                                                    }
+	                                                ]
+	                                        }"
+	                                />
+	                            </div>
+								<div class="col-md-4">	
+	                                <label for="nm_centro_custo">Nome C.C. 成本中心名称</label>	
+	                                <input type="text" class="form-control" name="nm_centro_custo" id="nm_centro_custo" readonly />
+	                            </div>
+	                            <div class="col-md-4">
+	                                <label for="nm_requisitante">Requisitante 申请人</label>
+	                                <input type="text" class="form-control" name="nm_requisitante" id="nm_requisitante" readonly />
+	                                <input type="hidden" id="cd_requisitante" name="cd_requisitante" />
+	                                <input type="hidden" name="lg_requisitante" id="lg_requisitante" />
+	                            </div>
+							</div>
+						</div>
+						<div class="form-group row-default">
+							<div class="row">
+								<div class="col-md-4 input-default">
+	                                <label for="cd_fornecedor" class="required">Código do Fornecedor 供应商编号</label>
+	                                    <input type="hidden" name="cd_fornecedor" id="cd_fornecedor" />
+	                                    <input type="hidden" name="lj_fornecedor" id="lj_fornecedor" />
+	                                    <input type="hidden" name="cgc_fornecedor" id="cgc_fornecedor"/>
+                                        <input type="hidden" name="A2_END" id="A2_END"/>
+                                        <input type="hidden" name="A2_BAIRRO" id="A2_BAIRRO"/>
+                                        <input type="hidden" name="A2_MUN" id="A2_MUN"/>
+                                        <input type="hidden" name="A2_EST" id="A2_EST"/>
+                                        <input type="hidden" name="A2_CEP" id="A2_CEP"/>
+                                        <input type="hidden" name="nm_fornecedor_fantasia" id="nm_fornecedor_fantasia"/>
+                                        <input type="hidden" name="A2_TIPO" id="A2_TIPO"/>
+                                      
+
+	                                    <input type="zoom" class="form-control" id="fornecedor"name="fornecedor" data-zoom="{
+	                                                    'displayKey':'COD_CGC_NOM',
+	                                                    'datasetId':'protheus_fornecedores',
+	                                                    'maximumSelectionLength':'1',
+	                                                    'filterValues' : '',	
+	                                                    'fields':[
+	                                                                {
+	                                                                    'field':'A2_COD',
+	                                                                    'label':'C&oacute;digo',
+	                                                                    'visible':'false'
+	                                                                },
+	                                                                {
+	                                                                    'field':'COD_CGC_NOM',
+	                                                                    'label':'Fornecedor',
+	                                                                    'standard':'true'
+	                                                                },
+	                                                                {
+	                                                                    'field':'A2_NREDUZ',
+	                                                                    'label':'Nome reduzido',
+	                                                                    'visible':'false'
+	                                                                },
+	                                                                {
+	                                                                    'field':'A2_CGC',
+	                                                                    'label':'CGC',
+	                                                                    'visible':'false'
+	                                                                },
+	                                                                {
+	                                                                    'field':'A2_END',
+	                                                                    'label':'ENDEREÇO',
+	                                                                    'visible':'false'
+	                                                                },
+	                                                                {
+	                                                                    'field':'A2_BAIRRO',
+	                                                                    'label':'BAIRRO',
+	                                                                    'visible':'false'
+	                                                                },
+	                                                                {
+	                                                                    'field':'A2_MUN',
+	                                                                    'label':'MUNICÍPIO',
+	                                                                    'visible':'false'
+	                                                                },
+	                                                                {
+	                                                                    'field':'A2_EST',
+	                                                                    'label':'ESTADO',
+	                                                                    'visible':'false'
+	                                                                },
+	                                                                {
+	                                                                    'field':'A2_CEP',
+	                                                                    'label':'CEP',
+	                                                                    'visible':'false'
+	                                                                },
+	                                                                {
+	                                                                    'field':'A2_TIPO',
+	                                                                    'label':'CPF_CNPJ',
+	                                                                    'visible':'false'
+	                                                                }
+	                                                            ]
+	                                                    }"
+	                                        />	
+	                            </div>	
+	                            <div class="col-md-4 input-default">
+	                                <label for="nm_fornecedor">Nome do Fornecedor 供应商名称</label>	
+	                                <input type="text" class="form-control" name="nm_fornecedor" id="nm_fornecedor" readonly/>
+	                            </div>
+	                            <div class="col-md-4 input-default">						
+	                                <label for="tipo_contrato" class="required">Tipo de Contrato 合同类型</label>	
+	                                <select name="tipo_contrato" id="tipo_contrato" class="form-control">
+	                                <option value=""></option>
+	                                <option value="EMPREITADA">EMPREITADA 承包商</option>
+	                                <option value="PRESTACAO_SERVICOS">PRESTAÇÃO DE SERVIÇOS 提供服务</option>
+	                                <!-- <option value="COMPRA">COMPRA 采购</option> -->
+	                                </select>                            
+	                            </div>
+	                        </div>
+                        </div>
+						<div class="form-group row-default">
+							<div class="row">
+	                            <div class="col-md-3 input-default">
+	                                <label for="valor_total_contrato">Valor Total do Contrato 合同总金额</label>	
+	                                <input type="text" class="form-control money number" name="valor_total_contrato" id="valor_total_contrato" />
+	                            </div>
+	                            <div class="col-md-3 input-default">
+	                                <label for="inicio_contrato">Início do Contrato 合同开始日期</label>					
+	                                <input type="date" class="form-control" name="inicio_contrato" id="inicio_contrato" />
+	                            </div>						
+	                            <div class="col-md-3 input-default">
+	                                <label for="fim_contrato">Fim do Contrato 合同结束日期</label>							
+	                                <input type="date" class="form-control" name="fim_contrato" id="fim_contrato" />
+	                            </div>
+	                            <div class="col-md-3 input-default">						
+	                                <label for="garantia">Possui Garantia 有保修</label>	
+	                                <select name="garantia" id="garantia" class="form-control">
+	                                <option value="SIM">SIM 有</option>
+	                                <option value="NAO">NÃO 没有</option>
+	                                </select>
+	                            </div>
+	                        </div>
+                        </div>
+						<div class="form-group row-default">
+							<div class="row">
+								<div class="col-md-3 input-default">
+	                                <label for="nm_forma_pagamento" class="required">Forma de pagamento 付款方式</label>	
+	                                    <select class="form-control" name="nm_forma_pagamento" id="nm_forma_pagamento">
+	                                        <option value=""></option>
+	                                        <option value="boleto">Boleto</option>
+	                                        <option value="cartao_credito">Cartão de crédito</option>
+	                                        <option value="dinheiro">Dinheiro</option>
+	                                        <option value="ted">TED</option>
+	                                    </select>		
+	                            </div>					
+	                            <div class="col-md-3 input-default">						
+	                                <label for="seguro">Possui Seguro 有保险</label>
+	                                <select name="seguro" id="seguro" class="form-control">
+	                                    <option value="SIM">SIM 有</option>
+	                                    <option value="NAO">NÃO 没有</option>
+	                                </select>
+	                            </div>
+	                            <div class="col-md-3 input-default">
+	                                <label for="valor_pagamento">Valor por pagamento 付款金额</label>	
+	                                <input type="text" class="form-control money number" name="valor_pagamento" id="valor_pagamento" />
+	                            </div>
+	                            <div class="col-md-3 input-default">						
+	                                <label for="tipo_ass_contrato">Contrato será assinado 将签订合同</label>	
+	                                <select name="tipo_ass_contrato" id="tipo_ass_contrato" class="form-control">
+	                                <option value="FISICA">FÍSICO 实体</option>
+	                                <option value="DIGITAL">DIGITAL 电子版</option>
+	                                </select>
+	                            </div>
+							</div>
+						</div>
+						<div class="form-group row-default">
+							<div class="row">
+								<div class="col-md-12 input-default">
+									<label for="nm_contrato_obra">Observações 评论</label>	
+									<textarea class="form-control" name="nm_contrato_obra" id="nm_contrato_obra"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+                    <!-- 	REPRESENTANTE LEGAL -->
+                    <div id="div_representante_legal">
+                        <div class="panel-heading xcmg-primary">
+                            <h3 class="panel-title"><b>Representante Legal</b></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group row row-default">
+                                <div class="col-md-2 input-default">
+                                    <label for="representante_legal">Representante Legal</label>	
+                                    <input type="text" class="form-control" name="representante_legal_1" id="representante_legal_1"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="nacionalidade">Nacionalidade</label>	
+                                    <input type="text" class="form-control" name="nacionalidade_1" id="nacionalidade_1"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="profissao">Profissão</label>	
+                                    <input type="text" class="form-control" name="profissao_1" id="profissao_1"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="nm_estado_civil_1">Estado Civil</label>	
+                                    <select class="form-control" name="nm_estado_civil_1" id="nm_estado_civil_1" onchange="escolheSelect(this)">
+                                        <option value=""></option>
+                                        <option value="SOLTEIRO">SOLTEIRO (A)</option>
+                                        <option value="CASADO">CASADO (A)</option>
+                                        <option value="SEPARADO">SEPARADO (A)</option>
+                                        <option value="DIVORCIADO">DIVORCIADO (A)</option>
+                                        <option value="VIUVO">VIÚVO (A)</option>
+                                    </select>		
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="email_representante">Email Representante</label>	
+                                    <input type="text" class="form-control" name="email_representante_1" id="email_representante_1"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="cpf">CPF</label>	
+                                    <input type="text" class="form-control" name="cpf_1" id="cpf_1"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="rg">RG</label>	
+                                    <input type="text" class="form-control" name="rg_1" id="rg_1"/>
+                                </div>
+                                <div id="div_conjuge_1" style="display:none">
+                                    <div class="col-md-2 input-default">
+                                        <label for="nome_conjuge">Nome Cônjuge</label>	
+                                        <input type="text" class="form-control" name="nome_conjuge_1" id="nome_conjuge_1"/>
+                                    </div>
+                                    <div class="col-md-2 input-default">
+                                        <label for="cpf_conjuge">CPF Cônjuge</label>	
+                                        <input type="text" class="form-control" name="cpf_conjuge_1" id="cpf_conjuge_1"/>
+                                    </div>
+                                    <div class="col-md-2 input-default">
+                                        <label for="rg_conjuge">RG Cônjuge</label>	
+                                        <input type="text" class="form-control" name="rg_conjuge_1" id="rg_conjuge_1"/>
+                                    </div>
+                                    <div class="col-md-2 input-default">
+                                        <label for="email_conjuge">Email Cônjuge</label>	
+                                        <input type="text" class="form-control" name="email_conjuge_1" id="email_conjuge_1"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr size="1" width="100%" align="center">
+                            <div class="form-group row row-default">
+                                <div class="col-md-2 input-default">
+                                    <label for="representante_legal">Representante Legal</label>	
+                                    <input type="text" class="form-control" name="representante_legal_2" id="representante_legal_2"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="nacionalidade">Nacionalidade</label>	
+                                    <input type="text" class="form-control" name="nacionalidade_2" id="nacionalidade_2"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="profissao">Profissão</label>	
+                                    <input type="text" class="form-control" name="profissao_2" id="profissao_2"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="nm_estado_civil_2">Estado Civil</label>	
+                                    <select class="form-control" name="nm_estado_civil_2" id="nm_estado_civil_2" onchange="escolheSelect(this)">
+                                        <option value=""></option>
+                                        <option value="SOLTEIRO">SOLTEIRO (A)</option>
+                                        <option value="CASADO">CASADO (A)</option>
+                                        <option value="SEPARADO">SEPARADO (A)</option>
+                                        <option value="DIVORCIADO">DIVORCIADO (A)</option>
+                                        <option value="VIUVO">VIÚVO (A)</option>
+                                    </select>		
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="email_representante">Email Representante</label>	
+                                    <input type="text" class="form-control" name="email_representante_2" id="email_representante_2"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="cpf">CPF</label>	
+                                    <input type="text" class="form-control" name="cpf_2" id="cpf_2"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="rg">RG</label>	
+                                    <input type="text" class="form-control" name="rg_2" id="rg_2"/>
+                                </div>
+                            </div>
+                            <div id="div_conjuge_2" style="display:none">
+                                <div class="col-md-2 input-default">
+                                    <label for="nome_conjuge">Nome Cônjuge</label>	
+                                    <input type="text" class="form-control" name="nome_conjuge_2" id="nome_conjuge_2"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="cpf_conjuge">CPF Cônjuge</label>	
+                                    <input type="text" class="form-control" name="cpf_conjuge_2" id="cpf_conjuge_2"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="rg_conjuge">RG Cônjuge</label>	
+                                    <input type="text" class="form-control" name="rg_conjuge_2" id="rg_conjuge_2"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="email_conjuge">Email Cônjuge</label>	
+                                    <input type="text" class="form-control" name="email_conjuge_2" id="email_conjuge_2"/>
+                                </div>
+                            </div>
+                            <hr size="1" width="100%" align="center">
+							<div class="form-group row row-default">
+                                <div class="col-md-2 input-default">
+                                    <label for="representante_legal">Representante Legal</label>	
+                                    <input type="text" class="form-control" name="representante_legal_3" id="representante_legal_3"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="nacionalidade">Nacionalidade</label>	
+                                    <input type="text" class="form-control" name="nacionalidade_3" id="nacionalidade_3"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="profissao">Profissão</label>	
+                                    <input type="text" class="form-control" name="profissao_3" id="profissao_3"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="nm_estado_civil_3">Estado Civil</label>	
+                                    <select class="form-control" name="nm_estado_civil_3" id="nm_estado_civil_3" onchange="escolheSelect(this)">
+                                        <option value=""></option>
+                                        <option value="SOLTEIRO">SOLTEIRO (A)</option>
+                                        <option value="CASADO">CASADO (A)</option>
+                                        <option value="SEPARADO">SEPARADO (A)</option>
+                                        <option value="DIVORCIADO">DIVORCIADO (A)</option>
+                                        <option value="VIUVO">VIÚVO (A)</option>
+                                    </select>		
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="email_representante">Email Representante</label>	
+                                    <input type="text" class="form-control" name="email_representante_3" id="email_representante_3"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="cpf">CPF</label>	
+                                    <input type="text" class="form-control" name="cpf_3" id="cpf_3"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="rg">RG</label>	
+                                    <input type="text" class="form-control" name="rg_3" id="rg_3"/>
+                                </div>
+                            </div>
+                            <div id="div_conjuge_3" style="display:none">
+                                <div class="col-md-2 input-default">
+                                    <label for="nome_conjuge">Nome Cônjuge</label>	
+                                    <input type="text" class="form-control" name="nome_conjuge_3" id="nome_conjuge_3"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="cpf_conjuge">CPF Cônjuge</label>	
+                                    <input type="text" class="form-control" name="cpf_conjuge_3" id="cpf_conjuge_3"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="rg_conjuge">RG Cônjuge</label>	
+                                    <input type="text" class="form-control" name="rg_conjuge_3" id="rg_conjuge_3"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="email_conjuge">Email Cônjuge</label>	
+                                    <input type="text" class="form-control" name="email_conjuge_3" id="email_conjuge_3"/>
+                                </div>
+                            </div>
+                            <hr size="1" width="100%" align="center">
+							<div class="form-group row row-default">
+                                <div class="col-md-2 input-default">
+                                    <label for="representante_legal">Representante Legal</label>	
+                                    <input type="text" class="form-control" name="representante_legal_4" id="representante_legal_4"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="nacionalidade">Nacionalidade</label>	
+                                    <input type="text" class="form-control" name="nacionalidade_4" id="nacionalidade_4"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="profissao">Profissão</label>	
+                                    <input type="text" class="form-control" name="profissao_4" id="profissao_4"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="nm_estado_civil_4">Estado Civil</label>	
+                                    <select class="form-control" name="nm_estado_civil_4" id="nm_estado_civil_4" onchange="escolheSelect(this)">
+                                        <option value=""></option>
+                                        <option value="SOLTEIRO">SOLTEIRO (A)</option>
+                                        <option value="CASADO">CASADO (A)</option>
+                                        <option value="SEPARADO">SEPARADO (A)</option>
+                                        <option value="DIVORCIADO">DIVORCIADO (A)</option>
+                                        <option value="VIUVO">VIÚVO (A)</option>
+                                    </select>		
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="email_representante">Email Representante</label>	
+                                    <input type="text" class="form-control" name="email_representante_4" id="email_representante_4"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="cpf">CPF</label>	
+                                    <input type="text" class="form-control" name="cpf_4" id="cpf_4"/>
+                                </div>
+                                <div class="col-md-2 input-default">
+                                    <label for="rg">RG</label>	
+                                    <input type="text" class="form-control" name="rg_4" id="rg_4"/>
+                                </div>
+                                <div id="div_conjuge_4" style="display:none">
+                                    <div class="col-md-2 input-default">
+                                        <label for="nome_conjuge">Nome Cônjuge</label>	
+                                        <input type="text" class="form-control" name="nome_conjuge_4" id="nome_conjuge_4"/>
+                                    </div>
+                                    <div class="col-md-2 input-default">
+                                        <label for="cpf_conjuge">CPF Cônjuge</label>	
+                                        <input type="text" class="form-control" name="cpf_conjuge_4" id="cpf_conjuge_4"/>
+                                    </div>
+                                    <div class="col-md-2 input-default">
+                                        <label for="rg_conjuge">RG Cônjuge</label>	
+                                        <input type="text" class="form-control" name="rg_conjuge_4" id="rg_conjuge_4"/>
+                                    </div>
+                                    <div class="col-md-2 input-default">
+                                        <label for="email_conjuge">Email Cônjuge</label>	
+                                        <input type="text" class="form-control" name="email_conjuge_4" id="email_conjuge_4"/>
+                                    </div>
+                                </div>
+                            </div>
+						</div>						  			
+                    </div>
+                    
+                 
+                    <div class="panel panel-default">
+                    <div class="panel-heading xcmg-primary">
+                        <h3 class="panel-title">
+                            <b>Autorizações 批准</b>
+                        </h3>
+                    </div>
+					<div class="panel-body">
+						<!-- GERENTE ÁREA -->
+						<div class="form-group row row-default">
+                            <div class="col-md-3 input-default">
+                                <label for="nm_funcao_1">Função 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_1" id="nm_funcao_1" readonly />
+                            </div>
+                            <div class="col-md-3">						
+                                <label for="nm_gerente_area">Nome 名字</label>	
+                                <input type="text" class="form-control" name="nm_gerente_area" id="nm_gerente_area" readonly />
+                                <input type="hidden" id="cd_gerente_area" name="cd_gerente_area" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_gerente_area" name="aux_aprov_gerente_area" />
+                                <label class="required">Aprovado? 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_gerente_area" id="rd_aprov_gerente_area_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_gerente_area" data-aux-id="aux_aprov_gerente_area"
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_gerente_area" id="rd_aprov_gerente_area_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_gerente_area" data-aux-id="aux_aprov_gerente_area" 
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_gerente_area">Observações 备注</label>	
+                                <textarea class="form-control" name="ds_obs_gerente_area" id="ds_obs_gerente_area"></textarea>
+                            </div>
+                        </div>	
+						<!-- DIRETOR ÁREA -->
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">						
+                                <label for="nm_funcao_2">Função 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_2" id="nm_funcao_2" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_diretor_area">Nome 名字</label>	
+                                <input type="text" class="form-control" name="nm_diretor_area" id="nm_diretor_area" readonly />
+                                <input type="hidden" id="cd_diretor_area" name="cd_diretor_area" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_diretor_area" name="aux_aprov_diretor_area" />
+                                <label class="required">Aprovado? 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_diretor_area" id="rd_aprov_diretor_area_sim" 
+                                            class="aprovacao" data-obs-id="rd_aprov_diretor_area" data-aux-id="aux_aprov_diretor_area" 
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_diretor_area" id="rd_aprov_diretor_area_nao" 
+                                            class="aprovacao" data-obs-id="rd_aprov_diretor_area" data-aux-id="aux_aprov_diretor_area"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_diretor_area">Observações 备注</label>	
+                                <textarea class="form-control" name="ds_obs_diretor_area" id="ds_obs_diretor_area"></textarea>
+                            </div>
+                        </div>
+                        <!-- DEPARTAMENTO JURÍDICO -->
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">			
+                                <label for="nm_funcao_3">Função 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_3" id="nm_funcao_3" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_advogado">Nome 名字</label>	
+                                <input type="text" class="form-control" name="nm_advogado" id="nm_advogado" readonly />
+                                <input type="hidden" id="cd_advogado" name="cd_advogado" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_juridico" name="aux_aprov_juridico" />
+                                <label class="required">Aprovado? 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_advogado" id="rd_aprov_advogado_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_advogado" data-aux-id="aux_aprov_juridico"
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_advogado" id="rd_aprov_advogado_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_advogado" data-aux-id="aux_aprov_juridico"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="obs_advogado">Observações 备注</label>	
+                                <textarea class="form-control" name="ds_obs_advogado" id="ds_obs_advogado"></textarea>
+                            </div>
+                        </div>
+                        <!-- CONTROLADORIA -->
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">
+                                <label for="nm_funcao_4">Função 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_4" id="nm_funcao_4" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_controladoria">Nome 名字</label>	
+                                <input type="text" class="form-control" name="nm_controladoria" id="nm_controladoria" readonly />
+                                <input type="hidden" id="cd_controladoria" name="cd_controladoria" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_controladoria" name="aux_aprov_controladoria" />
+                                <label class="required">Aprovado? 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_controladoria" id="rd_aprov_controladoria_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_controladoria" data-aux-id="aux_aprov_controladoria" 
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_controladoria" id="rd_aprov_controladoria_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_controladoria" data-aux-id="aux_aprov_controladoria"class="aprovacao" data-obs-id="ds_obs_controladoria" data-aux-id="aux_aprov_controladoria"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_controladoria">Observações 备注</label>	
+                                <textarea class="form-control" name="ds_obs_controladoria" id="ds_obs_controladoria"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">
+                        <!-- GERENTE FINANCEIRO -->
+                                <label for="nm_funcao_5">Função 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_5" id="nm_funcao_5" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_gerente_financeiro">Nome 名字</label>	
+                                <input type="text" class="form-control" name="nm_gerente_financeiro" id="nm_gerente_financeiro" readonly />
+                                <input type="hidden" id="cd_gerente_financeiro" name="cd_gerente_financeiro" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_gerente_financeiro" name="aux_aprov_gerente_financeiro" />
+                                <label class="required">Aprovado? 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_ger_fin" id="rd_aprov_ger_fin_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_gerente_financeiro"  data-aux-id="aux_aprov_gerente_financeiro"
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_ger_fin" id="rd_aprov_ger_fin_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_gerente_financeiro"  data-aux-id="aux_aprov_gerente_financeiro"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_gerente_financeiro">Observações 备注</label>	
+                                <textarea class="form-control" name="ds_obs_gerente_financeiro" id="ds_obs_gerente_financeiro"></textarea>
+                            </div>
+                        </div>	
+                        
+                        <!-- DIRETOR_FINANCEIRO -->
+
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">					
+                                <label for="nm_funcao_6">Função 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_6" id="nm_funcao_6" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_diretor_financeiro">Nome 名字</label>	
+                                <input type="text" class="form-control" name="nm_diretor_financeiro" id="nm_diretor_financeiro" readonly />
+                                <input type="hidden" id="cd_diretor_financeiro" name="cd_diretor_financeiro" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_diretor_financeiro" name="aux_aprov_diretor_financeiro" />
+                                <label class="required">Aprovado? 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_diretor_financeiro" id="rd_aprov_diretor_financeiro_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_diretor_financeiro" data-aux-id="aux_aprov_diretor_financeiro"
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_diretor_financeiro" id="rd_aprov_diretor_financeiro_nao" 
+                                            class="aprovacao" data-obs-id="ds_obs_diretor_financeiro" data-aux-id="aux_aprov_diretor_financeiro"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_diretor_financeiro">Observações 备注</label>	
+                                <textarea class="form-control" name="ds_obs_diretor_financeiro" id="ds_obs_diretor_financeiro"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- PRESIDENTE -->
+
+                        <div class="form-group row row-default">
+                            <div class="col-md-3 input-default">
+                                <label for="nm_funcao_7">Função 职位</label>	
+                                <input type="text" class="form-control" name="nm_funcao_7" id="nm_funcao_7" readonly />
+                            </div>
+                            <div class="col-md-3">	
+                                <label for="nm_presidente">Nome 名字</label>	
+                                <input type="text" class="form-control" name="nm_presidente" id="nm_presidente" readonly/>
+                                <input type="hidden" id="cd_presidente" name="cd_presidente" />
+                            </div>
+                            <div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+                                <input type="hidden" id="aux_aprov_presidente" name="aux_aprov_presidente" />
+                                <label class="required">Aprovado? 批准了吗 ?</label>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_presidente" id="rd_aprov_presidente_sim" 
+                                            class="aprovacao" data-obs-id="ds_obs_presidente" data-aux-id="aux_aprov_presidente"
+                                            value="Aprovado" type="radio" />			
+                                        <span class="">Aprovado 批准了</span>		
+                                    </label>
+                                </div>
+                                <div class="radio">		
+                                    <label>			
+                                        <input name="rd_aprov_presidente" id="rd_aprov_presidente_nao" 
+                                        class="aprovacao" data-obs-id="ds_obs_presidente" data-aux-id="aux_aprov_presidente"
+                                            value="Reprovado" type="radio" />			
+                                        <span class="">Reprovado 未获批准</span>		
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">	
+                                <label for="ds_obs_presidente">Observações 备注</label>	
+                                <textarea class="form-control" name="ds_obs_presidente" id="ds_obs_presidente"></textarea>
+                            </div>	
+                        </div>
+                    </div>
+                    
+                    <!-- 	PARECER JURIDICO -->
+                    <div id="div_parecer_juridico" style="display:none">
+                        <div class="panel-heading xcmg-primary">
+                            <h3 class="panel-title"><b>Parecer(es) Jurídico/Solicitante</b></h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label for="parecer_juridico">Parecer(es) Jurídico/Solicitante</label>	
+                                    <textarea class="form-control" name="parecer_juridico" id="parecer_juridico" rows="6"></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="historico_parecer_juridico">Histórico Parecer(es) Jurídico/Solicitante</label>	
+                                    <textarea class="form-control" name="historico_parecer_juridico" id="historico_parecer_juridico" rows="6" readonly></textarea>
+                                </div>
+                            </div>
+                        </div>						  			
+                    </div>    
+                    <div id="div_impressao" style="display:none" palign="center">
+                    	<div class="panel-body">
+							<div class="form-group row row-default">
+                            	<div class="col-md-2 input-default">
+									<button class="form-control" style="margin-left: 16;" type="button"  name="bt_Contrato" onclick="Contrato();">Contrato</button>
+								</div>
+							</div>
+						</div>						  			
+					</div>               
+                </div>
+            </form>
+        </div>        
+    </body>
+</html>

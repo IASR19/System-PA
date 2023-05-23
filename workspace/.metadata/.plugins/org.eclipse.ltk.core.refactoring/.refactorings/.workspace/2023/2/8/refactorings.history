@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;XCMG_DEV/forms/Adto e Prestação de contas viagem&apos;" deleteContents="false" description="Delete resource &apos;XCMG_DEV/forms/Adto e Prestação de contas viagem&apos;" element1="/XCMG_DEV/forms/Adto e Prestação de contas viagem" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1677103059052"/>
+</session>

@@ -1,0 +1,866 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/style-guide/css/fluig-style-guide.min.css"/>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/portal/resources/js/mustache/mustache-min.js"></script>
+	<script type="text/javascript" src="/style-guide/js/fluig-style-guide.min.js" charset="utf-8"></script>
+	
+	<link type="text/css" rel="stylesheet" href="custom.css" />
+	<script type="text/javascript" charset="utf-8" src="/webdesk/vcXMLRPC.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/jquery.mask.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/activities.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/utils.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/zoom.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/enableFields.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/approvers.js"></script>
+</head>
+<body>
+	<div class="fluig-style-guide">
+		<form name="form" role="form">
+			<div class="panel panel-default">
+				<div class="panel-body xcmg-primary">
+					<h1>
+						Solicitação de Alteração de Cargo e/ou Salário - 职位或工资变更申请
+					</h1>
+				</div>
+			</div>
+			<!-- DIV CABEÇALHO -->
+			<div class="panel panel-default" id="div-cabecalho">
+				<div class="panel-heading xcmg-primary">
+					<h3 class="panel-title">
+						<b>Cabeçalho 标题</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-2">
+							<label for="nr_solicitacao">Nº 申请单</label>
+							<input type="text" class="form-control" name="nr_solicitacao" id="nr_solicitacao" readonly />
+						</div>
+						<div class="col-md-2">
+							<label for="dt_solicitacao">Abertura 申请日期</label>
+							<div class="input-group">
+								<input type="text" class="form-control" name="dt_solicitacao" id="dt_solicitacao" readonly />
+								<span class="input-group-addon fs-cursor-pointer">
+									<span class="fluigicon fluigicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<label for="nm_requisitante">Requisitante 申请人</label>
+							<input type="hidden" name="cd_requisitante" id="cd_requisitante" />
+							<input type="hidden" name="lg_requisitante" id="lg_requisitante" />
+							<input type="text" class="form-control" name="nm_requisitante" id="nm_requisitante" readonly />
+						</div>
+						<div class="col-md-4">
+							<label for="cd_filial" class="required">Filial 分公司</label>
+							<input type="hidden" name="cd_empresa" id="cd_empresa" />
+							<input type="hidden" name="cd_filial" id="cd_filial" />
+							<input type="zoom" 
+                                   class="form-control" 
+                                   id="nm_filial"
+                                   name="nm_filial" 
+                                 	data-zoom="{
+									'displayKey':'CodeAndDescription',
+									'datasetId':'protheus_filiais',
+									'maximumSelectionLength':'1',
+									'fields':[
+												{
+													'field':'Code',
+													'label':'ID'
+												},
+												{
+													'field':'CodeAndDescription',
+													'label':'Filial',
+													'standard':'true'
+												},
+												{
+													'field':'Description',
+													'label':'Filial',
+													'visible':'false'
+												},
+												{
+													'field':'CompanyCode',
+													'label':'Empresa',
+													'visible':'false'
+												}
+											 ]
+									}"
+							/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="cd_centro_custo" class="required">Centro de custo 成本中心</label>	
+							<input type="zoom" 
+								class="form-control" 
+								id="cd_centro_custo"
+								name="cd_centro_custo" 
+								data-zoom="{
+										'displayKey':'CodCC',
+										'datasetId':'protheus_amarracao_cc',
+										'maximumSelectionLength':'1',
+										'fields':[
+													{
+														'field':'CodCC',
+														'label':'C&oacute;digo',
+														'visible':'true'
+													},
+													{
+														'field':'NomeCC',
+														'label':'Centro de custo',
+														'standard':'true'
+													},
+													{
+														'field':'gerente',
+														'label':'Gerente',
+														'visible':'false'
+													},
+													{
+														'field':'diretor',
+														'label':'Diretor',
+														'visible':'false'
+													}
+												 ]
+										}"
+							/>
+						</div>
+						<div class="col-md-9">	
+							<label for="nm_centro_custo">Nome C.C. 成本中心名称</label>	
+							<input type="text" class="form-control" name="nm_centro_custo" id="nm_centro_custo" readonly />
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- DIV ALTERAÇÃO PROPOSTA -->
+			<div class="panel panel-default" id="div-alteracao">
+				<div class="panel-heading xcmg-primary">
+					<h3 class="panel-title">
+						<b>Alteração Proposta / 变更申请原因</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-3">						
+							<label for="ds_alteracao_proposta">Alteração Proposta / 变更申请原因</label>	
+        					<select name="ds_alteracao_proposta" id="ds_alteracao_proposta" class="form-control">
+        					<option value="MÉRITO">Mérito / 优良成绩</option>
+       						<option value="PROMOÇÃO">Promoção / 晋升</option>
+       						<option value="ENQUADRAMENTO">Enquadramento / 分配到</option>
+       						<option value="ALTERAÇÃO CENTRO DE CUSTO">Alteração Centro de Custo / 转部门</option>
+       						<option value="RECRUTAMENTO INTERNO">Recrutamento Interno / 内部招聘</option>
+       						<option value="ADICIONAL DE INSALUBRIDADE">Adicional de Insalubridade / 额外不健康的</option>
+       						<option value="ADICIONAL DE PERICULOSIDADE">Adicional de Periculosidade / 额外危险性</option>
+       						<option value="OUTRO">Outro / 其他</option>
+        					</select>
+						</div>
+						<div class="col-md-4">
+							<label for="ds_alteracao_proposta_outro">------------</label>
+							<input type="text" class="form-control" name="ds_alteracao_proposta_outro" id="ds_alteracao_proposta_outro"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-6">
+							<label for="funcionarios">Nome do Funcionário / 姓名</label>
+							<input type="zoom" 
+                                 class="form-control" 
+                                 id="funcionarios"
+                                 name="funcionarios" 
+                                 data-zoom="{
+												'displayKey':'RA_NOMECMP',
+												'datasetId':'protheus_funcionarios',
+												'maximumSelectionLength':'1',
+												'fields':[
+															{	
+																'field':'RA_MAT', 
+																'label':'MATRÍCULA', 
+																'standard':'true'
+															},
+															{	
+																'field':'RA_NOMECMP', 
+																'label':'NOME', 
+																'standard':'true'
+															},
+															{	
+																'field':'RA_ADMISSA', 
+																'label':'DATA DE ADMISSÃO',
+																'visible':'false'
+															},
+															{	
+																'field':'RA_FILIAL', 
+																'label':'FILIAL',
+																'visible':'false'
+															},
+															{	
+																'field':'RA_CARGO', 
+																'label':'CÓDIGO DO CARGO',
+																'visible':'false'
+															},														
+															{	
+																'field':'RA_CC', 
+																'label':'CÓDIGO DO CENTRO DE CUSTO',
+																'visible':'false'
+															},
+															{	
+																'field':'RA_SALARIO', 
+																'label':'SALÁRIO',
+																'visible':'false'
+															}
+														]
+								 }"
+								/>
+						</div>
+						<div class="col-md-3">
+							<label for="nr_registro">Registro / 注册号码</label>
+							<input type="text" class="form-control" style="text-align: center;" name="nr_registro" id="nr_registro" readonly />
+						</div>
+						<div class="col-md-3">
+							<label for="dt_admissao">Admissão / 入职时间</label>
+							<input type="text"  class="form-control" style="text-align: center;" name="dt_admissao" id="dt_admissao" readonly />
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">
+							<table class="table table-bordered">
+								<tr>
+									<th style="text-align: center" class="col-md-2"></th>
+									<th style="text-align: center" class="col-md-5"><b>Situação
+											Atual 目前情况</b></th>
+									<th style="text-align: center" class="col-md-5"><b>Situação Proposta 拟定情况</b></th>
+								</tr>
+								<tr>
+									<td><b>Cargo Atual / 目前职位</b></td>
+									<td style="text-align: center;"><input type="text" class="form-control"
+										style="text-align: center;" name="cargo_atual_situacao_atual"
+										id="cargo_atual_situacao_atual" readonly></td>
+									<td>
+										<input type="zoom" 
+                                 			class="form-control" 
+                                 			id="cargo_proposto"
+                                 			name="cargo_proposto" 
+                                 			data-zoom="{
+												'displayKey':'Q3_DESCSUM',
+												'datasetId':'protheus_cargos',
+												'maximumSelectionLength':'1',
+												'fields':[
+															{	
+																'field':'Q3_CARGO', 
+																'label':'CÓDIGO', 
+																'standard':'true'
+															},
+															{	
+																'field':'Q3_DESCSUM', 
+																'label':'DESCRIÇÃO', 
+																'standard':'true'
+															}
+														]
+								 					}"
+											/>
+									</td>
+								<tr>
+									<td><b>Departamento / 部门</b></td>
+									<td style="text-align: center;"><input type="text" class="form-control"
+										style="text-align: center;" name="departamento_situacao_atual"
+										id="departamento_situacao_atual" readonly></td>
+									<td style="text-align: center;">
+										<input type="text" class="form-control" style="text-align: center;" name="departamento_situacao_proposta" id="departamento_situacao_proposta">
+									</td>
+								</tr>
+								<tr>
+									<td><b>C. de custo / 会计成本中心</b></td>
+									<td style="text-align: center;"><input type="text" class="form-control"
+										style="text-align: center;" name="centro_custo_situacao_atual"
+										id="centro_custo_situacao_atual" readonly></td>
+									<td style="text-align: center;">
+										<input type="text" class="form-control" style="text-align: center;" name="centro_custo_situacao_proposta" id="centro_custo_situacao_proposta" readonly>
+									</td>
+								</tr>
+								<tr>
+									<td><b>Gestor / 管理者</b></td>
+									<td style="text-align: center;"><input type="hidden" name="cd_gestor_situacao_atual"
+										id="cd_gestor_situacao_atual" readonly> <input
+										type="text" class="form-control" style="text-align: center;"
+										name="gestor_situacao_atual" id="gestor_situacao_atual"
+										readonly></td>
+									<td style="text-align: center;">
+										<input type="text" class="form-control" style="text-align: center;" name="gestor_situacao_proposta" id="gestor_situacao_proposta">
+									</td>
+								</tr>
+								<tr>
+									<td><b>Empresa / 公司</b></td>
+									<td style="text-align: center;"><input type="text" class="form-control"
+										style="text-align: center;" name="empresa_situacao_atual"
+										id="empresa_situacao_atual" readonly></td>
+									<td style="text-align: center;">
+										<input type="text" class="form-control" style="text-align: center;" name="empresa_situacao_proposta" id="empresa_situacao_proposta" readonly>
+									</td>
+								</tr>
+							</table>
+						</div>
+						
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="justificativa">Justificativa / 理由</label>
+							<textarea class="form-control" name="justificativa" id="justificativa"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- DIV HISTÓRICO SALARIAL -->
+			<div class="panel panel-default" id="div-historico-salarial">
+				<div class="panel-heading xcmg-primary">
+					<h3 class="panel-title">
+						<b>Histórico Salarial / 薪资历史</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-12" >
+							<table tablename="tb_historico_salarial" class="table table-bordered" nodeletebutton="true" noaddbutton="true">
+								<thead>
+									<tr>
+										<td class="col-xs-1 tb-col-1" style="text-align: center;">
+											<b>Data / 日期</b>
+										</td>
+										<td class="col-xs-2 tb-col-2" style="text-align: center;">
+											<b>Função / 功能</b>
+										</td>
+										<td class="col-xs-2 tb-col-2" style="text-align: center;">
+											<b>Salário / 工资</b>
+										</td>
+										<td class="col-xs-4 tb-col-4" style="text-align: center">
+											<b>Descrição / 描述</b>
+										</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="col-xs-1 tb-col-1" style="text-align: center;">
+											<input type="text" class="form-control" style="text-align: center;" name="dt_hist_sal_data" id="dt_hist_sal_data" readonly>
+										</td>
+										<td class="col-xs-2 tb-col-2" style="text-align: left;">
+											<input type="text" class="form-control" style="text-align: center;" name="nm_hist_sal_funcao" id="nm_hist_sal_funcao" readonly>
+										</td>
+										<td class="col-xs-2 tb-col-2" style="text-align: left;">
+											<input type="text" class="form-control" style="text-align: center;" name="vl_hist_sal_salario" id="vl_hist_sal_salario" readonly>
+										</td>
+										<td class="col-xs-4 tb-col-4" style="text-align: center;">
+											<input type="text" class="form-control" style="text-align: left;" name="nm_hist_sal_descricao" id="nm_hist_sal_descricao" readonly>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-3">
+							<label for="dt_inic_altera_cargo_salario">Fazer a alteração a partir de / 变更日期</label>
+							<div class="input-group calendar">
+								<input type="text" class="form-control campo-data" name="dt_inic_altera_cargo_salario" id="dt_inic_altera_cargo_salario" autocomplete="off" />
+									<span class="input-group-addon fs-cursor-pointer">
+										<span class="fluigicon fluigicon-calendar"></span>
+									</span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">							
+								<label for="hist_avaliacao_desempenho">Histórico da Avaliação de Desempenho</label>
+								<table class="table table-bordered">
+									<tr>
+										<td class="col-md-1">Mês / Ano</td>
+										<td style="text-align: center;">
+											<div id = "historico_avaliacao_1">
+											</div>
+										</td>
+										<td>
+											<div id = "historico_avaliacao_2">
+											</div>
+										</td>
+										<td>
+											<div id = "historico_avaliacao_3">
+											</div>
+										</td>
+										<td>
+											<div id = "historico_avaliacao_4">
+											</div>
+										</td>
+										<td>
+											<div id = "historico_avaliacao_5">
+											</div>
+										</td>
+										<td>
+											<div id = "historico_avaliacao_6">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>Nota</td>
+										<td><input type="text" class="form-control" name="nota_mes_1" /></td>
+										<td><input type="text" class="form-control" name="nota_mes_2" /></td>
+										<td><input type="text" class="form-control" name="nota_mes_3" /></td>
+										<td><input type="text" class="form-control" name="nota_mes_4" /></td>
+										<td><input type="text" class="form-control" name="nota_mes_5" /></td>
+										<td><input type="text" class="form-control" name="nota_mes_6" /></td>
+									</tr>
+								</table>								
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- DIV AVALIAÇÃO RH -->
+			<div class="panel panel-default" id="div-avaliacao-rh">
+				<div class="panel-heading xcmg-primary">
+					<h3 class="panel-title">
+						<b>Avaliação de Recursos Humanos / 人力资源评估</b>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="form-group row">
+						<div class="col-md-8">
+							<table class="table table-bordered col-md-8">
+								<tr>
+									<td class="col-md-4"></td>
+									<td style="text-align: center;"><b>Situação Atual / 目前情况</b></td>
+									<td style="text-align: center;"><b>Situação Proposta / 拟定情况</b></td>
+								</tr>
+								<tr>
+									<td>
+										<b>Salário / 工资</b>
+									</td>
+									<td>
+										<input type="text" class="form-control money" style="text-align: center;" name="salario_situacao_atual" id="salario_situacao_atual" readonly>
+									</td>
+									<td>
+										<input type="text" class="form-control" style="text-align: center;" name="salario_situacao_proposta" id="salario_situacao_proposta">
+									</td>
+								<tr>
+									<td>
+										<b>Tipo de Adicional / 额外类型</b>
+									</td>
+									<td>
+										<input type="text" class="form-control" style="text-align: center;"  name="tipo_adic_sit_atual" id="tipo_adic_sit_atual" readonly>
+									</td>
+									<td>
+										<input type="text" class="form-control" style="text-align: center;" name="tipo_adic_sit_proposta" id="tipo_adic_sit_proposta">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Percentual de Aumento / 增加百分比</b>
+									</td>
+									<td>
+										<input type="text" class="form-control" style="text-align: center;" name="perc_aumento_sit_atual" id="perc_aumento_sit_atual" readonly>
+									</td>
+									<td>
+										<input type="text" class="form-control" style="text-align: center;" name="perc_aumento_sit_proposta" id="perc_aumento_sit_proposta">
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<b>Valor do Adicional / 额外金额</b>
+									</td>
+									<td>
+										<input type="text" class="form-control" style="text-align: center;" name="valor_adic_sit_atual" id="valor_adic_sit_atual" readonly>
+									</td>
+									<td>
+										<input type="text" class="form-control" style="text-align: center;" name="valor_adic_sit_proposta" id="valor_adic_sit_proposta">
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="col-md-4">
+							<table class="table table-bordered">
+								<tr>
+									<td class="col-md-4" style="text-align: center;"><b>Aumento Salarial / 加薪</b></td>
+								</tr>
+								<tr>
+									<td class="col-md-4" style="text-align: left;">Em valor 金额:</td>
+								</tr>
+								<tr>
+									<td class="col-md-4"><input type="text" class="form-control" style="text-align: center;" name="aumento_salarial_valor" id="aumento_salarial_valor" readonly></td>
+								</tr>
+								<tr>
+									<td class="col-md-4" style="text-align: left;">Em percentual / 百分比</td>
+								</tr>
+								<tr>
+									<td class="col-md-4"><input type="text" class="form-control" style="text-align: center;" name="aumento_salarial_percentual" id="aumento_salarial_percentual" readonly></td>				
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-8">
+							<table class="table table-bordered col-md-8">
+								<tr>
+									<td class="col-md-4">
+										<b>Valor Total Mensal / 每月总金额</b>
+									</td>
+									<td style="text-align: center;">
+										<input type="text" class="form-control" style="text-align: center;" name="vlr_total_mensal_sit_atual" id="vlr_total_mensal_sit_atual" readonly>
+									</td>
+									<td style="text-align: center;">
+										<input type="text" class="form-control" style="text-align: center;" name="vlr_total_mensal_sit_proposta" id="vlr_total_mensal_sit_proposta" readonly>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-12">
+							<label for="observacoes_avaliacao_rh">Observações / 备注</label>
+							<textarea class="form-control" name="observacoes_avaliacao_rh" id="observacoes_avaliacao_rh"></textarea>
+						</div>
+					</div>		
+				</div>
+			</div>
+			<!-- DIV APROVAÇÕES -->
+			<div class="panel panel-default" id="div-aprovacoes">
+				<div class="panel-heading xcmg-primary">
+					<h3 class="panel-title"><b>Aprovações 批准</b></h3>
+				</div>
+				<div class="panel-body">
+					<!-- GERENTE DA ÁREA -->
+					<div class="form-group row row-default">
+						<div class="col-md-3 input-default">	
+							<label for="nm_funcao_1">Função 职位</label>	
+							<input type="text" class="form-control" name="nm_funcao_1" id="nm_funcao_1" readonly />
+						</div>
+						<div class="col-md-3">	
+							<label for="nm_gerente_area">Nome 名字</label>	
+							<input type="text" class="form-control" name="nm_gerente_area" id="nm_gerente_area" readonly />
+							<input type="hidden" id="cd_gerente_area" name="cd_gerente_area" />
+						</div>
+						<div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+							<input type="hidden" id="aux_aprov_gerente_area" name="aux_aprov_gerente_area" />
+							<label class="required">Aprovado? 批准了吗 ?</label>
+							<div class="radio">		
+								<label>			
+									<input name="rd_aprov_gerente_area" id="rd_aprov_gerente_area_sim" 
+										class="aprovacao" data-obs-id="ds_obs_aprov_gerente_area" data-aux-id="aux_aprov_gerente_area"
+										value="Aprovado" type="radio" />			
+									<span class="">Aprovado 批准了</span>		
+								</label>
+							</div>
+							<div class="radio">		
+								<label>			
+									<input name="rd_aprov_gerente_area" id="rd_aprov_gerente_area_nao" 
+										class="aprovacao" data-obs-id="ds_obs_aprov_gerente_area" data-aux-id="aux_aprov_gerente_area"
+										value="Reprovado" type="radio" />			
+									<span class="">Reprovado 未获批准</span>		
+								</label>
+							</div>
+						</div>
+						<div class="col-md-4">	
+							<label for="ds_obs_gerente_area">Observações 备注</label>	
+							<textarea class="form-control" name="ds_obs_aprov_gerente_area" id="ds_obs_aprov_gerente_area"></textarea>
+						</div>
+					</div>
+					<!-- DIRETOR DA ÁREA -->
+					<div class="form-group row row-default">
+						<div class="col-md-3 input-default">	
+							<label for="nm_funcao_2">Função 职位</label>	
+							<input type="text" class="form-control" name="nm_funcao_2" id="nm_funcao_2" readonly />
+						</div>
+						<div class="col-md-3">	
+							<label for="nm_diretor_area">Nome 名字</label>	
+							<input type="text" class="form-control" name="nm_diretor_area" id="nm_diretor_area" readonly />
+							<input type="hidden" id="cd_diretor_area" name="cd_diretor_area" />
+						</div>
+						<div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+							<input type="hidden" id="aux_aprov_diretor_area" name="aux_aprov_diretor_area" />
+							<label class="required">Aprovado? 批准了吗 ?</label>
+							<div class="radio">		
+								<label>			
+									<input name="rd_aprov_diretor_area" id="rd_aprov_diretor_area_sim" 
+										class="aprovacao" data-obs-id="ds_obs_aprov_diretor_area"  data-aux-id="aux_aprov_diretor_area"
+										value="Aprovado" type="radio" />			
+									<span class="">Aprovado 批准了</span>		
+								</label>
+							</div>
+							<div class="radio">		
+								<label>			
+									<input name="rd_aprov_diretor_area" id="rd_aprov_diretor_area_nao" 
+										class="aprovacao" data-obs-id="ds_obs_aprov_diretor_area" data-aux-id="aux_aprov_diretor_area"
+										value="Reprovado" type="radio" />			
+									<span class="">Reprovado 未获批准</span>		
+								</label>
+							</div>
+						</div>
+						<div class="col-md-4">	
+							<label for="ds_obs_diretor_area">Observações 备注</label>	
+							<textarea class="form-control" name="ds_obs_aprov_diretor_area" id="ds_obs_aprov_diretor_area"></textarea>
+						</div>
+					</div>
+					<!-- GERENTE DE RECURSOS HUMANOS -->
+					<div class="form-group row row-default">
+						<div class="col-md-3 input-default">	
+							<label for="nm_funcao_3">Função 职位</label>	
+							<input type="text" class="form-control" name="nm_funcao_3" id="nm_funcao_3" readonly />
+						</div>
+						<div class="col-md-3">	
+							<label for="nm_gerente_rh">Nome 名字</label>	
+							<input type="text" class="form-control" name="nm_gerente_rh" id="nm_gerente_rh" readonly />
+							<input type="hidden" id="cd_gerente_rh" name="cd_gerente_rh" />
+						</div>
+						<div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+							<input type="hidden" id="aux_aprov_gerente_rh" name="aux_aprov_gerente_rh" />
+							<label class="required">Aprovado? 批准了吗 ?</label>
+							<div class="radio">		
+								<label>			
+									<input name="rd_aprov_gerente_rh" id="rd_aprov_gerente_rh_sim" data-aux-id="aux_aprov_gerente_rh" 
+										class="aprovacao" data-obs-id="ds_obs_aprov_gerente_rh" 
+										value="Aprovado" type="radio" />			
+									<span class="">Aprovado 批准了</span>		
+								</label>
+							</div>
+							<div class="radio">		
+								<label>			
+									<input name="rd_aprov_gerente_rh" id="rd_aprov_gerente_rh_nao" data-aux-id="aux_aprov_gerente_rh"
+										class="aprovacao" data-obs-id="ds_obs_aprov_gerente_rh" 
+										value="Reprovado" type="radio" />			
+									<span class="">Reprovado 未获批准</span>		
+								</label>
+							</div>
+						</div>
+						<div class="col-md-4">	
+							<label for="ds_obs_gerente_rh">Observações 备注</label>	
+							<textarea class="form-control" name="ds_obs_aprov_gerente_rh" id="ds_obs_aprov_gerente_rh"></textarea>
+						</div>
+					</div>
+					<!-- DIRETOR DE RECURSOS HUMANOS -->
+					<div class="form-group row row-default">
+						<div class="col-md-3 input-default">	
+							<label for="nm_funcao_4">Função 职位</label>	
+							<input type="text" class="form-control" name="nm_funcao_4" id="nm_funcao_4" readonly />
+						</div>
+						<div class="col-md-3">	
+							<label for="nm_diretor_rh">Nome 名字</label>	
+							<input type="text" class="form-control" name="nm_diretor_rh" id="nm_diretor_rh" readonly />
+							<input type="hidden" id="cd_diretor_rh" name="cd_diretor_rh" />
+						</div>
+						<div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+						   	<input type="hidden" id="aux_aprov_diretor_rh" name="aux_aprov_diretor_rh" />
+							<label class="required">Aprovado? 批准了吗 ?</label>
+							<div class="radio">		
+								<label>			
+									<input name="rd_aprov_diretor_rh" id="rd_aprov_diretor_rh_sim" 
+										class="aprovacao" data-obs-id="ds_obs_aprov_diretor_rh" data-aux-id="aux_aprov_diretor_rh"
+										value="Aprovado" type="radio" />			
+									<span class="">Aprovado 批准了</span>		
+								</label>
+							</div>
+							<div class="radio">		
+								<label>			
+									<input name="rd_aprov_diretor_rh" id="rd_aprov_diretor_rh_nao" 
+										class="aprovacao" data-obs-id="ds_obs_aprov_diretor_rh" data-aux-id="aux_aprov_diretor_rh"
+										value="Reprovado" type="radio" />			
+									<span class="">Reprovado 未获批准</span>		
+								</label>
+							</div>
+						</div>
+						<div class="col-md-4">	
+							<label for="ds_obs_diretor_rh">Observações 备注</label>	
+							<textarea class="form-control" name="ds_obs_aprov_diretor_rh" id="ds_obs_aprov_diretor_rh"></textarea>
+						</div>
+					</div>
+					<!-- DIRETOR GERAL -->
+					<div class="form-group row row-default">
+						<div class="col-md-3 input-default">	
+							<label for="nm_funcao_5">Função</label>	
+							<input type="text" class="form-control" name="nm_funcao_5" id="nm_funcao_5" readonly />
+						</div>
+						<div class="col-md-3">	
+							<label for="nm_diretor_geral">Nome 名字</label>	
+							<input type="text" class="form-control" name="nm_diretor_geral" id="nm_diretor_geral" readonly />
+							<input type="hidden" id="cd_diretor_geral" name="cd_diretor_geral" />
+						</div>
+						<div class="col-md-2 fs-no-padding-left fs-no-padding-right">
+							<input type="hidden" id="aux_aprov_diretor_geral" name="aux_aprov_diretor_geral" />
+							<label class="required">Aprovado? 批准了吗 ?</label>
+							<div class="radio">		
+								<label>			
+									<input name="rd_aprov_diretor_geral" id="rd_aprov_diretor_geral_sim" 
+										class="aprovacao" data-obs-id="ds_obs_aprov_diretor_geral" data-aux-id="aux_aprov_diretor_geral"
+										value="Aprovado" type="radio" />			
+									<span class="">Aprovado 批准了</span>		
+								</label>
+							</div>
+							<div class="radio">		
+								<label>			
+									<input name="rd_aprov_diretor_geral" id="rd_aprov_diretor_geral_nao" 
+										class="aprovacao" data-obs-id="ds_obs_aprov_diretor_geral" data-aux-id="aux_aprov_diretor_geral"
+										value="Reprovado" type="radio" />			
+									<span class="">Reprovado 未获批准</span>		
+								</label>
+							</div>
+						</div>
+						<div class="col-md-4">	
+							<label for="ds_obs_aprov_diretor_geral">Observações 备注</label>	
+							<textarea class="form-control" name="ds_obs_aprov_diretor_geral" id="ds_obs_aprov_diretor_geral"></textarea>
+						</div>
+					</div>
+				
+				
+										
+				</div>			
+			</div>			
+		</form>
+	</div>	
+</body>
+<script type="text/javascript">
+
+	//AJUSTANDO O CALENDÁRIO
+	
+	var hoje = new Date();
+	hoje.setDate(hoje.getDate());
+	
+	var onlyDate = FLUIGC.calendar('#dt_inic_altera_cargo_salario', {
+		minDate: hoje,
+		pickDate: true,
+		daysOfWeekDisabled: [0,6]	    
+	});
+
+	
+	//HISTORICO_AVALIACAO_DESEPENHO
+	const data_atual = new Date();
+	
+	const mes_6 = new date(new Date().getFullYear(), (new Date().getMonth() - 2).toString().padStart(2, '0'), new Date().getDate());
+	
+	
+	const mes_5 = (data_atual.getMonth() - 2).toString().padStart(2, '0')
+  	+ '/' + data_atual.getFullYear();
+	
+	const mes_4 = (data_atual.getMonth() - 3).toString().padStart(2, '0')
+  	+ '/' + data_atual.getFullYear();
+	
+	const mes_3 = (data_atual.getMonth() - 4).toString().padStart(2, '0')
+  	+ '/' + data_atual.getFullYear();
+	
+	const mes_2 = (data_atual.getMonth() - 5).toString().padStart(2, '0')
+  	+ '/' + data_atual.getFullYear();
+	
+	const mes_1 = (data_atual.getMonth() - 6).toString().padStart(2, '0')
+  	+ '/' + data_atual.getFullYear();
+  
+	//const mes_anterior = new Date(
+    //new Date().getFullYear(),
+    //new Date().getMonth() - 2, 
+    //new Date().getDate()
+	//);
+
+	//alert(mes_anterior);
+
+  	//var cont;
+  
+  	//function subtractMonths(data_atual, months) {
+  	//	data_atual.setMonth(data_atual.getMonth() - months);
+  	//	return data_atual;
+	//}
+
+
+
+	var historico_avaliacao_6 = document.getElementById("historico_avaliacao_6"); 
+	var historico_avaliacao_5 = document.getElementById("historico_avaliacao_5"); 
+	var historico_avaliacao_4 = document.getElementById("historico_avaliacao_4"); 
+	var historico_avaliacao_3 = document.getElementById("historico_avaliacao_3"); 
+	var historico_avaliacao_2 = document.getElementById("historico_avaliacao_2"); 
+	var historico_avaliacao_1 = document.getElementById("historico_avaliacao_1"); 
+  
+	/*
+    for (var cont = 4; cont >= 0; cont -- ) {
+    
+    		var cont2 = 1;
+        
+        const newDate = subtractMonths(data_atual, cont2);
+        
+        var td_outros_meses = document.createElement('td');				
+
+		td_outros_meses.append(document.createTextNode((data_atual.getMonth() - cont2)
+        .toString().padStart(2, '0') + '/' + data_atual.getFullYear()));
+        
+        //td_outros_meses.appendChild(document.createTextNode(newDate));
+
+		historico_avaliacao.appendChild(td_outros_meses);
+
+
+		cont2 ++;
+
+        }
+     */   
+
+		//for (i = 0; i<=5; i++){
+
+			var td_mes_6 = document.createElement('td');
+			var td_mes_5 = document.createElement('td');
+			var td_mes_4 = document.createElement('td');
+			var td_mes_3 = document.createElement('td');
+			var td_mes_2 = document.createElement('td');
+			var td_mes_1 = document.createElement('td');
+   		
+   			//td_mes_anterior.style.border = "1px solid";
+			//td_mes_anterior.style.textAlign = "center";
+			
+       
+       		td_mes_6.append(document.createTextNode(mes_6));
+			td_mes_5.append(document.createTextNode(mes_5));
+			td_mes_4.append(document.createTextNode(mes_4));
+			td_mes_3.append(document.createTextNode(mes_3));
+			td_mes_2.append(document.createTextNode(mes_2));
+			td_mes_1.append(document.createTextNode(mes_1));
+ 
+        	historico_avaliacao_6.appendChild("teste"/*td_mes_6*/);
+			historico_avaliacao_5.appendChild(td_mes_5);
+			historico_avaliacao_4.appendChild(td_mes_4);
+			historico_avaliacao_3.appendChild(td_mes_3);
+			historico_avaliacao_2.appendChild(td_mes_2);
+			historico_avaliacao_1.appendChild(td_mes_1);
+        
+		//}
+   		
+
+
+
+
+
+
+		for (i = 1; i<=6; i++){
+ 
+ const oneMonthAgo = new Date(
+    new Date().getFullYear(),
+    new Date().getMonth() - i
+    );
+
+//alert(oneMonthAgo)
+ 
+//}
+ 
+ 
+ 
+    /*var data = new Date(),
+        //dia  = data.getDate().toString(),
+        //diaF = (dia.length == 1) ? '0'+dia : dia,
+        mes  = (data.getMonth() - i ).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        mesF = (mes.length == 1) ? '0' + mes : mes,
+        anoF = data.getFullYear();
+    alert (mesF + "/" + anoF);*/
+ //console.log(
+  oneMonthAgo.toLocaleDateString('pt-BR', {
+    year: 'numeric',
+    month: '2-digit',
+  });
+//);
+
+alert(oneMonthAgo);
+ 
+ }
+
+
+
+
+
+
+</script>
+</html>

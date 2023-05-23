@@ -1,0 +1,3 @@
+function beforeSendData(customFields,customFacts){
+
+}

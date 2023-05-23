@@ -1,0 +1,2606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.2.v201410272105 Build &lt;4.4.2.v20150217-1805></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="XCMG" id="59">
+            <property name="backgroundImage">email_templates/xcmg_logo_original.png</property>
+            <property name="backgroundRepeat">no-repeat</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="backgroundAttachment">fixed</property>
+            <property name="backgroundImage">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAABLCAMAAAD9JUoRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACNUExURQAAAAAAAAAA/wAAgACAgABVqgBAgEBAgAAzmTMzmQArgABVgABJkgBAgCBAgAA5jhw5jgAzgABNgABGiwBAgAA7iRROiRROnSdOnSdinTtinTt2nTt2sU52sWKJsXaJsXadxImdxImxxJ2xxJ2x2LHE2MTE2MTY2MTY69jY69jr6+vr6+vr/+v//////1n7v9MAAAAvdFJOUwABAQICAwQEBQUGBgcICAkJCgoLDA0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0Nz6AEXgAAAAlwSFlzAAAOwwAADsMBx2+oZAAACeJJREFUeF7tnG2X4zQMhdtMW0onpZRmZndn2TdggX3j//88ZOs6kWTZSdrCOZR5vkziuEp8I8uynd3FM8/8o7T7C4CN/wnrh8vYwc7/gS3afD4tLN0+dx2afAEwdftc2gkjsHXzPIs1g8tDFgFbN88O7b0I2Lp5nsWagSPW+79qfEAtCWzdPI5YUKXEO1QTwNbNk4v1K0Qp8Rn1BLB182RivYImZX5GzQHYunkysb5CkjJfH1G1B7ZuHivWGyhS4yPq9sDWzWPF+hOCVHmJygnYunmMWB8hRx3rWrB182ixXo5HrMgT6gPY+i+z2tzvdrvtCqc+Wqy3EGMUHeNh6+o0K0mD0utC9zigGWBfvJOaSE+J7sxb/IKBLeZwDND99vFAghoRFG3ofeGQweVFS8d6ra2jEqoe4HsoDnxlYIkLgjUu9ayORxjX5NYiSqxJ0Z3BLxjYAlzWZGPHw8M9ahB4m/vFcs9HkWNco77btjj32FMbcaiIZgXGXwKQGmzlnTN2d6gmUGJ9m46K8bAF+Blaco54IEGNxeLE59RwPmB+CJfucFLE1SEXC8USKVb+Ki2HJar2CLEef8HBFN7KqAVbCS5snGafUAPOTw8P1QIt9ZK7gyjwoR+5S+EwDRqvziDWYdJquvZEJdaHLH8q86Q6ImwlePW1a7TbRngriD2DlGviQeREXrZ2XUbT3clfCfRA5joOGt9scD7KSTuXaI8N2zV+U5Vhq4dfGzlKHj7p6hLOQ4d8EKGzSW0giXFk+CncuQeFGoiFs0nwL8AgVshHTf5Uhur+iUMCtga4eOOs8J8WG9aKHE/0wS29wtEOGFmWtg3UWOvbimLVBo8cZbUXK642CAFqPIa6Io+HrQHuBDT+5h0R7kPXxJi2ndwGcqzcZkQ2q6BnSB3GA7tG9sT+zpy7v8BZHeRjfYiDLQGXHwrhJb7j7RBj6WxCtIrQIFuIzUIsN7qTM1NYm+dXgQ5GiSRWyt1xWgd1f8OpIxZ7TTEYa0/aLtbTuiBR3rwTLlBIoKjZ87WSO+5JLLTfXWK39LPtVyiALQl7CgVd78GtVqOpVQ89uJ9zE30WWXLnbnYfZPpxFmLR6MZ84/Maj/1s+xNKYEvBV9rFkg8EHYUOIeFmzicE5KrFyr1YJTft3Mx/nJQdQqwXaD0xHuPFpAjpA2wp2DDdxyYEIbYIv9pVmp9B5kq9cBCr6D7d5M4u2Q+fCXGb0PZI6lsl5MoENi9gSwMJ7IsO8VL1wTlxhHwSRw7oLaVOeBad+qAqiqVWG8Zc6xPqRdi1YEuDQGTaF/xKjnxNKRq7VBNXrBT8hNOZ7Hf3mYdvQq4hiGKp9v/1PlYsYZZx4hQRtgzwGNUvwpKB0IrcrNytIqcDf2AYf0SvuRai411H7Lkc0oC3Gt7ccZ+vakWxzB50rFzg8QsqgVgIW5Z4LbxwPiDC/XEYkdcc4CsSXHGJFc6IS8p/+Pf+159RrJdoOaitPphFep4fwZYFXabpc3V6Kv3iiykRcaRwllGdPoYKU5PbATNZprF5hzlkBgf4J7Sd+VpefTBbsMgdYCsDKVGKSzRc6cGbHgpHOSZcgKrfUKvnJwd9XjABFsuskTo79OADagAsasFWBgYmchGKnWHmbLQpTl24w+bUtaD7zI/u9S0KDcQyYfsNl2aYDY2U7sNWzj1fX1Pva+mpTPA9lKOx71cj0bs9I0PvU4NtWwERAWKZWJTtOTOPn3EdoLgsFroNuXqImLap5RSroFU1vJNYaaVsOl0KWPXMGJPpJBavuvT4U0Qd2gb/Y1MeCMix8XCzHnoCHFn6JhjSwxZo54+E/Xg7kspypf7+Jhq5eTyugTQzrImVpsikVjZO7Ytj2zDP14zk+sUpdpkzxXr8Bg0Yb4W5n20zKCXYlEN6hDDkZH6+L47z/OMcXL4ivQtXe2Emlg3eKJXgChDZGJvKWeIRoqdkbnQ/V6zvcfmKwPLoe+BKIgz8DhWYfIpocvfXKCbYVEYK6JvF5hRiPE4T5QwSv7eMvP1zgOXR2TfXEmJ5sz6BuSz3NtiUJQX0Jqq2zh5orlj1vOE80h75SM6BnSMhlv3oD6UJnbcO0Z1gU4akxBr3yFo7V6zqVOdMUoAfEQtTRSmW6Wg6xpvorpYm2JRm0AqNpOfSw1VZLH8KgotXJd1pZJ3IE6s43BEoAzprZVOKlPIsB4ewkeH7oliclxlmrBHOAHfCWQnkMkqsiiJGR52GsSkJZOhSHwzY/fxy6uBmWs7Lr3RMmwEXYbVwUiLWsWK9hhZgiPFmEccMlbA1ABWOWh6ah8mOuHc2MwZ2a/nNT7Ne52NhtyqOj7vpo0G8DT7gKnyulTqrFstErS8ofXgoTAoBbCVW6IPU0/UqgO6I5ekO050GXFWO5a7ZzBg6xVdjhSWgFBWMWGaKmGZ/JmG16T1sgQ1atl805t4m2cruPpNNcRDzvrIocwofOy2ati04apd83D7uL9ADoPQPnDKDwwHYYtJ00Nu7p7uKB+ouS53IMwti0cDrWC722TH6DwOsWGIHMcA79KXVhgRsRVLQpT7oPN1Krd+tL0rKy9sX9E4csc4eTtEypyPo1YcvIcb7a8kC2AoMWrkrRCSh6Ii+oFOhvuMPhyEIOWJtauNJhWEvII8aOpb/QSWjmz+wReAZu+9KI91K6bO8JHsK98OhJlxwZCwnwVWw8BfIxTJ9joI5jkD/7cwAbA1eQ72tsBBHtxbtoGhwtlpxiMKxIu7NOFkZlZ7hx+73WQN6y/Wj/eAbtSSwlQY/92vSFGD1rsL27P9YIu5/eGLxdM+xSqXzB5TwTVeP1yqPx1dPT2/evXv7xi5GBGALZ3Tqucseg6Pe/yLtcDQT1gQnklhevIDjyQwBi5gqVhU2lTrendcHhrGLup6ci6xmfJ0l4UQxHw4xUcKZJJbP861TSkeZq4mVBj9KPL0BPc7bWU5yLTGrODWL5ozAixlIJnQKxziV8IU5aqVpTuJqYkGrvf9ZDL9vhHb9zwlC8CnkSxXQPTKx0uYsTiW4Mv3VyMlpZH7IcyDN0QepDV680guS5GXyHYVvoNLvJ4OGWLHSYl5FLHqKSWPKPv/i4RpiHfq272iGhUNB+C4S8GOSpOp5w2Ph8/iJpN5mM18Ue2KJfGl8l7/rpziKSSpXOfXOtMmmzhHx3QKPiPTc2iVicMi6VIXepF5TGcYuFAh+xJXIqu4kd+KRFf4Szgw2KeLsFt4Ck46SHDCy3tpFn1+2Xrxz9B9sqqfn3CuCEoEe2Kjnt27LT21b2A+PHE/dBeC5m0b6z3CSvyJZ0WMT16+C5UAeODSr9Xq92RH018oBaje8jzdJNzOZgs+SWncmsHB1lsva+702/+a9nnnmmfNYLP4Gj+qupRSKHi8AAAAASUVORK5CYII=</property>
+            <property name="backgroundImageType">embed</property>
+            <property name="backgroundPositionX">center</property>
+            <property name="backgroundPositionY">center</property>
+            <property name="backgroundRepeat">no-repeat</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <list id="24">
+            <header>
+                <table id="47">
+                    <property name="width">7.59375in</property>
+                    <column id="57">
+                        <property name="width">2.1770833333333335in</property>
+                    </column>
+                    <column id="58">
+                        <property name="width">5.416666666666667in</property>
+                    </column>
+                    <header>
+                        <row id="48">
+                            <cell id="49">
+                                <image id="44">
+                                    <property name="height">0.5in</property>
+                                    <property name="width">1.8854166666666667in</property>
+                                    <property name="source">embed</property>
+                                    <property name="imageName">XCMG_logo.png</property>
+                                </image>
+                            </cell>
+                            <cell id="50">
+                                <label id="46">
+                                    <property name="fontSize">20pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Contrato de Locação por Prazo Determinado</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </header>
+                </table>
+            </header>
+            <detail>
+                <text id="63">
+                    <property name="contentType">auto</property>
+                    <text-property name="content"><![CDATA[
+
+
+
+
+
+]]></text-property>
+                </text>
+            </detail>
+        </list>
+        <text id="60">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>
+<U>
+I.	PREÂMBULO:
+</U>
+</B>
+
+]]></text-property>
+        </text>
+        <text id="64">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="353">
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>
+1.	PARTES CONTRATANTES:
+</B>]]></text-property>
+        </text>
+        <text id="65">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="66">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>1.1.	LOCADORA: XXXXXXXXX XXXXXXXXXXXXX</B>, pessoa jurídica de direito privado, inscrita no CNPJ/MF sob o número XXXXXXXXXXXXXXXXX, com sede na Rua XX, s/n, bairro XXXXXXXXXXXX, município de XXXXXXXX- XX, CEP: XXX-XXXXX, presente neste ato na forma de seu contrato social, por seu Administrador XXXXXX XXXXXX, brasileiro, XXXXXXX, administrador da empresa, portador do CPF XXXXXX XXXXX XXX, documento de identidade XXXXXXXX STS/XX, endereço eletrônico XXXXXXXXXXXXXXXXXX, com endereço na XXXXXX XXXXXXXX XXXXXXXX, nº XXX, bairro XXXXXXXXX XXXXX, cidade de XXXXX – XX, CEP: XXXXXXXXXXXXX.
+
+
+]]></text-property>
+        </text>
+        <text id="67">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="68">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>1.2.</B>	LOCATÁRIA: XXXXXXXXX XXXXXXXXXXXXX, pessoa jurídica de direito privado, inscrita no CNPJ/MF sob o número XXXXXXXXXXXXXXXXX, com sede na Rua XX, s/n, bairro XXXXXXXXXXXX, município de XXXXXXXX- XX, CEP: XXX-XXXXX, presente neste ato na forma de seu contrato social, por seu Administrador XXXXXX XXXXXX, brasileiro, XXXXXXX, administrador da empresa, portador do CPF XXXXXX XXXXX XXX, documento de identidade XXXXXXXX STS/XX, endereço eletrônico XXXXXXXXXXXXXXXXXX, com endereço na XXXXXX XXXXXXXX XXXXXXXX, nº XXX, bairro XXXXXXXXX XXXXX, cidade de XXXXX – XX, CEP: XXXXXXXXXXXXX. ]]></text-property>
+        </text>
+        <text id="69">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="70">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B><U>II.	TERMINOLOGIA:</U></B><BR><BR>
+
+Convencionam as PARTES o significado dos termos aplicados no presente contrato:<BR><BR>
+
+<B>LOCATÁRIA:</B> XXXXX XXXXXXX XXXXXXXXXX<BR><BR>
+
+<B>XCMG BRASIL:</B> XCMG BRASIL INVESTIMENTOS LTDA.<BR><BR>
+
+<B>PARTES:</B> LOCATÁRIA e XCMG BRASIL em conjunto.<BR><BR>
+
+<B>CONTRATO:</B> O presente acordo de vontades.<BR><BR>
+]]></text-property>
+        </text>
+        <text id="80">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>EQUIPAMENTO (S):</B>
+
+]]></text-property>
+        </text>
+        <text id="81">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="354">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[XX (XXX) PÁ CARREGADEIRA, modelo XXXXXX, ano XXXX, sob o chassi n. XXXXXXXXXXXXXXXXX.
+
+]]></text-property>
+        </text>
+        <text id="355">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="72">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>III.	COMPROMISSO:</B>
+]]></text-property>
+        </text>
+        <text id="73">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="74">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[Declaram ter entre si justo e acordado a celebração do presente <B>CONTRATO DE LOCAÇÃO DE EQUIPAMENTO(S) POR TEMPO DETERMINADO</B>, que se regerá mediante as cláusulas abaixo, que mutuamente estipulam, outorgam e aceitam, a saber:]]></text-property>
+        </text>
+        <text id="75">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="76">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>1.	CLÁUSULA 1ª – OBJETO:</B>]]></text-property>
+        </text>
+        <text id="77">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="78">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>1.1.	</B>O presente contrato tem por objeto a Locação de XX (XX) EQUIPAMENTO(S) acima indicado, bem como seus acessórios.
+
+
+]]></text-property>
+        </text>
+        <text id="79">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="86">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>1.2.	</B>A LOCATÁRIA declara que o(s) equipamento(s) se encontra(m) em perfeitas condições de uso, manuseio, e funcionamento, estando perfeitamente de acordo e satisfeita com o bem locado, tendo sido vistoriado antes de serem postos à disposição, em conformidade com os relatórios de vistoria conferidos e assinados pela LOCATÁRIA.
+
+
+]]></text-property>
+        </text>
+        <text id="87">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="90">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>1.3.	</B>Está excluído do preço do aluguel todo e qualquer combustível/energia para movimentação e utilização do(s) equipamento e seus acessório(s), assim como os custos com operador.
+
+
+]]></text-property>
+        </text>
+        <text id="91">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="92">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>2.	CLÁUSULA 2ª – DO PRAZO DE LIBERAÇÃO DO EQUIPAMENTO:</B>
+
+
+]]></text-property>
+        </text>
+        <text id="93">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="94">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>2.1.	</B>A XCMG BRASIL obriga-se a disponibilizar o(s) EQUIPAMENTO(S) para retirada pela LOCATÁRIA em até 15 (quinze) dias úteis, após a assinatura do presente termo, ressalvados situações alheias a vontade do LOCADOR.
+
+
+]]></text-property>
+        </text>
+        <text id="95">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="96">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>3.	CLÁUSULA 3ª – DA ENTREGA TÉCNICA:</B>
+
+]]></text-property>
+        </text>
+        <text id="97">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="98">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>3.1.	</B>A ENTREGA TÉCNICA será promovida no endereço do LOCADOR, situado XXXXXXX XXXXX XXX, sem número, XXXXX, XXXXXXXXXX XXXXXX, XXXXXXXX, Distrito Industrial, no município de XXXXXX XXXXX, Estado de XXXXX XXXXX, CEP XXXXX XXXXX.]]></text-property>
+        </text>
+        <text id="99">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="102">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>3.2.	</B>Define-se como ENTREGA TÉCNICA o recebimento e aceitação pela LOCATÁRIA do(s) EQUIPAMENTO(S) indicados neste CONTRATO.]]></text-property>
+        </text>
+        <text id="103">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="104">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>3.3.	</B>A ENTREGA TÉCNICA será realizada por um operador devidamente habilitado, com experiência na direção e manuseio do(s) EQUIPAMENTO(S), o qual será indicado pela LOCATÁRIA.
+
+
+]]></text-property>
+        </text>
+        <text id="105">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="106">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>3.4.	</B>A XCMG BRASIL obriga-se a fazer, ao operador indicado pela LOCATÁRIA, uma demonstração técnica sobre a operação e manutenção do(s) EQUIPAMENTO(S), objeto deste CONTRATO, esclarecendo-lhe eventuais dúvidas.]]></text-property>
+        </text>
+        <text id="107">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="110">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>3.5.	</B>No ato da ENTREGA TÉCNICA a XCMG BRASIL se obriga a fornecer a LOCATÁRIA os Manuais de Operação do(s) EQUIPAMENTO(S).]]></text-property>
+        </text>
+        <text id="111">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="112">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>4.	CLÁUSULA 4ª – DO PRAZO CONTRATUAL:</B>]]></text-property>
+        </text>
+        <text id="113">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="114">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>4.1.	</B>O prazo de vigência deste CONTRATO DE LOCAÇÃO é de <B>XX (XXXXX XXXXX XXXX) meses</B>, corridos após a retirada do (s) equipamento(s) na sede da LOCADORA, renováveis mediante termo aditivo devidamente acordado entre as partes.]]></text-property>
+        </text>
+        <text id="115">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="116">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>4.2.	</B>Após o período mínimo garantido de XX (XXXX) meses, a LOCATÁRIA poderá rescindir o contrato sem a incidência de multa, desde que notifique a LOCADORA com antecedência mínima de XX (XXXXX) dias. ]]></text-property>
+        </text>
+        <text id="117">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="118">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>4.3.	</B>Findo o prazo estipulado nesta cláusula, a LOCATÁRIA deverá promover com a imediata devolução do(s) equipamento(s), independentemente de aviso ou notificação, em perfeito estado de conservação, salvo desgaste natural do tempo, indenizando a LOCADORA de qualquer dano que por ventura tenha ocorrido.]]></text-property>
+        </text>
+        <text id="119">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="120">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>4.4.	</B>Após o prazo do presente contrato, a renovação deve estar condicionada a aceitação expressa da LOCADORA, que poderá reavaliar as condições iniciais e formular termo aditivo ao presente instrumento. ]]></text-property>
+        </text>
+        <text id="352">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="351">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>4.5.	</B>Caberá à LOCATÁRIA solicitar a prorrogação do contrato com antecedência de 30 (trinta) dias do término do prazo contratual, solicitação esta que deverá ser feita de forma expressa.]]></text-property>
+        </text>
+        <text id="121">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="122">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>4.6.	</B>Fica desde já ajustado que o     valor de aluguéis regulados pelas disposições da cláusula 7ª e seguintes serão                devidas normalmente até o efetivo término do contrato, bem como até a efetiva devolução do(s) o(s) equipamento(s) e seu(s) acessório(s) para a empresa XCMG em sua sede.]]></text-property>
+        </text>
+        <text id="123">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="124">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>5.	CLÁUSULA 5ª – DO LOCAL DA RETIRADA E DEVOLUÇÃO DO(S) EQUIPAMENTO(S):</B>]]></text-property>
+        </text>
+        <text id="125">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="126">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>5.1.	</B>A LOCATÁRIA se obriga a retirar e devolver o(s) equipamento(s) para a LOCADORA no endereço XXXXXXXX XXXXXX, Km 854, Distrito Industrial, no município de Pouso Alegre (MG), CEP: XXXX-XXXX. ]]></text-property>
+        </text>
+        <text id="127">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="128">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>5.2.	</B>Para os fins de comprovação das condições de cada equipamento alugado será realizada uma vistoria pela LOCADORA, tanto no ato da entrega   do(s) equipamento(s) quanto na desmobilização dos bens, os quais serão parte integrante deste contrato, devidamente  assinado  pela  LOCATÁRIA ou por terceiro autorizado, valendo de tal documento como comprovante da data e condições/estado de entrega e devolução do(s) equipamento(s), podendo a LOCADORA valer-se do mesmo para cobrança judicial do débito e/ou reparação de danos decorrentes de manutenção/operação irregular, em não conformidade com as especificações do fabricante ou falta  de  acessórios dos equipamentos locados.]]></text-property>
+        </text>
+        <text id="129">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="130">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>5.3.	</B>Os custos de transporte para mobilização e desmobilização do(s) equipamento(s) locado(s) será de exclusiva e irrestrita responsabilidade da LOCATÁRIA.]]></text-property>
+        </text>
+        <text id="131">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="132">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.	CLÁUSULA 6ª – MANUTENÇÃO:</B>]]></text-property>
+        </text>
+        <text id="133">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="134">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.1.	</B>Os custos com i) assistência preditiva, preventiva e corretiva; II) mão de obra; III) Peças; IV) pequenos e grandes reparos correrão única e exclusivamente por conta da LOCATÁRIA;]]></text-property>
+        </text>
+        <text id="135">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="136">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.1.1.	</B>Correrá às expensas da LOCATÁRIA todos os custos/pagamento das peças necessárias a serem substituídas no(s) equipamento(s), ressalvado os casos em que se apurar a necessidade de troca de peças em garantia prevista no manual de cada equipamento locado.]]></text-property>
+        </text>
+        <text id="137">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="138">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.1.2.	</B>As peças em garantia serão fornecidas às expensas da LOCADORA, ressalvado os casos em que restar comprovado que o problema relatado no equipamento se deu por culpa exclusiva da LOCATÁRIA e/ou dolo na utilização adequada do bem.]]></text-property>
+        </text>
+        <text id="139">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="140">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.1.3.	</B>A LOCADORA fornecerá, mediante pagamento, as peças necessárias para reposição/ manutenção do(s) equipamento(s) locado(s).]]></text-property>
+        </text>
+        <text id="141">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="144">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.1.4.	</B>A LOCADORA se compromete a vender somente peças originais em conformidade com os manuais técnicos do equipamento.]]></text-property>
+        </text>
+        <text id="145">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="146">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.1.5.	</B>A LOCADORA se obriga a enviar as peças necessárias solicitadas pela LOCATÁRIA no prazo de 72 (setenta e duas horas), após a devida abertura de chamado, bem como comprovação de pagamento das peças solicitadas.]]></text-property>
+        </text>
+        <text id="147">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="148">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.1.6.	</B>O prazo de parada do equipamento e de espera do recebimento de peças não será deduzido/abatido da medição dos equipamentos locados, ressalvado os casos de peças em garantia na qual ficar comprovado ser de responsabilidade LOCADORA a sua substituição, bem como envio em prazo superior à 72 (setenta e duas horas).]]></text-property>
+        </text>
+        <text id="149">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="150">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.2.	</B>LOCATÁRIA se obriga a zelar pela guarda dos equipamentos e a mantê-los em perfeitas condições, como se seu fosse comprometendo-se a devolvê-los nas mesmas condições em que os recebeu.]]></text-property>
+        </text>
+        <text id="151">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="152">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.3.	 </B>Cabe à LOCATÁRIA a manutenção diária do(s) equipamento(s) com a verificação e troca do nível de fluídos, filtros, engraxadeiras, embuchamentos, óleos e combustíveis dos equipamentos locados, assim como a calibragem de pneus e inspeção de material rodante, troca de matérias de desgaste, obrigando-se, ainda, a usar somente produtos especificados pelos fabricantes. ]]></text-property>
+        </text>
+        <text id="153">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="154">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.4.	</B>A LOCATÁRIA se obriga a somente utilizar produtos e peças originais, de acordo com as recomendações da fabricante e indicados em seu manual.]]></text-property>
+        </text>
+        <text id="155">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="156">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.5.	</B>Utilizar o (s) equipamento (s) locado (s) segundo as normas definidas pelo fabricante em seu manual de operação e nos  termos definidos no presente contrato.]]></text-property>
+        </text>
+        <text id="157">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="158">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.6.	Acordam as partes que o tempo necessário de parada dos equipamentos para manutenção preventiva, corretiva, prazo de recebimento de peças, troca/substituição de peças, ou manutenção preditiva não serão abatidos dos valores devidos à LOCADORA.</B>]]></text-property>
+        </text>
+        <text id="159">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="160">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.7.	</B>Cabe a LOCATÁRIA toda a manutenção corretiva, preventiva, preditiva, inclusive, periódica preventiva e corretiva dos equipamentos tal qual descrito nos manuais e especificações técnicas de cada máquina. Para o cumprimento da Manutenção a XCMG se resguarda no direito de enviar técnico qualificado, a cada 60 (sessenta) dias, para a verificação dos equipamentos locados e conferência das manutenções preventivas realizadas de acordo com o manual do equipamento. Caso a LOCATÁRIA não realize as manutenções sobre os equipamentos, ficará responsável pelo ressarcimento de eventuais despesas adicionais que se fizerem necessárias, inclusive, com mão-de-obra, peças de reposição, reparação de peças desgastadas e quebras decorrentes da não realização da referida manutenção periódica, além de suportar com os custos das despesas com deslocamento dos técnicos até o local designado. Desta forma, a LOCATÁRIA, desde já, autoriza que a LOCADORA emita e cobre as faturas decorrente dos prejuízos causados pela ausência de realização das manutenções periódicas.]]></text-property>
+        </text>
+        <text id="161">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="162">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.8.	</B>Em caso de quebra ou avaria das peças em garantia descriminadas no manual de garantia entregue no momento da entrega técnica do equipamento, deverá a LOCATÁRIA comunicar a LOCADORA no prazo máximo de 72 (setenta e duas) horas da ocorrência, para que a LOCADORA proceda com a análise.]]></text-property>
+        </text>
+        <text id="163">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="164">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.9.	</B>Em caso de quebra ou avaria do(s) equipamento(s), a LOCATÁRIA se compromete a realizar toda e qualquer a manutenção/reparo necessário, sendo de sua integral responsabilidade e custeio, ressalvados os casos em que se ficar apurado tratar-se da troca de peças em garantia tal qual descrito nos manuais e especificações técnicas de cada máquina. ]]></text-property>
+        </text>
+        <text id="165">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="166">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.10.	</B>Caso seja necessário a intervenção dos técnicos da LOCADORA para reparo do(s) equipamento(s), a empresa XCMG BRASIL disponibilizará equipe de apoio para realizar as referidas manutenções, desde que haja disponibilidade para atendimento, bem como seja apurado pelo técnico da LOCADORA a real necessidade da intervenção. Deste modo, acordam as partes que todos os custos decorrentes dos reparos necessários sobre os equipamentos, incluindo mão-de-obra, peças e transporte da equipe serão de única responsabilidade da LOCATÁRIA.]]></text-property>
+        </text>
+        <text id="167">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="168">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.11.	</B>Ainda que os danos causados nos equipamentos sejam produzidos como consequência de caso fortuito ou força maior, acordam as partes que os mesmos serão de responsabilidade da LOCATÁRIA.]]></text-property>
+        </text>
+        <text id="169">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="170">
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.12.	</B>A (O) LOCATÁRIA (O) se compromete a utilizar e executar a manutenção, reparação ou substituição de peças e partes dos equipamentos locados de acordo com a descrição dos manuais. Qualquer prejuízo ou modificação decorrente de tal atitude será de responsabilidade da LOCATÁRIA, modo este, na ocorrência de custos para recomposição do equipamento, o mesmo será obrigação da LOCATÁRIA e prontamente cobrado pela LOCADORA através de Fatura.]]></text-property>
+        </text>
+        <text id="171">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="172">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.13.	</B>A (O) LOCATÁRIA(0) se obriga a arcar com os custos da pintura e seus retoques, quando necessários, ao devolver a(s) máquina(s).]]></text-property>
+        </text>
+        <text id="173">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="174">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>6.14.	</B>Não abrange a responsabilidade da LOCADORA os defeitos apresentados por:<BR><BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.14.1.	</B>Desgaste natural de uso e tempo;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.14.2.	</B>Defeitos causados por operações indevidas não previstas no manual de operações;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.14.3.	</B>Falta adequada de manutenção preventiva;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.14.4.	</B>Manuseio de mão de obra não qualificada;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>6.14.5.	</B>Defeitos causados por acidentes;
+]]></text-property>
+        </text>
+        <text id="175">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="178">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>7.	CLÁUSULA 7ª – DO PREÇO E DA FORMA DE PAGAMENTO:</B>]]></text-property>
+        </text>
+        <text id="179">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="180">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>7.1.	</B>A LOCATÁRIA se compromete a pagar, mensalmente, para a LOCADORA o valor de <B>R$ XX XXXX XXXXXX (XXXXX XXXXXX XXXXXXX)</B> pela <B>"QUANTIDADE MÍNIMA GARANTIDA DE 200 HORAS DE LOCAÇÃO"</B>.]]></text-property>
+        </text>
+        <text id="181">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="182">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>7.2.	</B>Caso seja ultrapassada a quantidade mínima garantida de 200 horas de locação, a LOCATÁRIA se responsabiliza pelos custos das horas adicionais que apuradas pela LOCADORA e faturadas para a LOCATÁRIA <I><B>no importe de R$ XX,XX (XXXXXX XXXXXXXX XXXXXXXXXXXXXXXXX) cada.</B></I>]]></text-property>
+        </text>
+        <text id="183">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="184">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>7.3.	</B>Levando-se em consideração que a primeira medição ocorre em 30 (trinta) dias e que o primeiro pagamento ocorrerá com mais 15 (quinze) dias após o fechamento da medição. Fica desde já estabelecido que o primeiro pagamento a ser realizado pela LOCATÁRIA em favor da LOCADORA, ocorrerá em até <B>45 (quarenta e cinco) dias corridos</B>, após a retirada do (s) Equipamento (s) na sede da LOCADORA, sendo que os demais pagamentos a cada 30 (trinta) sucessivamente.]]></text-property>
+        </text>
+        <text id="185">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="186">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>7.3.1.	</B>As medições serão elaboradas mensalmente, considerando sua cobrança em 30 (trinta) dias corridos a contar da data de assinatura do termo de vistoria e liberação da(s) máquina(s) no momento de sua retirada. ]]></text-property>
+        </text>
+        <text id="187">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="188">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>7.3.2.	</B>A LOCADORA solicitará o horímetro dos equipamentos para realização do fechamento das medições da LOCATÁRIA, sendo concedido o prazo improrrogável 48 (quarenta e oito horas) para envios das informações.]]></text-property>
+        </text>
+        <text id="189">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="190">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>7.3.3.	</B>Após a realização do fechamento e envio das medições, a LOCATÁRIA terá o prazo improrrogável de 48 (quarenta e oito) horas para aprovar. Em caso inercia da LOCATÁRIA na resposta das medições, será presumida a aceitação dos valores apresentados e desde já fica expressamente autorizado pela LOCATÁRIA que a LOCADORA efetue o faturamento e cobre o valor medido.]]></text-property>
+        </text>
+        <text id="191">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="192">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>7.4.	</B>A cobrança dos valores devidos pela(o) LOCAÇÃO dar-se-á através de boleto bancário em favor da LOCADORA.]]></text-property>
+        </text>
+        <text id="193">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="194">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>7.5.	</B>Na hipótese de atraso no pagamento, a LOCATÁRIA, será constituída em mora, sendo devido o valor principal de cada parcela vencida, acrescida de multa de 2% (dois por cento) e juros de mora de 1% (um por cento) ao mês, calculados sobre o valor atualizado pela variação do IPC-A da Fipe, ou outro que o vier a substituir.]]></text-property>
+        </text>
+        <text id="195">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="196">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>7.5.1.	</B>O inadimplemento de 01 (uma) parcela poderá, a critério da LOCADORA, culminar no vencimento antecipado das demais e ensejar à aplicação das seguintes medidas: i) inclusão do devedor nos órgãos de proteção ao crédito, ii) PEFIN, iii) protesto do título, iv) busca e apreensão do(s) equipamento(s) e v) ação de execução extrajudicial dos valores/medições inadimplidos.]]></text-property>
+        </text>
+        <text id="197">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="199">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>7.6.	</B>Os valores dos aluguéis poderão ser corrigidos ao final de cada 12 meses pela variação do IPC-A da Fipe, ou outro que o vier a substituir.]]></text-property>
+        </text>
+        <text id="198">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="202">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>7.7.	</B>A aplicação do estabelecido no item 7.5.1, pela LOCADORA, poderá ocorrer sem qualquer notificação prévia da LOCATÁRIA.]]></text-property>
+        </text>
+        <text id="203">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="204">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>7.8.	</B>O preço da locação ora pactuado considera os tributos vigentes na época da assinatura do contrato, sendo certo que qualquer alteração na respectiva carga tributária acarretará um reajuste proporcional do preço, sendo o respectivo ajuste efetuado na fatura correspondente ao mês posterior ao início da vigência da respectiva alteração na legislação tributária seja municipal, estadual ou federal.]]></text-property>
+        </text>
+        <text id="205">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="206">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.	CLÁUSULA 8ª – DAS OBRIGAÇÕES DA LOCATÁRIA:</B>]]></text-property>
+        </text>
+        <text id="207">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="208">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.1.	</B>Adimplir pontualmente com o pagamento da locação, sob pena de ser constituído em mora, independentemente de qualquer notificação.]]></text-property>
+        </text>
+        <text id="209">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="210">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.2.	</B>Zelar pelo cumprimento de todas as condições contratuais, efetuando a devolução dos equipamentos para a LOCATÁRIA após o prazo da LOCAÇÃO, sob pena de configuração de apropriação indébita (art. 168, do Código Penal), com sujeição às penas da lei, inclusive busca e apreensão do mesmo.]]></text-property>
+        </text>
+        <text id="211">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="212">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.3.	</B>Não emprestar, arrendar, sublocar ou ceder os equipamentos locados, a terceiros, a qualquer título, em como transferi-los para outro local ou tipo de operação, que não o constante deste contrato ou desde que não haja prévia e expressa autorização (por escrito) da LOCADORA.]]></text-property>
+        </text>
+        <text id="213">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="214">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.4.	</B>Permitir a LOCADORA em entrar em seus estabelecimentos ou de terceiros para examinar, reparar e vistoriar o(s) equipamento(s) e seu(s) acessório(s), objeto do presente contrato, quando a LOCADORA entender necessário, sempre objetivando a adequada inspeção e se necessária manutenção do(s) equipamento(s).]]></text-property>
+        </text>
+        <text id="215">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="216">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.5.	</B>Fazer retornar ou mesmo movimentar o(s) equipamento(s) com a respectiva documentação fiscal, assumindo exclusiva responsabilidade por eventuais infrações fiscais decorrentes dessa   omissão.]]></text-property>
+        </text>
+        <text id="217">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="218">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.6.	</B>Responsabilizar-se exclusivamente por quaisquer acidentes ocorridos com o(s) equipamento(s) locado(s) ou por eles causados a terceiros, desde sua entrega até a finalização do contrato com a efetiva retirada pela empresa.]]></text-property>
+        </text>
+        <text id="219">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="220">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.7.	</B>Excluir a LOCADORA, de quaisquer responsabilidades cíveis ou trabalhistas e de pagamento de quaisquer indenizações, seja a que título for.]]></text-property>
+        </text>
+        <text id="221">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="222">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.8.	</B>Devolver os equipamentos imediatamente após o fim da relação contratual ou do respectivo prazo, em perfeito estado de conservação, salvo os desgastes decorrentes de seu uso normal e regular, livres e desembaraçados de quaisquer gravames que possam ter recaído sobre estes, enquanto de posse destes por força deste contrato.]]></text-property>
+        </text>
+        <text id="223">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="224">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.9.	</B>O equipamento deverá ser devolvido, sem previa notificação, após o fim do contrato.]]></text-property>
+        </text>
+        <text id="225">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="226">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.10.	 </B>LOCATÁRIA se obriga a proceder com todos os esclarecimentos necessários a LOCADORA, sempre na ocorrência de sinistros, com destruição parcial ou total, inclusive nos casos de roubo, furto, extravio, ou por qualquer outro motivo não especificado neste instrumento, isto posto visando demonstrar os fatos, de forma detalhada, em torno do sinistro.]]></text-property>
+        </text>
+        <text id="227">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="228">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.11.	</B>A LOCATÁRIA desde já expressa sua autorização  para retirada dos referidos equipamentos objetos  desta locação, quando do seu termo final ou nas demais condições em que seja  considerado vencido/resolvido,  se a LOCADORA  assim entender  como  necessário,  podendo  e  estando  a  LOCADORA  autorizada  previamente  a  entrada em quaisquer   estabelecimentos da LOCATÁRIA ou onde estejam localizados os equipamentos, para o fim de retirada e entrega, sem se considerar como quitada as obrigações da LOCATÁRIA, aqui  assumidas.]]></text-property>
+        </text>
+        <text id="229">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="230">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>8.12.	</B>Nos casos em que a seguradora não anuir com o pagamento do sinistro de qualquer dos equipamentos locados, a LOCATÁRIA desde já se obriga a indenizará a LOCADORA, sempre na ocorrência de sinistros, com destruição parcial ou total, mal uso, inclusive nos casos de roubo,  furto, extravio, ou por qualquer outro motivo não especificado neste instrumento, pagando o valor constante na      Nota Fiscal de remessa em locação dos equipamentos respectivos ou o valor equivalente aos reparos (peças e mão-de-obra), caso os equipamentos venham comportar tais reparos.]]></text-property>
+        </text>
+        <text id="231">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="232">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>8.12.1.	</B>Ocorrendo o sinistro no equipamento, todos os danos ou despesas havidas pela LOCADORA, diretos ou indiretos, não indenizados pela seguradora, será de inteira e única responsabilidade da LOCATÁRIA, sejam eles para reparação dos equipamentos, resgate/transporte ou indenização de terceiros. A LOCATÁRIA também pagará o valor da franquia do seguro existente. Em caso de perda total, furto qualificado ou roubo do equipamento cometido mediante emprego ou ameaça de violência contra a pessoa, o valor de indenização do casco será o valor de mercado, devendo ser complementado pela LOCATÁRIA se o valor pago pela seguradora for insuficiente.]]></text-property>
+        </text>
+        <text id="233">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="234">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>9.	CLÁUSULA 9ª – DAS OBRIGAÇÕES DA LOCADORA:</B>]]></text-property>
+        </text>
+        <text id="235">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="236">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>9.1.	</B>Informar a LOCATÁRIA imediatamente toda e qualquer irregularidade percebida em relação ao uso e posse dos equipamentos.]]></text-property>
+        </text>
+        <text id="237">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="238">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>9.2.	</B>Identificar e manter uniformizado todo pessoal que for efetuar vistoria ou manutenção do(s) equipamento(s).]]></text-property>
+        </text>
+        <text id="239">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="240">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>9.3.	</B>A LOCADORA se obriga a arcar com o seguro dos equipamentos locados e fornecer uma cópia da apólice a empresa LOCATÁRIA.]]></text-property>
+        </text>
+        <text id="241">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="242">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>9.4.	</B>A LOCADORA se compromete a vender somente peças originais a seus clientes.]]></text-property>
+        </text>
+        <text id="243">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="244">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>9.5.	</B>A LOCADORA obriga a fornecer as peças em garantia a serem substituídas no equipamento, conforme expressamente indicado/previsto no manual de cada equipamento, ressalvados os casos em que ficar demonstrado que o problema gerado no equipamento se deu em decorrência de utilização inadequada e/ou dolo da LOCATÁRIA.]]></text-property>
+        </text>
+        <text id="245">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="246">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>10.	CLÁUSULA 10ª – RESCISÃO: </B>]]></text-property>
+        </text>
+        <text id="247">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="248">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>10.1.	</B>O presente contrato somente será considerado encerrado quando da devolução dos equipamentos e quitação de todos os  valores devidos, porventura  pendentes.]]></text-property>
+        </text>
+        <text id="249">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="250">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>10.2.	</B>Na hipótese da LOCATÁRIA não disponibilizar e/ou permitir que a LOCADORA retire os bens ao término do prazo contratual, o valor da locação definido neste contrato continuará a ser devido pelo prazo em que a LOCATÁRIA continuar na posse dos bens, havendo ainda a incidência de multa de caráter moratório equivalente a 10% (dez por cento) o valor global do presente instrumento de locação.]]></text-property>
+        </text>
+        <text id="251">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="252">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>10.2.1.1.	</B>São causas de rescisão também:<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>10.2.1.2.	</B>O inadimplemento do contrato no prazo determinado;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>10.2.1.3.	</B>O interesse da LOCADORA de rescindir o contrato;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>10.2.1.4.	</B>O pedido voluntário ou não de recuperação judicial;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>10.2.1.5.	</B>Dissolução ou liquidação judicial ou extrajudicial;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>10.2.1.6.	</B>Decretação de falência de qualquer das partes;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>10.2.1.7.	</B>Por comum acordo entre as PARTES. 
+]]></text-property>
+        </text>
+        <text id="253">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="254">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>10.3.	</B>A rescisão do presente CONTRATO não libera as PARTES das obrigações aqui contidas, salvo no caso do LOCATÁRIO não retirar o (s) equipamento (s) na sede da LOCADORA, caso em que resolverá o contrato entre as PARTES.]]></text-property>
+        </text>
+        <text id="255">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="256">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>10.4.	</B>As partes poderão rescindir, o presente contrato, independentemente de interpelação, aviso ou notificação judicial ou extrajudicial, na ocorrência de um dos seguintes eventos, assim considerados como infrações contratuais:]]></text-property>
+        </text>
+        <text id="257">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="258">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>A.	</B>Falta de cumprimento de quaisquer das obrigações contidas na presente relação contratual;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>B.	</B>Protesto legítimo de título de crédito, insolvência, decretação de falência, ou liquidação judicial ou extrajudicial da LOCATÁRIA, bem como o requerimento de recuperação judicial pelas mesmas;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>C.	</B>A prestação de informações falsas ou incorretas pela LOCATÁRIA para a celebração e durante a vigência deste contrato;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>D.	</B>A transferência do(s) equipamento(s) do local informado no contrato sem o prévio consentimento da LOCADORA;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>E.	</B>Cessão total ou parcial do objeto da presente locação a terceiros, sem prévio consentimento da LOCADORA;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;<B>F.	</B>Utilização inadequada do(s) equipamento(s) locado ou a utilização para fins diversos dos previstos neste contrato, descriminados na Cláusula 1ª;
+]]></text-property>
+        </text>
+        <text id="259">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="260">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>10.5.	</B>Caso a LOCADORA venha a tomar conhecimento de um dos eventos descritos a acima, antes de ser notificada pela LOCATÁRIA, poderá o presente contrato ser considerado rescindido imediatamente. ]]></text-property>
+        </text>
+        <text id="261">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="262">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>11.	CLÁUSULA 11ª – DISPOSIÇÕES GERAIS:</B>]]></text-property>
+        </text>
+        <text id="263">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="264">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>11.1.	</B>As disposições deste contrato somente poderão ser alteradas através de aditivo devidamente assinado pelas partes. Atos de tolerância não configurarão novação contratual.]]></text-property>
+        </text>
+        <text id="265">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="266">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>11.2.	 </B>O presente instrumento constitui título executivo   extrajudicial nos termos do   artigo 784, III, do CPC.]]></text-property>
+        </text>
+        <text id="267">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="268">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>11.3.	</B>As partes declaram conhecimento das condições firmadas, bem como declaram que leram e possuem pleno conhecimento do aqui contratado, sendo que toda e qualquer flexibilização   das regras aqui contidas, ora pactuadas, serão consideradas meras liberalidades  pelas partes não devendo estas serem  consideradas  como  renúncia dos  direitos e obrigações.]]></text-property>
+        </text>
+        <text id="269">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="270">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>11.4.	 </B>O presente contrato obriga as partes, seus sucessores, herdeiros cessionários a qualquer título.]]></text-property>
+        </text>
+        <text id="271">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="272">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>11.5.	</B>Para esclarecimento das partes, fica ajustado que peças em garantia são as peças indicadas/previstas no manual de cada equipamento.]]></text-property>
+        </text>
+        <text id="273">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="274">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>11.6.	</B>As PARTES, nos termos do art.10, §2°, da Medida Provisória n° 2.200-2, expressamente concordam em utilizar e reconhecem como válida qualquer forma de comprovação de anuência aos termos ora acordados em formato eletrônico, ainda que não utilizem de certificado digital emitido no padrão ICP-Brasil, incluindo assinaturas nas plataformas de assinatura eletrônicas. A formalização das avenças na maneira supra acordada será suficiente para a validade e integral vinculação das partes ao presente instrumento. Assinam o presente CONTRATO na presença de 02 (duas) testemunhas que a tudo assistiram e tem conhecimento, para que produza todos os efeitos legais.]]></text-property>
+        </text>
+        <text id="275">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="276">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.	DA OBSERVÂNCIA E CUMPRIMENTO A LGPD</B>]]></text-property>
+        </text>
+        <text id="277">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="278">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.1.	</B>As partes se comprometem mutuamente ao cumprimento da LGPD, de forma a garantir a proteção dos direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural, relativos ao tratamento de dados pessoais, garantindo que:<BR><BR><BR>
+&amp;nbsp;&amp;nbsp;a)	Os trabalhos deverão ser executados a partir das premissas da LGPD, em especial os princípios da finalidade, adequação, necessidade, transparência, livre acesso, qualidade dos dados, segurança, prevenção, não discriminação, e responsabilização e prestação de contas no tratamento dos dados.<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;b)	O tratamento de dados pessoais ocorrerá atendendo a pelo menos uma das bases legais previstas nas LGPD, limitado às atividades necessárias ao atingimento das finalidades do tratamento, para propósitos legítimos, específicos, explícitos e informados ao titular;<BR>
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;c)	Sempre que a Lei exigir o consentimento do usuário no fornecimento de dados, este deverá ser coletado de forma livre, informado, inequívoco e relacionado a uma finalidade determinada.]]></text-property>
+        </text>
+        <text id="285">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="286">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.2.	</B>A LOCATÁRIA declara estar comprometida com a conformidade da LGPD, assegurando a não utilização das informações em prejuízo das pessoas e/ou das comunidades, inclusive em termos de autoestima, de prestígio e/ou econômico-financeiro.]]></text-property>
+        </text>
+        <text id="287">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="288">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.3.	</B>Em caso de necessidade de coleta de dados pessoais indispensáveis à própria prestação do serviço pela LOCATÁRIA, esta será realizada mediante prévia aprovação da LOCADORA e os dados assim coletados só poderão ser utilizados na execução dos serviços especificados neste contrato, e em hipótese alguma poderão ser compartilhados ou utilizados para outros fins.]]></text-property>
+        </text>
+        <text id="289">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="290">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.4.	</B>No que toca aos dados eventualmente armazenados pela LOCATÁRIA, esta declara possuir processos internos de governança para a proteção dos dados, adotando medidas de segurança adequadas, a fim de garantir a confidencialidade, integridade e disponibilidade dos dados.]]></text-property>
+        </text>
+        <text id="291">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="292">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.5.	</B>Na execução e utilização dos dados em seus negócios relacionados aos serviços contratados, a LOCATÁRIA deve observar a LGPD e instruir seus colaboradores e prestadores de serviços sobre as premissas de governança regularmente aceitas no tratamento dos dados obtidos dos clientes.]]></text-property>
+        </text>
+        <text id="293">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="294">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.6.	</B>O eventual acesso, pela LOCATÁRIA, às bases de dados que contenham ou possam conter dados pessoais ou segredos de negócio implicará para a LOCATÁRIA e para seus prepostos o mais absoluto dever de sigilo.]]></text-property>
+        </text>
+        <text id="295">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="296">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.7.	</B>A LOCADORA deverá alterar ou adequar as regras de negócios às premissas da LGPD, sempre que solicitado ou necessário, além de utilizar os serviços seguindo às regras aplicáveis em relação ao tratamento de dados coletados. ]]></text-property>
+        </text>
+        <text id="297">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="298">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.8.	</B>No decorrer do contrato originário, as partes poderão recusar regras de negócios que visem frustrar, em contrariedade direta ou indireta, os objetivos da LGPD. ]]></text-property>
+        </text>
+        <text id="299">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="300">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.9.	</B>A LOCATÁRIA autoriza, desde já, eventuais auditorias a serem realizadas pela LOCADORA em suas dependências e/ou proceder à entrega de evidências do cumprimento a LGPD à LOCADORA. Entende-se por evidência qualquer documento necessário para a comprovação do cumprimento da LGPD, seja referente a processos, tecnologia e/ou jurídicos, ressalvados os documentos considerados segredos industriais e comerciais e ainda em obediência aos princípios da boa-fé proporcionalidade e condição econômica previstos na lei. ]]></text-property>
+        </text>
+        <text id="301">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="302">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.10.	</B>A LOCATÁRIA deverá informar imediatamente a LOCADORA quando receber uma solicitação de exercício de direitos de um Titular a respeito dos seus dados pessoais, relacionados ao presente contrato, cooperando para o atendimento desta.]]></text-property>
+        </text>
+        <text id="303">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="304">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.11.	</B>A LOCATÁRIA se compromete a entrar em contato com a LOCADORA, no prazo de 24 (vinte e quatro) horas da ocorrência de qualquer incidente que implique violação ou risco de violação de dados pessoais, para que esta possa adotar as providências devidas e comunicar as autoridades competentes.]]></text-property>
+        </text>
+        <text id="305">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="306">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.12.	</B>A LOCATÁRIA será responsabilizada perante a LOCADORA quando deixar de observar de forma deliberada e por incapacidade técnica os princípios descritos da LGPD, em eventos dolosos ou culposos oriundos da LOCATÁRIA que, porventura a LOCADORA seja responsabilizada, sem prejuízo a apuração de perdas e danos.]]></text-property>
+        </text>
+        <text id="307">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="308">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.13.	</B>Encerrada a vigência do contrato ou havendo solicitação do Titular, a LOCATÁRIA interromperá o tratamento dos Dados Pessoais disponibilizados pela LOCADORA e eliminará completamente os dados pessoais e todas as cópias porventura existentes (seja em formato digital ou físico), no prazo de 30 (trinta) dias, salvo quando a LOCATÁRIA tenha que manter os dados para cumprimento de obrigação legal ou outra hipótese da LGPD.]]></text-property>
+        </text>
+        <text id="309">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="310">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>12.14.	</B>Qualquer declaração falsa prestada neste instrumento ou em eventuais documentos solicitados pela LOCATARIA para coleta de evidências para averiguação do cumprimento a LGPD poderá ser considerado descumprimento contratual, podendo culminar em rescisão justificada, após as apurações devidas, sem prejuízo a eventual apuração de perdas e danos.]]></text-property>
+        </text>
+        <text id="311">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="312">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>13.	CLÁUSULA 13ª – LEGISLAÇÃO APLICÁVEL:</B>]]></text-property>
+        </text>
+        <text id="313">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="314">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>13.1.	</B>Aplicar-se-á ao presente CONTRATO única e exclusivamente a legislação brasileira.]]></text-property>
+        </text>
+        <text id="315">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="316">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>14.	CLÁUSULA 14ª – FORO:</B>]]></text-property>
+        </text>
+        <text id="317">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="318">
+            <property name="textAlign">justify</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>14.1.	</B>Fica eleito o foro da Comarca de Pouso Alegre (MG) como único competente para dirimir quaisquer dúvidas a respeito do presente instrumento, com renúncia a qualquer outro, por mais privilegiado que seja.]]></text-property>
+        </text>
+        <text id="319">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="320">
+            <property name="textAlign">center</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[Pouso Alegre / 包索市, <value-of format="Long Date">new Date()</value-of>]]></text-property>
+        </text>
+        <text id="321">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="322">
+            <property name="textAlign">center</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>(assinado eletronicamente)<BR>
+______________________________________________________<BR>
+XCMG BRASIL INVESTIMENTOS LTDA<BR>
+(LOCADORA)<BR>
+</B>
+]]></text-property>
+        </text>
+        <text id="323">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="324">
+            <property name="textAlign">center</property>
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>(assinado eletronicamente)<BR>
+_________________________________________________________<BR>
+XXXXXXXX XXXXXXXXXXX XXXXXXX<BR>
+Por seu diretor: XXX XXXX XXXXX<BR>
+(LOCATÁRIA)<BR>
+</B>
+]]></text-property>
+        </text>
+        <text id="325">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <text id="326">
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<B>TESTEMUNHAS:</B>]]></text-property>
+        </text>
+        <text id="327">
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[
+
+
+]]></text-property>
+        </text>
+        <table id="330">
+            <column id="340"/>
+            <column id="341"/>
+            <detail>
+                <row id="334">
+                    <cell id="335">
+                        <text id="343">
+                            <property name="textAlign">center</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[(assinado eletronicamente)
+Nome: XXXXXXXXXXX XXXXXXXXXXX
+CPF: XXXXX XXXXXXXXXX
+]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="336">
+                        <text id="344">
+                            <property name="textAlign">center</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[(assinado eletronicamente)
+Nome: XXXXXXXXXXX XXXXXXXXXXX
+CPF: XXXXX XXXXXXXXXX
+]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">XCMG_logo.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAD2UAAAPUCAMAAAAQJPN2AAAB7FBMVEUAAAAAPogAPogIPIMYSoYdTIYA
+                PogMRIcQRoYcTIYIQocKQ4cfTYYLQ4cORYcHQYcQRoYQRoYaS4YRRoYDPocRRocbSoUfTYYLQoYRRoYb
+                S4YWSYY4WoQRRoYZSoYJQocbS4YBPYYORYc9XIQwVoQeTYYDPYYlUIUPRYcdTIYfTYYIPINDX4MCPYY/
+                XYMCPIYAPogcTIYcTIYEPIQMRIcCPYYDPYVIYoMFPIQdTYYPRoYeTYYNRIceTYYFPIQRRoYIPIIsVIUf
+                TYYUSIYIQocIPIMIPIIHPIQDPYUHPIMyV4QSR4YRR4YHPIMIPINHYYMeTYZNZIMYSYZEYIMCPocEPIUX
+                SYYRRoZKY4MIQoceTYYEPIQLQ4c6W4QdTIZOZYIWSIYeTYYIPIMFPIQIPIMRRoYHPIMEPYUGQIcLO4AI
+                PINHYYMTOnwOOn8QO34HPIMGPIQPRYcKP4QWSYYRRoYGPIMSOn0VOXsRRoYdTIYPRYdWaYJQZoITR4Za
+                aoIAPoj///+mu9Xk6vJjhLEFQIcKQolLcaRAaJ4cT5B8mb4VSY0NRYoiU5IYTI9GbaIRR4tafazDzd5e
+                gK5Rdadmh7PQ2ee+ydtVeanL1eS1wdY6Y5vZ4ey5xNjU3enH0eGxvdMoVpPd5e+LpshxkLm6LmQUAAAA
+                f3RSTlMAFUbVoOwb9IW4+/nf9/H85+qo3m7aK80j4q8nPuWj+qv870Y3yfcv7b3RulD6S3hZtbKF9nLz
+                XOnA7MV/w5HUzTPWkXTAx6F/4zqM0ajdV+RnnlRq7ZrXYyHaiXlCum6V6a2M0YjZZv0xslhSOT+eluu1
+                mMeaRl6H8a6WefCyUGw3PgAA0gVJREFUeNrswYEAAAAAgKD9qRepAgAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABg9uBAAAAAAADI/7URVFVVVVVVVVVV
+                VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVWFnbtXTRgKAzAc
+                CJwrcBCcXLKI1KWSqWSJMYNumdyCSwcb7+DceqHQ0hbUmLSTz3MXL98PAAAA8F/CanuuFptiX+f5MsLD
+                yPJ6fyzKRVttVyEBAAAYKUxe2k2trCHO67TsnrU2AAAwUHhqU30NP8z3ZTeR2gAAwJ1mChsuaappAgAA
+                0FfojhIbrlimO8vjAABAL9M2i8At9UFnAwAAN4RzYYwN/eSVzgYAAK4I2yYCvTXm2QAAwCXhUEfAPBsA
+                APgDoYjA3ZrXBAAA4JfQriMwwLKcJQAAAN+dHGTDYNlbAgAA8CUsPBaHEeYba+MAAMCnk69nMNJ65wsa
+                AADw4ZRFYKxUZgPv7N0xCsJAEAXQBSFHENvUkt5KrIQUlrmAhSBssNNyr276tLPVvHeLz/yZAQDQFoco
+                l7UAAADZaYtDlKUWAAAgt6O2OIQZvwUAAMisepINgaaz5WwAAEhsHRvgBhoAABDhpy4O0V5iNgAAJCVk
+                w8Y0GwAACDA8fPCCjZgNAAAEuDagi7uYDQAA6VR1cejlJmYDAEAyJyEb+vkUAAAgk2FuQDdTLQAAQB7D
+                oQEdLe8CAACk8WxAV7PVbAAASKP64QV7LqABAAB/9u7dBmEABgKoq+xBQ4MQHaKk4lNAxwqRQCLKBl6d
+                BWhoLOS8t8adz5bP4E9dAgAAWIJhTOAbp9kAAMDPLgkUuOuMAwDAAgyHBCqcAwAAaG+TQImHMBsAANqb
+                TJ9BlVcAAAC9DdcEiqwNoAEAQHO3BMqMOuMAANDasE+gzi4AAIDGzgkUOgizAQCgMV+8oNgcAABAW3MC
+                pY4BAAC0dUyg1PYdAABAU9MqgVqbAAAAmjolUGxv/wwAAJp6rhOodguAD3t3bIMgGIRh+CpGsHcAoom9
+                HXbQUdlhYucMt7oTaKDhJ5fnWeNy3wsAlLQksLvZMRsAAGqaEtjfJQAAgIJOfQL7GwIAAChoTGAd+2cA
+                AIBYNhzTLQAAgHI6C+OwnmQ2AADw1z2BJqYAAADKGRJo4vwJAACgmG5OoI0xAACAYq4JbKHlBQAA/PZK
+                YD2P2QAAgFo2HFKvmA0AANUYP4N2ngEAANTyTqCVJQAAgFK6PoFWHgEAAHzZuWMThAEgCsMHghO4gLWF
+                Ka3s1KRJ5wIS4hi3uhsIqS4c37fF48HfyjeBMmsAAACtSIxDoSkAAIBWJMZhE5FxAABAYhx2aggAAKCT
+                JYE6YwAAAJ3MCdS5BwAA0ImVDZVeAQAAdDIlUOcTAABAJ7cE6lwCAADo5J1AnUcAAACNHM8J1HkGAADQ
+                yJBAoSUAAIBGTgkUOgQAANCIlQ2l5gAAABq5JrCBLxsAAPhjTKDQGsCPvTumARiKYSgIqnvXguhYIKFe
+                Bl/JFll3LJ48GAAgiMqGCZUNAACcXAX0qWwAAEBlw1oqGwAAorwF9KlsAADg5CugT2UDAAAqG9bylw0A
+                AFHuAvpUNgAAoLJhLZUNAABRngL6VDYAAGDLhrVUNgAARFHZMKGyAQAAlQ1rqWwAAIiismHGXzYAAKCy
+                YSmVDQAAUVQ2TKhsAAD42bmjEoCBIIaChUqqwFo/Bwf5C2HGxSPLorKhlsoGAIApKhsSKhsAAFDZUMuP
+                cQAAmKKyIWPLBgAAVDaUeh8AAGCIyoaEygYAAG6+H0i4GAcAAGzZUMqWDQAAU1Q2JFQ2AACgsqGWygYA
+                gCkqGxIqGwAAUNlQS2UDAMAUlQ0JlQ0AAKhsqKWyAQBgisqGhMoGAABUNtRS2XDYuaOTBoIwCqP2ZAN2
+                NsMma2QTJaKIBkRLTQNZQp4y/PecLj4uXACAUlQ23EJlAwAAKhuGpbIBAKAUlQ23UNkAAIDKhmGpbAAA
+                KOWxRZs3XPW8Ynda8b9iuWxu0Z4eAACAQsK37GPn7qZTS2bLBgCAUrIr+2Xq3N+0tGAqGwAASomu7O1P
+                ZwSbFkxlAwBAKdGVvesMYTq0XCobAABKSa7s/XdnDF/bFktlAwBAKcmV/dEZxVuLpbIBAKCU4MpeXJ+N
+                43ffUqlsAAAoJbiyPzvjOLZUKhsAAErJreyDKXsk02sLpbIBAKCU2Mqe3zsj+Us9QFPZAACc2bsT1ASg
+                GIqiS89H6oBatTPU1m612wh55+ziEnhhlNjKvix62VcmlQ0AAKOkVvb1vujlsa1IKhsAAEZJrezboptd
+                RVLZAAAwSmhlH0yf9bM5ViKVDQAAo2RW9tPPop/XSqSyAQBglMzK3i8a2pwrkMoGAIBRIiv79LHo6DPx
+                m5fKBgCAUSIr+23R06XyqGwAABglsbKPps+6+j1VHJUNAACjJFb2+6Krr4qjsgEAYJTAyj47Zfe1ea40
+                KhsAAEbJq+zty6Kvv7gBNJUNAACj5FX2ZdHZd4VR2QAAMEpcZV/vi84e28qisgEAYJS4yr4tettVFpUN
+                AACjpFX2wfRZd5tjRVHZ/LN3JygNREEURRfrQuoTMmEbh2hH0KC4U7fRv945u7gUvAIAoJWwyt7fB1t3
+                rSgqGwAAWgmr7NNg83bnSqKyAQCglazKXtbB9t2ivnmpbAAAaCWrst8HM3iuICobAABaiarsi+mzOaxL
+                5VDZAADQSlRlfwzm8Fk5VDYAALSSVNlPTtmz2F0qhsoGAIBWgir78DaYxW/OAJrKBgCAVoIq+ziYx1el
+                UNkAANBKTmW/fA/m8XOoECobAABayans18FMjhVCZQMAQCsxlX02fTaXv8fKoLIBAKCVlMre3wdzuVYG
+                lQ0AAK08VIbTYDK7c0VQ2QAA0EpIZS/rYDa3jG9eKhsA4J+9O0BNGAqiKLr0+Ug10hiK1hBohdKduo55
+                /5xdXAbeQJRJKvt70M9SM1DZAAAQZY7K3kyfdbSvNQGVDQAAUeao7Oego6MmoLIBACDKFJV9c8ru6bRV
+                PpUNAABRZqjs833Q098EA2gqGwAAosxQ2ZdBVz8VT2UDAECUCSr763fQ1f1c6VQ2AABEmaCyH4O+LpVO
+                ZQMAQJT8yr6aPuvs/7PCqWwAAIgSX9kfr0FnjwqnsgEAIEp8ZS+D1k7XyqayAQAgSnplr/ugt1f4Ny+V
+                DQAAUdIr+xh0t1Q0lQ0AAFHCK3szfdbfvlYylQ0AAFHCK/s56O+oZCobAACiZFf2zSk7wWmrYCr7zd4d
+                oCYQBVEQPPp8JGsEI7KiCFFIctPco6m6RTPwBgAAUtKVve2Lgp/yAJrKBgCAlHRlHxcN39OlsgEAIKVc
+                2dfXomHfJktlAwBASrmyb4uK42SpbAAASAlX9sn0WcffdapUNgAApHQr++O96LhNlcoGAICUbmV/LkIO
+                p4lS2QAAkJKt7PNjUfKufvNS2QAAkJKt7Oei5XOaVDYAAKRUK/ti+qzmcZ4klQ0AACnVyr4vap6TpLIB
+                ACAlWtlfTtk9h8sUqWwAAEhpVva2L3ruU6SyAQAgpVnZx0XQ4XeCVDYAAKQkK/v6WhTt2/SobADgn517
+                u0koiqIoak82YB8Ws08ICokPhED4gGLtY94xuphZyQJSkpV9WTR9To/KBgCAlGJlH12fVT1Ok6OyAQAg
+                JVjZ++ei6jI5KhsAAFKClX1YZO2OU6OyAQAgpVfZX7dF13M/MSobAABSepV9X5QdJkZlAwBASq6yf1yf
+                td2+pkVlAwBASq6yr4u2+7SobAAASKlV9rcpu273MykqGwAAUmKV/XFe1F0nRWUDAEDK66S4PtuA3feU
+                vL0AAAAhrS379Fj0nT8mxJYNAAAprcq+LLbgd0JUNgAApKQq++j6bBsep+lQ2QAAkFKq7P1zsQ1/06Gy
+                AQAg5X06DouN2B0n45+9O0BJKAzCKLr091OmkUmkGUUStNPW4Z1zdnEZmE9lAwBASqiyj9fFFN+7rUJl
+                AwBASqiyrXhNctgqVDYAAKR0Kvvk9dkkv5k1L5UNAAApncr+WEyy3yJUNgAApGQq+9Upe5a/ypqXygYA
+                gJRKZT+9L2Y5bw0qGwAAUiqVvV8MU1nzUtkAAJASqey3n8U0t8aal8oGAICUSGWfF/M01rxUNgAApDQq
+                +9nrs4m+EmteKhsAAFISlb27LSa6bAEqGwAAUhKVfViM9PCy3T+VDQAAKYXKPl4XMz1u909lAwBASqGy
+                L4uhCmteKhsAAFIClX3y+myuz/tf81LZAPDP3v2rNh1FARw3IYXURoQiFDpYlw7tllFsl7QPkCFkkAzt
+                UHwFt3spjQpNY4MR/yG+qgklDUJRB7E59/f5jJf7Al8OnANQlAIqe5qprvjXvFQ2AAAUJX5lj4yyq+zj
+                ZQpOZQMAQFHCV/ZwkqmyTyk4lQ0AAEUJX9njTKWdX6XYVDYAABQlemW//5aptmmKTWUDAEBRolf2dabi
+                zkcpNJUNAABFCV7Z76w+YzJMkalsAAAoSuzKvviSYZwiU9kAAFCU2JX9NkP+Hvqal8oGAICihK7sy88Z
+                cr5OgalsAADuVKsvHTdvDZavtQesotCV/SFD9GteKhsAgHlQHzT7jfb67lZrZm1uI/3JxvxbtzXT2dpr
+                N46aPeW9CiJX9pXVZ9z4cZHCUtkAABVUq78avD55ur1+uNVpddd20j+zczpL7sP2Zv9s0JPcf0dlL00z
+                3PiawlLZAAAVUqsfH23u7Xc30n/xcK31crfdaMrt31LZt0ZG2RRwzUtlAwBUQK3X7G8fdmZ1fT8en7b2
+                nz87OZDbd1HZC8NJhoU3KSqVDQBQrlr9yVmj/WJe1yvi0Wy23Rfbv1LZC+MMP9m7v5amwjiA4z1rnaZb
+                RuNQsAvTi0ltyGYrOLGUsbadDdkQkS7Ui6jpxW4KQvAieA5WKFlpWaDYi+0cE/9tiuZy53nO9/MGBmc3
+                ++73nOd3YHdDKorKBgAA0JAIPQuPJWdvSZ+KziYTz01a+y8qe9/GrgNosM2LygYAANCKMJ8n8v7N62Oi
+                MVrbQ2Xv23SAI1bWpJqobAAAAE2I+XdjyZhvzoaf2+Pi00HuR6OypVzj6jMct6PoNi8qGwAAQHmi9PJR
+                auq2VNlAPlyitANd2R93HOC4VakkKhsAAEBdIrQ8+LA41S/1EJ19Gp4ntYNa2asOcMK2mtu8qGwAAAAl
+                idLgeFGN168v5n5xbJLSDmBlr287gB7bvKhsAGozsp5qzjNhe+rpPYU2lbSrbrtyrkx2j3ENANQjFoaS
+                MV3m1x31x8an715DoCp7ywHarHyWCqKyAajEbWrTi+mWV9HNRsOyRuTlDFtWrbFYKJTTLdt+nasS3gB8
+                Tiy7gX1fBsHtqfwgx8eDU9lfufoMnfyQCqKyAfibkTUzc0v1VrnSbNSsUXkFRt3ublbKrfrbucwM0Q3A
+                P8RyPCiBfehmMk5pB6OyPziALtu8qGwAPuSOrKsTdtoNa2tY9tpIrVEov1rKzdDbAHpHROL5wAX2gYHx
+                F4S29pX9hVE2Ovut4DYvKhuAbxhZM2e3yoWGNSp9adhqNMstO/eE3gZwhbzAVnAHdpdFi4kIpa1zZX/6
+                7gDabPOisgH0nJHNTNTLzZpP27oDr7cLaXuO8TaA/0uUpsf1vuTsQm7lJ0OUtq6V/c0BTvFrXaqGygbQ
+                M4aZe9OqXFeprtuM1NzptnuanNoG0G2iFE8FfoLd7k7cJLR1rOyNXQc4zZZUDZUN4OoZ2artzq57/8p1
+                9wxbi5VXEyaxDaArRGQodVOiswd9y4S2dpW96QAabfPSobJF6Dw4YAT4gGG+Vuxo+AV5sd1aqnKQHMBl
+                CjuReixxpoGHk/yy06qy17j6DGf5KRWjXGW/v+dJxfbc2NMvzyV6o01KdK/v5yPHTYbPbTpyQugMzyL/
+                qqTXXw7i8NF3fuRDfUckDh/0TBcfggiZ+5+a6POJobDrZcmHX7GRWUrrnNcnjDTcyfaTXra2CHUQORC+
+                sIXIWf6wd289TURBHMDnSF3apVWBSrGoVUSgVdTiJYIFiQVEpWrQeAMreE3wQePlwRdnoxKN8RoTLzHG
+                r2o16oMKu9Rz2p0z8/sCLZxmd/87c+YkVwSQjAZUjPzTbPSngkXXsioXdyY6tfQqFVYEUPWiLfUxAW5h
+                ZyIVi61xkvHKSpf48iSyBca/FNtS9pNPnhBLePQCaSGXssuoU34ZT6uj0ehsJBKLZVOpQ/H43MoKurfB
+                ROXbx+OHUqny9/x5LTpD6plGFYbicxn8X4m5+IXU1so/oFhY/l+vVswO5E6G+BeQOZlqGQ3JmjoTh7fZ
+                1R0e2ObKpu3Dux2oGTW18pcEcpD5eSnLxvKRSLELGFDJNIc+4qa5eGqgP3ItLJexRUnCrrOmIQnai9iN
+                tDz1hFjS+wUkhVzKbmtEjRJbIICHq5GDVUTuUz1bm1A/dy6eG+i/CYGo0+lVSEFTrs4jYpyJW5zq14vZ
+                vL9hrDR9wwHzZpA1l8hV7D+oYjPykgYuJGFXK1Fm9jLGzpS98NETYmmvkBRyKRtiqNMGFegjeThI4C6l
+                oltdNCcb7EmoFQnpTLdBHTi7pueZ1q8X1Xd9rGR4w3ZbL/KWBMu1rUVucsCBupbO8Wg/MaQzJhVt6in7
+                nSeEjy+0TvOil7K1FrODvSVXDJrzfihA2Kl7aNI9Vf/vYMADBbXVPnzn6j4U/7avYdutnQ6YMYTMhf8i
+                FqobIAlzYL32iNSwNRiMSM6mnLKfy+gz4e8DUkIvZWuuLDceBX8bkYfedgi39RvQpEkF/rrIlRsma7ms
+                zpXLI1LB9td9fbxkYLv2dheZ2whWOz+I/Ky2OzqpYjbOY1daDTTlNtr9a7E6ZT/2hPD16CUSQjBldzSi
+                Tq0KfKkNyEMMQm19Bs0JVslWU8RKSbWbC+Ps2l0aly3Yy9F3ZGRe6wHbqhO5y4PN6DXSaGBzg4I6PZXL
+                oNApk5Ut2jRT9gspZQvrTvMimLJ1b5NuAX8XmTRzuacgxC5l0JyAlexjSMvZDqgFZ9fwmLSIV6m7YX7a
+                AS1mkb0U2KyALEXBSmomL6/FjGielZxNL2UvvPeEsO00L4opW3Mxu7EH/GWRhxD3jKu8iyZNqvoHfc3c
+                1DEFxjkTpXFJ2P9p85GRyz5RWyZIBBIHiykaRxtoZmfKVsUUk5f3dSAFbYop+5UnRCBvCZ3mRTFlQx61
+                WqvAVzuXp5sBCCl1EA0KFrJVjNTuuXU7wDSnMuasG4UefcfHSxMOVC+CYiVYjMtxF3+6C5bp2STDzoxr
+                bjkP7BFK2a+/eEJYd5oXyZStMqhVVAag/eaegFBSa9GoSVX/oK/XmrsKTHKS98euyy5s7bobtt3f60A1
+                1BoUNk/Kukhu8qImU2ARVUhfYD+ksDb2DB2z+HJgW8p+4wkR0OfXSAXJlA1p1KqzA3ypdchDOHvG21vR
+                qElV/6CvVfOUAoMc2YZtVPfI4b2ObNqtgs0HZrOZwvmXCNhCjfbLVuxaGizyztl0UvYzGX0mgnuDVNBM
+                2aoXtRoAf6PIRBjnjJst0gWcLt6KZDSafIPv3B47LjVs8ypF7WEHfpM3gYFY2F38WwtyNQtWUMUsl61n
+                IbKqvwP4IpOyn3zyhLDwNC+aKVt3/7Z7yrZ24aqFsme8y2zIdtMKfPXQqSOt2qTAEGd6vkESdu30HR+7
+                3wYBJVFUtIClFN+dvDZMP1MzZa4N//XmlpNsC9pkUvZTT4hl+PoEaSCasnXXNgcV+Org8hY6dD3j6wfR
+                pMQ58He0GYlIxDrACGeiNCKTzmpv85GAM9HKKCqGwFKM15f8edlqNC/z/+uptcA0Z1NJ2QsfPSGW4ynS
+                QDRlw3YXtSpLv94voZszvqUTTWo8EeQ79CIN7oEuMMEZHpeEXUfdp+UYr4AOgZ22M56YNQqkdeWp3D8s
+                tmYjy5xNJWW/88Q39u60tYkoCgPwuaIZE20aK8bYqomaGJdaqBaKMVHcqrjg2rqAK+gHBRGXz2dwxw1R
+                3EAF/6kKVv1ibya5w5xz7/v8gkIhzHvPBol8U3LNS2vKpgY7VR3D7pnfpPWMjxY5TWvHsv8b3FmxjtzL
+                bbuBZeJZO0o2Mwy/HCcvGTXdNCmYR3o1a3sCfh+RJMgBbSUp+zlWn0FST1gFtSl75QA7VTJYgPZHJOjR
+                tz7IaSpWyO6mkiphGovFc7exTVyA9SM+bedLVVXQr5dDWzlgWlO2OT20qcogRZQvU2CUpOyHMUBC33Vc
+                81KbsmkjuzWOBWizJPWMTw5wmlY1ye6sjqU1KSw9K2MSW4gpspnH8IveSDanyiAHTOe/1CzEy5c0hZqf
+                j3DKU/ZLlLIhubesgd6UXY7YqYELZFUJ5dKlmJ7xE4s4TUvPkd0lFcWIiXyFfkKfuJ92Ym1E1w6Tf8Lu
+                VNDYnmAWblTSAhWYwOrZKlL24w8xQGIPnrECelM2zWe3SoasJkMpKGwQMcBkalVO0xlDVmZcw/+82qmT
+                S7md+6cZxJjOYWy3ayfJP9c4ZAtIGzPTYhAqqHq2ipT9OgbowRcN17wUp2znn5XDZLeDA5Gn7Jk7nKrN
+                xpcpAbdLz3IH96OILcsBHMvW9duVDPbHz+0KqWLaDQ1PswELKGdrSNkvvsYAvl7zUpyynV82iQ6R1e5Q
+                vnYE9IybI5ymRTVDVmYZy7dkxpAzuftT2HYmzfoy2eQZfltOvtHx1peexaSHaee1XKQI2cTFJgVBQ8p+
+                EwP05JOCa16aUzZ12K2lhqxqHIi1I5SYpi/L6CbZnVMwDRkNG4cLxRGxJZpCsbNrujLZL7huYbOJtDB7
+                MbmhRCD1bAUp+xVWn0Gv3rF4qlN2uchuDZGVWcGB6FCmzBlO04Z1ZFeWfyG9ur2JiO29nWRzmWHWgG9f
+                z6bEYWuQDiux8EyTaNi3XwqVKfvR5xigRw+es3SqU7bztbpRk6wu6Djr1L/CTUpN5q3apTrZ1eWXJVat
+                Q8T233SObBoMv2m9+4QGqv+QdFlyDmZmU4FBldZq73O2/JT9NAbo2UOWTnfKdl5YbpDdOAcitZ7x7Fu1
+                l1bI7sIGFm7tauNq3RnOYgt2lGwqobz9daVNXglmGch/bSXxyltDOfPpl1Wj5DfxKfvxtxjA42teulO2
+                88Ly4CQRTubM6lAqsm/V3mXIbkz6DpuJvCEXbm1GFVu0LWUcy07kLvlExQbGdA2RbObwDjxzKVVoLPS6
+                ni0+ZT+JAfrwQfo1L+Upm/LsUnf129FQ+sIy6xnfXeIUVYcN2R0TXkAqNOrkwMjR62sYRJsiq/MMf9XI
+                J20O3mWSDBvPlDvic8yWnrKfY/UZ+H3NS3vKNi12azvZbedAZNQzfmgJp2hikrpwVnhtojTq5moXOsXl
+                u002K3Ge9187yCOmxcG7RmKZ9kXh77FgFY37m7Olp+yHMUBf3r9g0bSnbDo2yE4VTpHVSDATWB1yLfN5
+                6OIY2ZnaIpasOGTQKR6K6RyOZSezhzyCYQDmfSRVE+38XogO+5qzhafslyhlQ78+smjqUzY12K2WIavV
+                HAjnPeOZz0OXDpGducOi3TPUr/JVdIor8YO9O21tKojCAHxGMNHE2Gg1JsaqREVrW6FFrKLVVnGhVdw3
+                cEP0g4IbLvjtjHHfsSqCu/5SW4m1VfHe3Lk398zM+/yFQJJ35sx5L6Isu0n7yB3edFr8zyESSR1ZjSES
+                V1ROkpOEp+w3dwBMvWTJ7E/ZsS9gPUWBVDt7ovUz491ZTlB7lYKp3SxZx4gynhQfxKS4LXouUJADDJMt
+                cedeSlUYZFazqbl4ju2S/KkyOUh4ygYw90j0ArRBst5Sjld+DQUq+7IAjWdSay1v4wTdUNbv9M0aD4uX
+                zyJiW2SQAq1mmGIeuQLz4mNyAk9Nqn3SOyigWTUX27ORssF530dZMAdStipyvIoqTLT3RFs/tVJ/gZOT
+                61XpV3WbyQ2sJCOZq4M9DBa5SUGGljBMMUKOKCHKjZlO0izvxCMNF1WWkWuQssF1X+v1JyyX/RPjRGvy
+                HK9eCqQ62BMtnRnfn+fkFI4JqOo2M6ebjJQuHmawSojdZ70MUy0mN6ijDOLe2avzK2Qvx4TI8p2ujY0j
+                ZYPj7n3T+jHL5cBdNlEnx6twEktpfhugljmd4+TMPkghLC+yWGv7FBnIbEZvl326KIjCfeefZpIbTjCM
+                mUWCqE2Sz2HBVMGxbeOSU/Z7BjA2qrWuP2KxnEjZ5RrHq0MRynN+yfVTa6jeNk7OnEXpt4iZaR8mA5k9
+                6xms03MBUax5q8kJSvC30X+4/HGqTYKPYSEWHSVyiOCU/fWt5DlfsMTTuh7zncVyImXH36y1lAIpbxaM
+                1kpkLPXN3pWV6beIGVl1QFF0l7ejG9tKg2G6DGEKYZef0fUxjFtBQqgzuMf2wNqFDl1ny03Z91/pL6J3
+                Q4MVRvW4+leWyoV32Qk0a2WHKVC3NzuHBqgF1BZO0HxFIewVu9KmMFNRZJmd59CNbakrFKTszduV8ApO
+                /EseXsswbgOJoK4jY3uiw53ybLkp+4HW+iEDGHlU1z99espCuZGy4/8/0q4o0Ab2hPGe8bTrs9pCZVS1
+                WGxeqZykyKrYeGavdRl0PTVPaMFyk5TksoOW6iMBkLF9Uuhz4qBOcsp++UFr/fk+Axi491E3vGOhHEnZ
+                8c/WzaVA1Rp74t8z49aE7PxpCmMbC5U32MdyoQuj4hbrwsuVSDaR/RYz/PoxTp06gvfYfik6UuolNmWP
+                6nEPGMDAQ/1L/TnL5ErKjv2/ZnYlBepvY08MULLKFU5Otj/c7rUcyzR/iKK6tQPl2DbruURBbjP87QhZ
+                r+zNIW6g69Q8ZGww4cx1ttSU3Rj0/YYFaGDg6Vs94Q3L5ErKpu4cx2sFYe9Qg9HMeOod1bU16e9eMzB7
+                saJoMlfxHNty59B1EM1Ssh5Wn02YQelajnkRL81xYdm40JQ9Meg7ygCRvda/1Z+xSM6k7JhfSYcLlkNi
+                t2XFbXaJkjNU5OQUhykEdZRFyg2U0NzlrysURHnzFdSUjWS7ZXmGhhOUIjWywJuZNZjMjetsoSn7oR4n
+                vOgYpHtS15O8kvnK352UXZrN8apVCZuHJmykxCy6xslpr9q8aGjVXqw881iI3WcjDP+wlSyH5/aTTKP0
+                lIWev0ILuHCdLTNlTxr0/Yg2L4jqrp7iBUvkTsqOP/FuoECqwp5IbmZ8WY2Tc1RRCCWZH+OSzuMURWYX
+                Vp45oYsCrWb4h31kuaUMDWmm7FKn2N4JaInsXMuvs2Wm7He6AW1eP9i7094kgyAO4LMeoCBiq21UoB6g
+                qMEmkGq1eKE2Ro0x2hfaeMU3JsZbP8Bs8Iz3HW/jN1W8SBXYB7rLM7PP/L4CIfDfnZ2/6N3jup7h4zMk
+                yKOUbT3xJqbAKBuZSlNXM+Oji9GZRFlBAAWaq20GStCTzAUUXlgGJrXIlPZ3J8H8r3F03iJR/jBVWT4G
+                MZQBzkim7Cd13fSGbNGxoO3OW/2P50iQRykbsim0a0LJjpqmKrgwFUdnUscgiOwEEpRcqKAXV2WtuC+2
+                xcCkjKKlLcBaFcVf8yEUavViFAI3lIAxkin7tW4gX3QsaHuq/yD9yt+nlG1/3e5ZMFI070GtczMzro6P
+                oTPxqdAv03u3JC/VXVF3AEyUtD21cRg4Oyr7tprCGf9XIyQPX0UIkmXGozEUU/avQV/6RceCtObj/qb3
+                BF/5e5Wy1Q20KzkKRvsxKlIKbDuM7sSHgzWhUhwKTFWUZOyoC7D7bAeK1uYBY4rkwV9oFkH/1WT7nGjK
+                LQeuCKbsuy90A/2iY0Fa83E/7Vf+XqVsOJpAu5YovkXL9lXBsmNJdCZXCz3n9yyX6Slj75GM7ZNJKezv
+                3UZgTDrQZ9gL/VarJlCIpvg4MEUwZd/TDQyKjgVlT+q6hS/02rz8StlQRcvKYDS9ASPC9sz4uQQ6MzQd
+                es7vVWql6iljr0HhkTVXwSQjC5Db2QR8nZGPdYZ10F9qJcX5JhGq9HamU+P0Uvazj7qBQdGxoOy1buke
+                UuNZyi7G0a7UGTC6FJlHdFb3jKtyGp3ZrSAAVSF4ZbEkLxlbIM6VuqdZWARsRaceMqCN0FclGRYXLQzk
+                gSN6KfulbuBQdCwIe1zXLX17iMR4lrLt/+/MKVkI2zSkwALnk/arft4Gsxz272W1eGyXZGz/HAETJXGg
+                rRTTm6cfBlHMUAETGRYX7o0dA4bIpewHdd3AoehY0HX3hW7jJRLjW8pWObRsNRgVo7OsZgQsUbvRmbGT
+                EIQ6geQMjELXLh5E4Z3NMZ47BaiYA0wNR+fXJKBB6EyGxUVfpDcyPLujlrLvfNINLIqOBV1P9W/027x8
+                S9mQT6Jd8UNy+9C0uAhWqCF0ZnEJglBLkZpVZxV064rsFffSJBhtR9HWDuCJ4tlfyG5Bn6hbMh0iOllR
+                BG6opez7TKKRIO3RZ93WJ2JtXt6lbDiLli1VHAObI+aZ8dAT7kAWghim9/pxogTduji5HoWPToGJIri5
+                j459wNNpFP9YAP2xXA44hEGcXcwmlrJ/dxzzKDoWZD3XvzFo8/IvZdtf+T0IRtkxjIoRmL2Mw4S7YhiC
+                KCxBYhLbp6FLsZtbUXhpWwxMRlC0VwGW5K39/05DJzIsLvooNchsapxYyn7FJRoJyp7UdQfvHiEl/qVs
+                OI5WBTu+XIlRYWFmvOgs4Qa+a89OIDFrj3a/9Ezusb11HYw2oWivCixVUPxrGfTBlBxviEB284rZtFJ2
+                h3T0Ttq8REB3vuqOXiElHqZs+9PIVTBS5K5GHbEwM14YQFfSATd0j1LbMJTemYHuxK5tQ+GrrdNgUpBd
+                yJ3sBY4ORWcoKrg54FxhnXybREC5AjBCK2W/1g1cio4FUR90Z3VSbV4epmwoxNGu9DgY5aPzSHIEDEK7
+                Rk6egwZ+ASWVhS5dlozts0kZn5ml88BQhBZ8BOc+Zavj1H4QBGWpHYyus0ml7Md1NtFI0HX3hTa4jYT4
+                mLLt//9cmwGjhRgV8RrMQn4tuhIfh0DGqV0YLS1CV2KnpCDba9/Zu9PWpoIoDMBnFBONpmqqNSZxrbu1
+                4IK7uO874o4Loh9cccMPfjmX0Nri1rorFcF/KkJRxDQzN86Yc+68zx9oyYWQd+6Z8y64RzYGt0ibmqro
+                h/AvNxj+UjAUVhXD4pDOUz3fLpJS9mg6UlN0DDI9S2zqL1mOTKZs/+Pbm8jKiLvpG0ynoZb15DmUhb3k
+                5KSwsYNixVAq5esMmTaerB4xNLWH1CkvZPjLBArKVKQduoJ8R9TEbEkp+3Xyk56iYxBpaCSx+ihoZX0m
+                Uzb1zmO/CqfI6lQ8U2clatXxPIcy7RC5MGuEPafpvZRK7hYWi2fdfrJazNDUYVJnOcPfTlBIh+Q1OoIC
+                M7XEbEEpe2hEUTQCsYYTB69ZjGymbNrEnm02ZLWNY9HyzPiGIofSWSUX5gjLcraMC9nwp/U5sqkWGZoq
+                kTYR7fZIYwqFY0q4eAEtmaOkOfsAizGsKRqBVIP1xMEHOW1eGU3Z1Q727DJZdUlbXB1Kg5nxts9qnzXk
+                wpxlUfIp2zfv7sOF7OxbSVbzGZpbTspE1FORyi4KZie2zUGrNl8iDeSk7MG6pmgEQvV9SZx8YikymrJp
+                Lns2udflj0ajRC24Mo8DKax2DNkzWZQ5NUoj9xAN2RFYdZNsDBY22awgZXBw0tgsCsTMjedcHPzr6CEF
+                xKTsvq+qohEINZC4qb9iIbKass1s9myaQQ/Lb/lF5Cz8hejiSXJSlXUHrzDJpGvIPs0QgR1kdZjBYgrp
+                shOzy41toTC6hB25gjbrzpF8YlL2gK5oBDL1f0scvWchspqyqbaOPVtNVovi+aHkPjMe/kJ0/jg52Slr
+                JLPjOKVx7xhDFO5jB4QHRS3riUZtYWjoMgVxGwvd4R8V1sj/kpGSsl981hWNQKZnySg9bV6ZTdm0mj0r
+                XiKrCkejRKmY7RzKsm5yUpPVtZauJDu3EsPikTidQ1m2D+NIk+NTGRqqUADlTcKqJkCl7eJjtpSU/U5Z
+                NAKRnn9PnL3pZxGym7L931ycY8jGzOFYOM6Mh78QPc3xH+kVdQkvXUl2bj+GxaNxDRsgvNhKihhZR4CS
+                lMg7cxUfN3jReZ5kE5Kyn9eVRSMQ6W0ySlGbV3ZTdoD+6gpZdcdTsNNpRITszjI5WSTq3UXHUnKXW3uQ
+                IRZLqthG7cVu0sM8ZhjDGXzaINc04W+zhaTs94mrZwwwhsF6ksLIEEuQ4ZTt/+5i/hBZTeJolMhVeTaH
+                st20vam7BTPLqYbFGeKxl6xmMNhVSA880bFNJM+WLmMAXzaXSTIZKftlXVs0AoH6viapDLMEWU7ZS/Ps
+                ldPrWyNqLjmoQrn9RbAPTdubutNKOy3+ZCNDRC7iKM+PxaSGkVV+IMtW8srMF3XgCupNX0SCiUjZ/W/U
+                RSMQaCAZparNK8spm0rsW4msekRNJgc127R5tXdxrnEsEZP0UBb2pHqRvYohIhtzOMnz4wKpUWIY0x7y
+                yZxlAK8210guESn7dapoNMgADfR/TlL60sftl+mU7XsXmdt12k0cjQo5OPSAA+noaXuJWAtmLyV3d7D1
+                LDJHyeoRg4O88AuTv3Xh2KSJceRRDSsNwLuF3SSWhJQ9NKIvGoE875LUBrj9Mp2yqXsye7aFrKrx9HC6
+                lJt1B/s4ptcUvr0oTDLkrGsvXmRHZn2OrBYz2Cmq8rrM8H8eY20eA3g3uYukkpCyhxVGox/s3WlrU0EU
+                BuAzookmZmmksdq4Rk2rNWApRiuodQMVFQ24gFUEv7iCgvjxXLQuGPd9F/+pC4UkaDPTm3szZzLv8xMu
+                Scg7d857QJxmT7257wIq6/s7ZUc/wJirYc1Oi1XK3v6sVRXr/ebzl6xhfRd0sIW0ipI6BiQ7QG7waMgo
+                hJSiqKgleNIQi+QYCSUgZTeLoQ19FBCNQJzXQZNLlfV9nrLVCEds/bBbsS5m26izepJjMqjIyLCkYqF8
+                iYxdOc7gm603SGslg5Gj5AQ1wDC3RRSVyjIGiEfyBMlkP2XPfArm6w0DtGk/rDH38wnb1fcpm67lOGI7
+                SWtDkn2RrlIntQmOR+6CIiNTkubwzigylTi2ncE7e0lLTTIYWU1OGGfo4BJFZAwLvCA+mRqJZD9lPwrm
+                7Z79aATCzLwPQnnNdvV/yo5+hjFVJ6217I0BRXM7m+F4pC+SmZKgSJIpKDJ14zCDh+6Q1lEGMxfIBUcm
+                GDpYigVe4ILMapF1i9ZTduNjMH/3GaDNo6DJrcr6vk/Z0b9XvqWw/rTFqIUl1cbTzVVB5b2TVTKVuLOO
+                wUPbE9hhEJ3l5ACFa8yd6FO2i3smoC+JHFGxnrLfhIpGTxmgReNdENLXGbbJg5QdwxTjEtKa9ufcfE2d
+                5nAxxfHIVslMXdDV/cFhvMgGjaukpQR9poVbSg7wqCsznM1Y4AVuEHlp3HbKfnYvCOP9DAM0vQlmubfN
+                q/9TtspzxNJV0trG3hgZmqPPNcfxGCiRmekci3Fbkam7mMj21KYiUlmELpF8Q/7sfQxpI3WvhqMp6IGJ
+                OoljO2W/DcJ5zgCzNIc1Gh8bbJEPKZuqaY5YXqE3tsXO3t7QW1EkMyflbDxKLlRkaOggbov76hDp7WMw
+                lBM5J9lulKGzUSzwAlcIXOhlOWU/DZuOvjUYYFbbYY1rlfUepOwY/siMk9bYGvZFqkb/UGc4FuY93Wpc
+                zl+ryTKZuo4d2f7aTVpH5Hyq5TtP0pXlnARKtY26NOVRSwpYliyTMHZT9oNXQVgfGGBW62GNc5X1PqTs
+                6C/lZabxkqJFttizleGpJcq9tpsVRTKU2LKVwVc7EqR1gcHYfhJOYVxYq0DdKWOBF/ROdppksZuyn3cR
+                jZ4xwF8P3gdNzlXW+5CyYxhlXKUwcNdiUFGbc8s4HumTZEadYTH2KDJ0E7VnPjtGWkpQab58BRLOo5WP
+                oZ2irtTxjYFeWl8iUaym7BdfgvB+oAAN/mg/rHGvst6LlB3DspS1pFUT1L0VtwK1Kq7geCSvkRk1yFJk
+                1ioykziG2jOfmazxOs1gbpRkm0Ipl95+6sZZbCOH3prcQJJYTdkvg258ZoDfGt+CJvcq671I2VSa4Igl
+                N5DWRvZG2+OYynM8RspkZljOJF62ToaKxxl8dpD0ljOY20yy7WLQWkzhqZX+1KOAFAMVEsRmyn58L+jG
+                qwcMwPwhaHKwst6PlE3jHLVlinQqHr2paHkcRwY4HvkNZGZKzrRjvoTaMzCy7iZpVVCWZU78wuwTHt12
+                Cu88/Yd75Rzgj3yR5LCYsmc+Bd15yACaLV5m3jXYEm9SdgyLtQqkVWB/rKVZ0yMcj2VDZKZ0i6UYHELt
+                GZi5TPhFiVha9CovzNgbWUBhqT0MYMEqQT88FlP2o6BLP18wwNugycXKek9SNo2lOGLZCukoOReXY5cs
+                0V/VLMfCvEOsLKZ2zrgQnYZ3MHjuF3t3+htjFIUB/FyRGWYy1NIxGIKxGxINamukFAkSWyy1BR8k1hDC
+                x3ODIiQ0KmIX/6lttHy6577zvr3nus/vX2jS9pm553nOkpNBXbKfKaQXvmgt+GdYT+jPL+jSqydmh0vZ
+                L97Zbr1mSN7fK15RVtankrJpgPO2g5yaNU7G749v22UuRKXPkMxxNe/0N50moQeoPUuepPvsHIOXIdJr
+                LoNb9pTdwFMBCETTvEG4lD2WQzR6xpA4x+S62BsOI6GUXZ/BOZvZL7kHT8c9Q+ZYmQtRkwZWM1VNp+yy
+                DeLX4ksZUrcObVn5u0tqpfTQKbvsr/43qHnSBAmaeZSUCJaynz+03fuENa/UvbQd0a55JZOyCzhpXLaQ
+                XMx2TseQ2c/FqC4noYOsxawGydzESDbw+qvkZNR8ghSLBaQWTuxlLlEm19U8aYIkVa+TDsFS9iObh6cM
+                Sftncj3Oyvp0UnYB3x1sI6chTsf2okJ2uS4ebqmwEr3DJHMDr8WBeR+CWQEGSKs63jPLHKEsjqKMH8Iq
+                t0iFMCm7c00bdzc0KDBqO+Jd80onZdP5GuescpxczD2GLvU04usT2mXQLQ4ebpPbbgY/u0mrAQaRM+TP
+                bFTzaSska/UgaRAkZTuvaeXGGBLmXvGS+/iKA0gqZdN0ztsdQy4NnId1qddEN9wi7mq7itfi8NOJEjk1
+                ER18HSGl2vhZCu3GghfEadEwKRAkZXeuaSPvhobgHn+1ORrlANJK2QUcSU8np/6ZDF04JA7ZvayEuKvt
+                xgkG+OEyua1h8KJ3MNvMYpCZR76G5zCAAir2vEKk7M41bezd0BDcBzsh2sr6lFI2Ha5wzqobyGkFQ2bV
+                BeLJaTWdveXjJFK6vJIBfljZICeT0CxgTtQOZh9jEBogT6aHAVS4pyBmh0nZo9ba6LuhIbSRLzZXXwNU
+                1ieWsgtYwukx5DKIttPMNvWT0KCa/622t0hk4RUG+GUvklkxppFGB1AWL3aB/CxcxABKKIjZQVL2s4c2
+                P29HGNL0xE6It7I+rZRdQODtI6clDNnMaJNQU80TzEWDJFJHtzj8sZnc1jJ4u0gKGTxplluAb7IhXjvJ
+                23+Qsh+/t9bG3w0NQcnvDuS+jPBkSy1lFxB4a01yMfh0PZtZTRJqqemYmzNMIveXMsBvW0vktArbRBn0
+                kUKLGcQW45tsiNeMA+Qt/pT91ObqM9a80jRqc/eEJ1tyKbuAwDvfkMt5XFRmMb9OQm01j/KFC16laxjw
+                gnH7ya2Pwd8O0gezEz5OImRDxHoM+Yo+ZY+8s9b+B93QEJb87kDu2yueZMmlbGpVOW9LJBti4E1e0Nmv
+                5cxRuuBVwkk2TNhSIiezmsHfGdIHXfE+DiJkQ8xOGfITf8oesx1Y84KsZHcH/l7zJEsvZRfwL055OYZb
+                8leZbkjGzNbylrZ2GivZ4G8due1h8KZyMLul5ddVHHYiZEPUlpCf6FP284f2p/i7oSGop3Zc3GteyaXs
+                Ap7rzTHk0q4w+KgejW8Vp7qcRG5tZYBx66+K5hEgg4ohZdDS4WcIIRuiVmuTn9hT9hv7R+Td0N/Zu7Mf
+                mYIoDOCnLN260cYaQ9tm0JYmIWINMrbE2CJIhgQRROw7j6fSuhHL2AfBg//Ug23oq++5V9ftOl3f71/o
+                h77fqarvQCc1PlgnPtc5UwGmbBrHbTefYm1iSCB/mYRMYQr7obSaRK6gXBxG20PxjqPaIZ0Z5BlsnEhm
+                DEI26NY3QEloT9nPavY79d3Q0EkP7S/KJzbhpWwHa1RKFYozt8Qg1tdPQmY7e2JZmUQuLGWAUW5QvGkM
+                qZwnvwx4U9SoxBiEbFCu11ASulN2Y8T+pL0bGjroSc068qHBWQoxZdNgntttC7a3tFPPYhIyM9kTUwdJ
+                IrcSG7xgFNkaL9rBkMp88gtu/idTNAjZoN1ySkR1yh62Tnx9whCS19aZN5ylIFM2zeF2m7JBcoQOMtPn
+                ktDcXvZET4Ukjh9kgD8coHhlX55FqFMgrxzCD5nMeIRsUK84RAmoTtkvvtjflHdDQ+c8rllnak84Q2Gm
+                bNPD7dYXHwwHcVVQZrshoUoPe6J3LklcRe8Z/GX9bCx/cmgJ+cRsZkjkDEI26JfvJznVKfulHUV5NzR0
+                TP2zdegBZyjMlE3VBdxumyRH6BCvuMaQUNmb/WjTDUncO8YAf9pN8Qy6z9LxbWE2ntcnNYkEjDfjVoBI
+                JUNSqlN20xGk5m5o6JhH1qXaM85OoCnbQeN3sYpPgXaYPERS/X3siZmGJO6j9wz+tuiapmV1+uR9WuVV
+                xrQkqRM4yYZuIL+ipzll1z/aP6nuhoZOefrOOjVS58yEmrIdNH5PNfGxcCJDa/kjJFX15ga+7P8zd2kV
+                A/zlHAmsYEhrDHkDq7KTW4GTbOgKE0hKccp+ZB1695QhDG+sY8OcmVBTtovG7wLFOsXQ0uZ+ktqwjj2x
+                XxayxzJAk+sUb2ABQ1q7yBu4L57cEkV7JgD+rVQhIb0pu/HBuvSeIQhRW7wUT2wCTdmml9tt4mqKY24y
+                tDBvgKQO+3IvQPiOfNZeBmhyLEfx1jCktpN8MavEkNRWimH2M4AC0w3J6E3Zb6xTtecMIXhgmyme2ASa
+                sl28kOsx2OPyX2YeJ6nTRfbDgtMkcQ3l4hDlFsUz3hQQaDSNfLGVIbECSkWhSywkGbUp2/kR5FuGADyr
+                2Qh6JzahpmwX50NrKdYWhmhJ6kFMwZdpxcTDJJC7u54Bmi29SPF2MqS3nDxR9WUyqMocam0IrylAiXyZ
+                RNSm7Ac2guJuaOiI+oiNondiE2zKNlO53daVKU7Fm8ou3yyYIw/Zd9gX50niLANE2UMCSxjSW0F+MN7s
+                HVRlPrVURWs7qDHPkIDalJ3BEeSrBkO3G7bR1E5sgk3ZdKTI7dZrUICT0roh+kFR283kcYYEjqJcHKJt
+                o3izEST+xyTyw1qGFG5TKyfx1B0UKZCE0pTdGLGR9HZDQ/ZabPFSO7EJN2W7eCa3UFK7Bs1KVZKaPZ09
+                MXkDScxAyIZoG3MUbyHDfxhPXhj0ZieCLvuohYHNDKDHxCoJKE3ZwzYDn14wdLf39p+UTmwCTtkObm/n
+                F1OcMk6mmk0tk1TFm52zspCdu7WIAb6xd2c/MkRRHMfPtXe3MRg6aARtX0Z4sIslQhj72GNNkFgTD8Tb
+                uWk9iLXtW4Z/1YMXRlff09VVt+6p+n3+hcl01/f2rXPaOoKbxqnrNxQAE8zZoDI7KNr5YL4LAEQenCc3
+                nZX9dtT60GLItdcN68noW/ah0JWdxo9EAwY3B7s3t0pSh4JpDmFkX2eA9jZNIrcbDD25SAGYwBDLLA2v
+                DgEInTXkpLOyW9aLxnOGPPtooyk9sSlyZZsFnLiF5GKmM/xjtiGpejBLjfrOiSJ7PANEWEMCJYaeDFH2
+                DKZexjROwxBMAKkd5KSysp83rB/fmgz55Ryhp3CbV5Erm+oVTtq0FeQyiN0jf+svGZJaG8zDakUW2TcZ
+                IMK6e+gzDxZR9lYxxDMOl8IgT7YZctFY2c1v1pdnDLk18s569KvJ6St4ZdNlTtx2PHJ1pXKFxDYHUxyI
+                bOjZblw19mErZa5eYYilbCjCOawfB41K5KKxsp9Zb75im1d+vbFefef0Fb2yzUpOWv9mcpkTzLXn7E3e
+                TGInghkcJ4zsowwQ6SG5GQx46k0IC7PxR4xtIkUYDubLAKAbfZfIQWFlj3y1/jxlyKmXo9arnyOcuqJX
+                Np3kxC2Zg9+nxJYMktiVYG7ayyK7dpABIp2eRG6nGHp0nLJ2lSGma9ReFbcDQKkFhhz0VfYH61HjBUM+
+                tayLxhObgld2GmNKt9IfGI7qNP0QSZlSPwdCFtlVRDZ0cpsENjD0qGIoW3uCedFFn6lYlA15M5M601fZ
+                LxrWp/cMuSTc4qVt/3rBK5uWTuakldfiuUtmoEZSZheHQhbZt7YwQLTlVcw+82McZWsnQ1wXsEMe8sZx
+                7qewsp9YAWzzgs6av6yMsm1eRa9smseJm2EEq7rhr9WRmn79l0X2PUQ2dLQfd409mUKZOhbMJRyFVlMb
+                5iwD6LWdOlJX2a8a1q/P2OaVR9+thL4Tm8JXdhrrq0uYh+NW3tBFZA9wMIZI4P5pBuhg8SMSWMbQszOU
+                JfOAIbad1MZMBlCsPEz+rOe0jXy2vr1hyJ0utnjp2r9e+MpOY311ZZBc6kUfkdp3gsRWhHMmUV5kyO0R
+                IhsS+OCtFf1TIhHzKEslhvhK9L9B/FeAbg8MdaCtst9Y7z69ZMibp1ZO1f51VHYa66unGzx8dTb5GIkd
+                CugtvI0k8GgTA3R0gIjwYokX2ylD85GE8bU9Ialh8hloV6Jo2ir75aj17wtDzrz9YcV07V9HZVNtGids
+                TIxhgMt/VtZJrL6Sg3HYkNtdRDY4bJpEhM8IP/ZSdsxchh4sDHlEB0BMffMpkrbKbtkMNF4z5EvLdkPT
+                Ni9UNtFCTpjoQ3S4zIW1YA+JrZ3GwTiLyIZErCGBfQwJuEbZGWLoxRCNdZIB1BswFE1VZb9u2Cx8ZMiV
+                5w3bFUX711HZ6czWmmuw4CXSwHkSuxPQLqPZhtzuLWYAh1MksJWhZ5kuzK4GdESo0mMaY7jCAPqdoUiq
+                Krv5zWai8Zu9O/2NKQrDAP4cy4xRNbUXQ2nVFENSEWsTS/igxJaIElHEEqkgfPDxvakOiX2LJbb4TxFK
+                JTPOMXPOveec+/z+hjvLc+553+exUERaeI6C6V9nynY0O7eK/8Ca2a1gbMSjscalRm+y1wqRxpECy7LT
+                sxAu8JwkBWfxt715/dGkyPyr7zWklP0gyciLulA8WniOgmnzYsr+YVCsK66BzkrJo55lCsZGe8QbXct5
+                XZzsuAWA3w9puYyM1HI8FWTHNI65U5zmo5mQUnb9XWIusHFaSk/9c5KhjxPiDlO2uzVDC1RILdCp6RyB
+                MVUqizfmVbldnOw4WYCB9UJWzICZEH5WcmYamzkoTr0KjQWVsu8nmfnwTCgWLTxH4bR5MWU7e+mwEjrD
+                +bsSOrcGY2q3+KO3Ar0b7MkmAxdhYA1fhFpSQjY2C7VntsJU2/iRoGgMoplwUvbD8SQ7z4Ui8exr0opA
+                +teZsp2tIptbhc4yyZl5FTTjd2VLsQ9617YLkdbabgBs1E9NPzIxvEWoPTMxVSV/p9IUr2IVjQWUsu8l
+                /y2ccVpKzcskY6/EGabsSdWiWLcLOqpLcmVpFca6fbpPX6xBbzFDNpk4AAOKe55sOQNzfldX5M2xPP9a
+                UuR2oKGAUvbj8SRL7yeEYtByi1cYbV5M2b/MF+vKY9DZlKtekkUKxqorxB+dY9A7fVCI9FbfgIHzQpZc
+                QBZmCLVrDv5Qp4QoIh0VNBRMyq6/Sf5fOOO0lJKJj0nm7okrTNlOt5cOdEPnnORG+ZyCsWGfFgf1jECv
+                cESIrH3n9gtZMlshfd29Qu3a99c5OFFU+tFIOCn7aZKxd2zzisGDJHvu+teZsv/o6xTrdkBHDUhOdIzC
+                3GKvJvDOQ69wRYhM3ISB5R4VxQdvP1KnDgu1bQl+28QPBEWmXEMjoaTsR5+SFoQzTkvpqL9LPPBmQtxg
+                yna7bWh2DTpHPSqrcqm4DeZqXs2kHlbQKkwXIhNbC7xvnLIhpG6/UPvWYZLy6tyVyIZ5Cg2EkrKfJ5kb
+                fygUuleJF56KG0zZU6idYpnRt+guyYPeTTA35tU/qkUmIfuSEBnZAAOK940tmgFDrMr2S4kb9ylmQ2gg
+                kJT9JPOVVd/dEwrcQx+eI4dtXkzZU42VxboSdKpeRUpHuoZhbsSru4ErTkPvthAZ2XgNBg4J2XMOaVsl
+                ZMEq/HKUTdkUmy39dwJ+lz3xJfHA+GOhsGXe4jXprTjBlO164VBHHxrK11aXpcthbrRHPDKwF3oLVwuR
+                kT2G/f1kzxKkbG8ejk5TcAI/dedmfQnlRMf6lQqNhZGyfVhZ9d0bLkALW/YtXpPGn4gLTNnO/xt1KYPt
+                5pE7pWBMlbwaVC/2Qe/qRiEycwsGlFcnTcGbA3t4SJKiWbwvTjGad0KhqSBSdv1z4oenQgHzocVr0mtx
+                gSnb/T2/zdCpeHVD2rrZJQVjarf4pGMMencZssnUyQIMrBSy6AKs4krLtAzxvjhFZ2BwSOEfgkjZ9xNP
+                fHokFC5PrkQ4HD9gyv6b6hLrOivQGZSIdR6HObVIfFIehd71tUL0jb0763UpiuIAvjahtNqLUlVq7EWr
+                JETM8zXEFGK+YgiJB4TEA+Jp7dAi5nke4psSiUSuy1llnXPXPuf/+wTn6ST/vSahiyTg6gyK+hxFMr5H
+                M5u2oV8c0qXUPO/o70JI2VZWVn33hiFYD155Q551WR9S9hBLC6xuusvy0ex8g+SqZTZlvCRkr2QAoQUV
+                EpjCoOowKcKmjcSMQr84pMjsDYIqdhAp28zKqh/jtBAqI1e84hw/QMoeqsn65lCUdmrHMBfNJ7mFxkp4
+                khte1xGyQW4H/QXOFsVlgPRkfQIoQX0O/eKQFoVpwmHsAFL2QzulbO+/dBjCZOIa3C8+PGF1SNlDVeex
+                ulxDEO7TaWKD5HYbuzFbdxTpyhEGENtIAq7EoGoy6cE2y8TcRL84pEN+6+QZJGQ/ZXdee0veM4Tptjfm
+                KatDyk5k71DZCcJ9GpWrJFcxdv0mJ/j4sahkg5h099lRBl1NioB+cYvO0ndrGCBsa5dvITn7KfuxN+UZ
+                rnmFyVRLxA+37rE2pOzfuDLr20NRVqVxK+0mR3JtYwU8yQ2vsbsYQG4fSUxj0NWixFSM/cdCdgD94hC8
+                0ulxjnphPmU/+ORtucMQoK6tloiYxg+Qsn+3ewWrK1UoSj+nTX65IzF30Fglu7BfELJHM4DcykESqBQY
+                dE2gRKD0qusE+sUhbLkNA456ZD5lP/XGfH3CEB5jLRExjR8gZQ9jOetbR1G2GEuZ/614nHqwh40ZoGjn
+                GKAH20mixqBsDCWljdKrnhYeLSBgxf6jjnpnPWVbW1n13XOG4Jhrifjhc5d1IWUPw01idX2XKMocTpVS
+                m3pwxtqSdUmz+40lDCA39wquLY+EBA9mu4kMavrpEB4tIEyzW7MGyQD1lN354s25dY8hNG+8SXdYF1J2
+                UuWIRdVsraa9eork3DJrU+l13PACdaPDbOtIg5P039CHkLgm+sUhSH0nagvJBvWUfdcb9BHXvEJjsCUi
+                lvEDpOxhbWB9zUydWa0vJDm3iY0pNSjShdUM0IudGOwdKXsoEVWUXjWt28sAwcnVZpAZ2im7+9lbdJch
+                LC+9Uc9ZFVJ2Ymti822KsozTYqojOTeVjSm0sV4c1K0cSwLO2vBEKkymfxb0ryxs5p5fAaIUT58c+WHs
+                GFP2HW/SqwcMIbF3xSum8QOk7OROnk5ygoHwdNjrSG6wzNbUsF4c9C0miQEGfU1KwjgGgOzK9683FbH1
+                U/Z9q+HoBUNAus+8We86rAgpO8EZ6fEUpZ2KMlah5kiuUmdrjjmsFwd1Sy6TxFYGfS1KwCCmiAEyq9Ca
+                ZS1i66fs596oW48YwmHyilcs4wdI2X9wqsjqCvMzMZKZW0U9aNir30/EenGIwWaSmInJ3jhMoAScZgDI
+                pPzWORWySDdl37Nayvb+JUMwnpi84vXT2y7rQcr+k/GsTRLfZszj0JWWUg9O2av+lGZivTjE4BqS2sgp
+                Oord/AIDQAYtWtYgo1RTdue1N+sbe3f22lQUhAF8jojRhsSlWGON1iUudQkYxH1BRV9UXIrbQxEEH7Qo
+                FEEf5xBSK41WqbbF/V/1pUVFk3NPcobMxO/3P9zbfrkz89XfMFjx3qv2gdNBym7FScS/GoWsZOPWlylC
+                tcjajFzHeXEQcDvb7TN9T0R/WEHSnL7dFwAQVxy9onBSXCBlK5/zXZhisEFri9ey+gwng5Td0sRaTq5Q
+                7vcjtZuHKML1HKtTw3lxkPCEsrjDIOI0taD6ZCYAqJY7c1FxxE6cspuq53z9LIMJjR9euTlOBim7td2c
+                3mZHAecVBs/s7jqKcE9hQfhGh/PiIGDPY8piE4OI5yRsr+k3NwBEO7L7ue6InThlL3rVvr1jsOCz1y5h
+                mxdSdmuVHKe3nUK2s1kDaxxFeKBwjXF9CefFQcLlbFFN4TPRH4ZJ2BkGgP9HYdMt9RE7ZcrWP+fr3zMY
+                MPXdq/e1wYkgZbcxzOnlKhlKxIzK36QI7rDCY8q5cZwXBxFnM75zQMYZkjWm8HUGADLy+7eVyIRUKdvC
+                nG/9NYN+r7wB05wIUnYbbh2nN+goYFzhHHUWuQmK4K6yPgPHcF4cRBzPdvtM38n9frGfRDl9jYQAIEBx
+                a5dkyrYw5+t/NBi0e/fFGzDf5DSQstupjnB62yjkMFu0b5f5kM0bKGgI58WhAw8pi4sMQm5QN/r0pQ0A
+                sSZr58mQRCnbxpyvn2bQTnmLV+o2L6TstkY5veJQX34WWVehCPcHWaGtDufFQcSeEmVxikFI3pGgstEB
+                JACIsXPNagvL2OlTtpE53+9o89Lutfbt/sRtXkjZbW0pcnqnKOSgvRW/wRJFGFLZLJsr47w4yLhEWdw/
+                wiBlBclxKn81BICUiqOPjEXshCl7xkY4esWgWuOTN+IjJ4GU3d42Tm9ggkJOsDHnHEWorGONNlDQNQaI
+                t+MFGpd77TT9YuHvBAAoor4YWzhlz3kT6jMMmk17K+pvOAWk7B58o9hXooAtO9mSgZqjCOM6Tzxl6Pp+
+                sYcBxN6yFxjE3KHf6Z95AgAtLBRjS6ZsO3O+fo5BMRPb/UsWpjgBpOxe7NuNUshKNqRwk2JUdf5LOlmi
+                kFW4fAYduUZZlO1tihgyTH/Qfr8DAHQobFppNWInS9mNBW8E2rxUM7Hdv2yWE0DK7sXt2JGDFOA2shm5
+                MYpxPccaFaoUdIkBOnB0FcJaz50iKdU8A0BfGtm/wUgxtmjKnvVmfEWbl15GtvuXfGty95Cye3Lwe72j
+                gIrOLPoPJ8cpxj2lx3iHKejlDgbowAHKwpl55k26QEKczjMTANAVY8XYkim7Oe/tQJuXXka2+5ctcveQ
+                soPGBji9NRSynW3YupdiPFD62WfQUcizowzQgUNPKYtbDIJuUGf65lUNADEmaxWyL0nKXvSGzDcZdDKz
+                3b+k/pa7hpTdmw7b/C4KcCrLrv6y0VEEd1jp5mnxPJay4Sd7d/YcQxTFcfzcmMosIRhEMhhBBhEhEkpC
+                wpSEUGEsFXtsIQ9KWV94O10x9n1fy/aX2lUpRd+e7mvO6fw+/4AqD0m+fe89x5VTZMM0MTiUMeREo9Cf
+                aQBQuWRupuLH2BFX9j1dcfSCQaTyW0+Z92UOC5Xtb0mSozfNkI8jQq9W/2Z7sMjezjJl1uJRNjhznmwM
+                MzhVQ070MUDc1E2ePTudTucTiaFUaqDmh1SqP5E9OvvQLqFX0iIzJT0Qj8SOprLL7z1Vxu8xSKRni9cv
+                rzksVHa1bgTmyE+apZufCxbZ+1moVjzKBmf21pKNTganUuTCmakMEBd1u5b1NB8fqTH0T6ZmZn+uMFnD
+                SUBQehdju6vs154yTxkEuvPSU+fRNQ4Jle3D2eXtKXMt5q7Jtnpt9XePR2IaHmWDO5fIhpG54C5GjlMw
+                GFkHE8jSQqdvXf8Z20PNhV2xejKRKfTGKbEjqGxdK46/G7/LIM8TT6H7HBIq28aiOo5ekyEfy2X/9qpf
+                TkE0iH12mjyCR9ngTPtpsjHC4FaOHMgygHKZTblen772be14fG1qGotZYkdQ2cpWHP86gQRpdG3x+unN
+                Aw4HlW3lKDvQTH56WLDpcymIFrnrbrLkq40BKrPFdsgiuFWg4GIxPQPgr5Kzm1OGwjMD+fW6r+PULcsO
+                x6+xI6js2x89fe4zSHPVU+khh4PKtnJwKUcv2UI+5ixksZoaKIgGuZ+6Nxo8ygZ3LpCNRuSaa5soCMyF
+                h5jLTO5LRDrky4xktZ5px2ExtpvKVrfi+NcJJMhyV+VRtueN3+RQUNl2EuyA/47mPEs1y1AQK+R+5a5f
+                Qn7O4lE2VMZ69tk+BsdOUOT6GUClTMHN5WgzM7FM3QTydflGiq1wla1vxfEPDxlEKT/3lHpV5jBQ2dWc
+                3JXXOjBsatpQEDsFf+DOk5/abQxQoVGycojBKRcLs426nABgn8QOzwxk17EaC5tjshjbRWXrjaPxmwyS
+                KNzi9dMNDgOVbanFRSfWN/j+syLztO4YBXJA8G3YWQaPssGdxY1kYy72Qbk3k77BqmyYyFYX9hlyzYx0
+                XmQF6o9eiXVih6/s+55Sr8oMctx55qn17hqHgMq2lWMH+ix2dcuTXEuB7BZ84mNxX/xyOwNUaDNZaWVw
+                boyCUb4EAuAP1okdnkmlBQ+W+SrZMxT3xA5Z2arj6AaDHC88xa5zCKhsW2YaR2/qGYtd3dIsXEFBmE7J
+                f4vm8SgbHFpwDluXxUhQpMx0BlBkSmGPof/JDLWKnciS7OufAIkdsrJVx9FLbPOS457O1/0/fLzNlUNl
+                V/fgYmkj+Vgk7bb1tBYKwmxnwWYZPMoGh06RlTEG9zopUnsYQI91VTm4Nb19Au+yZQq9EyOxw1W28jh6
+                wiDFU0+1x1w5VLa9HnaglfykWZQZcygIs58F878vXltkgIoN0lcKb6zEUYGi1Iin9KDHjOplpUkJm+I6
+                Y2zCJHbIyi6/9xQbv80gg9YtXlHM0kNl22uo5+jNX67rXuJ+I2A2e2Ty5Gcrgzrt3d3bSqVSsVjc0tbW
+                Njo4OHiy64vDg9+Ntn1XLJZK3d0L2KHFtWRjmOE/OEREwtdOALiwsbpjtM1ws5gD7Xn9NROpsYm6uHIf
+                PNVuMcjwyVPuE4dQJLCUZQemG0UzdjKrDAXR0MSSWdwXX8ygQnt3aVLxS1F3rezoqKUAajs6OlZ2bRjc
+                0ba5eKoUcXSPkpVVDM5FvDA7wQAqJNMD1e9KkxVwXJDZlF1T/f8Kf3LOsj+zd6c9TYRBHMDnCWbX1rRe
+                iCK1ULmtBwKiAa0itooGjIK38cCqkRjx9uVs0KrxxPs26idV0Hgiu0/3mmnn9w22Xej+95njvcWZbPMi
+                4hPzo2zLGv+ExZKzbA3Kl8wYcVCqTkRsD2hpmIeUOagXr0BBWdNgPmufrDVD947MQDpX0d+E7g2DE4r4
+                KN5S4eXC7EPynQkWWuqI5Ep1YnEthih6eGkzlKEOdOEu73j0BQUBBd530ZQJLJacZetIxNB7c+rBRg2R
+                MZ3mEGhJdCNpSQe/T4Kg1IbBLdmBjG621s/bwx1jI9mK/hQWaYsBTvShCEQlzKCEhjoK8cO8vUQy9pSd
+                rSaGpHttA5SnNejGU4uz8U8owsd4UL0HA+vlLFtLBH0wT4GNJFLQXQ9aqsh0Yk3PvsW8ah8KSlL9+ez2
+                jjYDgmWc7RgbzVX0r0I9TefAkR4UgdgIXtmGQpC3kECp+J/U/jgGz1xbSe2DmAmllH2P9zHki/sowsV8
+                UL375euSsrWobvTBUhaDdpb1gpYh4iuAzQapF2ekK5++uM6AUBltO66N5s40oUNpcETJsOqA7AWPKNq9
+                MEJ8032UYrRUG5dhoGLHyL1rsEEpZeNti7VXKELFfVD9d29uYdEkZevZPRe915kAGw3hJ9ZFh0DL+k6k
+                rV3qxXnoyo9mKtsMIMNoW5cZyTk42R4GR+pQBCMCtuQrE6XBpNKP/Q/VV41BMTf1Uf0Y/o9Uyi68tjgb
+                f4giXG8t9lzdRZKyNTWiD6oV+ae6zQq07CFeLo7zZb44fanB9ClK+frvk+2xbH6Gpu2sAZN4reoraY3g
+                jebw33oKMZM5rVVAl7oyDwPQ2Xil3CO2+5SNdyzWnqMIVeGJxd4EuiApW1OviT6oAxtqGYapdqkCHaqd
+                zvax6UWHwE4WRYia8iNrqAbs3xnDpwZyg6vwHxsMcOQ0ioAcBjvSSC9KQXU90KZmzUd/xRaTGvymg1bK
+                vvXG4kwGoIXskcXeh/vogqRsErWC9j3C9TEMT+fBkhvA2wN2bqRQhCPVnxtgkbB/MdZlRv/M2k3XYQqf
+                RX2l7yR4Yoj6O0RR3lqSDPKlWtCCvpmzInkIhBcpm/02rycFFOF5/M5i7xG6ISmbxtybhQpsRDA08ZWg
+                RR1A6sxesGF0oQhDV/oIr4D9G2M4M7LlRw35NXBGSfVxUOwXZkuJv2Cvcy2DjD1J1cXRD7VbF9SA8Cxl
+                44TF2m0URSv3m2fSywK6ISlb2+pa9EGS7qPd/ARoUYuQvKVgJ40ieBu2V7KN2D8ZlZnL+bQB3/FY01cm
+                toF76ioKQVW0kdFeaNVuen79W+uaQXiYstkfR757jCIc7AshJo0/QFckZetrRR/Eq6iWKVY3g5aaaiTP
+                fvTZeakXD1pXbmyYf8TWtgJFYGaDe5UoBFXLe4EVVRf19PIXLAHhccpm31o7gSIU7Jv6p9xEdyRl61uy
+                HH2wiWj/5iIFWnoZbJKNrrT9jvehCM7UMPEyTNjfNEiPb4CS4Jpi8BZRlKsD/LqRm3ui6I3lkdlMauVt
+                kEvZzMdEj99FEQb2A+onjd9DdyRlFyGJPojuBhs1cQzc3IgCLYlupK9H6sUpSeW3l+8BRARFcI4R/e8v
+                hAfMBSxT5tAldC/euovlxU+LWsrGB7zrft/cQhGGwkeLvWfokqTsIqiF6IOWJfSe7+YcBz2r40if/eiz
+                86tQBCNVMcDv+MU7isMfTOlYDHYovusUwon51Nd3/Y+KxNAVc1OfRGw/UzY+t1i7gyIMty32XhfQJUnZ
+                xUjE0AetGuk+GOb6kix/3S/14lR0pS9AWTuBIkCH4b9k75rg7QDjoJmoxqKZPScYX/l0CKbsh7wPs1/f
+                RxG8x58t9u6gW5Kyi9KOPqi17xaOYpBiVaBnfQwZsB99lkXxlb073WkyCKMA/E6iNLa2VIioFCrKIq1K
+                oiEq7vse9zVqXKI/3I1R/55GQQ2oGHGPS7xTQyIJxNKPb5npzPQ8dzCBtD0z72LA2p0PG7MXe5pekEHX
+                7dwwQRSPs9XiU1QxhyiyveecPnd19qVsfKk4bQJk3oeK8xJoNmDKtmhjanD864JB+cMSzskMXHCK9eI2
+                OHvntjS8ghP3Uv5oVhKLcmC2IzWi/BVxXGFoOULKlIuM2IZS9tinisuej4LM8mOL11vExpQdzZo0NFgg
+                AVQnjGkthF196US5ODqV1Na0CaRZ3/7tDf+MPakLZNReiaUdRPZpHvIhbQ7kEcLycktByFDKdn6b1wuQ
+                UX5s8XqP+JiyI9oGDTLdEqBjEEaEb/JSR+GE9IAEuAHSa9NTRuypmhgyao/E0ZMCkXVSF8QLqj2FuUnv
+                7moTMpmyhz9XXPb8DcgkL7Z4/RxHfEzZEa1KQYO8Cu4INyK9LmzIPg839LJevL5W3HzEjP3PXpBZRYlj
+                C4iss9mfwLm0FXOwsti4qx/rlbKd3+b1eQRk0sjXivPeIQFM2VG1QId2OxoDsyclHLUYbsgeZr14Pa3Y
+                +UxoyjaQWSWJ4W4ziGzT6kO1+BTVnkVt/Qu2+nTgauxM2XhRcdo7kEkTFeclczPDlB3AcIv0YIcE6M5A
+                u9RxCaewDI4osV68ng5x4tk0igXIppUlOtUPItss9ixzducxu1zplmfHrcbSlD3q9mP2T27zmgv+tyTd
+                ZcCUHcB03F2mJMAC6NbfLeHscmbybqogtT1gvbg2a/dfYq34dEWQYQtldvX/5CUKx+0t2dWpUhpVpYaO
+                eHfYqixN2a6/Tn4BmeLFFq8XSARTtm0/ulrqPjEp3yPhdGyGK9qltqZDID3W7nsgNEMZZNh8iaybW9fI
+                Okd9zJ13c/hPass1H49ala0pe8ztTtvnb0Fm+LHFaxSJYMq2rYAwFZhx12SgU+tSCWcgB1f0K6ntIUiL
+                vn33hWY67MbqO69EX5itnOmKocbhZcgWWdWKGbK95/w8aHW2pmzXp0b/HgaZMfyj4rwJJIMpO4aNzdAg
+                eJZJCRrtUBLOaYeaS4tSW9MGkA47OROWFchWuGzXuEui6NLrfc2eqmsQUzJL5vl6zFlYm7Jdz07fQSY4
+                fx8z6esIksGUHUcvdChKALUZekT42lbFQTgjcFHaY5AGxw6yH/t/yp0aEI/skWja+Nciyyy/Kv66ksek
+                TLmFN7TWpGzX64B/cZuXGWOfKs57hYQwZcfRk4IGuTYJcDoNPbIXJKQjcMhlqe1+HyhxZx8yY1ezFWRe
+                i0SijoLILkfEZ+oJsOgUX7GtStmuz7R6CdLP+Tl5k74NIyFM2bGcgw4lCTIELXJrJBy13qXW0k4lte0H
+                Ja1vNTN2dUtA5pUkkssgsssBzxOo2nvG8xPOxuKUPf6n4rI/4yDd/Nji9RpJYcqOReWhQfq4BCishAaL
+                Ovx+4Lkmtd1bAUrYIQ4Wn0VbBmReWaqp+2IHonBSfOYl8ykbLytO+wDS72PFee+RGKbseAYy0KD/Yj0G
+                r3WuknDUebgk6Cm7aRMoWWcP8CGby7KtckKimAcimzT3CNFf9u7tx6UoCgP42sg0OmnVMMN06lpxJyHu
+                TGQIQtwFTy4RL4IH4vL4nVQbwpghGNfhXxWPHpzT3a7ds9fx/f6B89K05+tee32DT9mdn4llrVeg0Kbt
+                H2XPz0INU3aftiCELZLlMLSNOvHjRmHKNUl3B6Rq4zburfknZ6dkvlAqTvydMbTikf4HlQtClEPKxrfE
+                tB9s8wqtPZeYNwM9TNl9WrkeAazZLhk2VaFqyU0nfiaM9cdmLRgfY4uXrtPPhIqxNrBIFog3twxEESlf
+                EqJcUnb7V2LaS1BYM4l5cx3oYcqOc/BzqRvsc4dviaepGmy5LKmGFoIU7TvHYfE0k6BcHInlO56oV7uE
+                KJ+Ujbe254E/vQGFU4gWr9Y0FDFl/y2ac47FA31uab94ajyCLUtd1k8RKbrLjJ3KcQY5J7cjmVci6tVR
+                Lj6j3FI23iWmfQCF9Dkx7wU0MWX/LZo7e5XmAMu6qzvFU9Pci+ciSTV0GqSEB9nZRkD5WBvJ7g2iHi1j
+                yKYcU/bsfGJZ6zUoFPOjDgE+IUzZ/asjhJob1Iu6f4OXXCnBmKyj7FMgNacfCqVy1u5bFMekeGqyco1i
+                UpsQotxStvmLtx9BoRSixesDVDFlR/vGXJcMbhwqxsfE0357466rJdXQVZCSHY95kJ1lOSgnW1mVTZaV
+                2NxA+abszvvEstY0KIxCtHh96UAVU7aCnWsQwJ6GZGiUoOC6E0+X7B3uHHKS6hxIyb57QllugnJyUfys
+                BVE8KtuFKM+UbT5Kve+AQjD/B0yQLfRM2RoOIoRxN4BZ9fJiJ35cvQxzRiTVw40gHefHhLK4Kignw058
+                TJm7HEOFtlaI8k3Z5seCZ0AhmL9M8MfXNnQxZWuYqCKEEcngVqFPw5fEk3sCe0pOUp0EqdixjdPiXbgG
+                ys0C8XEYRPG4zs1nlH/Kfm37MPv7LEif+cV4f7ReQRlTdsSl2aUpyXCj0ucT7osndxQG1SXVg3UgDfue
+                C3VhBSg3R8TDhSUgikaNIZsiSNnW65regfSZL3kL89Fgyo65NHvUSYbd6MfmpnhyozAoY1/M0AGQhgPP
+                hLqwyd5igwK5Jt1zj0AUjVJDiCJI2W8+JZa13oK0FaLFa34W2piyYy7Nxuqg+81rG8TTxDgsOiipnoI0
+                nOe0eHd2g/JTl665syCKRnm/EMWQsvEyMe1rG6St/SsxbwbqmLKjfnGujkmGncPo1bKV4mnKZstv+Yyk
+                WbkDpOAkQzZ3nxkwycI1smlEiOJI2e0fiWkvQdq+JebNdaCOKftf4mhVnZQsi9Gjo048NYw2x66QVCdA
+                Cu4yZHfpOChHx6RbzuboDhXUKl7KJn97EcQr29PBP9nmpasQLV5BqtSZsrVsLyOA8oVA8b6824mn5nrY
+                dFvS3GOL12/27qTFiSiKAvAtF8akSWuitt1tNM5pNQpKsEURRxRFnMUBxKXgvFJ3p4hGxdluhxYH8J9K
+                o7isV6/rPerecL7fkCxO3fvuCeEQQzbPVptwzuOoJZEavRtCpCVlYyY17TkorOepeU8RAVO28tLsqWvi
+                0G3DX/2q+OpaLY5tJBxlx7b+NkN2XtfqoNJ4FGav5mY/KTIpRHpStvE2r/4rUEjvv6fWxflNMGWL8tLs
+                reKyFd4qF8XXdA9GNSXLPb7KLm7HCqG8mqBSLcr93ZRIjQnui5OmlG19djkDCmcoWrxmEQNTtigvzW53
+                xeHaFDztuyG+zpstH6okkuU4qKgdt4RyOwIq1RLJZWcbRFpUTgmRppQ9mEst678EhWL+nf68uQFiYMp2
+                KvtWTiMRh7M1eFnTEV83a7CqKlnuc5Rd2I7HQrm1loJKdUHySGwWKtCQ4n1xUpayrbd5/WCbVzjPvqXm
+                vUAUTNkBteqIoSouB+BjZSKekqrdZDDS4Sg7ri0M2T62gsq1W/KYBJEay7kvTtpStvVkxTavUMx/cYnZ
+                oc6UHdIuxFDfKA6rNyC/0/4h+yDs2ixZHnGUXdSWu0L5Jbx9Vrb9ksO43e0dGj7tcSFSlrKtbwl/fg0K
+                Y/ArtS7aCwKm7HnKS7PdNZnTS5HTyKR/yL4Cw45JlkOgYvYwZHu5ACrZEXFLVoJIjXVCpC5lW7949RUU
+                gvlLePM+IBKmbBH1pdmYDFbB25sWX6snYFj2q/a760EFcJLtbRuoZOf4MYRsWcZ9cdKYso23N/XfgkJ4
+                9Tu17ud7RMKUHdYBxNBriUNnFHmMdsVXx/YRoKZkWHwSVMh6Xhf3c5iHq0uXozA7mQKRFrWuEClM2XiX
+                mvYJFMJMat47xMKUHdbYKGKYSILUiDVa4qvVgGX1ccnwEFTMdiEFpxvIyyVxqYJIjQNCpDJlDz6mlvXf
+                gIoy/z5/3pcBYmHKDqyJKJrikCyH08SY+Nq4AaZtlgyL94IKObNYyEdi/P80HJ6Iw8YREGlRGRMilSkb
+                b2wHrI8DUFHPfqTWxfzcwpT9l/bS7MphcdhUgcPKRHx1K7DtqGR4ACpkLw/fejoKKt8FyZasAZEaPH1G
+                alM2PqWmvQMVMxQtXk8RD1P2f7pLs90ReR0y1aqJ+JruwbaphKPseC7fE/KzH1S+3fwWQnY0ePqM9Kbs
+                t7aH2d/fg4p5PZda13+FeJiy/9L/8nJtsSn6yHnxdt783uRuyXACtHA8L74A4yzL1mCzZOpY3+ChYbJ0
+                pxCpTdn4mpr2AVTMbGreLCJiyv5HfWn26Jg4tDImz5U74u1mDca1OxxlR8Lz4guxDqTAdVZlkxmrhOgP
+                e/f241IUhQF8bRH0UPdLjepMFDWCRCJucUmHSARBhCDu4YEHCf6A76SmyJRxH0OM8J/KRFxnzrR7j33O
+                Xjvf77lJn9qTb5+11xdwyu5MpJq1noFmY0T3MMOk8TY8Ysr+/84l8OGgdNOHLBvqYsuUlkC7NTKDUyB3
+                XC/uwOwHBeCmzOQKiMJxVPJWWeDZnbnUTUVNytbe5vVxGDQLj1P1nsInpuzfAi/NTk6L69KepRvFljkM
+                /S5ItnnnQc64XtzFHVAIEiPZjO7uQoqMxdLSwItSyMYRPSl7eCxV7SnIVRQtXp7PWZiy/xR2afaWS9LF
+                1TKms2KdTCP+qcnFhq+y/eB6cSf7QEFYyUZz0mFhVXK3CVS45XpStvY2r3G2ebnSf8SSw50BpuyfFJwF
+                D7ptXjtsxFZlBSJwTbLN2wxyt50h257hVq1AnJBMVS6oo4Dsk/ydARWupChlax8afgtyE0WL1yv4xZT9
+                W/Cl2f3bpAuzFP9Kdhqx1YiiLzapSrZboFk4JWRtLigMNcliojhfpFjsakruKurXnsZgk6aUrXwBVmsE
+                5KbzPtVu4iX8Ysr24moZPnQvztyxEH8rnxVrlcWIwWXJVtkNcsVL2W62gsJQkiw1EIWjJPm7ASreZU0p
+                W3uZ02OQC/U1bpNG4RlTth8leFGy/eL558RafQOiMMCubC84L+5mI18RhWKTZKhE8t9HcSivlvxdAxXv
+                jKqU3RlPNWs9B9lTP8QwaawNz5iy/TAP4EO5btfWvb8u1rZFcns0aXDBuBecFw/q5I3sXZYMgyAKxz4p
+                wBCoeP1GU8rWfj13jG1eTt6l2uVwwMKU/ZfgS7PXm64hOfnj002xtieSkI0hyXYI5O4458UdGL4mDcbN
+                7As3RMFIqpI/w/1/QZijKmUPf05VGwXZUr9cPqfLAkzZ/wi8NBt90s0gfnBr2jwbzSN2QLIdAznbfF+I
+                tx01S0zW8kiicKyRAiwAheCAqpStvTb5fQdkqx1Bi9cIvGPK9qUxHz7sqkoXlS344aQRa9f7EYmkwRov
+                P24JsYRWt6MynQEQBeSI9Cz4HlKy9EhXysabVLUPIFujqXpv4R9T9i9KHlZrjXRxOgGA/j4jtkxpCWIx
+                xN1nPnBe3NG6aIZEYnBCptGM5bIMxWGpkZ7wODBGA8pS9stvqWatFyA7nYlUu/E2/GPK9sashxfLexpW
+                33VRrJnDiEefZLsNcsN58R7wPWnwaowXFLyaFOEMKASDylI2nqSqvQPZiKLF6ylywJTtT70MH+Y3e1hf
+                srAp1swqxGOmgfG720Gu7gk5MMtA4SjJVKfjGeShGGwwUoAKfwZh2KotZbe/pJq1voJsvNB9E3/Sx2Hk
+                gCl7iuCre7ovNasuWifWKisQkSHJ9hDkai/nxZ0cBQVkjUxhFoMoIMulCHdAQVikLWXjU6ra6zaoZ1G0
+                eD1DHpiyPTL74UVNPGisR0z6JNO83aDv7N1Zj0xRFAXgfQRNlSEKZR5irDZFBCEIqvHQiKTjwSztQSIi
+                HvyAdVO6zFGtE7Mm/FJzNPpW3z51z717n6zvR1Rq3b3PXr72Cfk4CFLkEuvMSbl1W6UM10AqDJtL2SOf
+                EtMegLKKosVrFIVgyg7pXAUhLKhL7gbj2mitHGdZdgg3Ocr24nhYS5Vh+ddqXqcjVZZJKZogFWaZS9nW
+                d4jfd0BZtV8k1o13UAim7KAOIYgjkreNDUSlKelOgjxtuSPkYy1Ik/8Ks90KEGkyJGVw/NqkxEJnLmVj
+                NDFtDJRNFC1ez1EMpuzJ6S7NrpyTfO2I7U0iF8aDOCnkZRtIlRMsCSbV+pyUYQ5IiRn2UnbHdrdT6xEo
+                m877xLpXbRSDKTuF7v6exkXJ06bozoqeZ1l2AFtuCfkYrIBUGZC/1GP7zEjW9Usx+LlJqyX2Ujbe2d4Z
+                fzsCysD81sI3rWcoCFP2pNSXZvdLji5EtyS2wbEsO4DtQpraBshbjcfpSLOFqyU4lsardljysRsF+pKY
+                9hw0NfMv8L97jOIcEwpoYxUhVHdJbq6vQ2wOSqrlLMv2w1F2RiyJMqBfJtrBXQPSpSmZ8KcqXgMGZ9nW
+                L0+/eQqaiv1r8t+0nqAonGVPwsIYa5GTfLi50a2LA/ck1V2QF77K9nYYpMy2fyoXiVQZklLMAGkxZHGW
+                jceJaTyAlsXDxLwxFIaz7NBcA0HMlVy4o4hP1UmqUyAfHGX7WwZSZp5MsBJEqlRXSSnugbSoWZxlW98l
+                bj0BTaX9MbHuTRuF4Sw7uNsLEcL8jZIDtxQRavLCeO74KttbvQpSZlj+2MQyc1KmKeW4BtJirsmUjdeJ
+                afdBU3mQmPcQxWHKTqH/nsgaJz1bvhgx2iOpLoN8cJQ9PRyV6jahjNbF+SNIlq2XcjRBWhyxmbKfvkws
+                az0Dddf5nFhX6DF5puzwjvchiJXSq61rEKU5kmo7yAdH2dPCV7/aXZHfZoJIl8pWKYWLrm7EsGU2U7b1
+                R7uv2qCuxhLrii1GZ8pOp700e+9q6c3gIkSpz0ma2QdAXvbXhbycBukzIL9cbIBIl0tSjjkgNZpGU/bI
+                h8Q0tnl198j2y/vvRlEkpuwutJdmr3DSi6ux/r3crOXcZkxuCPk5AtKnJj+5MyBSZo9kZmEgQD7mGU3Z
+                1mPYONu8uhl5m1g33kGRmLJT6S/NRk16sCPaZsy1kuosyMtOvsr25OKro49Bv/x0AkTaLJFp0H9DhnwM
+                W03Z1leKX4PSmH8QUMK2AlN2F+ovd/YdF2+3oz2sW6lLqmMgDyz881cDKbRNfnCRnqYgyxpOSuGi/fJu
+                0Vf27vQ3pigMA/h7JqFD1dbUEktHLLVHRcRODIlohBDbWOODD0QkxAefnpvRQdpSlKot4j/VSqS0ve3M
+                ac/ynnl+/8Lkzr3POe+iN2X36b7Mrr4B5amNZNr57rxnynbKde9fhxFL19Idc1KRXPO3gKw8E+LU3oRc
+                kD/KIIrNXgmjAIrHPLUpW/uqp5+9oBxDmXbep8gzZftxEW6sFyumlHAZ623JdQxkZf98IStnF4Ii1GZk
+                VFeyFT2kWFnCeAqKx3O9KVv7hedX0FTUlykE2YjOlO2H6YATi9eIBfMECTsiuU6DLHCNV3TNIjRbBRl1
+                GESxaTVSF/5ZJW2hUZuytTfvvuc2rympb7kfVe2DZ0zZnmxqgRNXjTTMHEfCOqfZ43UZZGPDIyF2Oibl
+                pohcYqEBxaciDWB3S7IKelO29kHUL0GTqR8fP2YIvjFl+3IFbhyJ5l49Eou4x2vO3ReK67Gn2borYpaB
+                KDoLJAyT7rAWlRSnbO1x7NcgaLLe4Uy7kRp8Y8r2ZMVquHHISGNWtSNpByXXY5CVc0J2VoLiVBLpBlF8
+                yhJGERQTzSkb7zLVPoAmUt8IMOYVvGPK9mPTUriyTRrSlfrqmotsy55rWzj7zFJXKyhOB2Utr+4oQsHa
+                skugmKhO2YPfMs2qr0ET9X/KtPvSC++Ysr24tRXOtO6WBpxNvkjylOS6D7JxWojLshOz3SRe1ENKVSSQ
+                zaCYqE7ZeJup9p3bvCb5nGkX5PCEKduH3Yvh0DIjddu4FYlrmWb42S6QjWNCnH2WmAs9IIrQXgnDcK1d
+                XHSn7Nr7TLVXoH8lscXrHQJgyvbgfAuc6pZ67Uz/q3+l5LoBsnGZBeOWboJi1cl6cYpSUcIogKJSVJ2y
+                MaA7lI30g/7zMdPu2yACYMp271ob3GrbKPV52ASH1SXJdQ9k44GQnaMgImpEQcJgcUdklKds7alsCDRO
+                /anJmLcIgSnbNVNqhWvrTBxxPwZFyXUCZGOPkJXrzfDAEdEc2mckjNugqPQoT9lvdMeyah9oXE3/Fq/h
+                GkJgynbMPIEHPVKHO51IX9s0bdn7QRYOsGDc0l0QETWiIoFUQFHRfpetfVrWC9Bf6qfZjaoOIAimbLfM
+                cXiweoXMyHQvQRM4GePLRjcWjNs6CSKiRhyVMAwrbyJT1p6y+39kmlUHQIn8liFPTZiynTId8KDdxBL3
+                w1sguZ6BbJwRsrK2Kc61iGgOLZcwiqC4qE/Z2u8/h2ugP9TXJYTsAGDKdmlVOzy4amRmh9EcypJrB+g3
+                e/f2W0MUhQF8bZEezlGtuyoJRaVFpYLGPQgJERQJEbeGevCCePH27Ryn2tSlRUjVpfGfauPFg0nO3pk9
+                e9ae7/cvTDKzv1lrr+XhCBvGPQ2AiMjJuMSxHVQu+lN2S/ld3g+gJerv2EedZseUHdCebSjAZSNtGEM1
+                LJNMT0Aezgtx/SwRFaHLSBy7QeWiP2Vrn0v9k9u8/motWO3mJhAJU3Y4l9YgvPqwkXaMVKN7tWYkS0c/
+                yMNzIS/XQUTk5JpEcg1ULtpnjC95bVWbBS2Zt+pNIham7GB29iG8xij/VP9rsKTfGr12sGHc0yCIiJyc
+                lTh6q/EfXpMUUva07mJ28z0ImPhotfvWQixM2aHsqyG8ztvSrj2V6F+9L5megfh+KM6ZKizOI6JcHZc4
+                XoJKJoWUjc9WtYUWCG+sds0pRMNTdCAjNYRXuyrtW4sKuC6ZzoM87BXyMgwiIjfDEsd9UMkkkbLfzlnV
+                5kEz3612s4iHKTuM0QbCWz0kDkwP0ndCMj0GeTgl5MP0gYjIzXJxw+X+yRpPIWVj0qr2i9u8MGu1+z6D
+                eJiyg3hQR3jH7omTrYeQuoaRTBdB7vbzWrafcyAicjQuUZhOUMkkUctG64dV7Q2qbkr33foSrGRjys6d
+                WdmF8Lp3iaMtSN0qydSxH+TuihD34hBRMdZLFCtAZZNGLVt7SPs9jWprfbPafZ1AREzZ+TOnUYCejeLK
+                dCNxuyXTAZAzbsv2tZmlISJyVTcSxXZQ2bxKI2Xjk1XtE6pNecv/ouY7xMSUnTuzAQVYZ8TdUANpOyiZ
+                ToE8PBLioZWICjEmbWPvTeJSSdkzv61mzSlU2cQvq91rRMWUnbfeHhTgluEc0f94KJmegjwcFvJgjoGI
+                yNEqiWMMVDYrEknZ2hdB/aj0Ni/lD29RM3rPP1N2rs50owCXDQ///3NYMl0Auevn8DMv4yAicjUoUfR2
+                gcommZStvRw6ieqa1t2IsOQz4mLKztfWFwivftCIpxt1JKzTSKYrIL4dinIURESuNkkUL0GlczeVlI15
+                q9qXt6gs5ZfqF83F38XGc3SOhvoQXmNU/J1Ewu5Ipo5+kCsOP/NkaiAicnVcohgAlc76ZFJ2a8GqFr8a
+                Gof6AfEl6URgys7PjRrC6xzhWswMJyXTTZCHZ0IeloOIyNmARHEW9Ie9O+uRIYzCOH5eQZtuOyNG07aW
+                WIcRiQSxE2IbwRBiS3Djxq2rp2KPfewSQ3xTLRJrqstb1fXWeU8/v08wSV1M/tV1zlFnkpnKxrO4Y+3O
+                M/Sn2I+dd3xUMFXPyu6ZrSEKtnZKCmnBrkWS6gIoh41COawFEZG3EcmLL9+tMVTZeJlE7Q36k4ErXho2
+                xLOye+VkA+WbOSzFuHkwa0xSHQP528DlZ3m0TW8/IKKyLJMqTAOpM8sZquwXE0nMKr+4XI0nH5LYvYQC
+                rOzecJvrKN+2xcUTwO7M6DRJdQDk77hQDgMgIvLXEh8872/YbTFU2XieRG28+hVaFXidxG7iBRRgZfeE
+                O4oAZu/hf9QuTkuqayB/u4X8uRUgIvI3JlVYBVJniqnKvj+eRO05+s/juKfp9Tw2VnYvuLMIYKgpGZrn
+                hyWLWwKbGjzk1VNcMZ7PFRAR5bBPqjAKUueqqcrG07iTTcePomHdTWL3TscnCKzs76IYdh50kqHdQMNJ
+                lotGV52MSrrDIH/HhPjDEBEFcl0q0JwFUmfUVmXjTRI1FQO+AUX/XkTROD0ru7gFQwjgrJPu3KIGgO2S
+                aQQm7ZVUUzeA/O0U8tY0+hKLiMp2RCowBtLnvLHKjv2al4Zl1SHde5fE7i50YGUX1p6NAI5mRvYufFc/
+                IVncHFi0SlJtAnnjIS/uPSCigPZJBdaA9NlrrLLxPonaFwWHl8OJfl9dx53H0IGVXdTF1ShffbOT7vYM
+                4YdtTrKsXwqDRiTVfJC/5Tzk9Y9+fYVFROW7IhXYC9JnrbXKfvI2idpD9JPYn1bHayjByi5oeCbK1ziZ
+                +Wf8av2BPn15PVlSHQL5OyPk7TqIiHIZk/AcZ1w0WmWtsvEwidpnHau0goj+y4OOD2qeFyu7mBM1lG/G
+                Vslwbgt+aqyULAtXw57rkuoWyN9hIX59SUShTJbw9oMUumSusu99SqL2AP0j8il6Xd8esLILOTcD5aud
+                ku7cQB2/WeIky02DW0XnS6pjIH83hHy5GoiIcmnJf+ImCesWmatsPIo73b5qmfMtXfQb4Ts+6pmjZ2UX
+                cXkpyjdzWLpbOIg/LZNM22FN3UmqdSB/14R8tUBElM9c+V88PWhcy15l41UStVfoFwaueCnaCc/Kzs+N
+                zEL5ti2W7hbPwV9qbcmysAFjrkq6gyB/B4V8rQURUT7LJLxRkEL7DFb247jjTVO5ler+eBI7TffNWdm5
+                uV0IYPYe6a69FP8YdJJlLoyZLumugfytE/LUroOIKJ8BCa5pcHrMgh0GKxsPkqh90vMVcoksXPGaeAE9
+                WNl5uUEEMNTMNRnekixuHmz5xt6dtTgRRGEYPiVqiFvibowbjqDEfQG3qOgoiuu4oKCoqOCtDuiFV18T
+                ZlTcxV1x+al6Jy7d1VXTqak6+Z5/EJomedPV5xySfKdB7m4KOaqDiMjTXgnuIihGFzRW9vjHLGnxTNTq
+                p6dfs9S9QERY2Z6WBKhU+0Nps3Ql/md1W2yW7YAqiyXfLpC7O0JuzBwQEXnqSFnciqBbw2is7NS3eb17
+                igHwKkvd+2i2eAGsbF9rlyOAS7bIPokcu8VqKVTZJ7mmbwS52y/kpgsiIl+zJLjLoAg9EJWVPfYpS9oH
+                6Jf+Fq/eM8SEle3l+FwEcNJ4H1pfuUFsTBOa1CXXFpCH7UKc1ktEoYxIaGY2KEIjOis79W1evefQbux7
+                lrq3iAor28fQavTfjG1GCrVbyDfX2D+Fqjnjq1jZFbsi5GSRqhuKiAKbJmXw/I1+l5VWdurHkSMLuD74
+                nKWuF9lic1a2hw019N/Ms1JsTRNFtg7YrKZzrOxK8Vn2XwbuHQwiCqthpFqDt2xEiY7Wyn75JUtZZIeR
+                qzf+LUvdG8SFle1u5w70346dUmxoHQrNXiY2ZhR6DLOyK8XKdmX2gIjI3wIpg2+5qLdXa2Wnvs3rdVSD
+                tcDL84+PsV0hVrazszPRf7XzUux8DRYtIzbnFa337UquBSAPx4RcnAAR0QR0JSyzGhSjutrKHn+dJS2q
+                JVEVS/6oQZTr1ljZrq6HKNPVQ/Y12VbzxGo31DgsuTaDPGwW+m2gbiYimgzDEtYUUJSmqq1s/Eh7ANqX
+                l1As8dfmf/k0hsiwst2YegP9N7rMvibbrrZWbNp6FvxOkVzbQc54YtyRWQkiognYJiVw+Jl+w3orG2+z
+                pL2CXomPgP+l9xixYWU7MQcQQPOgFDL3UMpusVoBJRqGlV0p7sv+wwDdSkQ0SToS1jZQlLqKKzvxhcwR
+                dlw10l9nHud/IKxsF2YhAmi1K0r9xplIPlEADyTfLZCHO0IODoGIaCJGJKwOKEpTFFc2PmRJi+9MclUe
+                Zan7GuF5fla2g3YLASw0lYXxqBGbgzWocEPy3QV5uClU3nFFkwSJaFLMMBKSUfL1r85so7myn37Nkhbd
+                fK2KjH/MUhfjbDpWdnkHmwjggJFCS+ajvGtiNQwVRiTffZCH9ULlXQMR0cR0JaTDoCjNEs2VjRdZ0r7F
+                tiuqEhq2eEW5Z42VXdqyUQRw0kihRcvhYOaQ2JgWNCiq7KMgD0eESjN65ggS0WQ5JyFdBEWpo7uyx95n
+                SXsIjZ6k/b78L71niBAru6xNc9B/M5YaKbRmLpw0jdhcnQ0Fiir7FMjDbSH+XCWicOoS0k/27qNFiiiK
+                AvB9C22sbnPCmbENI/TYBlRGRlEMjaioGDFiwqUuFMH1KcYA5pxQRPGP6sZl1auurnre++p8/6DpRdWp
+                d+87G0Eq7Y47ZeOF7UA3+wwRepda9xAaMWUXdK6F+rXPSL6JKQxprCHXjHYk2y1QCbuEClsJIqIR9cWL
+                VzbGb61UZRlUepia9g7xiaDFS+fHD6bsYmbmo37TM9Wfp7c2iI9bBPs6ku0+qIR1c4UK6rVBRDSilpNw
+                XBRzbDG6GXvKNj6dHGGb16PvqXXvoRJTdiFn2qhfa3Md5+lLnfhsjSAidCTbJlAZO4UKGgMR0ciuSjh7
+                QTpdjT1l431q2vfo2rzst3h90Xj1GZiyC3E7EtRv/aTkm5lGGd1GbGddYcqu3D6hYtwUiIhG1pVwloBU
+                WuiiT9nPjbdGxdbm9fxjap3Wv4Qp28+dQACLJyTfpTZKWTAuPpfth4S8lH0bNDxeMv5PY+rwiOg/2yPh
+                7AGpNEeiT9nWz04/PkdUjM8W/PVV63gBU7aXu4gAFvUk3401KGm3eJ1KYNwV3n5WuZNCfFslonA6Ek4H
+                pFKnASnb+h7wZ8TE+J686lV5pmwftxQBrBqXXG57grKSzQ2ICQOm7Mpt4fVnxVyeBhHR6BaOSyjO/Mf1
+                WPUbkLKt32k9+xIRMX7n+19voBVTtseKVQhguatzaH2x8//MBbBtwL7sqnExu6ibICKqwnEJ5SpIp+tN
+                SNnW+5k/IB7G+8v/+vYaWjFl59uwCAHsd/UOrW8Xry5s60u2I6BSbgmJNKMKj4g02C2h7ADp1G1Eyn79
+                K7Vs9gVi8ehTat0rqMWUnevaFOq3cJ4vZC/HaOZPKBmMrwtTdi3Oc2Tc+HsMEdlyWkLpg3Q61Iyn05PU
+                tLdKm6OG9yq1TvN/wZSdZ+sC1C+5IfnGV2FUq5z4HGvBsr5kuwsq56hQI4rwiEiH5KCE4Ww/8iOWuGak
+                7Mc/UtMUn58OIYYWL9VzBUzZOU61UL/2GcnXW4TRLRGvC7BspWR7ACrnvhBfVokonDHJxhmcJjgt1dkG
+                xX7aXgeeVXyAOowPqXVPodgBoSyX5qN+0zOS79hiVKDVEx+3Gob1Jds9UDm7ODLudxZERBW5IlWI/bt6
+                zAZNSdl4mpr2GzGIoMVLdXk5U7anoLpmrc2Sb3IKldgjXpPzYdeAZ9l12CnE7UYiCibZINm46dIAGxsz
+                sfDSdsDT29FcXAxH2e+hGSfGM7h5Ceq3fjLUZvjCO+I1D3Z1JNs+UEmHhTx6bRARVWVMghiAdOo2JmXj
+                TWra10cwz36L1xfVR9lM2RncfgSweCLcZvgf9u6sV4YgDOP4W4IxMxhjEGMsibE7iCX2EGtiC4IQxB5C
+                hLhw4erpiC32fQ/xTZ3EPjNVnfR0tXqnnt9HOH1x8p+qfnqBkTSmDrUOiN15UEbzLgu5TQQRUW6OSxFM
+                BRSm7fFU9rNPiWr3od3dF4l2gT8EVvb/jOyp4tauIT/TJNWQ3v+7Z8XuBCirxUJOZjaIiHJTmyMF2AgK
+                U8XEU9naPyL1Xv0AmvIHoOBCASu7l1YDBWikRfbBKnJUbUuqddBqlNitBGU1j/tnbmdARJSjFWLBSzgx
+                OCARVbb2o9R70E37ZQIFL8ezsnvYMgEFmGzEyayoIFcTjKRpqT2YuyV2y0CZ7RNymQsiohwdlwJsAIVp
+                UUyVrf214NsPoZryF+OHPUfgWNndpq9HATanRfZe5G2apFpTg06uS1aXQJkd4WE2t8+IqDi1tvg3FhSm
+                hVFVtvaJ65fQTPnI+7BPzxA4VrZl1tuzWjktso8id6XdA3w0N0LrFyNDd1PIbgWIiHLkvOjG8bOBNzKu
+                ylYeesFfWHa58zXR7ilCx8q2zHr7Neu0uJnJ8KBhJM2WEnRyVPboJaDMdvEw286MBxFRvg6LbydBgdoe
+                V2XjXaLa28DHt1w+Jtq9CH9+jpXd4dg4+DfuoLi1mvBi5uBuoowQu7Wg7JYJcfuMiApTFt+mgcJUNZFV
+                9qM3iWrhn6ba3P2SKHf7MYLHyv7X6Vnwr7Tmf82vjW9JGtOESpPEbhcou7U8zB68FyyIKFzjjXi2CBSm
+                4xJZZeN+otqbR1DqXqLda4SPlf03U67Bv9KQuE2/AV/WSarp46DRSbG7COrDFaHepnD7jIjyN1H8Mlpf
+                DRt866Kr7DtvE9XeQadn3xLlVCy8s7Iti2P+zG6LW3s2vKkMDeqg0xixuwDqw7xrQrx1SURFqRvpFF18
+                RWpkfA/6gfIBtCdQ6WWi3SsowMr+wzRQgPpucTtUgkd1I2lMHQrtEbudoOw4gGZjFoCIKH/bpAcuSkTg
+                ZHyVrb33NNxb7qT+t41h71Xc1Wdl/zaliQLMmC9ua1bBq+WSaqnGe7ATxW4xqC/7hHrYCCIiDxpGOvAa
+                ThSqJsLKfqg7+DRscHW58yHR7j40YGX/sruOAjSmitvBKvwaN11SnYI+ZbE7B+rL6ilC3TaAiMiH7dKN
+                42eDb6tEWNl4laim4HtSHdRvzg37rOMbaqzsn9oLUIDJRpzMtAp8axpJY9ZDnblidx3Unx1CXVo6dwKJ
+                KHxNIx4dAIWpHGVl332fqHYP2mj/iyfJ7QdQgZX9w1AJBdicFtl7UYCJkmp/BdpsFbtNoP4suSrES5dE
+                9J29++ptIoiiAHyGZrBJHAjF9FADASJ6RwgIXXTRJCSaaKI9gBBvZ0UTovde/ioGK5AHdlfCu5O9nvP9
+                BD9498zeOdeXm8hPrUopptNBpmzrX1a/vKAxxqcH6l7SBqXsX9ywFcxfdVRayN5EH0rdSLWR1hxAvJ2U
+                Jh25BrE/8SEiRnQ45GYrpZjKtTBTtvVbwlYiX4P5m/CWDjaUsv09co4imRtPP9Yj1YR2GjMc8ZZQmrVG
+                PeN6URURb6bjP7Xqus4QHECYKdt647WV8eUG863ulob0lbIBt7TM/LVNd0g0ZRI9qV5Bquk0puoQa8Ri
+                SrMuKGar+0xEfFnnkJeJlGKaC4SZsvkyMu2TjSqu38yfaZgqnFPK9jSnXdqPZN0d9Gb+iYIsD8/SSsTb
+                RWnaQsgANXWfiUiOxiInztysWjC6gk3ZL75EptlYK9Vw/2tknKHlaUrZfua023uRbOoYerQAqeaUaMt5
+                xBtKadrMi5C/jjJYpg7tRaxqc8jHEEpB9SHUlM2HkWkfzXxcNd81V/eWZgSfsqd00oN1U5Fs9iz6VOlF
+                qi7acgjxtlGaN09F43+5+QzWeEq+2i5RhLcccnGSUkxlB4Sash98j0x7QyuevIuMu/uMZoSesjd30IOO
+                zYVYJDZAh0MaN42mTEa8vZQMrFLR+B99DNdyDcvnbAdF6vqQi7GUYuoBgk3Z/ByZdvcxjbC/xesD7Qg8
+                ZU9dRw8mTUGy1Svo22Skmm3rXXqtVnnl7oga0PqtZbBmudGUPI2/SpG6MQ55mEspprEAgk3Z939Ept2j
+                Dc/MV5+9e0I7wk7Zve30YLxDsoMVelfajVRLaUlPizxpCm3NZcgvJ1YwWJPVUJyv0hzdm5WGgTPjKj9r
+                fXeAcFO29fhnpZHrbWSdpaa5sFP2/hI92OSQ7FSZg6DTtdjV09GIN2IeJRNrNDQeevcZhxg7fzPnkNqp
+                pF8f+qn8rPVVHBBwyra+zeu9iWLQp7bPMuq+mvidG8JO2cfbmL/qKIdEblSVg2I6Ui2aQTsS+1j3UbJx
+                5DoE6GGwOp29bfqmjHFqp5J+0xwyd4dSTD0AQk7ZT75Fpj1n8T14Hxl39xEtCThln/IRISunCrGt+1/a
+                pyDVAhoyDvG2UzKy6jZkQoXBOgrsoeSmvAgYSZGGyWhQ+VkAugCEnLL5PDLNwn1h4z9x3WuaEmzK9vMJ
+                ue14IbZ1/9tapKpZmhnfg3hnKVlZpYVeIb+mtjtzb262bASwlSINpd3I2npKMW0AEHTKtv6htfjd19bH
+                BaLoywuaEmrKdsfoQekwktU6OXjKi5BqdZVmdCHeOUpm5t0Ivmp8C4O1DIAz9LdgTaUG4BBFGnKYGdeO
+                gIJqXHsLOWVbvzRc/D3OHyLrHtKWQFO266QHs3qRrHsaB9MY11Kn3hsRbwklQ+cQtm5LhQXZKu9G3RlK
+                TroA6OK7DLAA2XIB33cptrmoCztlWy/A/lHwYi7jNe51rx7QljBT9k/27mu3iSgIA/AcBBhsmk1LIAmQ
+                AKajIMuU0Duhh5qILm4AISTK9b8KVfQumihviu1ACBF7NsDuesYz3xOsVlHW/zlTZrQiBfkW8uvOo77G
+                U6RiBlL0UbixZZj4zNvRRJrNhVpbqaoPJhkDF5ezYMxPk09SrNbD8FSgKt0pW3oM/ADWhB9iBEH/Vwij
+                MmWnk26nFMmvo+5NzxNPN1IHqrfaajNMnNaobs5WXDDeRlULYBKRW0FV42HMoEwHxcUqJTg7RRXKUzZe
+                BaLxvmr9KvwMIwheQxqNKTuddDu1ifyWTULdNTuK4pohxVEKdxkmVgsv623O3pKFViVHFbYwOymLqWYt
+                jPklP5titAGGpUmOKrSn7EdvAtE4tw3ffREIx7/xfRiVKXtZBimY7sjL9bAoxS5QpJYShNhL4TbCxGzP
+                VVJK8V3QWqo5B5OAwXqcmTBmiBOOYmH9Hpx1UY3ylI37gWicR2DL3+LFf4j7MBpT9uoSUrDPkQ+bjbO5
+                JvIS1SNYaKxvDXvlXTqvs10eau2lCtvnnJQ2GrAExgx101Fc3EQYlnqowlL2nU+BaM/B1bOPgXASFpL/
+                TmHKPpxD8rKdjvzOchlS3EWR3BTIsIHCjV0IE7uLKmP2Uaj1s6RxFEwCmp01/ps/W685dykxiqrUp2w8
+                kN083P8ATD0PpLsPeZSlbNeZRfJyh1k8xohMXk2ROoQs/ugjj50w8Stf7yV15AwEjF0bDXBs/oE1lGm2
+                0NiEyM6g/2btHqy1OqqylI2XgWjvmW7zEn56UfGJ6Zv10Jay3SakoLSaxWOMUHsT+UiaeFtyFG4/TBLK
+                F9TdZ+u9aMzNoB8OwcRun7PXa8K0d1M8FsOwVKAaS9l4KDwO8rxxvfM+EI5vlUA4ZSnbTUcKMkdYPMaI
+                LaZIjsE49Gj+gquVMMk4pqw9u1dIaUcCZtpJQ4IWOfrpPIwZJl+0U8JGli1SjaVs4F4g2juW27yET5Wr
+                eAmJNKXs2c1IQXsH+fVOBStzVlCkIzIKRM9RuLFlmISsuaUpZx+HWsdtGVCCemjQGBgzXGuvDT9rYH00
+                wFI2cPdzINor8CP9nQbBN8bT20OpStlbpiAF+W7ym9EKZqY48pC0v/WMNWbXyZrdenK23oA5yclbPCDH
+                VEdkbe/G/yfy/7bDsNRJP1jKFn/v2v8Q7AivD2C+iTyUppTdsg4paC2S33yGW4BWUaTZImrG+8gas+vl
+                2H4lOVtK+0QCztCgGzDxKnVThY1wNx4nnNXiNKxxNMBSNuT3EN8GNw+/BcK9YFmHH0VRyl4xCSmY2kt+
+                pxeBn4ktFKkNAuScNWbXT3mpigttob9a4jDNLsSSM5osZRu/WNZmd8JwlHFUZd+rKvHzsPsfgxnhc9sr
+                PkAmLSn7SgYpOOFYZP2/1uwoimPWTf5ne21jdl0dWNn4ObsHWuWd5cDEtDtL2SbaTWfDzxrTYKWQpewK
+                8bud3zLbOSX81KLiC7M3OkJqUvbJiUjBPkd+BzPgqUCR5nN99qFWWWN2nR27fIkaWxe0KtgIpcRkj1jr
+                rIn2/0XjTsKHXKNt9IOl7JpnHwPRnoKTO58C4fqfQCgdKfvsHCQvu8qxyPr/IlOkSHPB3xLy2AWTguWb
+                rzX0hfYEKFVy9hoS00VDrYf5zt699TQRBmEAns9DEauAVVGOigKCtVAFtSJgPUCtSo1aMYgHrECM3qDx
+                zovZoKihHqKocCEm/lNLpLSFskvL7nZmd56f0GSbffeb7x2xjv3KnanL4TID45Ky//uisbaYREKYt8ml
+                zCNXbkjZqrwSree9ZZj1Ce/ZPQ+GVA2S161gfXEU9mj1n3Zs0FaEn2JrnYdsx1GYp+wiZJtAIfLbbNP4
+                GAqKWiBNUvZ/M9801ijFwpkFjbmfpD5aFMAVKVvdQxt0nwV96iTl7SyVL8BQPdmj+Ixe2ZhNw5mBKWcG
+                bfcO8z6AbI9QmGcYclxGIdbVoKBgsoOPuAlIk5S97BPvq8SURpznNO4+IFvOT9n21HZVnAB96gaS1jbi
+                iHJSn1zMJqM1HIk7L2n70KXalPwOVqlSkGMbCrG+hmoohAyh0Jc1hicpO+2Hxhqduq5Z3t8rCJbJbZwL
+                UnZ1A9qg7SiJA/XNaAdDqgqpawEd/ShsFnJW0PYEr5J/kK3iAxlqtsoVkJQtCtBWB8V6sytl+zIG42ku
+                0QcrJGWnfWYeDsmsnnqrMTf9Eflyesq+tgdtsKeZxIH6png7wFAH+TupFQrWF0Rhv7sJJ1zS9sSfJgZj
+                AUTyj4BV4tJyYI0825nKUQg93mYwg9piofiOtOFtyw6Xl7927T+orl5YISl7xbzG2p8ZJIH56H3Kd2TM
+                4Sn76BG0QU016KtmUByGVQoMtSN1V+RiNj1n/KN8g7anc8o/Hm3CZZXoTqt36ivKNRO8VNQBgFx6F4Xw
+                1ipgSNVWoFgt93hAUvaK5KLG2nuk4N0vjbm/s8iYs1P2iTK0nnHlZzP9SesltWBopA2Juy0Xs0lqig4O
+                XeUVtT37+ocGJkNNKPI9WE9QmMMHq/WhEAYu8IvZyncERT7tkCEpO439Nq+/X5EA/lu8aHytKI7DU/bZ
+                brTBPQX66nuQhe56MHST+lFen1zMpiuw9XkXg6TtCZ7uTwxGA5hHK7rT2m2u91GYokbBai0ohJGai8CK
+                amTyJlQCE5AhKTuN/zEshUnn5E+NOSqT90Vxdsq+5UXrVZYr0NfBZkRqrwJD55A23cmr6gCKEgvEyB5q
+                e4KdU4mB8ahekj6E7tQuSdAi3qPSAy2K0tYBfKhhHiN9JfFSQYak7BXsrxRTaO1ifrmdUotcMZycsu3Z
+                T73zMRi4U4Zs+MDQMerfDHpBx1YUFAQmB4auBslkbU98NOIfjwbQiHvLz/Zx3OvHwmFYaxcKYazyMpup
+                8YuSsTf65iUpO4N9Pfbvkm+g4l7UTmkjWjEcnLLVBbTB7ls0ptZNUlHNf19wLegYQkFH6+Rgot/KAnLj
+                yfCnQ/5wrJCr18/QlfJUIzaiMMGREUnZomh7jwED6voB6lfNSmpnM2SRlJ3Bf9XzBywp9kvHNW36M/Lm
+                1JSt9qMNyl6QmFo3Tx8AMF9KdglklxcrgWg40R+37WDbEwx2jkaeD4Rj0VYsmFur0MZgjV4UJtgBKdIs
+                J4rkrQfq1BXi7wwldwmyScrOMaextpDEEmI/cp8yj8w5NGXX1aANKjpAnzrFbN3Nzptg6BrtEXjvQb2I
+                FUVBUyAUGx98FenvDKYDt7mn1l1TQ/7B8Vg0gMVzbfnZ7hEHvr2RkL8LYzsKsTGV5w4CZWq4AYU+H2ST
+                lJ0juaCxNoelNPNNY24xicw5M2Xbcweo5yHoUzeQmx4FhmqRtG3SMs5caypv+19FIqNd+4LFZG5PMKWz
+                qysSSfj94fDWmFnbuFy7Lfs8rKXcWgRnpt31kIfiNQElSqtnjO7tbNW4B4UBbx1kkZSdg/0iqulZLBn2
+                q9BSviB3jkzZD3vQBlXNoE/dQ37KwZCi/W26RUbGHaUpFIrFwin+JYnIkq6MyLJ0oo6FQtIkb7YHMtZs
+                jUbIZwsKUQA/0ZitbtMefCPiAOSQlJ3r3W+NtR9YOslFjblfzKvP0Jkp+x9797bTRBSFAXgtY6wUK1pP
+                QAVrsVGJManxELWGAMYLD0HR4BlJjInGC8UXWJMKaAgiIcZ4isQ3tTHxgk47Q6fTPXvt+b834Ib0n73W
+                +s1UZw0UrFgNj1vvCIUasfqpJcMYGYduSO3A+AmmJiYEOjTPSNkQg/kpss/BCjL2lszQJkjZDT7qXi2u
+                rUhi1jzlbKhC64yTKft1Rgw4wFashsdvD1OoHrHZJAV4IwDRpHZg/AzVoTA7dtkpQsqGOPSVd9r1ns3V
+                k5rqVZJUYtoEKbvRuqfa10VJhAstXuuin3sp+05ODBhjK1bDu2GQQrHVu1YnKcCOlD5HAkR2T+N9BgWu
+                EFI2xMOusXGuqpzkS0aeNkPKbrT8x1NtVZKxsOEpV1sW/ZxL2c+y0n19PUzBDl8SrTLXKdQpm2+nl5gC
+                XBOAKFI7MD7A1My0QEcy49TcEwFo24lhS3J2YfCEwFb1HqcGSNmNljzVkjqT/cPTbkkc4FjK5p4+6b4j
+                zyjESEn02scU6qJYrEoBHgtANCm9qv2Cmroq0JEZamGnAEQwUKDE8ZPLKV2siahMDZCyfRZ/e6qtiXku
+                tHj9XhQHuJWyzVz1zj2gEHd1X/0YplAFmz8jDGJkHLrg6EtJowxjrjl+QRcwJgUgimz5KSWqvzgv0JY5
+                aoCU3Uh/m9cnMU79BEDdB3GBUyn74T4xIDNFIS4oP/ux+yCF2i722oORcYhdagfGTxIRWp1jlz1FrcwI
+                QDTZ8gumhPCNyzmBdjQtcEDK9ln47qm2sSDGff7pKbehv8VLxK2UfXxIDNh9mkLcUf/r8woRae4p20YB
+                3gpAFOl8ypb91MJtgehmdX7CBOvdL1ASeBrb2BHkqRFSto/+a9k/xDAXWrw+iRMcStnX94oBlw5TMB60
+                +TLY1mTvUqhxi6fi8xRgx3kBaN9RSaW9TC2MCkT1f2AI19shdkeM13rxufxoSq9WdCh3kBohZfupz4ym
+                N4zVt4zXrYkb3EnZZg6O7RmnYHxTHDDPFCov1pogjIxDvFI7MD6j8wSi7SaptR4B6MhQlckYnlbbW5q4
+                y+SDlO2nf/55SUzSP2P/7zK7G5xJ2UYOjoXf8OQxcUIPheIBsVX2GEbGIV5pHRjP9VMrRYGohlhrgwPo
+                UKocJxMK+VH1K3IJmiQfpOymVj3V/nwWg9Tfi6tbFUe4krIv5MSAA6x5W7kdvSMU6rC9l04quDIOsUrt
+                wHiZWpoT6Mr/17IAdKy3PMfUVbwfEbszl5h8kLKb0N9LtS4mLX7zlPvqRIuXiCspm4u9YsAYU7CCvc+7
+                7RpiCnVGbBV8t/OWALQntWXZ1RT8fjPvDAU5JABx2D3cT93CV4t7BTozTT5I2S2s6F40rn0UYxxo8aqt
+                iCucSNn8Tkx4xxRs3KXtpCKFYnv/3hsU4BUes6E9qS3LLjHVoTA7XqXg7DMhAPHITgweo9hxtTiqvK/U
+                Cpl+8kHKbuWLp9qvBTFmWfcXibr34gwXUraZXegjRbbiyLkpmWMU6rS102JXcP8MYpTa22cVao3tXRmx
+                3DAF2iUAsel7VKlynG/Yw2WLC0ZUmSU/pOzm9Ld5fRBj1j3lasviDAdStpld6LMP7Dhybs4+plCzYqkM
+                U4DnAtCOtN4+k3tIg/EbYPoHReR/2buznqaCKA7gZ0i1tigCiiIUbYoEi9VEY9w1Lvgixj1ucX3wSX3w
+                A5gz0VaMihsukLjEb6pifNHemVu5d5gz8/99AhISuP85M+cPjtSGsgnaaqrew5Dnn1ek7ESftGgfXrAT
+                IbR4zXI45KdsN2+hixfIohHc8e5GslL72VPnyWD5XgZIL9rdZ7/zIAqzM7WqQmZ3GCBr3ddu3u5S9L/U
+                9UuliTurGbJzWdG/kLITvfigRXMVHZuftXBzwaw+4wBS9uZedqA2ShZ7wnul1DNMVmfK7Kf1hP1nkJVo
+                R9lTMq+y+K2fLJYxQC621Kc6Ttqqa7JwaKWv/+klW0ttIGUnEd/m9XiGHQihxWuaAyI9Zd/Ywg70Vcji
+                nLcvlBdhH9kdYj91D5PB8t0MkFa0o+xuRSYbGTrXo8hMxTkwjPQgy73y2bGh4xdVinTdNXm3sGMiuFt6
+                vmj/KA8pO1nzoxbtPedP/shf6/kmB0R4ym70sAMj42RxK8iD3nKDrNb5+kqrSiZbGSCtaHeflchoBUPn
+                DtIC7G7/y6PLDO6sPjsxVqoWVlzv+ttCtj4wsRLLDXM2Se0gZSeS3+b1kh2Y1cI9nuGQyE7Zbq5prxkk
+                M1UKdPjQp+gXkfOsY2RykQHSinbONok4mLkBhZTd1sqw8gCAWa+idpCyTZ5o0d62OGchtHi94aCITtlu
+                rmkPKC+axJZEiazUGvbS6goZLD/NAOlEe2HcdsqmgrzCk6c/DYk4AvzXMTXAANG4RO0hZSeSHyFfcc7E
+                H0Ro/eU1B0VwylY7y+zAKeVFk9jSWHWDrAY9/dQeIpPDDJBWoHdVbKqEZdhZGyKrSY7SGFU2MUAkEs8w
+                kbKTib8OnXeCFH+p/qdXHBa5KVudYgfKO5UtZHo6y83GiCKrKnupqFDmBRmIdpS9apgsrjF0It2n9UGO
+                0j6iAwwQiY2UACnbpDWnRXvDeZK/IE7rjyG1eDELTtluJsjd58hivJeDViUrNcJe6keZF2Qg2lfZY2Qz
+                xtCRcoPspjhKO4gqIVZ1ALRRU9QeUraJ+JqqfDd7iS87W9gQFxipKXt4Azuwaw9ZnOzjsBWPktWon8tI
+                HyqUecGiRTvK5oNks4OhI3VK4ThHqeBxMSRAxgqUBCnbqDmvRfvW5NyE0OL1hEMjNGUf7WUHig1rvtzC
+                oRtQZFViL90mkxMMYBdtjVdNiS0Y8FVxnFIocJQuEYbZEAtDaz5Sttkz4Q+PpzlHn7Rwj59zaGSm7Mp+
+                dqA26kdd9xIrkJXyc6K/nkwebGMAq2gvjJfI6i5DJ6qURj9HaYoIL7MhEkOUCCnb4p0W7WuLczMj/ARC
+                61kOjsiUvd1JuO07SRb3ihyB2iBZNbxcDls2/waPMIBNtBfGy5uj/ILL04iiNHZylK4ThtkQCdNFIaRs
+                i9fftWhPOTfvtXBzoa0+Y5kp2024HRkniyt+PkfOXJ3s6uwj809+P9L4BJ2IdpQ9QXbKy9M1X20aJSKx
+                f0xzd5EwzIZI9FMypGybp1q07885FyG0eE1zeASm7HNOwu2aq2RxK5YvzE0NshqssYeKgxhmw6JEO8pO
+                VzRzliG1OlnFHDS7CMNsiMN+RYmQsq1aX7Vo7zgfrbdauPkmh0dcyv7B3p20RhVEUQC+JWqTbjtqQqJt
+                xzhFE4NEDIKIirOLKM44oagLV6IbQdydoo0mGDVxwhnxn6ooOGCqqpOXR1Xd8/2C8Aj0O+9U3WtGqyjB
+                RSNupmM5tAjZ8borysexRlzuaw1QFExtlV0xEuAQKFRnU8KsgkZVo/obA2nSLw5M2V4fbNJak1gAOWzx
+                mkSGUkvZ5gTKcMIbsvdDkR2pFjBDhmU2zYPeKns3a9eC9UugYWi0RH4aY5lNmXP3FkzZXuNfbNI+jWMB
+                TH+2iZtBjhJL2aYHJaiOmij+jmjU+8RrMMpRcBfcZTbHjJOHlnsh/zrOQV3FahgJdAUanZYfuDOb8rdY
+                HJiyvdKfpT2BBTBjE/dxGjlKK2Wv7kYJamfE43I3dGmYRPfPDIvTMRC5bFB6YDywbbkAClPvk1DLoNEy
+                YZlNKqww4sKU7ZV8onwzhYKl/+XB2ufIUlIp++BalKCySzx610KbLvEyDcSn2icu20HksgU6BbYtR0Bh
+                uiTYTWg0LCyzSYW94sSUHWAq8dPRr1Cs9E/RW/siwy1eQFopu9mJEtQGxGNgJdSpDIpXM8YBaFvFZelJ
+                EM1K7eyzelOCLAIFGTISbAk02iwss0kD39p8pmy/5Cd9tZ6gUMlPhLO29RR5Sihlj3SiBEObxOPaEBTa
+                I35rEJ/amLjc5c1smpXe2WebJYxhIApzVn7iEvLZbBWW2aTBDXFjyvZLf2vVaxQp/e1m1j5EptJJ2acq
+                KMGKgTjCfnSW3xYvswLx2ceb2TRHaqvsn2cauTC7MD1GvuP5AIfR/IMBUUCVzZQd5Gna15CLbm4f28S1
+                niFTyaTsS3WUoNEbR9iP0NBl8doUYbPFMpvmSG+V3Wm4dapIO8eEKdujS+ueTFKltkncmLIDvbZJK/YW
+                8vRXm7hXyFUiKdusWYcS9Jg4wn6UtopfB+Jz0bDMprnQu8arQ0LtBvmNClO2zz35ranzwBgpsFt8mLJD
+                pD9T+zkK9NIm7t0UcpVGyjYnUIb9RjyuR1jWlqU2Il4mxrej8yyzaQ70rvGqDkio9SCvlYavxV63ol8L
+                STRvnb3iwZQd6q1N2udpFGYy8S8O1k4gW0mkbHMRJVjeYcTN7KhCsZAtj+cifEL7xOkoiP5D7xqvYQl2
+                A+RTPSftuAqVrsofjL5lmaTCeinZeWRr6o1N2gyKMv7eJu79OLKVQsq+3I0SrLseSaMer9E0T5B6bmbf
+                0ZqlyE3v7LN+RsIi7ZG2PIBK5+VPI1ova1DWQqoKpuxQEzZprWd8EL+0JpGvBFL24FqUoH5JPEwPlKv3
+                iVdzI6LDMpvap3f2WcVIMBPjkvy4VAalLYeh0iL5jtu8KGfVbeLFlB1s/JNNWlEF7qN3NnEzyFj8Kbtv
+                JUpQOSUephvqNYx47Yrvtbs2pvZniOYhvv/kcuyTNiwBua2X9lyARlUjfxnUusyDMrZH/JiyQ6V/HXkC
+                hXhlE/dxGhmLPmWPbEQJNo6IR28DhC7x24zouGPD0gMg+ofeKhvHpQ3LQC7tnxHth0bf2Lu335iiKAzg
+                awtG25hqpMUoTbQuFZpoxF2E4KEudQlCxO2NSES8ePt2RotQpRRx/1dFJdXLzNlnn2mOvfb+fn/BzDyc
+                Od9ea6+1gnP1KHZ7B8SNKTs39aO1f45jCbxSftZg7SRiFnrKLmc9dVevOAysATVrfgy+COEoZq+8AqL5
+                0l3j9diIh3WgLH1D4qmGFF2QBQz/cikyw+LGlJ2f/oD5HC1Tf9Qwszo8ZoGn7HLWU29yZsfeQyCgecdT
+                4FtYjkqmRyCaL93ZZzXxcQuU5aD4akOKbshCuwLcV0FU3CEjeTBle3huVau/Qov0t83b+gSiFnbKvt2H
+                EqxdLw5DIa6B/i86R0UU3mB3FbPPg2iudBvGO3pkls4ztZBUN8o8Otc0lGCnLHIYRBG5JLkwZeemf/DX
+                e7RG/wg4a6cRt5BTtmnrRAm6jTgMpDoGqYGKEaf14f1eg45PnGqkoibSLWVvFS+rQBnOyAz24Lusk0XW
+                s5hNEdlgJBem7PzUL7Gqv0z8B5ip58ct4JRtrqEMZ00Ybeta3FJ5s7B9SDI9ANE/6Zay8US8nAQ1U+zF
+                eidSNKjif4SoqNW9kgtTtpexL1a172NoyeuPVrkPiFy4KbucvuP2YSMOFztA/3T0i5PZhNBsMpJl5QEQ
+                zUq3lF014sWw4Oh4WPo6gRTVZDHTBaJIDEs+TNk+9F9LfoEWRLDF6+NrRC7YlN1TSlDruCgOZphvkXPl
+                20zTH175f7Nkephs7ZIWS7iU3Sae7oKcPyZ3oxV6Po+Gd/eIqJX3JjembE/vrGqtpcw3ys8YrH2B2IWa
+                ske6UILKfnEwZ0EL1MRtD0Kzw0im0yCatQ1pah8RTzdATey4LgVcQIruSCNbQRSD/Bv9mLI9vf1mVfuM
+                Fjyzyn0fQ+wCTdn9W1CC6q5A7obrUhmQ+XT0+tUk0/19IPor3YbxnZKBQcjPcvmDzQF5PJVGRvaCKAKD
+                khdTth/927zeoLAJ7aXs+ktEL8yUfbmCEuzoFwfTDVpsrRGnoeBus1e2S6Z7IJqRcMP4Zq53LuE5mWkF
+                UnRTS1MUkS+vthambF/jU1a16eLf/JNV7j3iF2TKLmeo95oBcdi4AdTIZnEbRGgOCgegUT6p3getGPG1
+                HNTQ6hH5i+PkclgmDZlDINKufVTyY8r29dWqVp9AQZNWuW9vEb8QU/btPpRgQ484HF8DamjLRplDy+uR
+                a+Dvw90gAhIuZR8Vb09BDe2RQpYhScuksUsg0u6weGDK9jX2y6o2NY5CXv+wyj1HAsJL2aatEyXoNuLQ
+                G1xMDMdBcRsNribjWl57CkRAuqVsnOFb3FLpMkzZ+fUZ3tqiWFV7JD+mbF/6J21PopDPVrmpcSQguJRt
+                jqEMx4w4DFVBzfTtErejCM1VDkAjp4RL2VXDDuelckSYsvNbIc2Y8LZCEnk5Ix6Ysr2pz5tFGqf1ny3Y
+                +gRSEFrKLufkurPNhDGATa08hZqe4M4pXJ/6HIjSXeOFGjdPLZVuI8WcRIouSFP7eYxDqvk9C5iyvenv
+                nX6HAqatctNIQmAp+zd79/bjUhSFAXxtCaXVqrozGDPDFCXRkAbjYQwviGuMS1wSDy6JeBVP306VEZe4
+                30KE/9QlhIw4++zTOt276/v9B+elp9/Za69v+SrkoHRZXFr8gJ6sKW7rEJphLkAjF70D46XlksF+0F8K
+                k5LRBDQ6L/+2G0Txqq8RH0zZ/qLfA+ZfaDUILV5PoEJYKXusihyUz4rLieB6qEJTHgplMMFHyUiiW5wZ
+                J70D4yski72gv6yWrA5Do6Se9nPckELxWn9K/DBle4u/0+p9B17i7y+z9i10CCplj9aRg8IxcTBNzqg5
+                rTLiNBnc2P0+4cw4OVyHUhOSxTBotj1GspqCRhslwQUQxaomnpiy/cV/sjsDL9Gf3lv7+hF0CCllNyrI
+                wch2cTBHQG41cashMMWGJJp3FaSc2qPsipEspkGzrN8uv7B/PJXNfCPTQKoa8cKUndFdG7V39+Dl6Qcb
+                uRkoEVDKbu1EDhYPBbLlPHqVcXEyqxAY1wK05adBuq2HUpd4kbgnEpoOY/wymYumJDFVEMWoPCr9dQ1K
+                xL5x+z68PLOR+9iBEuGk7HyuQlfH47tMHKp94ja0E4FZIMlubgOppnVgvHiI1VO90GU9bhMa1STRKLeR
+                UpRWiyem7Kxe2qi1H8LDg8i/Kdj2A2gRSso2O4rIwZKV4rAmuNPXYBVPidtqBKZ8UZJtBWmmdmB8vyRi
+                oXFqNenCZmg0Hdt7hCiFJUZ8MWVn9Oi1jdoLpNd5byP3AmoEkrJzmtJ29xZOcjQtrXQrfsxaBGatYZ0X
+                /Yveo2xMyTcszO7hLwxXtqc2P7r3CJFTeaV4Y8rOasZGrf1AzaNa++Ep1AgjZec0pX3EiMPQYlB6C+S7
+                2Gb9hiXZrU0gtdQeZe80ktEW0B9Ko9KNFdBoQhwOBddXQeRQOiV9pyhldz7aqL3pIKV7n2zk7kOPIFJ2
+                PlPaxaZxJsIRkIdU/ycXIDCFSUl2BaSW2t1neyWr3aA/bJYf+M3Cx1JuhaOB0/dL2bpSdvSXlWeQ0n0b
+                uef3oEcIKXusihyUTohLg5/LvaSbjTTBzQdslGTzjoKU2qBm8eVsU/INC7O7NrJSunIeGs0JZeCNqFfO
+                9P1StrKUjRc2amkbpB9+sXFrf4YiAaTsi3XkoNAKpEpssAyLWyO048FFLUl2g3VeWqm9LbDHSFZToN/W
+                SXcWQqM54jReAVE8qiGEbF0p+2Hkh9lvkUL0HxOsfQVN+p+yGxXkoNIIpEpswBTGYtyaWz8nyW6zzksp
+                tbvPVktmF0C//F4qzF1yHtYbcWsVQRSLyiEJgaqUHfsodfsJnOIfjP/+mJr0PWW3CshB/aK4XOYrPItl
+                RpzO1REY5x68gyCN1O4+K41LZmYR6KfykHRpLhSaywUANFhKxyQIulJ27GvBXsEl/iVv1r6FKv85ZQdy
+                gFwdEwezgP8UszkpbhMIzQFhnRfNpvgoewWDYU/UpFt3oNBxScNwZpxiMS1h0JWyY6+4aj8e+Ef8cf1c
+                lf6mbNMsIgerlgfS1z2IRlYG09TmYbGRZLtApMc0rxL3wh4jXTJf2buT3SaCIAzA1YAwtrFJMDEmmAAx
+                KCwhEghhVrGdCLtA7LvECcSBAxKnvxXCIvZ9R4g3xUQcIMEuJzO0u1z1PYJlzczfVV2lsqdqPrVl2G51
+                GRn6oriUrS9lj3/yovHDt+9/9MI9hC4dTdnuEELoc/JSoCBriVeOrgixjStmH1bbPKxYbHP6gik4W/Gc
+                hp2U1CxotI8m2Dov0x3WxBKytaVs8ZeWn4Pxxgv3Vdsel/+XsqOpcO52xKiUYGYsP0K8AUQmVye7mm3+
+                tlJtw/glSuISzIQ+Zyl7RhZTe5y9qo0AmSrFQlvKxksv2pcXaEH+GHU/9gjKdDBlLy0hgAVZR4yhZTAJ
+                9DiJX0fFvVw1+wCMLmrXeOWq1JTEM7QOyayixBZBo13UpqW9MCZyy+sUDXUp+8UXL9pLtHTPC/ca2nQu
+                Ze/tQQD5y8QZtfd2Qv3EW5VBZErOtmabPyiefbaPEjkI8/eD0NaiTU+W2lWL7kVizCQbKR7qUjaee9Fa
+                1XrlN8T7H4+hTcdSdnU7AiicIU5tECaZzaPEW4HY9BPjzhYYRfTexL9iXc4p2O4ouXnQaCG17TqMiVo0
+                k890puz7r7xon8bR1Ph7L9wDqNOplD1SRACZE8QZtqPx5EqOWG4JIlOoEeM8jCJql/ktd5ayU3CBLGXP
+                0Bxqm1sPYyI2GFPIVpiy8VR4vfchmuiCLV6v7kOdDqXsGxkEMDhCnLqF7DQMEK9aQGTYC+Vz98CoobeU
+                vYuScfYUbTjtKAWnoNEVarAJaKYLZC5STBSmbLz1on1smkSfvPPCfYY+HUnZbmEBAfRWiXM8uuQnU7FM
+                vE2IzVpizD0Co4Xa2Wc4SAmdg8kMUUu2q6qF69RgE9CMfLmIJp9pTdnPhBez36CJD16479q2eAGdSdnu
+                NkLoqRDnstr9uGnbRTzXg8jkjhKjshVGh5Uan/8Tio4S2gFzhVLRD40W0XSUczAmTgMUF40pW3oaHXuM
+                f5B/euDHnkGh2RScO4QQShViuKzai5ipyw0Tr5ZHZAbLxLhlE9CU0FvK7qeWRLapBNfjKBVZaHSSpqVu
+                MdvE6XRUl7K1pmzpndX38A/iO+G9/wCNwqdsdxoh8GMe3W6Y1PQ6kV+Q/N/k5gYYDdSu8cqX7TJxYvka
+                pWMbNJplZxGmG0Q1Xlxvyha/zespppA/1c2/ewKNgqfssyWEcIgP2X0wKcoSzxURm/3EuQajgN7ZZ4sp
+                sZ3Qbi2lZDUUyjlqsAloRrgl0YVspSlb+sar9+OYRP6GMu+fQ6XQKXtoGQLIbXLEqNhrOl2Fi8Qbjq7T
+                rzBCjLmzYbqf2lI2TlGDrfJKpLiUUrIOCt2lX2wCmpFtWYWiozNli6/7Tgmk4uvz3r9XOvomcMqu9iKA
+                /PFI0r4qS5zIfsjtZTZmH4DpdnpL2UVHiTntuxoGKC37oNBVmraLtj3ORKZ3iOKjNGXjnhdtanP1k29e
+                trFH0Clsyq4NIoBMnTijdhKevoXEq6xBbEp834PewVhq6N02kKUUzIdqv08Y7ZecoWP0i01AM5KtGaUI
+                aU3Zj4UXsz9gkpdeuNdQ6id7d9raVBCFAfiM2zU3JE1aG7S2dYtUpQQjgjt1A3HBLYpVKFFwwe2DKPrx
+                vdYaqyKu4L7/UVO1tdXKZJlMZu45zy8opPnw5pw5r9WUXQpgQXpQn/bdy3oxEOwivavu3XUvks5tOTQe
+                cyvc+7e0JDwge87NSo2QMUfB0Bm5xi58lx4hF3FN2XgZeW1m6VUcWrwegSmbKXs4BQvWjJDOoHtHuGJh
+                m5/VuskjpHNNptnxxvfz3U0mrAVnCTLnHBhaR7OQ+6XCI0GBnMQ2ZT9+E3ntFaYb+xx5rgKuLKbschIW
+                ZPKkoY7Li67W6LhKegPu/cSRzpPOHenzijW+t8/6yYROMLZGkTEqCYZWU5VcQBP+SpXITWxTNh5EXhv9
+                gmneRZ77dB9cWUvZqhjCgiU50lD7IH7KwrRAkV4/nNOnSOeSxOwY43v7bJkiEy6AsYU0Sa61NyZBDcnJ
+                02zhiAvkKL4pe+xD5LXnU7k0Di1e78CWrZSthmBDtyKdsxATOrbnApjW42nV6VrSugIRW3xH2TvIiL3g
+                q0tJym5SkRpT2ggh2i/sdK8om33KxrjnT5krmFKJPPeZaYsX0FDKdvgJ1ZDSj9TZnjmaKV0gOhLCsOQq
+                0su7t7EfDpPOgvMQMcV3lI2DZITiO1XceIAkZTepkxq0ieWCvXBMR5mcxThl40XktfdP8dvT95HfRp+A
+                Lzspe+kSWNCR0IfsQxATsr1UtQOmZRTpLYdzghF9zL4IEU98a7y2Kjna1aQimXQCHB2nRh3j+90VzkiQ
+                uzin7KdfI689w08xaPF6DcaspOxdGViQLLsyUndf3wBNyKVhWg/pqSVwTva0PmYfhoijFXwXxnvIkDNg
+                KqvoF1m9b9wealhZltNEmw05uy7OPGX7vmg9Oo4q/1ffo4+PwZiNlN27FRakhknntIMvgtui63TLLpEF
+                edJbBPcMKX3M3g8RQ3xrvJI5MmQ1eApLZNR2cLSQGleEEO3U7XLI5p2y73+KvPZ2DFVjbyO/jX4BZxZS
+                diENC4IS6eT6ICYMqRYO97sUaalbcE+RtBachIgfvtOw1TSDZJ26bSOzDoKjvfR/8gpMOK3L6ZBN68HZ
+                k0pN7tXk+0PrxlH1uDKptj/q293ZtHEe/g2s7aRWuxrAgpWrSCefgagKi4qmDAQwrZ/0lIOfRThMWpc3
+                Q8QN49tnN8mU42Ap2EV1kQqMWc2hJqhTEKI9nA/ZzFO2mHL/0aTxL3+8m64y08t7f3mo8ere7DifPoOF
+                lH0sBQuyvaQzsgaiKnmMpuuEaemlpFdw8DbsxoLEbI74jrLTikxZCJZ6yLB54GiODw0mQvzrlOMhm/fG
+                uBDtN5daqxzCgr4BR/bW3Rdsanl79RaqQQLuWZmXmM0P41F2Qm5jNyejqB5+9i+0Xqjo/zw9pylYOOR6
+                yJaULUQjfEnZKtEBC7oWk84R9zqa2yJdaH17dThIeuoG3JNZLDGbHb5VQOEBMkY5uJzScuEgmbYBDM2n
+                Ji118AWSiL+w6HzIlpQtRN38SdmWHkx1K9IZTkFUZXttTE+yivRKIdzTrUjrusTsOGFc47WODDoKfraQ
+                cWvB0FFq1kAWQli2rEzuk5QtRN18Sdma4iyLOztlvvMqzWZ9a9btilSDLXBQgvSuy6XxGOFb44V+Mmgd
+                2PnB3r39uhREYQD/lhy2tna1B3UOdYlTcTtpnKZRKtK4vChSDXELEYnLAyF48rT+dSIIImZvnT1mur7f
+                n9A+7HyzZr7V7MC7i2rQLixsytoVCiyfIwFM2UT/IoWUHWZxVn0gcJBBjGPTUNyT2u5QPcu7cDt4TOOz
+                e86YbYvdUXYmKCjZQ7NqrcK//WrQFSxug8UrFNRwhBQwZROVlkbKnrY1gMac+zSLmgj+7ID6ti5wG8VY
+                7pzfgdtbxuxlYbj77BIAsLbrnx0SfMMrARE8XeizeoUCyjaRBKZsovJSSNkbxzSAbBTL4/Do/aWoQw6p
+                b6so4LhGqNmF29o5paVgd5St1+DTDbXmGiqwSw26CB96MZ7a0pJqdJAGpmyi8hJI2ZuZBtDchIvsUXIN
+                /Tdy9Sw7AbcTUU4f2h24vWUF2lIwPMpuC3x6rMb86ANhyl7UKXgxsthzT//F+y4SwZRNVFYKKXs01ABO
+                PoFLh5s0v8pe42+21LeL6c6/9gi40MsIw7WIK/Bqm9qSC6rwTA3a4n0KSsp4Dak4q0RUUvwpe97QAFo9
+                uPS4R/P7muy/kpZ6Vp8BqV402Cdw61xXSp3hNV55B17JUE05jEpsV4NW4YescppNAayncl2cKZvon0Se
+                smWrrgGsH4RLd6z0RXsKh35DPRsL3KZR3hnXicBtB2N28gyv8ToOzx6pJeuCSnxSg1bgyxO+zabK3Rek
+                gymbqLTIU7ZM1CHUwLHP5R6FT15r6lsNBRzQKNVQwI6XSmmzO8rWjygh2S7DquRdVEJMpsSr8OZOnOe2
+                tET2pRSymbKJyos7Zcs+DWEi/OD6/ChIWz1rbMBNDmmM6k8Zsw0w3H3WFHhWU0Nq+Alfty9oJwrj0Tr9
+                Z5OkQjZTNlFpcafsQE9tPwhcRrlS8Y/C5hF1879P9kmc/9KRB4Vi9nOlhJkcHFYVE1fUjveC75iyF/cY
+                HnVPKlFVGoO0QjZTNlF5Mafsyy0N4MhRiaSBLXr1wh+FU+rbURSwpVHKZ4Vi9hnD49DkGf7v6j349kLN
+                2P0aFdmrFr2CT722ElWjOUNimLKJSoo6ZXffawD5A7jIoK6kms9R1MOxepb14CaR1sBnfRTxTilVhs/h
+                TsO7u2rGcfyOW8cXsQ1edeJ8hkTpa02RGqZsotLiTdlh3kRlM7jITaVffyq3WV3d/L8I70e6s7jZRQE7
+                bhnuqU6b4TVeehjeiZlDi2EPVdmpBu0W+LUW54ZISl1avWdM2UQR8JqyZ5kG0OzDRe4rfXGsjzIuqG8r
+                xa6qx2ncQxFvzimlyPDxSCbw77YaMUBlrqpBn/BdYhWsZErjQIIhmymbqLRoU/aDXAMYdxmyC2quoRTJ
+                1bNM4CaxbjVvdVDE2/NKCTI8yr6AClxRG9qCytxTg7bjh8TWiZIh6T3JZsom+szenbU4EURRAD7XLWRi
+                NJmYmJjEGZJIRtGAIrgjg74obiguiDj6MIr4JqLgy/3riiC4DHalU9V9q+t8P2EaJn26bp1bPo8pe2dD
+                C9DaRpbhQOmHQa/8muDTcHBdjRoLXHy4oxSdhLvPdBcB3NAkrD1BOOuaoEfwT+oJLxCg36V7JZspm6h8
+                +yP7VRsMjdSc29cVA4N2jQUQ8exBR8DF2RWV8Ft4mNPYTU3CNQR0QhN0GCHssP+UNOkr2UzZROXbH9eE
+                VleM1Jzbd0+wvO2aetYSZBseUaM6Am70qqSUH9gmQnijKajNEVBdE/QSeXCXJ2VL+ko2UzZR+fZH1TZy
+                U5Clx5/Wnz6Jkfadx3BwUq3qCJy8T7hLK0pGm+2L0Bzid9xCVf4Xil+uaILOIIxLTSVK90o2UzZR+fyk
+                7N5AC3C0Lshytqak2lwX5CID9eziXTtfaXLGbFaNV0/Ka7xOIQhJYQa/JQjplCboGgJ5wrcBSvhKNlM2
+                Ufm8pOxZSwuwsYNMly4q/VyTndeoqRmCxNRtu+9DXYGTHmN2RFIePbiOMA5q9d1GUMc1QXXkxMk2KsC9
+                aKfFmbKJSucjZU+3tADNF7yJ5WgyRX7n1beTkZfrdgWsGq+ahI+yJ4IwDmvl3RTshdvQVnEewdxlFSol
+                eyWbKZuofNkp28iQdu0hW0Udte9iBdJWzyZ9ZBPD69e6AscOtHNKUWD32S88iF1CQ/APfqhY1UnkFPX+
+                CopCY4a4MWUT5WApZRczpH1kYWWXmHmDHlay2FDPTsPByPCwf1fg5iunxuOQ8L+KtRn+wIJsd+sI7JEm
+                6AACkjq/vVNundhDNlM20dJspexihrSvjqzsEjOvK1jRafWssYh9VazzH/XLZSX7Uj7KPoM84t4U4MlY
+                ENhbTdAbBPXCbucH2XZxM+5pcaZsotKtmLLlwpoWoLUdc0u1E0NNHf0t9awlyCZjtcs5ZvceKJmX8Bqv
+                gPO5u1ptjSn2xgK5leziP6IpjqHKGY8QP6ZsoqXZSdlyT4swGCLL0PC13gKteWnquHRUPTsBB1PL602f
+                C3g5uypSXuNVE4RyTKvtNUKTJKebXyGwOd8OaGmN8/EfZDNlE+VgJ2W7nh+HP0ecs0o0u4fd3TX1rDaL
+                /l5nV8DL2RWR8hqvKwhGqj0iMOkjtH2aomNYEa+TkXftBSqBKZtoaVZSdr+jTsIvTxm1lVRrT+DHvKae
+                nYIDMf0YOwJHvadKliV8lP3vwmfeKjYy2Jxsyt6H4OSbEi3hcyUOspmyiXKxkbLnYy3A0bogy3SipLo1
+                hS/r3h/jRzg4a/owrNOHo/47JbtS7j5rC/7Gbc9OOoLg3muK9iE8uXVViRxNnlUlZDNlE+VgImUXc368
+                sWNlYbd5rRm8kYF6tiVu9eaWjXtwdOg+p8btSniNl25iT0Zvmnxn785anAiiKACfEk1MYmcxLjGJGk2C
+                KxFFEDfcFReMC4KKOir6oKi44PP9624guHS6Ot1dfVN1vl8wzDxMnb5V9ygSDVG8yxKguoELA+5HJUtb
+                t8EbTNlEaelI2bO9Es/pQ+MTDNlJK+LSG0aSsxosPNK9Dba9D7Y+sNJLq5BH2dEAS1r1Mr6sanDgjARo
+                A9ww/YYQJaru8maQzZRNtAwNKXteFQeqcyS6q3kztR0dNdl/Oia/OK7BmetestuZANw1vuJUP0so2BRF
+                +iLeOmXgwE0J0Au4clj3R1xSoTuBT5iyidIrP2U/jMSB5gyJ1kI+M1vXZKdn2pKznQYWzopqp4YAd42v
+                tJBrvOQ5/sZRrI3WHHH4mSKjTXBmX1eIFjk+8mmQzZRNVLbzWMZaQ2I4TjSmFvIby9929w3yNmtIzkaw
+                sK0pqu0dw9qb60LqhFzjtdcgBldkLzSFE7skQI/hjjnKW+O0wM4hPMOUTVSqV/iHlmjbvsAaTAc12e42
+                kVX3+XDQbM5grfKWt8bVCXmUvRmFMr5GmHoPcZiys9oOlyZc40KxPns2yGbKJnLFPmVribYW27wMt4Zm
+                qMl2v4nsNCwY7Zf6qodh7w1vjSsT8u6z3RdQrE3ipz7cOCoBmsKpwVnef6P/6m70L2QzZROV6zz+oiXa
+                Wmzz6mnPY4sprMn+07wl+arfh4We7gVoIq0J7PWucJytSshH7IMo2HbxUscgnur7Q6vgJBx7qPxVEpVi
+                /z0PMzZTNlE27lP2th3iwjmDJPt2Cv2nJltx/e0nAwsjUS66ixTec5ytSMijbLmJgj0TLz2BI1MJUA05
+                4/d5Sq212cuMzZRNVLKrSGfSFgdaNYtJNj9I/9A1+IfeZ5abYcHsEOXqRw3H2asp5EqCqkHBNouPEu5V
+                8S5ANiM4Z0bHhei31vQGPMWUTZRWmSn76X5xYPcaEo1Zffn/A6DqQ3M0hIWh/iPQOYMU3j0QUiHoGq8D
+                iMW+54StjW5clADtQgmGvAlHv3Xm8BZTNlGpriCNw01xIHqo5SdRL2NNtvtNZDsMLPRFvW4PKQyuBH1T
+                WY+Qa7zkMuKwyitLxzi3x2VyCWUwn4Xoh/p6Ty+L/1QJ+n8eUeleIoUTVXGgOkeiScg7jBz2TgxakrOb
+                sGDaol57Ao6zV07Io2wHO7yM9s2FS2gbLMCUndlrlMLcXIH/MlS4+nQCr90WIirPR9i725AErvqIH0ZC
+                EjnY19GXnDW3wcJ4BYp3U+52r5wXWhp3n6kvy/7pjvimMUMs/vrycAYlMX39T5OoYJ378BwPHkRlOgJb
+                5lhdHDg1RKK1kFcYxcz8C2J2Ss5OwkZN9Ev5B6h85Th7SRxl5yDqIQYfFmvpmdogAdqC0tzgsvGwVfs+
+                Xxb/5ZAQUWn2VGDJ3JIEru7hmqO8Lv7d3jFcGEeSr/phWDAd0S+6i1Qqh/hEKj2OsvMxRSzF5X9law5g
+                QW2pwypYh/KYXVzwEq766Qvw3zUh+sbevfc0DUZhAH9O1DYdwlAcDjYGjiGoOKMQ0alBRY03jJc4RY14
+                +8drojHG/85XV2NiotG1lXL6tu/z+wjLtva0530eys0pJCQP1MJEA3FkVUl1z3XYOK4/GR8PXSzCvkLl
+                uCCVD9eU/gtrvAqxmFuA3ELHKsZLHx7n9JTN+wmP9XyYsYHHSkS5uYVk6mNqoSaIIzUl1YlxZMQ+iexE
+                wum+CD4LUgnWTyqlw4XxLLQFBvpaLrGdCJyyt6oiyJX0e0r+6bXKvyzOKi+ivF1BIvNTGsOqhHiDB6l+
+                qAnMdIc0W8vXkUC9GIXoqR93vGapVzpcGC9M9hlwScvlEmJwyt6qXcibfFbyTLjmyYwNBHywT5SfdSTR
+                3KMGqpEgzviUkuqqwNBTzdiYIIG3xTh+35tFSu9OKeWhGF+o7TF9Af/COfGfbgos7VMPPUfu5Oycz/8N
+                /mnPeDNjM2ScKFdXkcBsWw1MbyJWhw2Xv04D25GeZqxVpiSlcAUpBZeVyNRhmJBSdSwubMDUE/XQbbjg
+                XhHiNikTI17N2MALJaKcnAwQr1NRCzcQq8kDVN8N3YGxexXNVruOBOYLEv86fUKQTrB0xevt5XSYfZaB
+                u7CxW0tkJ2x9VQ89ghNkJlTywIgH5V2/W1IiyskrxHu4rAbCviBOtyBT1/YKV2DutGbsEJJoaUHUBFwb
+                d90Bn7PPQoGNw1oeYwJba+qhw3DE+Gkvi9T84kNB9p8CFogS5eUNYm0OqYGRLmLd47Pmn5+UvUZbszXU
+                RQJSmKi7qQ7SCtbvKxny+lbjEIwc0tIYbsLYXfXQHJwxy9iXcgtPbMBDO5SI8nEMMSSqqIFeE7FWlpV0
+                TxN5WKlqtkYFCXQK82ClvYjUgk8M/4zHGq8MVJswsldL4zhi8MPLwjm4Q1ptpbIKozq8tK5ElIuDAQaT
+                VbUw2kGsO9zm+m5qHgYsksgmkcSMFsXwHaT3+vJRpcFY45WBixiIS89/8VFgbVI9FMElEpUqv49+CaMG
+                PPXe64sfUY4uYzCpqYWJBmJtVpR0bAMGTJLIwg4SkAktikokSO/LNaUYzD7bsj4SYJXXb87CXKQemoRb
+                GjWl0ql4livOlXEiF7zEQOMTaqEmiCMR6yy/eyBIyeFlxrnSNcjWBOkFSzyePRgXxrdsuA4rUpbHoSl+
+                ze6mTBZBC46RG/t5u1EuYTQPn3FlnCgX9wMXyqlXBXBjcd1x1UhgwCqJrLqCBOSzFsfHLgDGoDnJ69X8
+                M7DzXEsh7MDenHqoD/csMgatRBa8fo/9w7jXlz+i3BzBILMLaqAacchO6BlyVa/oT7blQjKqxTE8I5yz
+                3eTzq2xdg51HWgqTSI41aFtxAw6SfpGuOzTA6F3fZ2wA55WI7C1hgMURNTC9iViNwvQ5bafllsCAZRLZ
+                UyTRLVTs3X8u9QcvGDf+V8w+y8CCYDC+j43pQDByUT10Fk6SnXuUim56bk1AeKlEZCh+YVx2LquB4Yf4
+                wYXFdceNLMKAbRLZ0GwJI4FGm/gvddZ6bSevD1p+Y+/ef2OIojiAf68wa3ft9rFMX9ZS1d1SpKtB1bst
+                CfUq8Yp6NEgQQQh+O/+6eiWaXWY6M+7cs/f7+Rc22bnnnnO/pw2LZqQHlKaRhx3ioUU4yuxpCWlWmbsC
+                +i6YFCKy7Wzu+1j6JhBp9ZSQtPYjf7srkq26QQzmg2hSOIFkwkP8Em7EVnYmyk1YtCI94AxycVM8tAXO
+                MnurQlpViyHol0NCRJYdD/4R6V0SC6pH8EP+g+uu65+AC9qSsb2I47au2OLSY4Nkhvl6qgNfZad2EDY9
+                Ev3KBrnYJh5yuMoGzFauz9bp1FOOiv8h5BU+kW2v804bO7WKSCdmhaQ2BidknkRWaPbkgpuRC0gmOHqI
+                c+O/sZWdke2IhQuzk6TFscru6SqbdbZKfWcWWWNvtCREZNVkiL8YrkkEa/3ZW6qSrzoo3tza3f6yZGse
+                cYyNiy7V20gq5Pvs7Hl9j18wsMno/8+uG2wOd43rmxuIzwzy1ZoqrVFH2hIuectlXkR2LeEvLvSLDSMh
+                opiij6eODssOHUOKkq3SbcRxQlt4VbltkFSwxr1eP3FgPAtTiMbHxR2pjHFxDCCdZ3CfWWEEqxblIY6K
+                d3VJiMimnfmmje3imux4GqMufTPMgGTrg0Ec86JNLcQP3J+dP68Hxvt2Iy4ufd70tQSr7LRuQgOzMMQr
+                fwWqxQugro4KEVl0Psg1beycQRSzS0gq9+GU6YaI2O/UNwuiTesIkgsunxTKSkM89hCWTYluFYNNYJWd
+                0g4oMXZPyG31Fy61JBwTvBQisuZ4iK7uV8SCvqJBFMMZrXUlN8LF/2fO+E7EMSjqVFJNIQTHWGdzYDwD
+                g7Bsr+i2B3lZFA9dhBbm0ZS+y15/jM+cZo39L6+Y+EJkzxq6MaMNsaDxBJF2DwjJuAtrsjd6kPUPM2IQ
+                g6mJPucMUtXZS16ndmXG69iXygNYtiCqjRjk5bR4aAiKjLW5WdRJs/MLLLGjXBMisuRkgC7MskSwNgQd
+                cnvGuuow3LMoGbuKOK5obCOMv0EqwTVeP7OVncoZ2HZHVNuJ3GwXD81DFbPA+3/n1FlixxFwPI7Ilnc5
+                PoQuvEGkaY0lVeZGQjgo87uYati7g6iluWGkErx77nV2F1vZ6lY/695HledGh4/ioSkoY77O8XjikNbM
+                I9bYDEAjcsr1AJ1MXWwoNxHpBr9iTq3Jjngxb6fdZuqiUeuuQTqfL3FwPA2v/0yqBtZtE70KBvnZKh5q
+                Qx82tF3RmGOJHV9wXojIgsPD6BTWxYbWKiLd57j4unPOfj1WZyVTpemezgZaNgAHx3Mz6XXCeBv2PRS9
+                VrB5zI1Tlc7HhnavqBxYcfaQ5KYHnBknsmDfF3Rq9osN/ROIdKssVGo7/P0YlWwNGMRgPolO1T3p6+z3
+                bGgn5PW5otyEfQdErZpBjmbEQytQygxe7BPaBJbYufvMYwTR/7eEThMDEsHaS+Mnqp/1ZaR8Cw7LPPC7
+                jXU9vNytNoHUxq55XS8mNbksHhtCDoqi1ewVJMJN45qCA7KzyoZ2PipDLLGTWRP6xt7ddsUURXEA/+/k
+                XM2YGRVTetYDCjFEU8LSVFgpapJVQklZhKx4gTf7q4uFxY3mTnPuPXPu2b+P0JqZc3bnv/cWImT5JezR
+                Nsoa6Og0ppz8f5jZG0ZV6/WM3G4HrU05eF2Eiqkrk5IcL9dLp1fvHIEBi2yrDpRNQgA2fkS1oYKd40Js
+                lujbkBL7oNQsCyHCdRF79HSzBjo6jcnpl6df0oOoch3sE01S8xlbq70HGqjtl26PzC7bFDssRTBghS3V
+                TTCqiR20ALtRTccoi31IiV1NXj9iIUSYphT8BtMcgUwdoRR6zILr21DttG9960AQZPF9JllH0KF5Ro7J
+                4PJf2WH9KIvjC7MTRZg1zg6yvcreRWN13SzCl76xKiV2pe6yECJEU8rQcurO54FqN8HtZ1D9st2sVXcr
+                gija3LQ/WoQW6so5KbQDuuNkr+tPmTaYQJY2dlzHwchw9krUIA5oWlq0w5VYzn2WElsDNSNxOCHCc0/B
+                b8vjCKTmUNJSIwtuXIINHiRYq34EcoMtlhhphh5qXVq0g7j2zuL0Q8XGYcZDtpF3G4YdZfdkYlM50ce+
+                IRahSA00ZCE02WEhREjyWfgNpzgC3hZKyp5kwY9tuXX0s1bJQQTRanc072wRv8hyrwjs1LDDVlEWx5PP
+                izBtjd3zBTFCBbnD6JcaOWLLpcgO6hALIUJx7T18qCHJEUifR0lUz4J3rDlPKM1a1ROCqGWrJfoJ2qgn
+                UxL+2telArtriKBbjAMnx8z/8h5m9xxGrNCrWnnR1ig10DJm/osZN+oeCyFCcOod/AocBS+LkpplIwZz
+                ssuiE0X3Xq0WAA707qez0Eh9kOj4/22qFnbXCAxpYAtNwDTqZPesIXZobCTFonKjl1csug/ZROVZCLGX
+                /iJ7rpMjcKwXJZFErZiHqnxNtk+OtfJ6EcRt26fMpOaglXpybvYUi39YxwC7awKGTLN97pu/zzvZ3XAU
+                cUQTOaf39Fcu3b9RY/4rGVtZec0WQrvTb+E3nOQInMw68EKpKVdvFWpnrfpi/FL2p8wIQbPXLw5JdnyP
+                vCKHH5UaCYYcZ+skq+BG72SVvYyYouMNLk9erITXtygVdsiapcwWwk9/kb2V4gicICmyAzn7FJZpG2Kd
+                MsMAnIg9tPdCO3VTpqH5rLtZuPy0gjK4Xi4WYJ6Ff7bKNSG+qGZ+wMUugMpWYhcWpMKOgNpkIQRzmHHx
+                oscRuEUoiW6xONYL63SxVmcJQbRm2HapMwiBuvLmkFTav11TWGVn1RNMsS9B0F4NF3sLIwCV60O80XRu
+                3NL98VFLLvd/lAp7H1JmC1G9Hr2F36DH4cvUEUqi+ywaW2EfamStniGQGIy08oYRDnXz3KyEx3/YicUn
+                xcbXWesWP5sffbZrgh1Uh/ijI3V2L6AMX3K8SyadRUxNshBCk3wz/LJJjsA8AsixOGHnEdPrsU7JHgRB
+                MZhHn5zDXyQ8rt0lODz8LE0wp4ntUgWjz3ZtsINycAIdn78u89D+qfPo9QbZ1mWCuiP7SYTQY1PBL1vP
+                4Ut1EEqiFvsDwDG55h1ABzNHn9zssS6SulciRwiPujgz5fARemFzcvuiAtbYVbU4gCrdPhC2VHX8+jpZ
+                ZdfCGbSw2BSDg0snr6lBnrANei8bvYTQ4MIbZWaClFeM69oX3b5ae9LobqlfdWTO+HefCKFSV7cn3dvx
+                9Y29u+9pGojjAH432ls7To1zsYiKzMgMXZDJnELYyBys3WK2zEX4Yz6EIZJIohCURKNJ37rdQzSEbXZs
+                69re9/MGgJbc9Xu/u9/Fy/mDNCNtc8Iu4IUpGZpn194mbYF4Qt0SUJ0Ihb6Tchwd0WzPCup+zLffPUHB
+                ZiwAGFHiK7mEfrcmL3yb/B9dQGuQh/s+nmxuP7TGKfyYOEFvWgEwTyZv7rR4JMw57cRM8vQu+SdriapO
+                XOfb537HI8OvZAnoFREPzS4K3REtrK+hkbhHsFPh1uEBxuyITSdkh9do8L7HJuLWHPGzMb/BDeLIkyDU
+                A2ZfEFew0nHgk/ZKtXgaY+SiNUtQV+uZLWa37Gv3iDcI2arvBxETzUaXeMQSS6SmL0tZ3IXtKV9xczbA
+                CJ5XmPNgNIVDpy/FPTjZcUP3cyF7AnvGf74kjixbARB+QtzCSmZQi9p2Bbt1CPsScZufXZ8jU0X9FB+i
+                xCNUS0Ce6O4+LVRZ08OWEK4VNvZ2fP6pE1CsInAHF4ARVT+THljNmqhnS3uUOPPot6ouaZrGbbIsi7aN
+                6vryY+J7dENrcHn02vKs3ORc/+WwskTX1D60PnTeJXd54NCuTFzFShUjSPd8xcuHydMMI70J2/zs/tR3
+                x/jowYc98+n/Wpzpb1aWa5w3NE3zzNOfFhqyq9pBbj8+28gtvEP92ss+F7FtHOAqdk1GenqvKPuSJKmq
+                uqxpWoFz3pSdumb1F5GbheVRVixpqGNHaf+GNrVj6WJQkv/jwVAT/gA1Piz5n8ign8r1D3tBmnpary6r
+                SFE118rcswMfeOe56pqmqeqiJCnKTshGicto6KKY0iV1XQzyuV6ZvasmD9bkLQ2tTW1bkGwvKHEdy5gB
+                aD++UjYqJUYG+8WdqckuG32g0frJPfVAyahg+UaWeAbtzH2fWiPPhqbxrgn/Y9XkniLW/0QGDnc2XWvZ
+                /DvebStKNtQSpIlvTG9+p55r+GkHiBMRvhlV8K794MuuBQBDSpwwMgE01IvH5k4aco6Sv0R8VG340wXD
+                UmmzeFj25Qp24sg42MowAt71QvurwXtoOlwbde5a76h3UUG7ZBHD0cAhHAO5e+ibbVWvBSBrt2oIC5/w
+                D+Ij7ASXegEMJZG8SwAA+mN21p7xT9a283VlK4Z8HVCXc50nFksB3ER39uc3G88s/7khc305uo3t4b7E
+                3qKeDeBYPDn1k3kA4Ats9bw4k7A8LFE1zs5XU8jXACACGtrZ801hu1O7xuVcPoecDeDQcxOfowAwBJbK
+                bFWKh2VP9UZbKc8YB6clxGsAEBANZffmNwtNb6btbrpG7TooWLro/5YtABMWPzzBNykAXDFtr54fG9WE
+                NU0r5SPjzES6BgBol7a3F3N67YE1bRGZFzQ1WldiOKYRRCyN+7MBBtit4Dg2AIwctmPp80oyf1TejVsu
+                ia9XD41j82MG6RoAoEfazijfouqmzpsuBu6IXGvouafRfSWDZB147M15EVvHAXpI5CvovAsAYw7cpS07
+                b89U1xPW2MXXy9W8kaycpHHsGgDAebPA7PaCmtMKvClHrPG6Icuc61quXbRGshaOnbQNT7dqAXDbc6Oy
+                io9UAJgclkqlVtNmJVnMV6vr64mrhGo7VR/l88XksdkK1kjWAABj6M+fVerSU7VzeV5NlmeHqVU3W5l6
+                Q52X6ooSQ8t+6LZqOTDsid43l5AAjF+iXD00kibKQADgMpZqy6TTb03TPEv2cGa2fEzbSqkUQjUAgBto
+                qO2d0lcW1+ABAAAAAAAAAMAf9uBAAAAAAADI/7URVFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+                VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVWFPTgQAAAAAADyf20EVVVVVVVVVVVVVVVVVVVVVVVV
+                VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVhDw4EAAAAAID8XxtBVVVVVVVV
+                VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVXag0MCAAAA
+                AEH/X/vBDAAAAAAAAAAAAAAAAAAAAAAAV3nTg04BnGJ8AAAAAElFTkSuQmCC
+</property>
+        </structure>
+    </list-property>
+</report>
